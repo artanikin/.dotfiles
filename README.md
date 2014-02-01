@@ -11,15 +11,32 @@ cd ~
 git clone https://github.com/arty88/dotfiles.git ~/.dotfiles
 ```
 
-* create symbolic links to config files
-
+### Git
 ```
-ln -s ~/.doftiles/vimrc ~/.vimrc
-ln -s ~/.doftiles/zsh/zshrc_linux ~/.zshrc
-ln -s ~/.doftiles/vim .vim
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ```
 
+### Zsh
+Install oh-my-zsh
+```
+git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+```
+* for linux
+```
+ln -s ~/.doftiles/zsh/zshrc_linux ~/.zshrc
+ln -s ~/.doftiles/zsh/zsh_themes/tuts05.zsh-theme ~/.oh-my-zsh/themes/
+```
+* for mac
+```
+ln -s ~/.doftiles/zsh/zshrc_mac ~/.zshrc
+ln -s ~/.doftiles/zsh/zsh_themes/tuts03.zsh-theme ~/.oh-my-zsh/themes/
+```
+
+### Vim
+```
+ln -s ~/.doftiles/vim .vim
+ln -s ~/.doftiles/vim/vimrc ~/.vimrc
+```
 * install Vundle
 
 ```
