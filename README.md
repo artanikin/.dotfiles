@@ -32,6 +32,21 @@ ln -s ~/.doftiles/zsh/zshrc_mac ~/.zshrc
 ln -s ~/.doftiles/zsh/zsh_themes/tuts03.zsh-theme ~/.oh-my-zsh/themes/
 ```
 
+### Tmux
+
+```
+git submodule init
+git submodule update
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+cp ~/.dotfiles/tmux/mytheme.sh ~/.dotfile/tmux/tmux-powerline/themes/ 
+```
+Update `~/.dotfiles/tmux/tmux-powerline/config/defaults.sh` by
+```
+export TMUX_POWERLINE_DEBUG_MODE_ENABLED_DEFAULT="false"
+export TMUX_POWERLINE_PATCHED_FONT_IN_USE_DEFAULT="false"
+export TMUX_POWERLINE_THEME_DEFAULT="mytheme"
+```
+
 ### Vim
 ```
 ln -s ~/.doftiles/vim .vim
