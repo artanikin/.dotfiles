@@ -25,7 +25,6 @@ alias v="vim"
 alias reload!="source ~/.zshrc"
 alias be="bundle exec"
 alias g=git
-alias ls='ls --color=auto'
 alias rspec="clear; rspec"
 alias z="zeus"
 alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
