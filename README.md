@@ -27,10 +27,3 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 
 * install plugins: open vim and fire command `:BundleInstall`
-
-* compile Command-T: make sure that default version of ruby is 1.8.7-p299 with command `ruby -v`, then go to `cd ~/.vim/bundle/Command-T/ruby/command-t` and run commands:
-
-```
-ruby extconf.rb
-make
-```
