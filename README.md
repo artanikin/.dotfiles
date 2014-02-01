@@ -35,8 +35,7 @@ cp ~/.doftiles/zsh/zsh_themes/tuts02.zsh-theme ~/.oh-my-zsh/themes/
 ### Tmux
 
 ```
-git submodule init
-git submodule update
+git clone https://github.com/erikw/tmux-powerline
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 cp ~/.dotfiles/tmux/mytheme.sh ~/.dotfile/tmux/tmux-powerline/themes/ 
 ```
