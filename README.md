@@ -21,15 +21,15 @@ Install oh-my-zsh
 ```
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 ```
-* for linux
-```
-ln -s ~/.doftiles/zsh/zshrc_linux ~/.zshrc
-cp ~/.doftiles/zsh/zsh_themes/tuts05.zsh-theme ~/.oh-my-zsh/themes/
-```
 * for mac
 ```
 ln -s ~/.doftiles/zsh/zshrc_mac ~/.zshrc
-cp ~/.doftiles/zsh/zsh_themes/tuts03.zsh-theme ~/.oh-my-zsh/themes/
+cp ~/.doftiles/zsh/zsh_themes/tuts01.zsh-theme ~/.oh-my-zsh/themes/
+```
+* for linux
+```
+ln -s ~/.doftiles/zsh/zshrc_linux ~/.zshrc
+cp ~/.doftiles/zsh/zsh_themes/tuts02.zsh-theme ~/.oh-my-zsh/themes/
 ```
 
 ### Tmux
