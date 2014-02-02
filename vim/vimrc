@@ -126,6 +126,13 @@ color solarized
 
 inoremap <C-f> <ESC>
 
+onoremap in( :<c-u>normal! f(vi(<cr>
+onoremap il( :<c-u>normal! F)vi(<cr>
+onoremap ia( :<c-u>normal! vi(<cr>
+onoremap in{ :<c-u>normal! f{vi{<cr>
+onoremap il{ :<c-u>normal! F}vi{<cr>
+onoremap ia{ :<c-u>normal! vi{<cr>
+
 " mkdir -------------------------------------------------------------------
 nnoremap <leader>s :!mkdir -p %:h<cr><cr>:w<cr>
 
