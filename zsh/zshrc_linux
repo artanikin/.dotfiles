@@ -22,6 +22,7 @@ alias ls='ls --color=auto'
 alias rspec="clear; rspec"
 alias z="zeus"
 alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
+alias go_serv="ssh root@192.168.225.194"
 # ------------------------------------------------------------------
 
 # RBENV ------------------------------------------------------------
