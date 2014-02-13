@@ -46,6 +46,7 @@ set showcmd
 set hidden
 set history=1000
 set mouse=a
+set colorcolumn=80
 
 " Default Whitespace ------------------------------------------------------
 set tabstop=2
@@ -144,7 +145,7 @@ nnoremap <silent> ]B :blast<CR>
 noremap  <leader>d :Bclose<CR>
 noremap  <leader>a :tabnew<CR>
 noremap  <leader>A :tabc<CR>
-nnoremap <leader>ev :tabe $MYVIMRC<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 nnoremap Y y$
 
@@ -185,8 +186,8 @@ nmap <leader>t :TagbarToggle<CR>
 let g:vroom_spec_command="rspec --format documentation"
 
 " IndentLine --------------------------------------------------------------
-" let g:indentLine_color_term = 239
-let g:indentLine_color_term = 236
+let g:indentLine_color_term = 239
+" let g:indentLine_color_term = 236
 let g:indentLine_char = '┆'
 " let g:indentLine_char = '¦'
 

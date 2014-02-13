@@ -21,6 +21,10 @@
   aa = add --all
   pom = push origin master
   b = branch
+  pd  = push origin dev 
+  pld = pull origin dev 
+  pm  = push origin master 
+  plm = pull origin master 
 
   unstage = reset HEAD            # un-add files from index (tracking)
   uncommit = reset --soft HEAD^   # go back one commit, put changes into your working dir and index
@@ -33,5 +37,3 @@
   summary = true
 [core]
   editor = vim
-[credential]
-  helper = osxkeychain
