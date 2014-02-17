@@ -1,5 +1,4 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export TERM=screen-256color
 export LANG=en_US.UTF-8
 export EDITOR=vim
 
@@ -14,17 +13,17 @@ plugins=(git gem ruby rake rails tmux rbenv)
 source $ZSH/oh-my-zsh.sh
 
 # ALIAS ------------------------------------------------------------
-alias tmux="tmux -2"
-alias v="vim"
-alias reload!="source ~/.zshrc"
-alias be="bundle exec"
 alias g=git
+alias v="vim"
+alias z="zeus"
+alias tmux="tmux -2"
+alias be="bundle exec"
 alias ls='ls --color=auto'
 alias rspec="clear; rspec"
-alias z="zeus"
-alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
-alias mm="cd ~/Dropbox/naumen/MM/marketing/;tmux new -s mm"
+alias reload!="source ~/.zshrc"
 alias go_serv="ssh root@192.168.225.194"
+alias mm="cd ~/Dropbox/naumen/MM/marketing/;tmux new -s mm"
+alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
 # ------------------------------------------------------------------
 
 # RBENV ------------------------------------------------------------

@@ -120,8 +120,8 @@ set guifont=Monaco\ For\ Powerline:h13
 
 " Themes ------------------------------------------------------------------
 set t_Co=256
-set background=light
-color solarized
+set background=dark
+color jellybeans
 
 " Mapping -----------------------------------------------------------------
 
@@ -186,11 +186,11 @@ nmap <leader>t :TagbarToggle<CR>
 let g:vroom_spec_command="rspec --format documentation"
 
 " IndentLine --------------------------------------------------------------
-" let g:indentLine_color_term = 239
-let g:indentLine_color_term = 251
+let g:indentLine_color_term = 239                        " for light themes
+" let g:indentLine_color_term = 251                      " for dark themes
 let g:indentLine_char = '┆'
 " let g:indentLine_char = '¦'
-          
+
 " vim-airline -------------------------------------------------------------
 let g:airline_powerline_fonts = 1
 " buffers tab -------------------------------------------------------------
