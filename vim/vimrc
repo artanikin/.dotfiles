@@ -1,5 +1,7 @@
 set nocompatible
-filetype off
+filetype plugin indent on 
+syntax on
+" filetype off
 
 runtime macros/matchit.vim
 
@@ -23,31 +25,36 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-ragtag'
+" Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-eunuch'
+" Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
+" Bundle 'godlygeek/csapprox'
+" Bundle 'kshenoy/vim-signature'
+" Bundle 'vim-scripts/ctags.vim'
 " Themes ------------------------------------------------------------------
+Bundle 'croaky/vim-colors-github'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jpo/vim-railscasts-theme'
-filetype plugin indent on 
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'morhetz/gruvbox'
+Bundle 'sjl/badwolf'
 
 let mapleader = ','
 let maplocalleader = '\\'
-syntax on
 set ruler
 set number
 set showcmd
 set hidden
-set history=1000
+set history=100
 set mouse=a
-set colorcolumn=80
+set pastetoggle=<F10>
 
 " Default Whitespace ------------------------------------------------------
 set tabstop=2
@@ -79,7 +86,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 
 " Status Line -------------------------------------------------------------
 set statusline=%f "tail of the filename
-set statusline+=%{fugitive#statusline()}    " GIT
+" set statusline+=%{fugitive#statusline()}    " GIT
 set statusline+=%= "left/right separator
 set statusline+=%c, "cursor column
 set statusline+=%l/%L "cursor line/total lines
@@ -94,10 +101,10 @@ set backupdir=~/.dotfiles/vim/vim_backups//
 set directory=~/.dotfiles/vim/vim_backups//
 set viewdir=~/.dotfiles/vim/vim_backups//
 
-set undofile
-if &undodir =~# '^\.\%(,\|$\)'
-  let &undodir = "~/.dotfiles/vim/undo/" . &undodir
-endif
+" set undofile
+" if &undodir =~# '^\.\%(,\|$\)'
+"   let &undodir = "~/.dotfiles/vim/undo/" . &undodir
+" endif
 
 " FILETYPES ---------------------------------------------------------------
 "
@@ -108,21 +115,28 @@ au BufNewFile,BufRead *.json set ft=javascript
 " Vim Terminal ------------------------------------------------------------
 "
 " Making cursor a bar in insert mode --------------------------------------
-if exists('$TMUX')
-  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
+" if exists('$TMUX')
+"   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+"   let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+" else
+"   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+"   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" endif
 
-set guifont=Monaco\ For\ Powerline:h13
+" set guifont=Monaco\ For\ Powerline:h13
 
 
 " Themes ------------------------------------------------------------------
+
+" Gruvbox theme -----------------------------------------------------------
+let g:gruvbox_bold = 1
+let g:gruvbox_italic = 0
+let g:gruvbox_invert_selection = 0
+let g:gruvbox_contrast = 'hard' " ---------------------(soft|medium|hard)
+
 set t_Co=256
 set background=dark
-colorscheme jellybeans
+colorscheme gruvbox
 
 " Mapping -----------------------------------------------------------------
 
@@ -164,6 +178,22 @@ augroup vimscript
   autocmd!
   autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END
+
+augroup ColorcolumnOnlyInInsertMode
+  autocmd!
+  autocmd InsertEnter * setlocal colorcolumn=80
+  autocmd InsertLeave * setlocal colorcolumn=0
+augroup END
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Plugins -----------------------------------------------------------------
 "
@@ -207,9 +237,8 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " Unimpaired --------------------------------------------------------------
 "
 " Bubble single lines -----------------------------------------------------
-nmap <C-Up> [e
-nmap <C-Down> ]e
-" Bubble multiple lines ---------------------------------------------------
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
+" nmap <C-Up> [e
+" nmap <C-Down> ]e
+" " Bubble multiple lines -------------------------------------------------
+" vmap <C-Up> [egv
+" vmap <C-Down> ]egv
