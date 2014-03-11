@@ -13,7 +13,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tomtom/tcomment_vim'
-Bundle 'tomtom/tcomment_vim'
 Bundle "tomtom/tlib_vim"
 Bundle 'kien/ctrlp.vim'
 Bundle 'Townk/vim-autoclose'
@@ -37,6 +36,7 @@ Bundle 'jonathanfilip/vim-lucius'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'morhetz/gruvbox'
 Bundle 'sjl/badwolf'
+Bundle 'vim-scripts/candyVirus.vim'
 filetype plugin indent on
 " -------------------------------------------------------------------------
 
@@ -44,7 +44,8 @@ filetype plugin indent on
 syntax on
 set re=1
 
-set number
+set nonumber
+set relativenumber
 set showcmd
 set cursorline
 set ruler
@@ -58,6 +59,16 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
+" -----------------------------------
+
+set linebreak
+set dy=lastline
+
+" For russian language --------------
+set keymap=russian-jcukenwin " переключение по Ctrl+^
+set iminsert=0 " по умолчанию - латинская раскладка
+set imsearch=0 " по умолчанию - латинская раскладка при поиске
+set iskeyword=@,48-57,_,192-255 " настраиваю для работы с русскими словами (чтобы w, b, * понимали русские слова)
 " -----------------------------------
 
 " Searching and highlights ----------
@@ -104,15 +115,15 @@ set laststatus=2
 " Themes ------------------------------------------------------------------
 "
 " Gruvbox theme ----------------------
-let g:gruvbox_bold = 1
-let g:gruvbox_italic = 0
-let g:gruvbox_invert_selection = 0
-let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
+" let g:gruvbox_bold = 1
+" let g:gruvbox_italic = 0
+" let g:gruvbox_invert_selection = 0
+" let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
 " ------------------------------------
 
 set t_Co=256
 set background=dark
-colorscheme gruvbox
+colorscheme jellybeans
 " -------------------------------------------------------------------------
 
 " FILETYPES ---------------------------------------------------------------
@@ -137,6 +148,7 @@ augroup END
 
 " Mapping -----------------------------------------------------------------
 inoremap <C-f> <ESC>
+imap jj <Esc>
 let mapleader = ','
 
 " Buffers ----------------------------
@@ -176,6 +188,7 @@ cnoreabbrev Qa qa
 " vim-airline ------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_theme = 'tomorrow'
 " ------------------------------------
 
 " SuperTab ---------------------------
@@ -202,8 +215,9 @@ let g:tagbar_compact   = 1
 let g:vroom_spec_command="rspec --format documentation"
 
 " IndentLine -------------------------
-let g:indentLine_color_term = 239   " for dark themes
+let g:indentLine_color_term = 236   " for dark themes
 " let g:indentLine_color_term = 251 " for light themes
+" let g:indentLine_char = '⋮'
 let g:indentLine_char = '┆'
 " let g:indentLine_char = '¦'
 " -------------------------------------------------------------------------
