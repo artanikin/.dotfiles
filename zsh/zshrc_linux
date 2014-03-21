@@ -17,15 +17,17 @@ alias g=git
 alias v="vim"
 alias z="zeus"
 alias tmux="tmux -2"
+alias mux="tmuxinator"
 alias be="bundle exec"
+alias ns="mux start ns"
+alias mm="mux start mm"
+alias nb="mux start nb"
+alias blog="mux start blog"
 alias ls='ls --color=auto'
 alias rspec="clear; rspec"
 alias reload!="source ~/.zshrc"
 alias go_serv="ssh root@192.168.225.194"
 alias http_server="python -m SimpleHTTPServer 8000"
-alias ns="cd ~/Dropbox/naumen/NS/naustart/;tmux new -s ns"
-alias mm="cd ~/Dropbox/naumen/MM/marketing/;tmux new -s mm"
-alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
 # ------------------------------------------------------------------
 
 # RBENV ------------------------------------------------------------

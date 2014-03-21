@@ -21,7 +21,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'skalnik/vim-vroom'
 Bundle 'rbgrouleff/bclose.vim'
 Bundle 'mattn/emmet-vim'
-Bundle 'Yggdroot/indentLine'
+" Bundle 'Yggdroot/indentLine'
 Bundle 'ervandew/supertab'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle 'bling/vim-airline'
@@ -29,6 +29,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
+Bundle 'slim-template/vim-slim'
+Bundle 'kchmck/vim-coffee-script'
 " Themes ----------------------------
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jpo/vim-railscasts-theme'
@@ -37,15 +39,17 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'morhetz/gruvbox'
 Bundle 'sjl/badwolf'
 Bundle 'vim-scripts/candyVirus.vim'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'w0ng/vim-github-theme'
 filetype plugin indent on
 " -------------------------------------------------------------------------
 
 " Config ------------------------------------------------------------------
 syntax on
 set re=1
-
-set nonumber
-set relativenumber
+set shell=/bin/bash
+set encoding=utf-8
+set fileencoding=utf-8
 set showcmd
 set cursorline
 set ruler
@@ -53,6 +57,14 @@ set showcmd
 set mouse=a
 set scrolloff=3
 set pastetoggle=<F10>
+
+" Gui {{{
+set guifont=Monaco\ for\ Powerline\ 10
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+" }}}
 
 " Default Whitespace ----------------
 set tabstop=2
@@ -112,18 +124,33 @@ set statusline+=\ %P "percent through file
 set laststatus=2
 " -----------------------------------
 
+" Experiment {{{
+set list
+set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:∙
+set nonumber
+set relativenumber
+set cpoptions+=$
+" }}}
+
+
 " Themes ------------------------------------------------------------------
+
+set t_Co=256
+
+if has("gui_running")
+  set background=dark
+  colorscheme codeschool
+else
+  set background=dark
+  colorscheme hybrid
+endif
 "
 " Gruvbox theme ----------------------
 " let g:gruvbox_bold = 1
 " let g:gruvbox_italic = 0
 " let g:gruvbox_invert_selection = 0
-" let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
+" let g:gruvbox_contrast = 'medium'   "(soft|medium|hard)
 " ------------------------------------
-
-set t_Co=256
-set background=dark
-colorscheme jellybeans
 " -------------------------------------------------------------------------
 
 " FILETYPES ---------------------------------------------------------------
@@ -141,7 +168,7 @@ augroup END
 
 augroup ColorcolumnOnlyInInsertMode
   autocmd!
-  autocmd InsertEnter * setlocal colorcolumn=80
+  autocmd InsertEnter * setlocal colorcolumn=81
   autocmd InsertLeave * setlocal colorcolumn=0
 augroup END
 " -------------------------------------------------------------------------
@@ -150,6 +177,8 @@ augroup END
 inoremap <C-f> <ESC>
 imap jj <Esc>
 let mapleader = ','
+nnoremap n nzz
+nnoremap N Nzz
 
 " Buffers ----------------------------
 nnoremap <silent> [b :bprevious<CR>
@@ -171,6 +200,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 " -------------------------------------------------------------------------
 
+nnoremap n nzz
+nnoremap N Nzz
+
 " NerdTree ---------------------------
 nmap <leader>q :NERDTreeToggle<cr>
 " -------------------------------------------------------------------------
@@ -188,7 +220,7 @@ cnoreabbrev Qa qa
 " vim-airline ------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'lucius'
 " ------------------------------------
 
 " SuperTab ---------------------------
@@ -215,9 +247,9 @@ let g:tagbar_compact   = 1
 let g:vroom_spec_command="rspec --format documentation"
 
 " IndentLine -------------------------
-let g:indentLine_color_term = 236   " for dark themes
+" let g:indentLine_color_term = 236   " for dark themes
 " let g:indentLine_color_term = 251 " for light themes
 " let g:indentLine_char = '⋮'
-let g:indentLine_char = '┆'
+" let g:indentLine_char = '┆'
 " let g:indentLine_char = '¦'
 " -------------------------------------------------------------------------
