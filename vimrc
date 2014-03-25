@@ -31,7 +31,11 @@ Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'rking/ag.vim'
+Bundle 'terryma/vim-expand-region'
+
 " Themes ----------------------------
+Bundle 'reedes/vim-thematic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'jonathanfilip/vim-lucius'
@@ -41,6 +45,7 @@ Bundle 'sjl/badwolf'
 Bundle 'vim-scripts/candyVirus.vim'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'w0ng/vim-github-theme'
+Bundle 'reedes/vim-colors-pencil'
 filetype plugin indent on
 " -------------------------------------------------------------------------
 
@@ -138,12 +143,14 @@ set cpoptions+=$
 set t_Co=256
 
 if has("gui_running")
-  set background=dark
-  colorscheme codeschool
+  set background=light
+  colorscheme pencil
 else
-  set background=dark
-  colorscheme hybrid
+  set background=light
+  colorscheme hybrid-light
 endif
+
+
 "
 " Gruvbox theme ----------------------
 " let g:gruvbox_bold = 1
@@ -176,7 +183,13 @@ augroup END
 " Mapping -----------------------------------------------------------------
 inoremap <C-f> <ESC>
 imap jj <Esc>
-let mapleader = ','
+let mapleader = ' '
+
+nnoremap <leader>w :w<cr>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
 nnoremap n nzz
 nnoremap N Nzz
 
@@ -217,10 +230,18 @@ cnoreabbrev Qa qa
 " -------------------------------------------------------------------------
 
 " PLUGINS CONFIG ----------------------------------------------------------
+
+" CtrlP {{{
+let g:ctrlp_match_window = 'bottom,order:ttd'
+let g:ctrlp_switch_buffer = 0
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" }}}
+
 " vim-airline ------------------------
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'lucius'
+let g:airline_theme = 'hybrid'
 " ------------------------------------
 
 " SuperTab ---------------------------
