@@ -35,17 +35,16 @@ Bundle 'rking/ag.vim'
 Bundle 'terryma/vim-expand-region'
 
 " Themes ----------------------------
-Bundle 'reedes/vim-thematic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'morhetz/gruvbox'
-Bundle 'sjl/badwolf'
-Bundle 'vim-scripts/candyVirus.vim'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'w0ng/vim-github-theme'
 Bundle 'reedes/vim-colors-pencil'
+Bundle 'john2x/flatui.vim'
+Bundle 'noahfrederick/vim-hemisu'
 filetype plugin indent on
 " -------------------------------------------------------------------------
 
@@ -64,7 +63,8 @@ set scrolloff=3
 set pastetoggle=<F10>
 
 " Gui {{{
-set guifont=Monaco\ for\ Powerline\ 10
+" set guifont=Monaco\ for\ Powerline\ 10
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -143,21 +143,21 @@ set cpoptions+=$
 set t_Co=256
 
 if has("gui_running")
-  set background=light
-  colorscheme pencil
+  set background=dark
+  colorscheme codeschool
 else
+" Gruvbox theme ----------------------
+  " let g:gruvbox_bold = 1
+  " let g:gruvbox_italic = 0
+  " let g:gruvbox_invert_selection = 0
+  " let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
+" ------------------------------------
   set background=light
-  colorscheme hybrid-light
+  colorscheme solarized
 endif
 
 
 "
-" Gruvbox theme ----------------------
-" let g:gruvbox_bold = 1
-" let g:gruvbox_italic = 0
-" let g:gruvbox_invert_selection = 0
-" let g:gruvbox_contrast = 'medium'   "(soft|medium|hard)
-" ------------------------------------
 " -------------------------------------------------------------------------
 
 " FILETYPES ---------------------------------------------------------------
@@ -178,12 +178,15 @@ augroup ColorcolumnOnlyInInsertMode
   autocmd InsertEnter * setlocal colorcolumn=81
   autocmd InsertLeave * setlocal colorcolumn=0
 augroup END
+
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 " -------------------------------------------------------------------------
 
 " Mapping -----------------------------------------------------------------
 inoremap <C-f> <ESC>
 imap jj <Esc>
-let mapleader = ' '
+let mapleader = ','
 
 nnoremap <leader>w :w<cr>
 
@@ -238,11 +241,11 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " }}}
 
-" vim-airline ------------------------
+" vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'hybrid'
-" ------------------------------------
+let g:airline_theme = 'solarized' " bubblegum | murmur
+" }}}
 
 " SuperTab ---------------------------
 let g:SuperTabDefaultCompletionType = "<c-n>"

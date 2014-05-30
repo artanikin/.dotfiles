@@ -19,15 +19,18 @@ alias z="zeus"
 alias tmux="tmux -2"
 alias mux="tmuxinator"
 alias be="bundle exec"
+# alias rake="bundle exec rake"
 alias ns="mux start ns"
 alias mm="mux start mm"
 alias nb="mux start nb"
+alias ncp="cd ~/Dropbox/naumen/cp; mux start cp"
 alias blog="mux start blog"
 alias ls='ls --color=auto'
 alias rspec="clear; rspec"
 alias reload!="source ~/.zshrc"
 alias go_serv="ssh root@192.168.225.194"
 alias http_server="python -m SimpleHTTPServer 8000"
+alias rspecold='ruby vendor/plugins/rspec/bin/spec spec/features/contracts_spec.rb'
 # ------------------------------------------------------------------
 
 # RBENV ------------------------------------------------------------
