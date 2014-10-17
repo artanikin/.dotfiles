@@ -2,56 +2,54 @@ set nocompatible
 
 " Vundle ------------------------------------------------------------------
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=/Users/artyom/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tomtom/tcomment_vim'
-Bundle "tomtom/tlib_vim"
-Bundle 'kien/ctrlp.vim'
-Bundle 'Townk/vim-autoclose'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'kien/ctrlp.vim'
-Bundle 'skalnik/vim-vroom'
-Bundle 'rbgrouleff/bclose.vim'
-Bundle 'mattn/emmet-vim'
-" Bundle 'Yggdroot/indentLine'
-Bundle 'ervandew/supertab'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/syntastic'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/ZoomWin'
-Bundle 'slim-template/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'rking/ag.vim'
-Bundle 'terryma/vim-expand-region'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'kien/ctrlp.vim'
+Plugin 'skalnik/vim-vroom'
+Plugin 'rbgrouleff/bclose.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'ervandew/supertab'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'slim-template/vim-slim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'rking/ag.vim'
+Plugin 'terryma/vim-expand-region'
 
 " Themes ----------------------------
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jpo/vim-railscasts-theme'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'morhetz/gruvbox'
-Bundle 'w0ng/vim-hybrid'
-Bundle 'w0ng/vim-github-theme'
-Bundle 'reedes/vim-colors-pencil'
-Bundle 'john2x/flatui.vim'
-Bundle 'noahfrederick/vim-hemisu'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'jonathanfilip/vim-lucius'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'morhetz/gruvbox'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'w0ng/vim-github-theme'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'john2x/flatui.vim'
+Plugin 'noahfrederick/vim-hemisu'
+Plugin 'davidkariuki/sexy-railscasts-256-theme'
+
+call vundle#end()
 filetype plugin indent on
 " -------------------------------------------------------------------------
 
 " Config ------------------------------------------------------------------
 syntax on
-set re=1
-set shell=/bin/bash
+set shell=/bin/zsh
 set encoding=utf-8
 set fileencoding=utf-8
 set showcmd
@@ -61,10 +59,11 @@ set showcmd
 set mouse=a
 set scrolloff=3
 set pastetoggle=<F10>
+set number
 
 " Gui {{{
-" set guifont=Monaco\ for\ Powerline\ 10
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=Monaco\ for\ Powerline:h12
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -132,8 +131,6 @@ set laststatus=2
 " Experiment {{{
 set list
 set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:∙
-set nonumber
-set relativenumber
 set cpoptions+=$
 " }}}
 
@@ -144,16 +141,18 @@ set t_Co=256
 
 if has("gui_running")
   set background=dark
-  colorscheme codeschool
+  colorscheme jellybeans
+  let g:airline_theme = 'jellybeans' " bubblegum | murmur
 else
 " Gruvbox theme ----------------------
-  " let g:gruvbox_bold = 1
-  " let g:gruvbox_italic = 0
-  " let g:gruvbox_invert_selection = 0
-  " let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
+  let g:gruvbox_bold = 1
+  let g:gruvbox_italic = 0
+  let g:gruvbox_invert_selection = 0
+  let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
 " ------------------------------------
-  set background=light
-  colorscheme solarized
+  set background=dark
+  colorscheme jellybeans
+  let g:airline_theme = 'jellybeans' " bubblegum | murmur
 endif
 
 
@@ -235,6 +234,8 @@ cnoreabbrev Qa qa
 " PLUGINS CONFIG ----------------------------------------------------------
 
 " CtrlP {{{
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|DS_Store)$'
 let g:ctrlp_match_window = 'bottom,order:ttd'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
@@ -244,7 +245,6 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " vim-airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'solarized' " bubblegum | murmur
 " }}}
 
 " SuperTab ---------------------------

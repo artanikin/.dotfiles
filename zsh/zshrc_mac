@@ -1,6 +1,8 @@
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/Users/artyom/.rbenv/shims:/Users/artyom/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# export PATH=/usr/local/bin:$PATH
+# export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export PATH="$HOME/.rbenv/bin:$PATH"
 export TERM=screen-256color
-export NODE_PATH=/usr/local/lib/node_modules
 export LANG=en_US.UTF-8
 export EDITOR=vim
 
@@ -10,13 +12,10 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tuts02"
 
 # enable plugins
-plugins=(git brew gem ruby rvm)
+plugins=(git brew gem ruby osx rails rake rbenv tmux)
 
 source $ZSH/oh-my-zsh.sh
-
-# RBENV Settings 
-export RBENV_ROOT=/usr/local/var/rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+eval "$(rbenv init -)"
 
 # ALIAS ------------------------------------------------------------
 alias server="python -m SimpleHTTPServer 8000"
@@ -28,7 +27,20 @@ alias g=git
 alias rspec="clear; rspec"
 alias z="zeus"
 alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
+alias stcp='ruby script/server -p 2999 -e development2'
+alias go_serv="ssh root@192.168.225.194"
 # ------------------------------------------------------------------
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+fancy-ctrl-z () {
+if [[ $#BUFFER -eq 0 ]]; then
+  BUFFER="fg"
+  zle accept-line
+else
+  zle push-input
+  zle clear-screen
+fi
+}
+
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
