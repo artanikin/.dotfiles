@@ -12,7 +12,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tuts02"
 
 # enable plugins
-plugins=(git brew gem ruby osx rails rake rbenv tmux)
+plugins=(git brew gem ruby osx rails rake rbenv tmux vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 eval "$(rbenv init -)"
@@ -28,7 +28,8 @@ alias rspec="clear; rspec"
 alias z="zeus"
 alias nb="cd ~/Dropbox/naumen/NauBonus/code/naubonus/;tmux new -s nb"
 alias stcp='ruby script/server -p 2999 -e development2'
-alias go_serv="ssh root@192.168.225.194"
+alias go_serv='ssh root@192.168.225.194'
+alias stcp='ruby script/server -p 2999 -e development2'
 # ------------------------------------------------------------------
 
 fancy-ctrl-z () {
@@ -44,3 +45,9 @@ fi
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+# for vi-mode ------------------------------------------------------
+bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
+bindkey ‘^R’ history-incremental-search-backward
+export KEYTIMEOUT=1
+# ------------------------------------------------------------------

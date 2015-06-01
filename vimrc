@@ -29,6 +29,9 @@ Plugin 'slim-template/vim-slim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-expand-region'
+Plugin 'rizzatti/dash.vim'
+" Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Themes ----------------------------
 Plugin 'altercation/vim-colors-solarized'
@@ -42,6 +45,8 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'john2x/flatui.vim'
 Plugin 'noahfrederick/vim-hemisu'
 Plugin 'davidkariuki/sexy-railscasts-256-theme'
+Plugin 'andrwb/vim-lapis256'
+Plugin 'NLKNguyen/papercolor-theme'
 
 call vundle#end()
 filetype plugin indent on
@@ -141,18 +146,18 @@ set t_Co=256
 
 if has("gui_running")
   set background=dark
-  colorscheme jellybeans
-  let g:airline_theme = 'jellybeans' " bubblegum | murmur
+  colorscheme PaperColor
+  let g:airline_theme = 'pencil' " bubblegum | murmur
 else
 " Gruvbox theme ----------------------
-  let g:gruvbox_bold = 1
-  let g:gruvbox_italic = 0
-  let g:gruvbox_invert_selection = 0
-  let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
+  " let g:gruvbox_bold = 1
+  " let g:gruvbox_italic = 0
+  " let g:gruvbox_invert_selection = 0
+  " let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
 " ------------------------------------
-  set background=dark
-  colorscheme jellybeans
-  let g:airline_theme = 'jellybeans' " bubblegum | murmur
+  set background=light
+  colorscheme solarized
+  let g:airline_theme = 'solarized' " bubblegum | murmur
 endif
 
 
