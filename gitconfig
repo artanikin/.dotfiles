@@ -37,6 +37,7 @@
   summary = true
 [core]
   editor = vim
+	excludesfile = /Users/artyomanikin/.gitignore_global
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f

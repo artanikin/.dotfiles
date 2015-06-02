@@ -2,7 +2,7 @@ set nocompatible
 
 " Vundle ------------------------------------------------------------------
 filetype off
-set rtp+=/Users/artyom/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 

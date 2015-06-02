@@ -15,7 +15,7 @@ ZSH_THEME="tuts02"
 plugins=(git brew gem ruby osx rails rake rbenv tmux vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # ALIAS ------------------------------------------------------------
 alias server="python -m SimpleHTTPServer 8000"
