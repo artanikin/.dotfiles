@@ -58,3 +58,6 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 
 * install plugins: open vim and fire command `:BundleInstall`
+
+### Install ruby environment for Mac OSx
+http://www.mgrachev.com/2014/11/17/configuring-rails-environment-on-yosemite/

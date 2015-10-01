@@ -32,6 +32,10 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'rizzatti/dash.vim'
 " Plugin 'ryanoasis/vim-webdevicons'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'airblade/vim-gitgutter'
 
 " Themes ----------------------------
 Plugin 'altercation/vim-colors-solarized'
@@ -47,6 +51,13 @@ Plugin 'noahfrederick/vim-hemisu'
 Plugin 'davidkariuki/sexy-railscasts-256-theme'
 Plugin 'andrwb/vim-lapis256'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'jdkanani/vim-material-theme'
+Plugin 'Wutzara/vim-materialtheme'
+Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'jscappini/material.vim'
+Plugin 'xiaody/thornbird.vim'
+Plugin 'woju/vim-colors-woju'
+Plugin 'chriskempson/base16-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -65,10 +76,11 @@ set mouse=a
 set scrolloff=3
 set pastetoggle=<F10>
 set number
+set linespace=4
 
 " Gui {{{
-set guifont=Monaco\ for\ Powerline:h12
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+" set guifont=Monaco\ For\ Powerline:h12
+set guifont=DejaVu\ Sans\ Mono\ For\ Powerline:h12
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -113,9 +125,9 @@ set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 set backspace=indent,eol,start
 
 " Directories for swp files ---------
-set backupdir=~/.dotfiles/vim/vim_backups//
-set directory=~/.dotfiles/vim/vim_backups//
-set viewdir=~/.dotfiles/vim/vim_backups//
+set backupdir=~/.dotfiles/vim/vim_backups/
+set directory=~/.dotfiles/vim/vim_backups/
+set viewdir=~/.dotfiles/vim/vim_backups/
 " -----------------------------------
 
 " set undofile ----------------------
@@ -145,9 +157,10 @@ set cpoptions+=$
 set t_Co=256
 
 if has("gui_running")
-  set background=dark
-  colorscheme PaperColor
-  let g:airline_theme = 'pencil' " bubblegum | murmur
+  set background=light
+  colorscheme macvim
+  let g:airline_theme = 'tomorrow' " bubblegum | murmur
+  let g:enable_bold_font = 1
 else
 " Gruvbox theme ----------------------
   " let g:gruvbox_bold = 1
@@ -155,14 +168,15 @@ else
   " let g:gruvbox_invert_selection = 0
   " let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
 " ------------------------------------
-  set background=light
+  set background=dark
   colorscheme solarized
   let g:airline_theme = 'solarized' " bubblegum | murmur
+  let g:enable_bold_font = 1
 endif
 
-
-"
 " -------------------------------------------------------------------------
+
+set tags=./tags;
 
 " FILETYPES ---------------------------------------------------------------
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
@@ -226,6 +240,10 @@ nnoremap N Nzz
 " NerdTree ---------------------------
 nmap <leader>q :NERDTreeToggle<cr>
 " -------------------------------------------------------------------------
+
+map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " ABBREVIATIONS -----------------------------------------------------------
 cnoreabbrev W w
