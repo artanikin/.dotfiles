@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rails'
@@ -15,7 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'skalnik/vim-vroom'
 Plugin 'rbgrouleff/bclose.vim'
 Plugin 'mattn/emmet-vim'
@@ -29,13 +29,13 @@ Plugin 'slim-template/vim-slim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-expand-region'
-Plugin 'rizzatti/dash.vim'
-" Plugin 'ryanoasis/vim-webdevicons'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 " Themes ----------------------------
 Plugin 'altercation/vim-colors-solarized'
@@ -76,11 +76,26 @@ set mouse=a
 set scrolloff=3
 set pastetoggle=<F10>
 set number
-set linespace=4
+set linespace=2
 
 " Gui {{{
 " set guifont=Monaco\ For\ Powerline:h12
-set guifont=DejaVu\ Sans\ Mono\ For\ Powerline:h12
+" set guifont=DejaVu\ Sans\ Mono\ For\ Powerline:h12
+if has("gui_running")
+  if has("gui_gtk2")
+    " set guifont=Courier\ New\ 11
+    " set guifont=DejaVu\ Sans\ Mono\ For\ Powerline\ 9
+    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Medium\ 9
+  elseif has("gui_photon")
+    set guifont=Courier\ New:s11
+  elseif has("gui_kde")
+    set guifont=Courier\ New/11/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Courier_New:h11:cDEFAULT
+  endif
+endif
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
@@ -147,7 +162,8 @@ set laststatus=2
 
 " Experiment {{{
 set list
-set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:∙
+" set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:∙
+set listchars=tab:▸\ ,eol:¬ ",nbsp:,trail:∙
 set cpoptions+=$
 " }}}
 
@@ -158,9 +174,10 @@ set t_Co=256
 
 if has("gui_running")
   set background=light
-  colorscheme macvim
-  let g:airline_theme = 'tomorrow' " bubblegum | murmur
+  colorscheme thornbird
+  let g:airline_theme = 'molokai' " bubblegum | murmur
   let g:enable_bold_font = 1
+  set lines=45 columns=200
 else
 " Gruvbox theme ----------------------
   " let g:gruvbox_bold = 1
@@ -292,6 +309,25 @@ let g:tagbar_compact   = 1
 
 " Vroom ------------------------------
 let g:vroom_spec_command="rspec --format documentation"
+
+" Webdevicons ------------------------
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+let g:WebDevIconsUnicodeDecorateFolderNodes = 0
+
+" Nerdtree-git-plugin ----------------
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹ ",
+    \ "Staged"    : "✚ ",
+    \ "Untracked" : "✭ ",
+    \ "Renamed"   : "➜ ",
+    \ "Unmerged"  : "═ ",
+    \ "Deleted"   : "✖ ",
+    \ "Dirty"     : "✗ ",
+    \ "Clean"     : "✔︎ ",
+    \ "Unknown"   : "? "
+    \ }
 
 " IndentLine -------------------------
 " let g:indentLine_color_term = 236   " for dark themes
