@@ -31,9 +31,12 @@ Plugin 'rking/ag.vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'christoomey/vim-tmux-navigator'
+" Snippets start ----------
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+" Snippets end ------------
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
