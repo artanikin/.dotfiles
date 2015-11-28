@@ -96,7 +96,8 @@ if has("gui_running")
   elseif has("x11")
     set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
   else
-    set guifont=Courier_New:h11:cDEFAULT
+    "set guifont=Courier_New:h11:cDEFAULT
+    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Nerd\ Font\ Complete\ Mono:h12
   endif
 endif
 set guioptions-=m  "remove menu bar
@@ -189,8 +190,8 @@ else
   " let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
 " ------------------------------------
   set background=dark
-  colorscheme solarized
-  let g:airline_theme = 'solarized' " bubblegum | murmur
+  colorscheme jellybeans
+  let g:airline_theme = 'jellybeans' " bubblegum | murmur
   let g:enable_bold_font = 1
 endif
 
