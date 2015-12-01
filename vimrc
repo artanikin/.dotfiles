@@ -24,7 +24,7 @@ set showcmd
 set mouse=a
 set scrolloff=3
 set pastetoggle=<F10>
-set number
+set relativenumber
 set linespace=2
 
 " Default Whitespace ----------------
@@ -79,7 +79,6 @@ set laststatus=2
 
 " Experiment {{{
 set list
-" set listchars=tab:▸\ ,eol:¬,nbsp:⋅,trail:∙
 set listchars=tab:▸\ ,eol:¬ ",nbsp:,trail:∙
 set cpoptions+=$
 " }}}
@@ -116,7 +115,6 @@ else
   set background=dark
   colorscheme solarized
   let g:airline_theme = 'solarized' " bubblegum | murmur
-  let g:enable_bold_font = 1
 endif
 
 let g:enable_bold_font = 1
