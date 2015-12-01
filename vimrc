@@ -1,77 +1,16 @@
 set nocompatible
 
-" Vundle ------------------------------------------------------------------
-filetype off
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" Plugin 'VundleVim/Vundle.vim'
+" load plugins
+source ~/.vim/plugins.vim
 
-call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-haml'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-unimpaired'
-Plug 'scrooloose/nerdtree'
-Plug 'tomtom/tcomment_vim'
-Plug 'Townk/vim-autoclose'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'skalnik/vim-vroom'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'mattn/emmet-vim'
-Plug 'ervandew/supertab'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/syntastic'
-Plug 'vim-ruby/vim-ruby'
-Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/ZoomWin'
-Plug 'slim-template/vim-slim'
-Plug 'kchmck/vim-coffee-script'
-Plug 'rking/ag.vim'
-Plug 'terryma/vim-expand-region'
-Plug 'ryanoasis/vim-devicons'
-Plug 'christoomey/vim-tmux-navigator'
-" Snippets start ----------
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-" Snippets end ------------
-Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ap/vim-css-color'
-Plug 'benmills/vimux'
-Plug 'terryma/vim-multiple-cursors'
-
-" Themes ----------------------------
-Plug 'altercation/vim-colors-solarized'
-Plug 'jpo/vim-railscasts-theme'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'nanotech/jellybeans.vim'
-Plug 'morhetz/gruvbox'
-Plug 'w0ng/vim-hybrid'
-Plug 'w0ng/vim-github-theme'
-Plug 'reedes/vim-colors-pencil'
-Plug 'john2x/flatui.vim'
-Plug 'noahfrederick/vim-hemisu'
-Plug 'davidkariuki/sexy-railscasts-256-theme'
-Plug 'andrwb/vim-lapis256'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'jdkanani/vim-material-theme'
-Plug 'Wutzara/vim-materialtheme'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'jscappini/material.vim'
-Plug 'xiaody/thornbird.vim'
-Plug 'woju/vim-colors-woju'
-Plug 'chriskempson/base16-vim'
-
-" call vundle#end()
-
-call plug#end()
-filetype plugin indent on
-" -------------------------------------------------------------------------
+" Abbreviations
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev Q! q!
+cnoreabbrev Qa qa
 
 " Config ------------------------------------------------------------------
 syntax on
@@ -87,30 +26,6 @@ set scrolloff=3
 set pastetoggle=<F10>
 set number
 set linespace=2
-
-" Gui {{{
-" set guifont=Monaco\ For\ Powerline:h12
-" set guifont=DejaVu\ Sans\ Mono\ For\ Powerline:h12
-if has("gui_running")
-  if has("gui_gtk2")
-    " set guifont=Courier\ New\ 11
-    " set guifont=DejaVu\ Sans\ Mono\ For\ Powerline\ 9
-    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Medium\ 9
-  elseif has("gui_photon")
-    set guifont=Courier\ New:s11
-  elseif has("gui_kde")
-    set guifont=Courier\ New/11/-1/5/50/0/0/0/1/0
-  elseif has("x11")
-    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
-  else
-    set guifont=Courier_New:h11:cDEFAULT
-  endif
-endif
-set guioptions-=m  "remove menu bar
-set guioptions-=T  "remove toolbar
-set guioptions-=r  "remove right-hand scroll bar
-set guioptions-=L  "remove left-hand scroll bar
-" }}}
 
 " Default Whitespace ----------------
 set tabstop=2
@@ -183,23 +98,35 @@ set cpoptions+=$
 set t_Co=256
 
 if has("gui_running")
+
+  if has("gui_gtk2")
+    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Medium\ 9
+  elseif has("gui_photon")
+    set guifont=Courier\ New:s11
+  elseif has("gui_kde")
+    set guifont=Courier\ New/11/-1/5/50/0/0/0/1/0
+  elseif has("x11")
+    set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
+  else
+    set guifont=Courier_New:h11:cDEFAULT
+  endif
+
+  set guioptions-=m  "remove menu bar
+  set guioptions-=T  "remove toolbar
+  set guioptions-=r  "remove right-hand scroll bar
+  set guioptions-=L  "remove left-hand scroll bar
+
   set background=dark
   colorscheme thornbird
   let g:airline_theme = 'molokai' " bubblegum | murmur
-  let g:enable_bold_font = 1
   set lines=45 columns=200
 else
-" Gruvbox theme ----------------------
-  " let g:gruvbox_bold = 1
-  " let g:gruvbox_italic = 0
-  " let g:gruvbox_invert_selection = 0
-  " let g:gruvbox_contrast = 'hard'   "(soft|medium|hard)
-" ------------------------------------
   set background=dark
   colorscheme solarized
   let g:airline_theme = 'solarized' " bubblegum | murmur
-  let g:enable_bold_font = 1
 endif
+
+let g:enable_bold_font = 1
 
 " -------------------------------------------------------------------------
 
@@ -279,15 +206,6 @@ map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
-" ABBREVIATIONS -----------------------------------------------------------
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Wq wq
-cnoreabbrev WQ wq
-cnoreabbrev Q! q!
-cnoreabbrev Qa qa
-" -------------------------------------------------------------------------
-
 " PLUGINS CONFIG ----------------------------------------------------------
 
 " CtrlP {{{
@@ -345,11 +263,3 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎ ",
     \ "Unknown"   : "? "
     \ }
-
-" IndentLine -------------------------
-" let g:indentLine_color_term = 236   " for dark themes
-" let g:indentLine_color_term = 251 " for light themes
-" let g:indentLine_char = '⋮'
-" let g:indentLine_char = '┆'
-" let g:indentLine_char = '¦'
-" -------------------------------------------------------------------------
