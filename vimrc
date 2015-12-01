@@ -2,67 +2,74 @@ set nocompatible
 
 " Vundle ------------------------------------------------------------------
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin()
+" Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'Townk/vim-autoclose'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'skalnik/vim-vroom'
-Plugin 'rbgrouleff/bclose.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'ervandew/supertab'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'majutsushi/tagbar'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'slim-template/vim-slim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'rking/ag.vim'
-Plugin 'terryma/vim-expand-region'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'christoomey/vim-tmux-navigator'
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-unimpaired'
+Plug 'scrooloose/nerdtree'
+Plug 'tomtom/tcomment_vim'
+Plug 'Townk/vim-autoclose'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'skalnik/vim-vroom'
+Plug 'rbgrouleff/bclose.vim'
+Plug 'mattn/emmet-vim'
+Plug 'ervandew/supertab'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/syntastic'
+Plug 'vim-ruby/vim-ruby'
+Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/ZoomWin'
+Plug 'slim-template/vim-slim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'rking/ag.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'ryanoasis/vim-devicons'
+Plug 'christoomey/vim-tmux-navigator'
 " Snippets start ----------
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 " Snippets end ------------
-Plugin 'airblade/vim-gitgutter'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ap/vim-css-color'
+Plug 'benmills/vimux'
+Plug 'terryma/vim-multiple-cursors'
 
 " Themes ----------------------------
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'jonathanfilip/vim-lucius'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'w0ng/vim-github-theme'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'john2x/flatui.vim'
-Plugin 'noahfrederick/vim-hemisu'
-Plugin 'davidkariuki/sexy-railscasts-256-theme'
-Plugin 'andrwb/vim-lapis256'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'jdkanani/vim-material-theme'
-Plugin 'Wutzara/vim-materialtheme'
-Plugin 'kristijanhusak/vim-hybrid-material'
-Plugin 'jscappini/material.vim'
-Plugin 'xiaody/thornbird.vim'
-Plugin 'woju/vim-colors-woju'
-Plugin 'chriskempson/base16-vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'jpo/vim-railscasts-theme'
+Plug 'jonathanfilip/vim-lucius'
+Plug 'nanotech/jellybeans.vim'
+Plug 'morhetz/gruvbox'
+Plug 'w0ng/vim-hybrid'
+Plug 'w0ng/vim-github-theme'
+Plug 'reedes/vim-colors-pencil'
+Plug 'john2x/flatui.vim'
+Plug 'noahfrederick/vim-hemisu'
+Plug 'davidkariuki/sexy-railscasts-256-theme'
+Plug 'andrwb/vim-lapis256'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'jdkanani/vim-material-theme'
+Plug 'Wutzara/vim-materialtheme'
+Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'jscappini/material.vim'
+Plug 'xiaody/thornbird.vim'
+Plug 'woju/vim-colors-woju'
+Plug 'chriskempson/base16-vim'
 
-call vundle#end()
+" call vundle#end()
+
+call plug#end()
 filetype plugin indent on
 " -------------------------------------------------------------------------
 
@@ -70,7 +77,7 @@ filetype plugin indent on
 syntax on
 set shell=/bin/zsh
 set encoding=utf-8
-set fileencoding=utf-8
+" set fileencoding=utf-8
 set showcmd
 set cursorline
 set ruler
@@ -176,7 +183,7 @@ set cpoptions+=$
 set t_Co=256
 
 if has("gui_running")
-  set background=light
+  set background=dark
   colorscheme thornbird
   let g:airline_theme = 'molokai' " bubblegum | murmur
   let g:enable_bold_font = 1
@@ -258,7 +265,14 @@ nnoremap n nzz
 nnoremap N Nzz
 
 " NerdTree ---------------------------
-nmap <leader>q :NERDTreeToggle<cr>
+" close NERDTree after a file is opened
+let g:NERDTreeQuitOnOpen=1
+" show hidden files in NERDTree
+let NERDTreeShowHidden=0
+" Toggle NERDTree
+nmap <silent> <leader>q :NERDTreeToggle<cr>
+" expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeFind<cr>
 " -------------------------------------------------------------------------
 
 map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
