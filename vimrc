@@ -65,16 +65,8 @@ set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 set backspace=indent,eol,start
 
 " Directories for swp files ---------
-set backupdir=~/.dotfiles/vim/vim_backups/
-set directory=~/.dotfiles/vim/vim_backups/
-set viewdir=~/.dotfiles/vim/vim_backups/
-" -----------------------------------
-
-" set undofile ----------------------
-if &undodir =~# '^\.\%(,\|$\)'
-  let &undodir = "~/.dotfiles/vim/undo/" . &undodir
-endif
-" -----------------------------------
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Status Line -------------------------------------------------------------
 set statusline=%f "tail of the filename
