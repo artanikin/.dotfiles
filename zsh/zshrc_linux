@@ -34,6 +34,9 @@ alias reload!="source ~/.zshrc"
 alias go_serv="ssh root@192.168.225.194"
 alias http_server="python -m SimpleHTTPServer 8000"
 alias rspecold='ruby vendor/plugins/rspec/bin/spec spec/features/contracts_spec.rb'
+alias ctagsupd='ctags -R --exclude=.git --exclude=log --exclude=public *'
+alias -g L='| less'
+alias -g G='| grep'
 # ------------------------------------------------------------------
 
 # RBENV ------------------------------------------------------------
@@ -57,7 +60,7 @@ bindkey '^Z' fancy-ctrl-z
 
 # for vi-mode ------------------------------------------------------
 bindkey -v
+bindkey '^R' history-incremental-search-backward
 bindkey -M viins 'jk' vi-cmd-mode
-bindkey ‘^R’ history-incremental-search-backward
 export KEYTIMEOUT=1
 # ------------------------------------------------------------------

@@ -24,7 +24,7 @@ set showcmd
 set mouse=a
 set scrolloff=3
 set pastetoggle=<F10>
-set relativenumber
+set number
 set linespace=2
 
 " Default Whitespace ----------------
@@ -108,13 +108,13 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
 
   set background=dark
-  colorscheme thornbird
-  let g:airline_theme = 'molokai' " bubblegum | murmur
+  colorscheme base16-default
+  let g:airline_theme = 'pencil' " bubblegum | murmur
   set lines=45 columns=200
 else
   set background=dark
-  colorscheme solarized
-  let g:airline_theme = 'solarized' " bubblegum | murmur
+  colorscheme jellybeans
+  let g:airline_theme = 'jellybeans' " bubblegum | murmur
 endif
 
 let g:enable_bold_font = 1
@@ -184,7 +184,7 @@ nnoremap N Nzz
 
 " NerdTree ---------------------------
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 " show hidden files in NERDTree
 let NERDTreeShowHidden=0
 " Toggle NERDTree

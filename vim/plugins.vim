@@ -24,9 +24,9 @@ Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vi
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
-Plug 'ap/vim-css-color', { 'for': 'css'  }
+Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'scss']  }
 Plug 'tpope/vim-haml',   { 'for': 'haml' }
-Plug 'mattn/emmet-vim',  { 'for': 'html' }
+Plug 'mattn/emmet-vim',  { 'for': ['html', 'css', 'sass', 'scss', 'erb'] }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 " Themes
