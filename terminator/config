@@ -1,0 +1,163 @@
+[global_config]
+  title_transmit_bg_color = "#d30102"
+  focus = system
+[keybindings]
+[profiles]
+  [[smyk]]
+    palette = "#000000000000:#B85B4194317F:#7DD6A9EB0000:#C4C4A5A40000:#6262A3A3C4C4:#BAB98A8ACCCC:#202073738383:#A135A13DA133:#7AE07AE07AE0:#D6D683837C7B:#C4C4F1F03736:#FEFEE1E14D4D:#8D8DCFCFF0F0:#F7F79A99FFFF:#6A69D9D9CFCF:#F7F7F7F7F7F7"
+    background_image = None
+    use_system_font = False
+    foreground_color = "#F7F7F7F7F7F7"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#1B2A1B2C1B2A"
+  [[monokai]]
+    palette = "#494948483E3E:#F9F926267272:#A6A6E2E22E2E:#FDFD97971F1F:#6666D9D9EFEF:#AEAE8181FFFF:#A1A1EFEFE4E4:#F8F8F8F8F2F2:#757571715E5E:#FCFC5C5C9494:#C1C1F1F16161:#FEFEB2B25757:#8D8DE6E6F7F7:#C2C2A1A1FFFF:#BBBBF7F7EFEF:#F8F8F8F8F0F0"
+    background_image = None
+    use_system_font = False
+    foreground_color = "#F8F8F8F8F2F2"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#272728282222"
+  [[github]]
+    palette = "#3E3E3E3E3E3E:#97970B0B1616:#070796962A2A:#F8F8EEEEC7C7:#00003E3E8A8A:#E9E946469191:#8989D1D1ECEC:#FFFFFFFFFFFF:#666666666666:#DEDE00000000:#8787D5D5A2A2:#F1F1D0D00707:#2E2E6C6CBABA:#FFFFA2A29F9F:#1C1CFAFAFEFE:#FFFFFFFFFFFF"
+    background_image = None
+    foreground_color = "#3E3E3E3E3E3E"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#F4F4F4F4F4F4"
+  [[solarized-light]]
+    palette = "#070736364242:#DCDC32322F2F:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3"
+    background_image = None
+    foreground_color = "#65657b7b8383"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#fdfdf6f6e3e3"
+  [[default]]
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#ffffff:#002b36:#cb4b16:#8ae236:#657b83:#729fcf:#6c71c4:#93a1a1:#fdf6e3"
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_image = None
+    background_darkness = 0.9
+    scrollback_lines = 6000
+    use_system_font = False
+    cursor_color = "#eee8d5"
+    foreground_color = "#ffffff"
+    icon_bell = False
+    show_titlebar = False
+    copy_on_selection = True
+    background_color = "#404040"
+  [[dracula]]
+    palette = "#000000000000:#FFFF55555555:#5050FAFA7B7B:#F1F1FAFA8C8C:#BDBD9393F9F9:#FFFF7979C6C6:#8B8BE9E9FDFD:#BBBBBBBBBBBB:#555555555555:#FFFF55555555:#5050FAFA7B7B:#F1F1FAFA8C8C:#BDBD9393F9F9:#FFFF7979C6C6:#8B8BE9E9FDFD:#FFFFFFFFFFFF"
+    background_image = None
+    foreground_color = "#F8F8F8F8F2F2"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#1E1E1F4528E7"
+  [[molokai]]
+    palette = "#1B1B1D1D1E1E:#F9F926267272:#8282B4B41414:#FDFD97971F1F:#5656C2C2D6D6:#8C8C5454FEFE:#464654545757:#CCCCCCCCC6C6:#505053535454:#FFFF59599595:#B6B6E3E35454:#FEFEEDED6C6C:#8C8CEDEDFFFF:#9E9E6F6FFEFE:#89899C9CA1A1:#F8F8F8F8F2F2"
+    background_image = None
+    foreground_color = "#A0A0A0A0A0A0"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#1C1C1C1C1C1C"
+  [[espresso]]
+    palette = "#353435343534:#D2D252515251:#A5A5C2C26161:#FFFFC6C66D6D:#6C6C9999BBBB:#D1D19797D9D9:#BEBED6D6FFFF:#EEEEEEEEECEC:#535353535353:#F0F00C0C0C0C:#C2C2E0E07575:#E1E1E4E38B8B:#8A8AB7B7D9D9:#EFEFB5B5F7F7:#DCDCF4F3FFFF:#FFFFFFFFFFFF"
+    background_image = None
+    foreground_color = "#FFFFFFFFFFFF"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#323232323232"
+  [[monokai-soda]]
+    palette = "#19BB19BB19BB:#F4F200005F73:#983FE11323D9:#FB1E849E198C:#9D5B655FFFAE:#F4F200005F73:#581BD1DBEBAB:#C504C57CB5BD:#62085E9D4BE8:#F4F200005F73:#983FE11323D9:#E0A1D61A61AC:#9D5B655FFFAE:#F4F200005F73:#581BD1DBEBAB:#F721F729EF99"
+    background_image = None
+    foreground_color = "#C504C57CB5BD"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#19BB19BB19BB"
+  [[misterioso]]
+    palette = "#000000000000:#FFFF42424242:#7474AFAF6868:#FFFFADAD2929:#33338F8F8686:#94B213C0E6A2:#2323D7D7D7D7:#E1E1E1E1E0E0:#555555555555:#FFFF32324242:#7474CDCD6868:#FFFFB9B92929:#2323D7D7D7D7:#FFFF3737FFFF:#0000EDEDE1E1:#FFFFFFFFFFFF"
+    background_image = None
+    foreground_color = "#E1E1E1E1E0E0"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#2D2D37374343"
+  [[chalkboard]]
+    palette = "#000000000000:#C3C373737272:#7272C3C37373:#C2C2C3C37272:#73737272C3C3:#C3C37272C2C2:#7272C2C2C3C3:#D9D9D9D9D9D9:#323232323232:#DBDBAAAAAAAA:#AAAADBDBAAAA:#DADADBDBAAAA:#AAAAAAAADBDB:#DBDBAAAADADA:#AAAADADADBDB:#FFFFFFFFFFFF"
+    background_image = None
+    foreground_color = "#D9D9E6E6F2F2"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#292926262F2F"
+  [[obsidian]]
+    palette = "#000000000000:#A68D007C0180:#0000BBBB0000:#FF67CD9D2236:#39F09BC8DBA3:#BBBB0000BBBB:#0000BBBBBBBB:#BBBBBBBBBBBB:#555555555555:#FFFF00000304:#937AC857637E:#FF75F893745E:#A149D769FFFF:#FFFF5555FFFF:#5555FFFFFFFF:#FFFFFFFFFFFF"
+    background_image = None
+    foreground_color = "#CD53CD5BCD4F"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#27FB305832F7"
+  [[solarized-dark]]
+    palette = "#070736364242:#DCDC32322F2F:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3"
+    background_image = None
+    foreground_color = "#838394949696"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#00002B2B3636"
+  [[default_back]]
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    background_image = None
+    cursor_color = "#eee8d5"
+    foreground_color = "#eee8d5"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#002b36"
+  [[tomorrow]]
+    palette = "#000000:#912226:#778900:#ae7b00:#1d2594:#682a9b:#2b6651:#929593:#666666:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ecebec"
+    background_image = None
+    foreground_color = "#C5C5C8C8C6C6"
+    show_titlebar = False
+    font = Fura Mono Medium for Powerline Medium 10.5
+    background_color = "#1D1D1F1F2121"
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = solarized-dark-ilya
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      size = 1200, 800
+      type = Window
+  [[hr]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 350:126
+      size = 1200, 784
+      title = /bin/bash
+      type = Window
+    [[[child1]]]
+      active_page = 0
+      labels = None, None
+      last_active_term = 503c824a-d1a7-430b-9f91-0567114bcd11, d4ea6fe2-b46b-40a8-8309-a57236c9191c
+      order = 0
+      parent = child0
+      type = Notebook
+    [[[terminal2]]]
+      command = ssh-vm
+      order = 0
+      parent = child1
+      profile = solarized-dark-ilya
+      type = Terminal
+      uuid = 503c824a-d1a7-430b-9f91-0567114bcd11
+    [[[terminal3]]]
+      command = 2hr
+      order = 1
+      parent = child1
+      profile = solarized-dark-ilya
+      type = Terminal
+      uuid = d4ea6fe2-b46b-40a8-8309-a57236c9191c
+[plugins]

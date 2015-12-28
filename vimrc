@@ -99,7 +99,8 @@ if has("gui_running")
   elseif has("x11")
     set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
   else
-    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Nerd\ Font\ Complete\ Mono:h12
+    " set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Nerd\ Font\ Complete\ Mono:h12
+    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Medium:h10
   endif
 
   set guioptions-=m  "remove menu bar
