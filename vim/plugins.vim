@@ -9,18 +9,26 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
-Plug 'tomtom/tcomment_vim'
+" Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-bundler'
 Plug 'Townk/vim-autoclose'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'ervandew/supertab'
-Plug 'bling/vim-airline'
+" Plug 'bling/vim-airline' | Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/ZoomWin'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
+Plug 'KabbAmine/zeavim.vim'
+Plug 'tpope/vim-repeat'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'danro/rename.vim'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
@@ -37,6 +45,9 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'davidkariuki/sexy-railscasts-256-theme'
 Plug 'xiaody/thornbird.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plug 'daylerees/colour-schemes', {'rtp': 'vim/'}
+Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
 filetype plugin indent on

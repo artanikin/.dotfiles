@@ -16,6 +16,7 @@ cnoreabbrev Qa qa
 syntax on
 set shell=/bin/zsh
 set encoding=utf-8
+set ff=unix
 " set fileencoding=utf-8
 set showcmd
 set cursorline
@@ -87,11 +88,12 @@ set cpoptions+=$
 " Themes ------------------------------------------------------------------
 
 set t_Co=256
+set term=screen-256color
 
 if has("gui_running")
 
   if has("gui_gtk2")
-    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Medium\ 9
+    set guifont=Fura\ Mono\ Medium\ For\ Powerline\ Medium\ 10.5
   elseif has("gui_photon")
     set guifont=Courier\ New:s11
   elseif has("gui_kde")
@@ -114,8 +116,8 @@ if has("gui_running")
   set lines=45 columns=200
 else
   set background=dark
-  colorscheme jellybeans
-  let g:airline_theme = 'jellybeans' " bubblegum | murmur
+  colorscheme solarized
+  let g:airline_theme = 'solarized' " bubblegum | murmur
 endif
 
 let g:enable_bold_font = 1
@@ -125,7 +127,7 @@ let g:enable_bold_font = 1
 set tags=./tags;
 
 " FILETYPES ---------------------------------------------------------------
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru} set ft=ruby
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
 au BufNewFile,BufRead *.json set ft=javascript
 " -------------------------------------------------------------------------
@@ -143,8 +145,8 @@ augroup ColorcolumnOnlyInInsertMode
   autocmd InsertLeave * setlocal colorcolumn=0
 augroup END
 
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
 " -------------------------------------------------------------------------
 
 " Mapping -----------------------------------------------------------------
@@ -255,3 +257,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Clean"     : "✔︎ ",
     \ "Unknown"   : "? "
     \ }
+
+
+" For repeat plugin
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
+" Indent guide
+set ts=2 sw=2 et
+let g:indent_guides_start_level = 2
