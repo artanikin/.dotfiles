@@ -1,5 +1,4 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
 
 export TERM=screen-256color
 export LANG=en_US.UTF-8
@@ -17,7 +16,7 @@ plugins=(git brew gem ruby osx rails rake rbenv tmux vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # RBENV start -------------------------------------------------------
-export RBENV_ROOT=/usr/local/var/rbenv
+export RBENV_ROOT=/Users/artyom/.rbenv
 export PATH="$RBENV_ROOT/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 # RBENV end  --------------------------------------------------------
@@ -54,6 +53,6 @@ bindkey '^Z' fancy-ctrl-z
 # for vi-mode ------------------------------------------------------
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
-bindkey ‘^R’ history-incremental-search-backward
+bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
 # ------------------------------------------------------------------
