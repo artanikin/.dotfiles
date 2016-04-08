@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 alias g=git
 alias v="vim"
 alias z="zeus"
-alias tmux="tmux -2"
+# alias tmux="tmux -2"
 alias mux="tmuxinator"
 alias navicat="sh /home/artyom/.app/navicat/start_navicat &"
 alias be="bundle exec"
@@ -62,3 +62,5 @@ export KEYTIMEOUT=1
 
 export NB_DEV_DATABASE_USER='root'
 export NB_DEV_DATABASE_PASSWORD='12345'
+
+# screenfetch
