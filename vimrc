@@ -88,7 +88,9 @@ set cpoptions+=$
 " Themes ------------------------------------------------------------------
 
 set t_Co=256
+" set term=xterm-256color
 set term=screen-256color
+let base16colorspace=256
 
 if has("gui_running")
 
@@ -116,8 +118,8 @@ if has("gui_running")
   set lines=45 columns=200
 else
   set background=dark
-  colorscheme solarized
-  let g:airline_theme = 'solarized' " bubblegum | murmur
+  colorscheme base16-default
+  let g:airline_theme = 'jellybeans' " bubblegum | murmur
 endif
 
 let g:enable_bold_font = 1
