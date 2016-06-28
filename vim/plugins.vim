@@ -34,7 +34,7 @@ Plug 'danro/rename.vim'
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
 Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'scss']  }
 Plug 'tpope/vim-haml',   { 'for': 'haml' }
-Plug 'mattn/emmet-vim',  { 'for': ['html', 'css', 'sass', 'scss', 'erb'] }
+Plug 'mattn/emmet-vim' ",  { 'for': ['html', 'css', 'sass', 'scss', 'erb'] }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 
 " Themes
@@ -48,6 +48,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plug 'daylerees/colour-schemes', {'rtp': 'vim/'}
 Plug 'jonathanfilip/vim-lucius'
+Plug 'dracula/vim'
 
 call plug#end()
 filetype plugin indent on

@@ -116,8 +116,8 @@ if has("gui_running")
   set lines=45 columns=200
 else
   set background=dark
-  colorscheme solarized
-  let g:airline_theme = 'solarized' " bubblegum | murmur
+  colorscheme jellybeans
+  let g:airline_theme = 'jellybeans' " bubblegum | murmur
 endif
 
 let g:enable_bold_font = 1
