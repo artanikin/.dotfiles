@@ -29,6 +29,7 @@ Plug 'KabbAmine/zeavim.vim'
 Plug 'tpope/vim-repeat'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'danro/rename.vim'
+Plug 'tmux-plugins/vim-tmux'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
@@ -40,14 +41,10 @@ Plug 'slim-template/vim-slim', { 'for': 'slim' }
 " Themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
-Plug 'morhetz/gruvbox'
 Plug 'reedes/vim-colors-pencil'
 Plug 'davidkariuki/sexy-railscasts-256-theme'
 Plug 'xiaody/thornbird.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-Plug 'daylerees/colour-schemes', {'rtp': 'vim/'}
-Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
 filetype plugin indent on
