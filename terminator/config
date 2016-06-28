@@ -107,7 +107,8 @@
     font = Fura Mono Medium for Powerline Medium 10.5
     background_color = "#27FB305832F7"
   [[solarized-dark]]
-    palette = "#070736364242:#DCDC32322F2F:#858599990000:#B5B589890000:#26268B8BD2D2:#D3D336368282:#2A2AA1A19898:#EEEEE8E8D5D5:#00002B2B3636:#CBCB4B4B1616:#58586E6E7575:#65657B7B8383:#838394949696:#6C6C7171C4C4:#9393A1A1A1A1:#FDFDF6F6E3E3"
+    scrollbar_position = hidden
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
     background_image = None
     use_system_font = False
     foreground_color = "#838394949696"
@@ -125,6 +126,7 @@
   [[tomorrow]]
     palette = "#000000:#912226:#778900:#ae7b00:#1d2594:#682a9b:#2b6651:#929593:#666666:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ecebec"
     background_image = None
+    use_system_font = False
     foreground_color = "#C5C5C8C8C6C6"
     show_titlebar = False
     font = Fura Mono Medium for Powerline Medium 10.5

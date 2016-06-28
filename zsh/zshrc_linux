@@ -2,13 +2,12 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
-# export TERM=xterm-256color
-export TERM=screen-256color
+export TERM=xterm-256color
 
 ZSH=$HOME/.oh-my-zsh
 
 # zsh theme
-ZSH_THEME="maran"
+ZSH_THEME="tuts02"
 
 # enable plugins
 plugins=(git gem ruby rake rails tmux rbenv vi-mode)
@@ -32,6 +31,7 @@ alias 2cp='cd /home/artyom/virtual_cp/files/cp'
 alias 2mm='cd /home/artyom/virtual_cp/files/mm'
 alias -g L='| less'
 alias -g G='| grep'
+alias battery="battery -b /sys/class/power_supply/BAT1"
 # ------------------------------------------------------------------
 
 # RBENV ------------------------------------------------------------
@@ -62,3 +62,9 @@ export KEYTIMEOUT=1
 
 export NB_DEV_DATABASE_USER='root'
 export NB_DEV_DATABASE_PASSWORD='12345'
+
+# screenfetch
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL ]
