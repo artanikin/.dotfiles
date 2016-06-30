@@ -3,7 +3,6 @@ set nocompatible
 " load plugins
 source ~/.vim/plugins.vim
 
-
 " Abbreviations
 cnoreabbrev W w
 cnoreabbrev Q q
@@ -113,13 +112,13 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
 
   set background=dark
-  colorscheme base16-default
+  colorscheme base16_default
   let g:airline_theme = 'pencil' " bubblegum | murmur
   set lines=45 columns=200
 else
   set background=dark
   colorscheme base16-default
-  let g:airline_theme = 'jellybeans' " bubblegum | murmur
+  let g:airline_theme = 'base16_default' " bubblegum | murmur
 endif
 
 let g:enable_bold_font = 1
@@ -267,3 +266,5 @@ silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 " Indent guide
 set ts=2 sw=2 et
 let g:indent_guides_start_level = 2
+
+let g:vimwiki_list = [{'path':'~/GoogleDrive/Productivity/work/wiki', 'path_html':'~/GoogleDrive/Productivity/work/html'}]

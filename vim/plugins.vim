@@ -30,6 +30,9 @@ Plug 'tpope/vim-repeat'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'danro/rename.vim'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'kchmck/vim-coffee-script'
+Plug 'powerman/vim-plugin-ruscmd'
+Plug 'vimwiki/vimwiki'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
