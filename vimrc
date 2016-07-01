@@ -88,9 +88,9 @@ set cpoptions+=$
 " Themes ------------------------------------------------------------------
 
 set t_Co=256
-" set term=xterm-256color
-set term=screen-256color
-let base16colorspace=256
+set term=xterm-256color
+" set term=screen-256color
+" let base16colorspace=256
 
 if has("gui_running")
 
