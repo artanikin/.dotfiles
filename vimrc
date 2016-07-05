@@ -37,7 +37,7 @@ set expandtab
 set linebreak
 set dy=lastline
 
-" For russian language --------------
+" For russian language ---------------
 set keymap=russian-jcukenwin " переключение по Ctrl+^
 set iminsert=0 " по умолчанию - латинская раскладка
 set imsearch=0 " по умолчанию - латинская раскладка при поиске
