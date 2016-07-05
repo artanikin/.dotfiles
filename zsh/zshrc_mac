@@ -1,6 +1,6 @@
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin
 
-export TERM=screen-256color
+export TERM=xterm-256color
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export GREP_OPTIONS='--color=auto'
@@ -56,3 +56,6 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey '^R' history-incremental-search-backward
 export KEYTIMEOUT=1
 # ------------------------------------------------------------------
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
