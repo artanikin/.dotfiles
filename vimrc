@@ -10,6 +10,8 @@ cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 cnoreabbrev Q! q!
 cnoreabbrev Qa qa
+cnoreabbrev Ц w
+cnoreabbrev Цй wq
 
 " Config ------------------------------------------------------------------
 syntax on
@@ -78,8 +80,10 @@ set laststatus=2
 " -----------------------------------
 
 " Experiment {{{
+nmap <leader>l :set list!<CR>
 set list
-set listchars=tab:▸\ ,eol:¬ ",nbsp:,trail:∙
+set listchars=tab:▸\ ,eol:¬,trail:˽
+" set listchars=tab:▸\ ,eol:¬,trail:∙
 set cpoptions+=$
 " }}}
 
@@ -87,9 +91,9 @@ set cpoptions+=$
 " Themes ------------------------------------------------------------------
 
 set t_Co=256
-set term=xterm-256color
-" set term=screen-256color
-" let base16colorspace=256
+" set term=xterm-256color
+set term=screen-256color
+let base16colorspace=256
 
 if has("gui_running")
 
@@ -154,6 +158,7 @@ augroup END
 inoremap <C-f> <ESC>
 imap jj <Esc>
 let mapleader = ','
+cmap w!! %!sudo tee > /dev/null %
 
 nnoremap <leader>w :w<cr>
 
@@ -268,3 +273,30 @@ set ts=2 sw=2 et
 let g:indent_guides_start_level = 2
 
 let g:vimwiki_list = [{'path':'~/GoogleDrive/Productivity/work/wiki', 'path_html':'~/GoogleDrive/Productivity/work/html'}]
+
+
+" PLUGIN ZoomWin
+nmap <leader>zw  :ZoomWin<CR>
+
+" Auto toggle paste state in insert mode
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()

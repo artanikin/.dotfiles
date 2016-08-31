@@ -33,6 +33,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'kchmck/vim-coffee-script'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'vimwiki/vimwiki'
+Plug 'mhinz/vim-startify'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
@@ -40,6 +41,8 @@ Plug 'ap/vim-css-color', { 'for': ['css', 'sass', 'scss']  }
 Plug 'tpope/vim-haml',   { 'for': 'haml' }
 Plug 'mattn/emmet-vim' ",  { 'for': ['html', 'css', 'sass', 'scss', 'erb'] }
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'othree/html5.vim'
+Plug 'gregsexton/MatchTag'
 
 " Themes
 Plug 'altercation/vim-colors-solarized'
