@@ -35,15 +35,7 @@ cp ~/.doftiles/zsh/zsh_themes/tuts02.zsh-theme ~/.oh-my-zsh/themes/
 ### Tmux
 
 ```
-git clone https://github.com/erikw/tmux-powerline
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
-cp ~/.dotfiles/tmux/mytheme.sh ~/.dotfiles/tmux/tmux-powerline/themes/ 
-```
-Update `~/.dotfiles/tmux/tmux-powerline/config/defaults.sh` by
-```
-export TMUX_POWERLINE_DEBUG_MODE_ENABLED_DEFAULT="false"
-export TMUX_POWERLINE_PATCHED_FONT_IN_USE_DEFAULT="false"
-export TMUX_POWERLINE_THEME_DEFAULT="mytheme"
 ```
 
 ### Vim
@@ -51,13 +43,13 @@ export TMUX_POWERLINE_THEME_DEFAULT="mytheme"
 ln -s ~/.doftiles/vim .vim
 ln -s ~/.doftiles/vim/vimrc ~/.vimrc
 ```
-* install Vundle
+* install Plug
 
 ```
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+https://github.com/junegunn/vim-plug
 ```
 
-* install plugins: open vim and fire command `:BundleInstall`
+* install plugins: open vim and fire command `:PlugInstall`
 
 ### Install ruby environment for Mac OSx
 http://www.mgrachev.com/2014/11/17/configuring-rails-environment-on-yosemite/
