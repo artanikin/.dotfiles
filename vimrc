@@ -116,9 +116,10 @@ if has("gui_running")
   let g:airline_theme = 'pencil' " bubblegum | murmur
   set lines=45 columns=200
 else
+
   set background=dark
-  colorscheme base16-default
-  let g:airline_theme = 'base16_default' " bubblegum | murmur
+  colorscheme base16-monokai
+  let g:airline_theme = 'base16_monokai' " bubblegum | murmur
 endif
 
 let g:enable_bold_font = 1
@@ -268,3 +269,35 @@ set ts=2 sw=2 et
 let g:indent_guides_start_level = 2
 
 let g:vimwiki_list = [{'path':'~/GoogleDrive/Productivity/work/wiki', 'path_html':'~/GoogleDrive/Productivity/work/html'}]
+
+
+" Gist
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
+let g:gist_browser_command = 'google-chrome %URL%'
+
+" Index ctags from any project, including those outside Rails
+map <Leader>ct :!ctags -R .<CR>
+
+" Auto toggle paste state in insert mode
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()

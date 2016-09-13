@@ -58,4 +58,4 @@ export KEYTIMEOUT=1
 # ------------------------------------------------------------------
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-monokai.dark.sh"
