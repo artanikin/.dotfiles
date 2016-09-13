@@ -33,6 +33,7 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'kchmck/vim-coffee-script'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'vimwiki/vimwiki'
+Plug 'mhinz/vim-startify'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }

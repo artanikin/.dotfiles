@@ -10,6 +10,8 @@ cnoreabbrev Wq wq
 cnoreabbrev WQ wq
 cnoreabbrev Q! q!
 cnoreabbrev Qa qa
+cnoreabbrev Ц w
+cnoreabbrev Цй wq
 
 " Config ------------------------------------------------------------------
 syntax on
@@ -37,7 +39,7 @@ set expandtab
 set linebreak
 set dy=lastline
 
-" For russian language --------------
+" For russian language ---------------
 set keymap=russian-jcukenwin " переключение по Ctrl+^
 set iminsert=0 " по умолчанию - латинская раскладка
 set imsearch=0 " по умолчанию - латинская раскладка при поиске
@@ -78,8 +80,10 @@ set laststatus=2
 " -----------------------------------
 
 " Experiment {{{
+nmap <leader>l :set list!<CR>
 set list
-set listchars=tab:▸\ ,eol:¬ ",nbsp:,trail:∙
+set listchars=tab:▸\ ,eol:¬,trail:˽
+" set listchars=tab:▸\ ,eol:¬,trail:∙
 set cpoptions+=$
 " }}}
 
@@ -87,9 +91,13 @@ set cpoptions+=$
 " Themes ------------------------------------------------------------------
 
 set t_Co=256
+" for mac ----------------
 set term=xterm-256color
+" for linux --------------
 " set term=screen-256color
 " let base16colorspace=256
+" ------------------------
+
 
 if has("gui_running")
 
@@ -155,6 +163,7 @@ augroup END
 inoremap <C-f> <ESC>
 imap jj <Esc>
 let mapleader = ','
+cmap w!! %!sudo tee > /dev/null %
 
 nnoremap <leader>w :w<cr>
 
@@ -270,7 +279,6 @@ let g:indent_guides_start_level = 2
 
 let g:vimwiki_list = [{'path':'~/GoogleDrive/Productivity/work/wiki', 'path_html':'~/GoogleDrive/Productivity/work/html'}]
 
-
 " Gist
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
@@ -278,6 +286,8 @@ let g:gist_browser_command = 'google-chrome %URL%'
 
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
+" PLUGIN ZoomWin
+nmap <leader>zw  :ZoomWin<CR>
 
 " Auto toggle paste state in insert mode
 function! WrapForTmux(s)
