@@ -33,7 +33,6 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'kchmck/vim-coffee-script'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'vimwiki/vimwiki'
-Plug 'mhinz/vim-startify'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby',{ 'for': 'ruby' }
@@ -51,6 +50,7 @@ Plug 'reedes/vim-colors-pencil'
 Plug 'davidkariuki/sexy-railscasts-256-theme'
 Plug 'xiaody/thornbird.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'crusoexia/vim-monokai'
 
 call plug#end()
 filetype plugin indent on

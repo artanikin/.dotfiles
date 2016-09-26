@@ -92,9 +92,9 @@ set cpoptions+=$
 
 set t_Co=256
 " for mac ----------------
-set term=xterm-256color
+" set term=xterm-256color
 " for linux --------------
-" set term=screen-256color
+set term=screen-256color
 " let base16colorspace=256
 " ------------------------
 
@@ -126,8 +126,9 @@ if has("gui_running")
 else
 
   set background=dark
-  colorscheme base16-monokai
+  colorscheme monokai
   let g:airline_theme = 'base16_monokai' " bubblegum | murmur
+  let g:monokai_term_italic = 1
 endif
 
 let g:enable_bold_font = 1
