@@ -273,7 +273,6 @@ set cpoptions+=$
 set tags+=.git/tags
 map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 
-
 " Mapping -----------------------------------------------------------------
 inoremap <C-f> <ESC>
 imap jj <Esc>
@@ -341,8 +340,5 @@ map <leader>c <C-_><C-_>
 
 " Vroom ------------------------------
 let g:vroom_spec_command="rspec --format documentation"
-
-
-
 
 " vim:foldmethod=marker:foldlevel=0
