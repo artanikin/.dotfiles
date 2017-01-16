@@ -50,7 +50,17 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 " }}}
-" UI Layout ----------------------------------
+" UI Layout {{{
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
+set statusline=%f "tail of the filename
+set statusline+=%= "left/right separator
+set statusline+=%c, "cursor column
+set statusline+=%l/%L "cursor line/total lines
+set statusline+=\ %P "percent through file
+set laststatus=2
+" }}}
 " Searching & Highlights {{{
 set hlsearch
 set incsearch
@@ -65,8 +75,39 @@ nnoremap N Nzz
 nnoremap ,<Space> za¬
 vnoremap ,<Space> za¬
 " }}}
-" Line Shortcuts -----------------------------
-" Leader Shortcuts ---------------------------
+" Line Shortcuts {{{
+inoremap <C-f> <ESC>
+imap jj <Esc>
+cmap w!! %!sudo tee > /dev/null %
+
+nnoremap Y y$
+
+nmap F1 help
+nmap <F1> <nop>
+imap <F1> <nop>
+
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+nnoremap n nzz
+nnoremap N Nzz
+
+" switch between panels
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+" }}}
+" Leader Shortcuts {{{
+let mapleader = ','
+nnoremap <leader>w :w<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>sv :so $MYVIMRC<cr>
+
+map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
+map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+" }}}
 " Airline {{{
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -127,10 +168,49 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+let g:vroom_spec_command="rspec --format documentation"     " Vroom
 " }}}
-" Launch Config ------------------------------
-" Tmux ---------------------------------------
-" MacVim -------------------------------------
+" Tcomment {{{
+map <leader>c <C-_><C-_>
+" }}}
+" Tagbar {{{
+" nmap <leader>t :TagbarToggle<CR>
+" let g:tagbar_width     = 40
+" let g:tagbar_autoclose = 1
+" let g:tagbar_autofocus = 1
+" let g:tagbar_compact   = 1
+" }}}
+" Tags {{{
+set tags+=.git/tags
+map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
+" }}}
+" Config {{{
+set shell=/bin/zsh
+set encoding=utf-8
+set ff=unix
+set showcmd
+set modelines=1                             " tell vim check final line of the file for a modeline
+set cursorline
+set ruler
+set showcmd
+set mouse=a
+set scrolloff=3
+set pastetoggle=<F10>
+set number
+set relativenumber
+set linespace=2
+set linebreak
+set dy=lastline
+set backspace=indent,eol,start
+set splitbelow                              " Open new split panes to bottom
+set splitright                              " Open new split panes to right
+" }}}
+" Lists characters {{{
+set nolist
+set listchars=tab:▸\ ,eol:¬,trail:∙
+set cpoptions+=$
+" }}}
 " AutoGroups {{{
 " FILETYPES ---------------------------------------------------------------
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru} set ft=ruby
@@ -157,7 +237,10 @@ augroup configgroup
     autocmd BufWritePost *.rb :call StripTrailingWhitespaces()
 augroup END
 " }}}
-" Backups ------------------------------------
+" Backups {{{
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" }}}
 " Custom Functions {{{
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)         " For repeat plugin
 
@@ -203,8 +286,16 @@ nmap <Leader><Leader>m :e app/models/<cr>
 nmap <Leader><Leader>v :e app/views/<cr>
 nmap <Leader><Leader>h :e app/helpers/<cr>
 " }}}
-
-" Abbreviations
+" Buffers {{{
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+noremap  <leader>d :Bclose<CR>
+map <leader>p :bprevious<CR>
+map <leader>n :bnext<CR>
+" }}}
+" Abbreviations {{{
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
@@ -213,132 +304,12 @@ cnoreabbrev Q! q!
 cnoreabbrev Qa qa
 cnoreabbrev Ц w
 cnoreabbrev Цй wq
-
-" Config ------------------------------------------------------------------
-set shell=/bin/zsh
-set encoding=utf-8
-set ff=unix
-set showcmd
-set modelines=1 " tell vim check final line of the file for a modeline
-
-set cursorline
-
-set ruler
-set showcmd
-set mouse=a
-set scrolloff=3
-set pastetoggle=<F10>
-set number
-set relativenumber
-set linespace=2
-
-
-set linebreak
-set dy=lastline
-
+" }}}
 " Russian language {{{
 set keymap=russian-jcukenwin " переключение по Ctrl+^
 set iminsert=0 " по умолчанию - латинская раскладка
 set imsearch=0 " по умолчанию - латинская раскладка при поиске
 set iskeyword=@,48-57,_,192-255 " настраиваю для работы с русскими словами (чтобы w, b, * понимали русские слова)
 " }}}
-
-
-set backspace=indent,eol,start
-
-" Directories for swp files ---------
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-
-" Status Line -------------------------------------------------------------
-set wildmenu
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
-set statusline=%f "tail of the filename
-set statusline+=%= "left/right separator
-set statusline+=%c, "cursor column
-set statusline+=%l/%L "cursor line/total lines
-set statusline+=\ %P "percent through file
-set laststatus=2
-" -----------------------------------
-
-" Lists characters {{{
-set nolist
-set listchars=tab:▸\ ,eol:¬,trail:∙
-set cpoptions+=$
-" symbols:∙˽
-" }}}
-
-
-set tags+=.git/tags
-map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
-
-" Mapping -----------------------------------------------------------------
-inoremap <C-f> <ESC>
-imap jj <Esc>
-let mapleader = ','
-cmap w!! %!sudo tee > /dev/null %
-
-nnoremap <leader>w :w<cr>
-nnoremap <leader>ev :e $MYVIMRC<cr>
-nnoremap <leader>sv :so $MYVIMRC<cr>
-nnoremap Y y$
-
-nmap F1 help
-nmap <F1> <nop>
-imap <F1> <nop>
-
-" move vertically by visual line
-nnoremap j gj
-nnoremap k gk
-nnoremap n nzz
-nnoremap N Nzz
-
-" Buffers ----------------------------
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-noremap  <leader>d :Bclose<CR>
-map <leader>p :bprevious<CR>
-map <leader>n :bnext<CR>
-" -----------------------------------
-
-" Panels & Open files
-set splitbelow                              " Open new split panes to bottom
-set splitright                              " Open new split panes to right
-
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
-map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
-map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
-map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
-" -------------------------------------------------------------------------
-
-
-" PLUGINS CONFIG ----------------------------------------------------------
-
-
-
-" SuperTab ---------------------------
-let g:SuperTabDefaultCompletionType = "<c-n>"
-" ------------------------------------
-
-
-" Tcomment ---------------------------
-map <leader>c <C-_><C-_>
-
-" Tagbar -----------------------------
-" nmap <leader>t :TagbarToggle<CR>
-" let g:tagbar_width     = 40
-" let g:tagbar_autoclose = 1
-" let g:tagbar_autofocus = 1
-" let g:tagbar_compact   = 1
-
-" Vroom ------------------------------
-let g:vroom_spec_command="rspec --format documentation"
 
 " vim:foldmethod=marker:foldlevel=0
