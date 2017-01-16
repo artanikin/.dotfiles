@@ -44,6 +44,27 @@ if has("gui_running")
   set lines=45 columns=200
 endif
 " }}}
+" Config {{{
+set shell=/bin/zsh
+set encoding=utf-8
+set ff=unix
+set showcmd
+set modelines=1                             " tell vim check final line of the file for a modeline
+set cursorline
+set ruler
+set showcmd
+set mouse=a
+set scrolloff=3
+set pastetoggle=<F10>
+set number
+set relativenumber
+set linespace=2
+set linebreak
+set dy=lastline
+set backspace=indent,eol,start
+set splitbelow                              " Open new split panes to bottom
+set splitright                              " Open new split panes to right
+" }}}
 " Spaces & Tabs {{{
 set tabstop=2
 set shiftwidth=2
@@ -107,6 +128,67 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 map <leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+" }}}
+" Tags {{{
+set tags+=.git/tags
+map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
+" }}}
+" Lists characters {{{
+set nolist
+set listchars=tab:▸\ ,eol:¬,trail:∙
+set cpoptions+=$
+" }}}
+" AutoGroups {{{
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru} set ft=ruby
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
+au BufNewFile,BufRead *.json set ft=javascript
+
+" autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+augroup VimScript
+  autocmd!
+  autocmd BufWritePost $MYVIMRC,plugins.vim source $MYVIMRC | AirlineRefresh
+augroup END
+
+augroup ColorColumnOnlyInInsertMode
+  autocmd!
+  autocmd InsertEnter * setlocal colorcolumn=101
+  autocmd InsertLeave * setlocal colorcolumn=0
+augroup END
+
+augroup ConfigGroup
+    autocmd!
+    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
+    autocmd BufWritePost *.rb :call StripTrailingWhitespaces()
+augroup END
+" }}}
+" Backups {{{
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" }}}
+" Buffers {{{
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+noremap  <leader>d :Bclose<CR>
+map <leader>p :bprevious<CR>
+map <leader>n :bnext<CR>
+" }}}
+" Abbreviations {{{
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev Q! q!
+cnoreabbrev Qa qa
+cnoreabbrev Ц w
+cnoreabbrev Цй wq
+" }}}
+" Russian language {{{
+set keymap=russian-jcukenwin " переключение по Ctrl+^
+set iminsert=0 " по умолчанию - латинская раскладка
+set imsearch=0 " по умолчанию - латинская раскладка при поиске
+set iskeyword=@,48-57,_,192-255 " настраиваю для работы с русскими словами (чтобы w, b, * понимали русские слова)
 " }}}
 " Airline {{{
 let g:airline_powerline_fonts = 1
@@ -181,135 +263,18 @@ map <leader>c <C-_><C-_>
 " let g:tagbar_autofocus = 1
 " let g:tagbar_compact   = 1
 " }}}
-" Tags {{{
-set tags+=.git/tags
-map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
-" }}}
-" Config {{{
-set shell=/bin/zsh
-set encoding=utf-8
-set ff=unix
-set showcmd
-set modelines=1                             " tell vim check final line of the file for a modeline
-set cursorline
-set ruler
-set showcmd
-set mouse=a
-set scrolloff=3
-set pastetoggle=<F10>
-set number
-set relativenumber
-set linespace=2
-set linebreak
-set dy=lastline
-set backspace=indent,eol,start
-set splitbelow                              " Open new split panes to bottom
-set splitright                              " Open new split panes to right
-" }}}
-" Lists characters {{{
-set nolist
-set listchars=tab:▸\ ,eol:¬,trail:∙
-set cpoptions+=$
-" }}}
-" AutoGroups {{{
-" FILETYPES ---------------------------------------------------------------
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru} set ft=ruby
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set ft=markdown
-au BufNewFile,BufRead *.json set ft=javascript
-" -------------------------------------------------------------------------
-
-" autocommands ------------------------------------------------------------
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-augroup vimscript
-  autocmd!
-  autocmd BufWritePost $MYVIMRC,plugins.vim source $MYVIMRC | AirlineRefresh
-augroup END
-
-augroup ColorcolumnOnlyInInsertMode
-  autocmd!
-  autocmd InsertEnter * setlocal colorcolumn=101
-  autocmd InsertLeave * setlocal colorcolumn=0
-augroup END
-
-augroup configgroup
-    autocmd!
-    autocmd BufEnter *.zsh-theme setlocal filetype=zsh
-    autocmd BufWritePost *.rb :call StripTrailingWhitespaces()
-augroup END
-" }}}
-" Backups {{{
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" }}}
-" Custom Functions {{{
-silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)         " For repeat plugin
-
-" Auto toggle paste state in insert mode
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
-
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
-
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
-
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
+" Functions {{{
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
 function! StripTrailingWhitespaces()
-    " save last search & cursor position
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    let @/=_s
-    call cursor(l, c)
+  " save last search & cursor position
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  let @/=_s
+  call cursor(l, c)
 endfunction
-" }}}
-" Rails-specific {{{
-nmap <Leader>rr :e config/routes.rb<cr>
-nmap <Leader><Leader>c :e app/controllers/<cr>
-nmap <Leader><Leader>m :e app/models/<cr>
-nmap <Leader><Leader>v :e app/views/<cr>
-nmap <Leader><Leader>h :e app/helpers/<cr>
-" }}}
-" Buffers {{{
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-noremap  <leader>d :Bclose<CR>
-map <leader>p :bprevious<CR>
-map <leader>n :bnext<CR>
-" }}}
-" Abbreviations {{{
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Wq wq
-cnoreabbrev WQ wq
-cnoreabbrev Q! q!
-cnoreabbrev Qa qa
-cnoreabbrev Ц w
-cnoreabbrev Цй wq
-" }}}
-" Russian language {{{
-set keymap=russian-jcukenwin " переключение по Ctrl+^
-set iminsert=0 " по умолчанию - латинская раскладка
-set imsearch=0 " по умолчанию - латинская раскладка при поиске
-set iskeyword=@,48-57,_,192-255 " настраиваю для работы с русскими словами (чтобы w, b, * понимали русские слова)
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
