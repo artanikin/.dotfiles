@@ -275,6 +275,30 @@ function! StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+
+""" FocusMode
+function! ToggleFocusMode()
+  if (&foldcolumn != 12)
+    set laststatus=0
+    set numberwidth=10
+    set foldcolumn=12
+    set noruler
+    set nonumber
+    set norelativenumber
+    hi FoldColumn ctermbg=none
+    hi LineNr ctermfg=0 ctermbg=none
+    hi NonText ctermfg=0
+  else
+    set laststatus=2
+    set numberwidth=4
+    set foldcolumn=0
+    set ruler
+    set nonumber
+    set relativenumber
+    execute 'colorscheme ' . g:colors_name
+  endif
+endfunc
+nnoremap <F1> :call ToggleFocusMode()<cr>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
