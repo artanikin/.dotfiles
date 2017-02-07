@@ -50,6 +50,9 @@ Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
 Plug 'gosukiwi/vim-atom-dark'
 Plug 'albertorestifo/github.vim'
+Plug 'bruth/vim-newsprint-theme'
+Plug 'ryanpcmcquen/true-monochrome_vim'
+Plug 'croaker/mustang-vim'
 
 call plug#end()
 filetype plugin indent on
