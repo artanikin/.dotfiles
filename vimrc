@@ -110,8 +110,6 @@ imap <F1> <nop>
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-nnoremap n nzz
-nnoremap N Nzz
 
 " switch between panels
 nnoremap <C-j> <C-w>j
