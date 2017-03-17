@@ -243,14 +243,15 @@ let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 " }}}
 " Syntastic {{{
+set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-" let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers = ['rubocop']
 " }}}
 " Rspec {{{
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -258,10 +259,15 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-let g:vroom_spec_command="rspec --format documentation"     " Vroom
+let g:rspec_command = "Dispatch spring rspec {spec}"
+" let g:vroom_spec_command="rspec --format documentation"     " Vroom
 " }}}
 " Tcomment {{{
 map <leader>c <C-_><C-_>
+" }}}
+" Vim-maximizer {{{
+map <F2> :Copen<CR>
+map ,c :ccl<CR>
 " }}}
 " Functions {{{
 " strips trailing whitespace at the end of files. this

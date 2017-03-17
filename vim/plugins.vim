@@ -12,6 +12,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'Townk/vim-autoclose'
 Plug 'tpope/vim-dispatch'
+Plug 'ecomba/vim-ruby-refactoring'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'ervandew/supertab'
@@ -25,6 +26,8 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'tpope/vim-dispatch'
 Plug 'karlbright/qfdo.vim'
+Plug 'szw/vim-maximizer'
+Plug 'tmhedberg/matchit'
 
 " Languagespecific plugins
 Plug 'vim-ruby/vim-ruby' | Plug 'ngmy/vim-rubocop' | Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
