@@ -16,8 +16,8 @@ else
   set term=screen-256color
 
   set background=dark
-  colorscheme mustang
-  let g:airline_theme = 'one'
+  colorscheme Tomorrow
+  let g:airline_theme = 'tomorrow'
 endif
 " }}}
 " GUI configurations {{{
@@ -64,6 +64,7 @@ set backspace=indent,eol,start
 set splitbelow                              " Open new split panes to bottom
 set splitright                              " Open new split panes to right
 set cursorline
+set autowrite                               " Autosave closed buffers
 hi CursorLine term=bold cterm=bold          " remove cursor underline
 " }}}
 " Spaces & Tabs {{{
@@ -203,7 +204,14 @@ let g:ctrlp_match_window = 'bottom,order:ttd'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" }}}
+" Silver Searcher {{{
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+  nnoremap \ :Ag<space>
+endif
 " }}}
 " NERDTree & Webdevicons {{{
 let g:NERDTreeQuitOnOpen=0                             " close after a file is opened
@@ -254,13 +262,6 @@ let g:vroom_spec_command="rspec --format documentation"     " Vroom
 " }}}
 " Tcomment {{{
 map <leader>c <C-_><C-_>
-" }}}
-" Tagbar {{{
-" nmap <leader>t :TagbarToggle<CR>
-" let g:tagbar_width     = 40
-" let g:tagbar_autoclose = 1
-" let g:tagbar_autofocus = 1
-" let g:tagbar_compact   = 1
 " }}}
 " Functions {{{
 " strips trailing whitespace at the end of files. this
