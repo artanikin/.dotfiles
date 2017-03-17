@@ -16,8 +16,8 @@ else
   set term=screen-256color
 
   set background=dark
-  colorscheme jellybeans
-  let g:airline_theme = 'jellybeans'
+  colorscheme mustang
+  let g:airline_theme = 'one'
 endif
 " }}}
 " GUI configurations {{{
@@ -50,7 +50,6 @@ set encoding=utf-8
 set ff=unix
 set showcmd
 set modelines=1                             " tell vim check final line of the file for a modeline
-set cursorline
 set ruler
 set showcmd
 set mouse=a
@@ -64,6 +63,8 @@ set dy=lastline
 set backspace=indent,eol,start
 set splitbelow                              " Open new split panes to bottom
 set splitright                              " Open new split panes to right
+set cursorline
+hi CursorLine term=bold cterm=bold          " remove cursor underline
 " }}}
 " Spaces & Tabs {{{
 set tabstop=2
@@ -193,15 +194,15 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " }}}
 " CtrlP {{{
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*/vendor/*,*.so,*.swp,*.zip
 nmap <c-T> :CtrlPBufTag<cr>
 let g:ctrlp_map = '<leader>f'
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|DS_Store)$'
 let g:ctrlp_match_window = 'bottom,order:ttd'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 " }}}
 " NERDTree & Webdevicons {{{
@@ -238,7 +239,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " let g:syntastic_ruby_checkers = ['mri', 'rubocop']
