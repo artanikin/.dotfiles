@@ -130,8 +130,8 @@ map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " }}}
 " Tags {{{
+noremap <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 set tags+=.git/tags
-map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 " }}}
 " Lists characters {{{
 set nolist
