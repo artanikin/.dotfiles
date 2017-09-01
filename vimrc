@@ -64,6 +64,7 @@ set backspace=indent,eol,start
 set splitbelow                              " Open new split panes to bottom
 set splitright                              " Open new split panes to right
 set cursorline
+set autowrite                               " Autosave closed buffers
 hi CursorLine term=bold cterm=bold          " remove cursor underline
 " }}}
 " Spaces & Tabs {{{
@@ -111,8 +112,6 @@ imap <F1> <nop>
 " move vertically by visual line
 nnoremap j gj
 nnoremap k gk
-nnoremap n nzz
-nnoremap N Nzz
 
 " switch between panels
 nnoremap <C-j> <C-w>j
@@ -131,8 +130,8 @@ map <leader>s :split <C-R>=expand("%:p:h") . '/'<CR>
 map <leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " }}}
 " Tags {{{
+noremap <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 set tags+=.git/tags
-map <leader>ct :!ctags --tag-relative --extra=+f -Rf.git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 " }}}
 " Lists characters {{{
 set nolist
@@ -205,7 +204,14 @@ let g:ctrlp_match_window = 'bottom,order:ttd'
 let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+" }}}
+" Silver Searcher {{{
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+  nnoremap \ :Ag<space>
+endif
 " }}}
 " NERDTree & Webdevicons {{{
 let g:NERDTreeQuitOnOpen=0                             " close after a file is opened
@@ -237,14 +243,15 @@ let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
 " }}}
 " Syntastic {{{
+set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-" let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers = ['rubocop']
 " }}}
 " Rspec {{{
 map <Leader>t :call RunCurrentSpecFile()<CR>
@@ -252,17 +259,15 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-let g:vroom_spec_command="rspec --format documentation"     " Vroom
+let g:rspec_command = "Dispatch spring rspec {spec}"
+" let g:vroom_spec_command="rspec --format documentation"     " Vroom
 " }}}
 " Tcomment {{{
 map <leader>c <C-_><C-_>
 " }}}
-" Tagbar {{{
-" nmap <leader>t :TagbarToggle<CR>
-" let g:tagbar_width     = 40
-" let g:tagbar_autoclose = 1
-" let g:tagbar_autofocus = 1
-" let g:tagbar_compact   = 1
+" Vim-maximizer {{{
+map <F2> :Copen<CR>
+map ,c :ccl<CR>
 " }}}
 " Functions {{{
 " strips trailing whitespace at the end of files. this
