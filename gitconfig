@@ -1,12 +1,26 @@
 [user]
   name = Anikin Artyom
-  email = aanikin@naumen.ru
+  email = anikinartyom@gmail.com
 [color]
   diff = auto
   status = auto
   branch = auto
   interactive = auto
   ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  frag = magenta bold
+  meta = yellow bold
+  new = green
+  old = red
+[color "status"]
+  added = green
+  changed = blue
+  deleted = red
+  untracked = magenta
 [gc]
   auto = 1
 [alias]
@@ -21,38 +35,45 @@
   aa = add --all
   pom = push origin master
   b = branch
-  pd  = push origin dev 
-  pld = pull origin dev 
-  pm  = push origin master 
-  plm = pull origin master 
+  pd  = push origin dev
+  pld = pull origin dev
+  pm  = push origin master
+  plm = pull origin master
 
-  unstage = reset HEAD            # un-add files from index (tracking)
+  amend = commit --amend
+  new = checkout -b
+  changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+  h1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+  h2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  log = log --graph --date=short
+
+  # unstage = reset HEAD            # un-add files from index (tracking)
   uncommit = reset --soft HEAD^   # go back one commit, put changes into your working dir and index
 
-[format]
-  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+# [format]
+#   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
 [merge]
-	tool = meld
+  tool = meld
   summary = true
 [core]
   editor = vim
-	excludesfile = ~/.gitignore
+  excludesfile = /Users/arty/.gitignore_global
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 [push]
-	default = simple
+  default = simple
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [diff]
-	tool = meld
+  tool = meld
