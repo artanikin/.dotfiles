@@ -16,8 +16,8 @@ else
   set term=screen-256color
 
   set background=dark
-  colorscheme mustang
-  let g:airline_theme = 'one'
+  colorscheme badwolf
+  let g:airline_theme = 'badwolf'
 endif
 " }}}
 " GUI configurations {{{
@@ -227,8 +227,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "? "
     \ }                                              " NERDTree git-plugin
 
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable = 0
+let g:webdevicons_enable_nerdtree = 0
 let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 let g:WebDevIconsUnicodeDecorateFolderNodes = 0
 " }}}

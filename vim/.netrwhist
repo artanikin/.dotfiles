@@ -1,8 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/art/.oh-my-zsh'
-let g:netrw_dirhist_2='scp://arty@192.168.241.44//home/arty/'
-let g:netrw_dirhist_3='scp://arty@192.168.241.44//home/arty/projects/cp/'
-let g:netrw_dirhist_4='scp://arty@192.168.241.44//home/arty/projects/cp/app/'
-let g:netrw_dirhist_5='scp://arty@192.168.241.44//home/arty/projects/cp/app/controllers/'
-let g:netrw_dirhist_6='/home/art/.config'
+let g:netrw_dirhist_cnt =0
