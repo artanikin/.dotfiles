@@ -37,6 +37,15 @@ cp ~/.doftiles/zsh/zsh_themes/tuts02.zsh-theme ~/.oh-my-zsh/themes/
 ```
 ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
+Install Tmux Plugin Manager
+```
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+Install requirenments to system clipboard (tmux-yank plugin)
+For MacOS
+```
+brew install reattach-to-user-namespace
+```
 
 ### Vim
 ```
