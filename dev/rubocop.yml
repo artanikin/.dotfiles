@@ -1,0 +1,22 @@
+AllCops:
+  DisplayCopNames: true
+
+Metrics/LineLength:
+  Max: 110
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+    - "**/*_shared_examples.rb"
+
+Metrics/AbcSize:
+  Enable: false
+
+Metrics/ClassLength:
+  Enable: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enable: false
