@@ -1,6 +1,6 @@
 # Dotfiles
 
-This repo is a collection of my customizations for zsh, vim and git. 
+This repo is a collection of my customizations for zsh, vim and git.
 
 ## Installation
 
@@ -13,7 +13,8 @@ git clone https://github.com/arty88/dotfiles.git ~/.dotfiles
 
 ### Git
 ```
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ```
 
 ### Zsh
@@ -35,7 +36,7 @@ cp ~/.doftiles/zsh/zsh_themes/tuts02.zsh-theme ~/.oh-my-zsh/themes/
 ### Tmux
 
 ```
-ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ```
 Install Tmux Plugin Manager
 ```
@@ -46,16 +47,19 @@ For MacOS
 ```
 brew install reattach-to-user-namespace
 ```
+Open Tmux sessions and press `Ctrl+I` for install plugins
 
 ### Vim
 ```
 ln -s ~/.doftiles/vim .vim
 ln -s ~/.doftiles/vim/vimrc ~/.vimrc
+ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
 ```
 * install Plug
 
 ```
-https://github.com/junegunn/vim-plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 * install plugins: open vim and fire command `:PlugInstall`
