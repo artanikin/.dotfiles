@@ -51,7 +51,7 @@ Open Tmux sessions and press `Ctrl+I` for install plugins
 
 ### Vim
 ```
-ln -s ~/.doftiles/vim .vim
+ln -s ~/.doftiles/vim ~/.vim
 ln -s ~/.doftiles/vim/vimrc ~/.vimrc
 ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
 ```
