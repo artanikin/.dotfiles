@@ -70,6 +70,8 @@ set autowrite                               " Autosave closed buffers
 set splitbelow                              " Open new split panes to bottom
 set splitright                              " Open new split panes to right
 set scrolloff=7                             " Minimal number of screen lines to keep above and below the cursor
+set hidden                                  " Allow buffer change w/o saving
+set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
 
 set list
@@ -82,6 +84,8 @@ set smartcase
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 nnoremap n nzz
 nnoremap N Nzz
+
+nmap 0 ^
 
 " Menu configuration
 set wildmenu
