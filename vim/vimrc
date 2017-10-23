@@ -1,0 +1,270 @@
+set nocompatible
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-sensible'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'Townk/vim-autoclose'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'powerman/vim-plugin-ruscmd'
+Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
+Plug 'mattn/emmet-vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
+Plug 'rizzatti/dash.vim'
+Plug 'christoomey/vim-tmux-navigator'
+" Plug 'Einenlum/yaml-revealer'
+Plug 'nelstrom/vim-textobj-rubyblock' | Plug 'kana/vim-textobj-user'
+Plug 'thoughtbot/vim-rspec'
+" Linting
+Plug 'w0rp/ale'
+
+Plug 'slim-template/vim-slim', { 'for': 'slim' }
+Plug 'tpope/vim-haml', { 'for': 'haml' }
+
+" Colors
+Plug 'nanotech/jellybeans.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'crusoexia/vim-monokai'
+Plug 'sjl/badwolf'
+Plug 'arty88/sexy-railscasts-256-theme'
+Plug 'xiaody/thornbird.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'rakr/vim-one'
+Plug 'jacoborus/tender'
+call plug#end()
+
+syntax on
+filetype on
+filetype indent on
+filetype plugin indent on
+runtime macros/matchit.vim
+
+" Settings to replace tab. Use :retab for replacing tab in existing files.
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+
+" Other general vim options:
+set showmatch
+set ignorecase
+set incsearch
+set nopaste
+set number
+set relativenumber
+set undolevels=1000
+set cursorline
+set history=200
+set showcmd                                 " Show entered command
+set pastetoggle=<F10>                       " Toggle PASTE mode
+set autowrite                               " Autosave closed buffers
+set splitbelow                              " Open new split panes to bottom
+set splitright                              " Open new split panes to right
+set scrolloff=7                             " Minimal number of screen lines to keep above and below the cursor
+set shell=/bin/zsh
+
+set list
+set listchars=trail:∙
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
+nnoremap n nzz
+nnoremap N Nzz
+
+" Menu configuration
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
+
+" Testing for faster vim in terminal
+set timeoutlen=1000
+set ttimeoutlen=0
+
+set t_Co=256
+set background=dark
+colorscheme tomorrow-night
+let g:airline_theme='tomorrow'
+
+" Leader Shortcuts
+let mapleader=','
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>eg :e $MYGVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+nnoremap j gj
+nnoremap k gk
+nnoremap Y y$
+
+" switch between panels
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Buffers
+nnoremap <tab> :bnext<CR>
+nnoremap <S-tab> :bprevious<CR>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+noremap  <leader>d :bdelete<CR>
+noremap  <leader>D :bufdo bd<CR>
+
+" Switch between last two buffers
+nnoremap <leader><leader> <c-^>
+
+" In command mode '%%' insert current directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" Tags
+noremap <leader>ct :!ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
+set tags+=$HOME/.tags
+
+" Autogroups
+
+if has("autocmd")
+  " Have Vim jump to the last position when reopening a file
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,*.axlsx} set filetype=ruby
+  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set filetype=markdown
+  au BufRead,BufNewFile *.json set filetype=javascript
+  au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml
+
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType javascript,html,eruby setlocal ts=4 sts=4 sw=4 et
+endif
+
+augroup VimScript
+  autocmd!
+  if has("gui_running")
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | source $MYGVIMRC | AirlineRefresh
+  else
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
+  endif
+augroup END
+
+augroup ColorColumnOnlyInInsertMode
+  autocmd!
+  autocmd InsertEnter * setlocal colorcolumn=111
+  autocmd InsertLeave * setlocal colorcolumn=0
+augroup END
+
+augroup ConfigGroup
+    autocmd!
+    autocmd BufWritePost * :call StripTrailingWhitespaces()
+augroup END
+
+" Backupds
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+" Abbreviations
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+cnoreabbrev Q! q!
+cnoreabbrev Qa qa
+cnoreabbrev Ц w
+cnoreabbrev Цй wq
+
+" Functions
+" strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
+function! StripTrailingWhitespaces()
+  " save last search & cursor position
+  let _s=@/
+  let l=line(".")
+  let c=col(".")
+  %s/\s\+$//e
+  let @/=_s
+  call cursor(l, c)
+endfunction
+
+" Plugins
+
+" NERDTree
+let NERDTreeShowBookmarks=0
+let NERDTreeWinPos="left"
+let NERDTreeHijackNetrw=1
+let NERDTreeChDirMode=2
+let NERDTreeDirArrows=1
+let g:NERDTreeQuitOnOpen=1                             " close after a file is opened
+let NERDTreeShowHidden=0                               " show hidden files in NERDTree
+let g:NERDTreeWinSize=50
+let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
+
+nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
+nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
+
+" NERDTree syntax highlight
+" let g:NERDTreeFileExtensionHighlightFullName = 1
+" let g:NERDTreeExactMatchHighlightFullName = 1
+" let g:NERDTreePatternMatchHighlightFullName = 1
+
+" let g:NERDTreeHighlightFoldersFullName = 1
+
+" CtrlP
+nmap <c-b> :CtrlPBuffer<cr>
+nmap <leader>t :CtrlPBufTag<cr>
+let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_max_height=30
+let g:ctrlp_match_window_reversed=0
+let g:ctrlp_match_window='bottom,order:ttd'
+
+" Emmet
+let g:user_emmet_mode='a'                              " Enabled in all modes (i,n,v,a)
+
+" Airline
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=0
+
+" Silver Searcher
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+  nnoremap \ :Ag<space>
+endif
+
+" Ruby-motion (:help ruby-motion)
+let g:ruby_indent_access_modifier_style = 'normal'
+let g:ruby_indent_block_style = 'do'
+let g:ruby_indent_assignment_style = 'variable'
+
+" Vim-RSpec
+let g:rspec_command = "clear && spring rspec {spec}"
+" let g:rspec_command = "clear && rspec {spec}"
+let g:rspec_runner = "os_x_iterm2"
+
+map <leader>f :call RunCurrentSpecFile()<CR>
+map <leader>s :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
+
+" ALE async linter
+let g:airline#extensions#ale#enabled=0
+let g:ale_fixers = { 'ruby': ['eruby', 'rubocop'] }
+let g:ale_sign_error="E" " •
+let g:ale_sign_warning="W"
+
+" Vim AND Tmux Balancing
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
+" zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
