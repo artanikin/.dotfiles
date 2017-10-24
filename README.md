@@ -57,6 +57,13 @@ ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
 ```
 * install Plug
 
+### NeoVim
+NeoVim configuration depends on Vim configuration. Before, add links for vim config.
+```
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+```
+For check all requirenments for neovim, open neovim and put `:CheckHealth`
+
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
