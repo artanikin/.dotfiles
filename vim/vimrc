@@ -1,5 +1,8 @@
 set nocompatible
 
+" ===========================================================================
+" PLUGINS {{{
+" ===========================================================================
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/ctrlp.vim'
@@ -34,6 +37,7 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
 call plug#end()
+" }}}
 
 syntax on
 filetype on
@@ -41,6 +45,9 @@ filetype indent on
 filetype plugin indent on
 runtime macros/matchit.vim
 
+" ===========================================================================
+" OPTIONS {{{
+" ===========================================================================
 " Settings to replace tab. Use :retab for replacing tab in existing files.
 set tabstop=2
 set shiftwidth=2
@@ -67,6 +74,8 @@ set hidden                                  " Allow buffer change w/o saving
 set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
 
+set foldmethod=marker                       " The folding settings above make the {{{ and }}} sections fold up.
+
 set list
 set listchars=trail:∙
 
@@ -74,6 +83,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+" }}}
+
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 nnoremap n nzz
 nnoremap N Nzz
