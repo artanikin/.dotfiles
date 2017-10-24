@@ -57,19 +57,19 @@ ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
 ```
 * install Plug
 
-### NeoVim
-NeoVim configuration depends on Vim configuration. Before, add links for vim config.
-```
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-```
-For check all requirenments for neovim, open neovim and put `:CheckHealth`
-
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 * install plugins: open vim and fire command `:PlugInstall`
+
+### NeoVim
+NeoVim configuration depends on Vim configuration. Before, add links for vim config.
+```
+ln -s ~/.dotfiles/nvim ~/.config/nvim
+```
+For check all requirenments for neovim, open neovim and put `:CheckHealth`
 
 ### Install ruby environment for Mac OSx
 http://www.mgrachev.com/2014/11/17/configuring-rails-environment-on-yosemite/
