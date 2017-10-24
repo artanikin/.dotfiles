@@ -39,12 +39,6 @@ Plug 'jacoborus/tender'
 call plug#end()
 " }}}
 
-syntax on
-filetype on
-filetype indent on
-filetype plugin indent on
-runtime macros/matchit.vim
-
 " ===========================================================================
 " OPTIONS {{{
 " ===========================================================================
@@ -83,27 +77,26 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-" }}}
 
-nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
-nnoremap n nzz
-nnoremap N Nzz
-
-nmap 0 ^
-
-" Menu configuration
-set wildmenu
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
+" Backupds
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Testing for faster vim in terminal
 set timeoutlen=1000
 set ttimeoutlen=0
 
-set t_Co=256
-set background=dark
-colorscheme tomorrow-night
-let g:airline_theme='tomorrow'
+set tags+=$HOME/.tags
+" }}}
+
+" ===========================================================================
+" MAPPINGS {{{
+" ===========================================================================
+nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
+nnoremap n nzz
+nnoremap N Nzz
+
+nmap 0 ^
 
 " Leader Shortcuts
 let mapleader=','
@@ -139,10 +132,24 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Tags
 noremap <leader>ct :!ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
-set tags+=$HOME/.tags
 
-" Autogroups
+" Zoom a vim pane, <C-w>= to re-balance
+nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
+nnoremap <leader>= :wincmd =<cr>
 
+" }}}
+
+" ===========================================================================
+" MENU CONFIGURATION {{{
+" ===========================================================================
+set wildmenu
+set wildmode=list:longest,list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
+" }}}
+
+" ===========================================================================
+" AUTOCOMMANDS {{{
+" ===========================================================================
 if has("autocmd")
   " Have Vim jump to the last position when reopening a file
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -182,11 +189,14 @@ augroup rails_shortcuts
   autocmd User Rails nnoremap <Leader>v :Eview<Space>
 augroup END
 
-" Backupds
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" Vim AND Tmux Balancing
+" automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+" }}}
 
-" Abbreviations
+" ===========================================================================
+" ABBREVIATIONS {{{
+" ===========================================================================
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
@@ -195,8 +205,11 @@ cnoreabbrev Q! q!
 cnoreabbrev Qa qa
 cnoreabbrev Ц w
 cnoreabbrev Цй wq
+" }}}
 
-" Functions
+" ===========================================================================
+" FUNCTIONS {{{
+" ===========================================================================
 " strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
 function! StripTrailingWhitespaces()
   " save last search & cursor position
@@ -207,8 +220,11 @@ function! StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+" }}}
 
-" Plugins
+" ===========================================================================
+" PLUGIN OPTIONS {{{
+" ===========================================================================
 
 " NERDTree
 " let NERDTreeShowBookmarks=0
@@ -274,15 +290,22 @@ let g:airline#extensions#ale#enabled=1
 let g:ale_fixers = { 'ruby': ['eruby', 'rubocop'] }
 let g:ale_sign_error="E" " •
 let g:ale_sign_warning="W"
+" }}}
 
-" Vim AND Tmux Balancing
-" automatically rebalance windows on vim resize
-autocmd VimResized * :wincmd =
+syntax on
+filetype on
+filetype indent on
+filetype plugin indent on
+runtime macros/matchit.vim
 
-" zoom a vim pane, <C-w>= to re-balance
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
+set t_Co=256
+set background=dark
+colorscheme tomorrow-night
+let g:airline_theme='tomorrow'
 
+" ===========================================================================
+" NEOVIM CONFIGURATION {{{
+" ===========================================================================
 if has('nvim')
   set inccommand=split
   set termguicolors
@@ -292,3 +315,4 @@ if has('nvim')
 
   tnoremap <Esc> <C-\><C-n>
 endif
+" }}}
