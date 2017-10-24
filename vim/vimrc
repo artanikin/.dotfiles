@@ -16,8 +16,8 @@ Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
 Plug 'kchmck/vim-coffee-script'
+Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 " Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 " Plug 'mattn/emmet-vim'
 " Plug 'tpope/vim-sensible'
 Plug 'christoomey/vim-tmux-navigator'
@@ -162,6 +162,13 @@ augroup END
 augroup ConfigGroup
     autocmd!
     autocmd BufWritePost * :call StripTrailingWhitespaces()
+augroup END
+
+augroup rails_shortcuts
+  autocmd!
+  autocmd User Rails nnoremap <Leader>m :Emodel<Space>
+  autocmd User Rails nnoremap <Leader>c :Econtroller<Space>
+  autocmd User Rails nnoremap <Leader>v :Eview<Space>
 augroup END
 
 " Backupds
