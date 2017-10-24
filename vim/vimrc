@@ -1,9 +1,7 @@
 set nocompatible
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
@@ -17,12 +15,12 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
-Plug 'mattn/emmet-vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
-Plug 'rizzatti/dash.vim'
+" Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
+" Plug 'mattn/emmet-vim'
+" Plug 'tpope/vim-sensible'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'nelstrom/vim-textobj-rubyblock' | Plug 'kana/vim-textobj-user'
 Plug 'thoughtbot/vim-rspec'
 " Linting
 Plug 'w0rp/ale'
@@ -31,12 +29,7 @@ Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 
 " Colors
-Plug 'nanotech/jellybeans.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'crusoexia/vim-monokai'
-Plug 'sjl/badwolf'
 Plug 'arty88/sexy-railscasts-256-theme'
-Plug 'xiaody/thornbird.vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
@@ -162,7 +155,7 @@ augroup END
 
 augroup ColorColumnOnlyInInsertMode
   autocmd!
-  autocmd InsertEnter * setlocal colorcolumn=111
+  autocmd InsertEnter * let &colorcolumn="111,".join(range(111,999),",")
   autocmd InsertLeave * setlocal colorcolumn=0
 augroup END
 
@@ -200,24 +193,23 @@ endfunction
 " Plugins
 
 " NERDTree
-let NERDTreeShowBookmarks=0
-let NERDTreeWinPos="left"
-let NERDTreeHijackNetrw=1
-let NERDTreeChDirMode=2
-let NERDTreeDirArrows=1
-let g:NERDTreeQuitOnOpen=1                             " close after a file is opened
-let NERDTreeShowHidden=0                               " show hidden files in NERDTree
-let g:NERDTreeWinSize=50
-let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
+" let NERDTreeShowBookmarks=0
+" let NERDTreeWinPos="left"
+" let NERDTreeHijackNetrw=1
+" let NERDTreeChDirMode=2
+" let NERDTreeDirArrows=1
+" let g:NERDTreeQuitOnOpen=1                             " close after a file is opened
+" let NERDTreeShowHidden=0                               " show hidden files in NERDTree
+" let g:NERDTreeWinSize=50
+" let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
 
-nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
-nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
+" nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
+" nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
 
 " NERDTree syntax highlight
 " let g:NERDTreeFileExtensionHighlightFullName = 1
 " let g:NERDTreeExactMatchHighlightFullName = 1
 " let g:NERDTreePatternMatchHighlightFullName = 1
-
 " let g:NERDTreeHighlightFoldersFullName = 1
 
 " CtrlP
@@ -259,7 +251,8 @@ map <leader>l :call RunLastSpec()<CR>
 map <leader>a :call RunAllSpecs()<CR>
 
 " ALE async linter
-let g:airline#extensions#ale#enabled=0
+let g:ale_enabled=0
+let g:airline#extensions#ale#enabled=1
 let g:ale_fixers = { 'ruby': ['eruby', 'rubocop'] }
 let g:ale_sign_error="E" " •
 let g:ale_sign_warning="W"
@@ -271,3 +264,13 @@ autocmd VimResized * :wincmd =
 " zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+if has('nvim')
+  set inccommand=split
+  set termguicolors
+
+  colorscheme sexy-railscasts-256
+  let g:airline_theme='base16_railscasts'
+
+  tnoremap <Esc> <C-\><C-n>
+endif
