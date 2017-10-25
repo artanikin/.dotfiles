@@ -1,5 +1,7 @@
-" This file contains settings for the editor,
+" ============================================================================================================
+" This file contains settings for the Vim editor,
 " which are not currently used, but may be needed later
+" ============================================================================================================
 
 Plug 'tpope/vim-sensible'
 
