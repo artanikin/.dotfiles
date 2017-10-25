@@ -20,9 +20,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'rking/ag.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
-" Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-" Plug 'mattn/emmet-vim'
-" Plug 'tpope/vim-sensible'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec'
 " Linting
@@ -226,26 +223,6 @@ endfunction
 " PLUGIN OPTIONS {{{
 " ===========================================================================
 
-" NERDTree
-" let NERDTreeShowBookmarks=0
-" let NERDTreeWinPos="left"
-" let NERDTreeHijackNetrw=1
-" let NERDTreeChDirMode=2
-" let NERDTreeDirArrows=1
-" let g:NERDTreeQuitOnOpen=1                             " close after a file is opened
-" let NERDTreeShowHidden=0                               " show hidden files in NERDTree
-" let g:NERDTreeWinSize=50
-" let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
-
-" nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
-" nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
-
-" NERDTree syntax highlight
-" let g:NERDTreeFileExtensionHighlightFullName = 1
-" let g:NERDTreeExactMatchHighlightFullName = 1
-" let g:NERDTreePatternMatchHighlightFullName = 1
-" let g:NERDTreeHighlightFoldersFullName = 1
-
 " CtrlP
 nmap <c-b> :CtrlPBuffer<cr>
 nmap <leader>t :CtrlPBufTag<cr>
@@ -253,9 +230,6 @@ let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_max_height=30
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_match_window='bottom,order:ttd'
-
-" Emmet
-let g:user_emmet_mode='a'                              " Enabled in all modes (i,n,v,a)
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
