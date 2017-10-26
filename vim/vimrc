@@ -1,3 +1,6 @@
+" The folding settings above make the {{{ and }}} sections fold up.
+" vim:foldmethod=marker:foldlevel=0
+
 set nocompatible
 
 " ===========================================================================
@@ -33,6 +36,7 @@ Plug 'arty88/sexy-railscasts-256-theme'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
+Plug 'zcodes/vim-colors-basic'
 call plug#end()
 " }}}
 
@@ -64,8 +68,6 @@ set scrolloff=7                             " Minimal number of screen lines to 
 set hidden                                  " Allow buffer change w/o saving
 set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
-
-set foldmethod=marker                       " The folding settings above make the {{{ and }}} sections fold up.
 
 set list
 set listchars=trail:∙
@@ -276,3 +278,5 @@ set t_Co=256
 set background=dark
 colorscheme tomorrow-night
 let g:airline_theme='tomorrow'
+
+
