@@ -251,8 +251,8 @@ let g:ruby_indent_block_style = 'do'
 let g:ruby_indent_assignment_style = 'variable'
 
 " Vim-RSpec
-let g:rspec_command = "clear && spring rspec {spec}"
-" let g:rspec_command = "clear && rspec {spec}"
+" let g:rspec_command = "clear && spring rspec {spec}"
+let g:rspec_command = "clear && rspec {spec}"
 let g:rspec_runner = "os_x_iterm2"
 
 map <leader>f :call RunCurrentSpecFile()<CR>
@@ -278,5 +278,3 @@ set t_Co=256
 set background=dark
 colorscheme tomorrow-night
 let g:airline_theme='tomorrow'
-
-
