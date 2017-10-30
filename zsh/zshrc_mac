@@ -18,6 +18,10 @@ plugins=(git brew brew-cask bundler gitignore history gem ruby osx rails rake rb
 
 source $ZSH/oh-my-zsh.sh
 
+
+# For add to $PATH from /etc/paths.d
+eval `/usr/libexec/path_helper -s`
+
 # RBENV start -------------------------------------------------------
 export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
@@ -72,6 +76,3 @@ setopt auto_cd
 cdpath=($HOME/projects)
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# For add to $PATH from /etc/paths.d
-# eval `/usr/libexec/path_helper -s`
