@@ -49,6 +49,7 @@
 
   # unstage = reset HEAD            # un-add files from index (tracking)
   uncommit = reset --soft HEAD^   # go back one commit, put changes into your working dir and index
+	sla = log --oneline --decorate --graph --all
 
 # [format]
 #   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
