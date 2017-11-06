@@ -1,5 +1,5 @@
 set linespace=5
-set guifont=Monaco:h15  " if have space in font name use 'Courier\ New'
+set guifont=Menlo:h15  " if have space in font name use 'Courier\ New'
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
