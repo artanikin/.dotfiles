@@ -40,16 +40,17 @@
   pm  = push origin master
   plm = pull origin master
 
-  amend = commit --amend
+  amend = commit --amend                                                        # change last commit message
+  car = commit --amend --no-edit                                                # change last commit files
   new = checkout -b
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   h1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
   h2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   log = log --graph --date=short
 
-  # unstage = reset HEAD            # un-add files from index (tracking)
-  uncommit = reset --soft HEAD^   # go back one commit, put changes into your working dir and index
-	sla = log --oneline --decorate --graph --all
+  unstage = reset                                                               # un-add files from index (tracking)
+  uncommit = reset --soft HEAD^                                                 # go back one commit, put changes into your working dir and index
+  sla = log --oneline --decorate --graph --all
 
 # [format]
 #   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
