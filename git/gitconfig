@@ -39,6 +39,7 @@
   pld = pull origin dev
   pm  = push origin master
   plm = pull origin master
+  browse = !hub browse
 
   amend = commit --amend                                                        # change last commit message
   car = commit --amend --no-edit                                                # change last commit files
