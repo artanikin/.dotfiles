@@ -29,9 +29,9 @@
   ci = commit
   co = checkout
   br = branch
-  di = diff
-  dc = diff --cached
-  ds = diff --staged
+  di = diff --word-diff --color-words
+  dc = diff --cached --word-diff --color-words
+  ds = diff --staged --word-diff --color-words
   aa = add --all
   pom = push origin master
   b = branch
