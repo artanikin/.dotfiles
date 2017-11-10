@@ -17,6 +17,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-conflicted'
 Plug 'Townk/vim-autoclose'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'powerman/vim-plugin-ruscmd'
@@ -289,6 +290,9 @@ let g:airline#extensions#ale#enabled=1
 let g:ale_fixers = { 'ruby': ['eruby', 'rubocop'] }
 let g:ale_sign_error="E" " •
 let g:ale_sign_warning="W"
+
+" Vim-conflicted
+set stl+=%{ConflictedVersion()}
 " }}}
 
 syntax on

@@ -65,6 +65,10 @@ fi
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
+conflicted() {
+  vim +Conflicted
+}
+
 # for vi-mode ------------------------------------------------------
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
