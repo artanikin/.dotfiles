@@ -1,3 +1,7 @@
+for zsh_source in $HOME/.zsh/functions/*.zsh; do
+  source $zsh_source
+done
+
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/Cellar
 export PATH="/usr/local/Cellar/python3/3.6.3/bin:${PATH}"
 export PATH="/usr/local/Cellar/python/2.7.14/bin:${PATH}"
@@ -51,33 +55,6 @@ alias dm="docker-machine"
 alias mntnb="sshfs dev:/home/arty/projects/nb ~/mount/nb -ovolname=NB"
 alias mntcp="sshfs dev:/home/arty/projects/cp ~/mount/cp -ovolname=CP"
 # ------------------------------------------------------------------
-
-fancy-ctrl-z () {
-if [[ $#BUFFER -eq 0 ]]; then
-  BUFFER="fg"
-  zle accept-line
-else
-  zle push-input
-  zle clear-screen
-fi
-}
-
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-
-conflicted() {
-  vim +Conflicted
-}
-
-# No arguments: `git status`
-# With arguments: acts like `git`
-g() {
-  if [[ $# -gt 0 ]]; then
-    git "$@"
-  else
-    git status
-  fi
-}
 
 # for vi-mode ------------------------------------------------------
 bindkey -v

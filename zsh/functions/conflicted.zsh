@@ -1,0 +1,3 @@
+conflicted() {
+  vim +Conflicted
+}
