@@ -20,10 +20,6 @@ for zsh_source in $HOME/.zsh/configs/*.zsh; do
   source $zsh_source
 done
 
-# autojump start ---------------------------------------------------
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-# autojump end -----------------------------------------------------
-
 # for vi-mode ------------------------------------------------------
 bindkey -v
 bindkey -M viins 'jk' vi-cmd-mode
