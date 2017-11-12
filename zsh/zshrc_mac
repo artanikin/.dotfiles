@@ -28,10 +28,9 @@ export PATH="/usr/local/Cellar/python/2.7.14/bin:${PATH}"
 
 export TERM=xterm-256color
 export LANG=en_US.UTF-8
-export EDITOR=vim
+export EDITOR=nvim
 export GREP_OPTIONS='--color=auto'
 export DEFAULT_USER='arty'
-
 
 # For add to $PATH from /etc/paths.d
 eval `/usr/libexec/path_helper -s`
