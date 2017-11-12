@@ -2,6 +2,7 @@ source ~/.zplug/init.zsh
 
 zplug 'mafredri/zsh-async'
 zplug 'sindresorhus/pure'
+zplug 'zsh-users/zsh-autosuggestions', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
 zplug 'zsh-users/zsh-completions', defer:3
 zplug "plugins/vi-mode", from:oh-my-zsh
@@ -18,6 +19,8 @@ zplug load
 for zsh_source in $HOME/.zsh/functions/*.zsh; do
   source $zsh_source
 done
+
+PURE_PROMPT_SYMBOL=$
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/Cellar
 export PATH="/usr/local/Cellar/python3/3.6.3/bin:${PATH}"
@@ -41,26 +44,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init - zsh)"; fi
 # autojump start ---------------------------------------------------
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 # autojump end -----------------------------------------------------
-
-# ALIAS ------------------------------------------------------------
-alias cp="cp -iv"
-alias rm="rm -iv"
-alias mv="mv -iv"
-alias ls="ls -FGh"
-alias dotfiles="cd ~/.dotfiles"
-alias sed="sed -E"
-alias -g G="| grep "
-alias server="python -m SimpleHTTPServer 8000"
-alias tmux="tmux -2"
-alias v="vim"
-alias reload!="source ~/.zshrc"
-alias be="bundle exec"
-alias lc='colorls -r'
-alias rspec="clear; rspec"
-alias dm="docker-machine"
-alias mntnb="sshfs dev:/home/arty/projects/nb ~/mount/nb -ovolname=NB"
-alias mntcp="sshfs dev:/home/arty/projects/cp ~/mount/cp -ovolname=CP"
-# ------------------------------------------------------------------
 
 # for vi-mode ------------------------------------------------------
 bindkey -v
