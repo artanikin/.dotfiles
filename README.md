@@ -84,7 +84,7 @@ $ vim +PlugInstall
 NeoVim configuration depends on Vim configuration. Before, add links for vim config.
 
 ```console
-$ ln -s ~/.dotfiles/nvim ~/.config/nvim
+$ ln -s ~/.dotfiles/vim/nvim ~/.config/nvim
 ```
 
 For check all requirenments for neovim
