@@ -25,6 +25,7 @@ brew cask install phinze/cask/telegram
 brew cask install skype
 brew cask install slack
 brew cask install itrem2
+brew install battery
 
 ## Database
 brew install sqlite3
