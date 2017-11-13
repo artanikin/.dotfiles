@@ -93,6 +93,11 @@ For check all requirenments for neovim
 $ nvim +CheckHealth
 ```
 
+### Custom command
+
+```console
+$ ln -s ~/.dotfiles/bin ~/bin
+```
 
 ## Screenshots
 
