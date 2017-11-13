@@ -110,3 +110,4 @@ Terminal:
 Theme [sexy-railscasts-256](https://github.com/arty88/sexy-railscasts-256-theme)
 
 ![dotfiles](https://github.com/arty88/.dotfiles/blob/master/screenshots/vim.png)
+Test
