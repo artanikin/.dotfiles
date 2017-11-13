@@ -4,72 +4,109 @@ This repo is a collection of my customizations for zsh, vim and git.
 
 ## Installation
 
-* clone repo to `~/.dotfiles` holder:
+Clone repo to `~/.dotfiles` holder:
 
-```
-cd ~
-git clone https://github.com/arty88/dotfiles.git ~/.dotfiles
+```console
+$ cd ~
+$ git clone https://github.com/arty88/dotfiles.git ~/.dotfiles
 ```
 
 ### Git
-```
-ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+
+```console
+$ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
+$ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ```
 
 ### Zsh
-Install oh-my-zsh
+
+Link to config files
+
+```console
+$ ln -s ~/.doftiles/.zsh ~/.zsh
+$ ln -s ~/.doftiles/zsh/zshrc ~/.zshrc
+$ ln -s ~/.doftiles/zsh/zshenv ~/.zshenv
 ```
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-```
-* for mac
-```
-ln -s ~/.doftiles/zsh/zshrc_mac ~/.zshrc
-cp ~/.doftiles/zsh/zsh_themes/tuts01.zsh-theme ~/.oh-my-zsh/themes/
-```
-* for linux
-```
-ln -s ~/.doftiles/zsh/zshrc_linux ~/.zshrc
-cp ~/.doftiles/zsh/zsh_themes/tuts02.zsh-theme ~/.oh-my-zsh/themes/
+
+Install [Zplug](https://github.com/zplug/zplug)
+
+```console
+$ mkdir ~/.zplug
+$ git clone https://github.com/zplug/zplug ~/.zplug
 ```
 
 ### Tmux
 
+Link to config file
+
+```console
+$ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ```
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+
+Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
+
+```console
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-Install Tmux Plugin Manager
+
+Install requirenments to system clipboard (tmux-yank plugin) for MacOS
+
+```console
+$ brew install reattach-to-user-namespace
 ```
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-Install requirenments to system clipboard (tmux-yank plugin)
-For MacOS
-```
-brew install reattach-to-user-namespace
-```
+
 Open Tmux sessions and press `Ctrl+I` for install plugins
 
+
 ### Vim
-```
-ln -s ~/.doftiles/vim ~/.vim
-ln -s ~/.doftiles/vim/vimrc ~/.vimrc
-ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
+
+```console
+$ ln -s ~/.doftiles/vim ~/.vim
+$ ln -s ~/.doftiles/vim/vimrc ~/.vimrc
+$ ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
 ```
 * install Plug
 
-```
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+```console
+$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-* install plugins: open vim and fire command `:PlugInstall`
+* install plugins
+
+```console
+$ vim +PlugInstall
+```
+
 
 ### NeoVim
-NeoVim configuration depends on Vim configuration. Before, add links for vim config.
-```
-ln -s ~/.dotfiles/nvim ~/.config/nvim
-```
-For check all requirenments for neovim, open neovim and put `:CheckHealth`
 
-### Install ruby environment for Mac OSx
-http://www.mgrachev.com/2014/11/17/configuring-rails-environment-on-yosemite/
+NeoVim configuration depends on Vim configuration. Before, add links for vim config.
+
+```console
+$ ln -s ~/.dotfiles/nvim ~/.config/nvim
+```
+
+For check all requirenments for neovim
+
+```console
+$ nvim +CheckHealth
+```
+
+
+## Screenshots
+
+### Console
+
+Terminal:
+* [iTerm2](https://www.iterm2.com/)
+* Theme [railscasts](https://github.com/arty88/.dotfiles/blob/master/os/iterm2/railscasts.itermcolors)
+* Font [Menlo Regular](https://github.com/arty88/.dotfiles/blob/master/os/fonts/Menlo-Regular.ttf) 15px
+
+![dotfiles](https://github.com/arty88/.dotfiles/blob/master/screenshots/console.png)
+
+### Vim
+
+Theme [sexy-railscasts-256](https://github.com/arty88/sexy-railscasts-256-theme)
+
+![dotfiles](https://github.com/arty88/.dotfiles/blob/master/screenshots/vim.png)
