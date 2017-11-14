@@ -4,7 +4,7 @@ This repo is a collection of my customizations for zsh, vim and git.
 
 ## Installation
 
-### Packages
+### Brew Packages
 
 ```console
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
