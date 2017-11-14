@@ -85,3 +85,10 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+[gitsh "color"]
+  default = cyan
+[gitsh]
+  defaultcommand = status -sb
+  gitcommand = hub
+  nogreeting = true
+  prompt = "\n%D %c(%b%#)%w ➜"
