@@ -40,7 +40,7 @@ $ git clone https://github.com/zplug/zplug ~/.zplug
 Link to config file
 
 ```console
-$ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+$ ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
 ```
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
