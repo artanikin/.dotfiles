@@ -16,6 +16,13 @@
   meta = yellow bold
   new = green
   old = red
+  commit = yellow
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
 [color "status"]
   added = green
   changed = blue
@@ -59,8 +66,9 @@
   tool = meld
   summary = true
 [core]
-  editor = vim
-  excludesfile = /Users/arty/.gitignore_global
+  editor = nvim
+  excludesfile = ~/.gitignore_global
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f
@@ -77,5 +85,3 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
-[diff]
-  tool = meld
