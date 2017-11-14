@@ -4,6 +4,17 @@ This repo is a collection of my customizations for zsh, vim and git.
 
 ## Installation
 
+### Packages
+
+```console
+# install brew
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# cd on dotfiles dir
+$ dotfiles
+# install packages
+$ brew bundle
+```
+
 Clone repo to `~/.dotfiles` holder:
 
 ```console
