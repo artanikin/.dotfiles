@@ -29,6 +29,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec'
 Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tommcdo/vim-exchange'
+Plug 'vim-scripts/ReplaceWithRegister'
 " Linting
 Plug 'w0rp/ale'
 
@@ -230,8 +231,7 @@ endfunction
 " PLUGIN OPTIONS {{{
 " ===========================================================================
 
-" NERDTree
-let NERDTreeShowBookmarks=0
+" NERDTree let NERDTreeShowBookmarks=0
 let NERDTreeWinPos="left"
 let NERDTreeHijackNetrw=1
 let NERDTreeChDirMode=2
@@ -294,6 +294,10 @@ let g:ale_sign_warning="W"
 
 " Vim-conflicted
 set stl+=%{ConflictedVersion()}
+
+" ReplaceWithRegister
+" replace text from system clipboard
+nmap <leader>gr "*gr
 " }}}
 
 syntax on
