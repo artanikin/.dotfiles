@@ -31,6 +31,7 @@ Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-titlecase'
 " Linting
 Plug 'w0rp/ale'
 
