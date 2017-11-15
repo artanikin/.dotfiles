@@ -30,6 +30,7 @@ Plug 'thoughtbot/vim-rspec'
 Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'christoomey/vim-system-copy'
 " Linting
 Plug 'w0rp/ale'
 
