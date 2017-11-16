@@ -22,7 +22,7 @@ Plug 'Townk/vim-autoclose'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
@@ -258,7 +258,7 @@ let g:airline_powerline_fonts=0
 
 " Silver Searcher
 if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ackprg = 'ag --nogroup --nocolor --column'
   nnoremap \ :Ag<space>
 endif
 
