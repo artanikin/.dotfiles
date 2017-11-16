@@ -8,7 +8,6 @@ set nocompatible
 " ===========================================================================
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'kien/ctrlp.vim'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
@@ -32,6 +31,8 @@ Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/ReplaceWithRegister'
 Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-titlecase'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Linting
 Plug 'w0rp/ale'
 
@@ -160,7 +161,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 if has("autocmd")
   " Have Vim jump to the last position when reopening a file
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,*.axlsx} set filetype=ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,Brewfile,config.ru,*.axlsx} set filetype=ruby
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set filetype=markdown
   au BufRead,BufNewFile *.json set filetype=javascript
   au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml
@@ -252,14 +253,6 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFoldersFullName = 1
 
-" CtrlP
-nmap <c-b> :CtrlPBuffer<cr>
-nmap <leader>t :CtrlPBufTag<cr>
-let g:ctrlp_custom_ignore='\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_max_height=30
-let g:ctrlp_match_window_reversed=0
-let g:ctrlp_match_window='bottom,order:ttd'
-
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=0
@@ -267,8 +260,6 @@ let g:airline_powerline_fonts=0
 " Silver Searcher
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrlp_use_caching = 0
   nnoremap \ :Ag<space>
 endif
 
@@ -298,8 +289,24 @@ let g:ale_sign_warning="W"
 set stl+=%{ConflictedVersion()}
 
 " ReplaceWithRegister
-" replace text from system clipboard
+  " replace text from system clipboard
 nmap <leader>gr "*gr
+
+" FZF (Replace for Ctrl-P
+let g:fzf_files_options =
+  \ '--reverse ' .
+  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+nnoremap <C-p> :Files<cr>
+let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+
+nnoremap <leader>ga :Files app/<cr>
+nnoremap <leader>gm :Files app/models/<cr>
+nnoremap <leader>gv :Files app/views/<cr>
+nnoremap <leader>gc :Files app/controllers/<cr>
+nnoremap <leader>gy :Files app/assets/stylesheets/<cr>
+nnoremap <leader>gj :Files app/assets/javascripts/<cr>
+nnoremap <leader>gs :Files spec/<cr>
+
 " }}}
 
 syntax on
