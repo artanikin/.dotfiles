@@ -332,8 +332,6 @@ let g:gitgutter_sign_modified_removed = '∙'
 let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger           = '<tab>'
-let g:UltiSnipsJumpForwardTrigger      = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger     = '<C-l>'
 
 nnoremap <leader>ue :UltiSnipsEdit<cr>
 " }}}
