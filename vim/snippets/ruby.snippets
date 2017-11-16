@@ -9,12 +9,14 @@ snippet cla<
 	end
 
 snippet ed
-	each do |${1:e}|
-	  ${2}
+	${1}.each do |${2:$1}|
+	  ${3}
 	end
+	$0
 
 snippet ea
-	each { |${1:e}| ${2} }
+	${1}.each { |${2:$1}| ${3} }
+	$0
 
 snippet defp
 	def ${1:method_name}(${2:params})
