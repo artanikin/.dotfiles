@@ -24,7 +24,7 @@ Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'MarcWeber/vim-addon-mw-utils' |  Plug 'tomtom/tlib_vim' |  Plug 'garbas/vim-snipmate' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec'
 Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -78,7 +78,7 @@ set shell=/bin/zsh
 set colorcolumn=0
 
 set list
-set listchars=trail:∙
+set listchars=tab:»·,trail:∙
 
 set hlsearch
 set incsearch
@@ -327,6 +327,15 @@ let g:gitgutter_sign_added = '∙'
 let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
+
+" UltiSnips - Snippet manager
+let g:UltiSnipsSnippetsDir='~/.vim/snippets'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsJumpForwardTrigger      = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger     = '<C-l>'
+
+nnoremap <leader>ue :UltiSnipsEdit<cr>
 " }}}
 
 syntax on

@@ -1,0 +1,22 @@
+snippet cla
+	class ${1:ClassName}
+		${2:code}
+	end
+
+snippet cla<
+	class ${1:ClassName} < ${2:ParentClass}
+		${3}
+	end
+
+snippet ed
+	each do |${1:e}|
+	  ${2}
+	end
+
+snippet ea
+	each { |${1:e}| ${2} }
+
+snippet defp
+	def ${1:method_name}(${2:params})
+	  ${3}
+	end
