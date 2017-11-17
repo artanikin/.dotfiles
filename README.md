@@ -116,10 +116,10 @@ Terminal:
 * Theme [railscasts](https://github.com/arty88/.dotfiles/blob/master/os/iterm2/railscasts.itermcolors)
 * Font [Menlo Regular](https://github.com/arty88/.dotfiles/blob/master/os/fonts/Menlo-Regular.ttf) 15px
 
-![dotfiles](https://github.com/arty88/.dotfiles/blob/master/screenshots/console.png)
+![dotfiles](https://github.com/arty88/.dotfiles/blob/master/docs/screenshots/console.png)
 
 ### Vim
 
 Theme [sexy-railscasts-256](https://github.com/arty88/sexy-railscasts-256-theme)
 
-![dotfiles](https://github.com/arty88/.dotfiles/blob/master/screenshots/vim.png)
+![dotfiles](https://github.com/arty88/.dotfiles/blob/master/docs/screenshots/vim.png)
