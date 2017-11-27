@@ -2,6 +2,19 @@
 
 This repo is a collection of my customizations for zsh, vim and git.
 
+**Table of Contents**
+
+- [Brew Packages](#brew-packages)
+- [Git](#git)
+- [Zsh](#zsh)
+- [Tmux](#tmux)
+- [Vim](#vim)
+- [NeoVim](#neovim)
+- [Custom command](#custom-command)
+- [Screenshots](#screenshots)
+  + [Console](#console-screenshot)
+  + [Vim](#vim-screenshot)
+
 ## Installation
 
 ### Brew Packages
@@ -26,7 +39,7 @@ $ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 $ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ```
 
-### Zsh
+### Tmux
 
 Link to config files
 
@@ -109,7 +122,7 @@ $ ln -s ~/.dotfiles/bin ~/bin
 
 ## Screenshots
 
-### Console
+### Console Screenshot
 
 Terminal:
 * [iTerm2](https://www.iterm2.com/)
@@ -118,7 +131,7 @@ Terminal:
 
 ![dotfiles](https://github.com/arty88/.dotfiles/blob/master/docs/screenshots/console.png)
 
-### Vim
+### Vim Screenshot
 
 Theme [sexy-railscasts-256](https://github.com/arty88/sexy-railscasts-256-theme)
 
