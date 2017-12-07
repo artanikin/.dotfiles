@@ -10,13 +10,13 @@ Metrics/BlockLength:
     - "**/*_shared_examples.rb"
 
 Metrics/AbcSize:
-  Enable: false
+  Enabled: false
 
 Metrics/ClassLength:
-  Enable: false
+  Enabled: false
 
 Style/Documentation:
   Enabled: false
 
 Style/ClassAndModuleChildren:
-  Enable: false
+  Enabled: false
