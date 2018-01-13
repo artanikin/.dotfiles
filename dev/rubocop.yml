@@ -1,5 +1,7 @@
 AllCops:
   DisplayCopNames: true
+  Exclude:
+    - 'db/**/*'
 
 Metrics/LineLength:
   Max: 110
