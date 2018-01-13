@@ -17,6 +17,7 @@ alias reload!="source ~/.zshrc"
 alias be="bundle exec"
 alias lc='colorls -r'
 alias rspec="clear; rspec"
+alias fs="foreman start"
 alias dm="docker-machine"
 alias mntnb="sshfs dev:/home/arty/projects/nb ~/mount/nb -ovolname=NB"
 alias mntcp="sshfs dev:/home/arty/projects/cp ~/mount/cp -ovolname=CP"
