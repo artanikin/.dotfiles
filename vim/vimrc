@@ -160,7 +160,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 if has("autocmd")
   " Have Vim jump to the last position when reopening a file
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,*.axlsx} set filetype=ruby
+  au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Guardfile,config.ru,*.axlsx,*.jb} set filetype=ruby
   au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} set filetype=markdown
   au BufRead,BufNewFile *.json set filetype=javascript
   au BufRead,BufNewFile *.{yaml,yml} set filetype=yaml
