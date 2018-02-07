@@ -44,6 +44,8 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
 Plug 'zcodes/vim-colors-basic'
+Plug 'herrbischoff/cobalt2.vim'
+Plug 'endel/vim-github-colorscheme'
 call plug#end()
 " }}}
 
@@ -252,6 +254,15 @@ let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFoldersFullName = 1
+
+let s:blue = "689FB6"
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .gitignore files
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
