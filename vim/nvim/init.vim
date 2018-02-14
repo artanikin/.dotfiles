@@ -9,8 +9,8 @@ if has('nvim')
   set inccommand=split
   set termguicolors
 
-  colorscheme sexy-railscasts-256
-  let g:airline_theme='base16_railscasts'
+  colorscheme codeschool
+  let g:airline_theme='base16_codeschool'
 
   tnoremap <Esc> <C-\><C-n>
 endif
