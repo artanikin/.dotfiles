@@ -27,6 +27,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec'
+Plug 'jgdavey/tslime.vim'
 Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tommcdo/vim-exchange'
 Plug 'vim-scripts/ReplaceWithRegister'
@@ -282,8 +283,9 @@ let g:ruby_indent_assignment_style = 'variable'
 
 " Vim-RSpec
 " let g:rspec_command = "clear && spring rspec {spec}"
-let g:rspec_command = "clear && rspec {spec}"
-let g:rspec_runner = "os_x_iterm2"
+" let g:rspec_command = "clear && rspec {spec}"
+" let g:rspec_runner = "os_x_iterm2"
+let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
 
 map <leader>f :call RunCurrentSpecFile()<CR>
 map <leader>s :call RunNearestSpec()<CR>
