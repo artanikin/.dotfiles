@@ -171,7 +171,7 @@ if has("autocmd")
   au BufRead,BufNewFile Brewfile set filetype=sh
 
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType javascript,html,eruby setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType javascript,html,eruby,sass setlocal ts=4 sts=4 sw=4 et
 endif
 
 augroup VimScript
