@@ -37,6 +37,7 @@ $ git clone https://github.com/arty88/dotfiles.git ~/.dotfiles
 ```console
 $ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
 $ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
+$ ln -s ~/.dotfiles/git/git_template ~/.git_template
 ```
 
 ### Zsh

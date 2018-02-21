@@ -97,7 +97,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set timeoutlen=1000
 set ttimeoutlen=0
 
-set tags+=$HOME/.tags
+set tags+=.git/tags
 " }}}
 
 " ===========================================================================
@@ -142,7 +142,7 @@ nnoremap <leader><leader> <c-^>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Tags
-noremap <leader>ct :!ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
+" noremap <leader>ct :!ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
 
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>

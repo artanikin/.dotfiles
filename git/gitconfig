@@ -1,3 +1,5 @@
+[init]
+  templatedir = ~/.git_template
 [user]
   name = Anikin Artyom
   email = anikinartyom@gmail.com
@@ -59,6 +61,8 @@
   uncommit = reset --soft HEAD^                                                 # go back one commit, put changes into your working dir and index
   sla = log --oneline --decorate --graph --all
 
+  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
+
 # [format]
 #   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
@@ -75,12 +79,6 @@
   required = true
 [push]
   default = simple
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
