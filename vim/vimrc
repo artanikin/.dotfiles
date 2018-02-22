@@ -48,6 +48,7 @@ Plug 'zcodes/vim-colors-basic'
 Plug 'herrbischoff/cobalt2.vim'
 Plug 'endel/vim-github-colorscheme'
 Plug 'antlypls/vim-colors-codeschool'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
 " }}}
 
