@@ -9,7 +9,7 @@ if has('nvim')
   set inccommand=split
   set termguicolors
 
-  let ayucolor='dark'
+  let ayucolor='dark'    " light mirage dark
   colorscheme ayu
   let g:airline_theme='ayu'
 

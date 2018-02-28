@@ -36,6 +36,8 @@ Plug 'christoomey/vim-titlecase'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'Yggdroot/indentLine'
+Plug 'mhinz/vim-startify'
 " Linting
 Plug 'w0rp/ale'
 
@@ -94,7 +96,7 @@ set smartcase
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
-" Testing for faster vim in terminal
+" Timeout when switching modes
 set timeoutlen=1000
 set ttimeoutlen=0
 
@@ -350,6 +352,18 @@ let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger           = '<tab>'
 
 nnoremap <leader>ue :UltiSnipsEdit<cr>
+
+" IndentLine
+let g:indentLine_char = '│'
+
+" Vim-Startify
+autocmd VimEnter *
+              \ if !argc()
+              \ | Startify
+              \ | NERDTree
+              \ | wincmd w
+              \ | endif
+
 " }}}
 
 syntax on
