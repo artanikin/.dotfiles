@@ -51,6 +51,7 @@ Plug 'herrbischoff/cobalt2.vim'
 Plug 'endel/vim-github-colorscheme'
 Plug 'antlypls/vim-colors-codeschool'
 Plug 'ayu-theme/ayu-vim'
+Plug 'rakr/vim-two-firewatch'
 call plug#end()
 " }}}
 
