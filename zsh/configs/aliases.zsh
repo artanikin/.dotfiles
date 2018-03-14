@@ -17,6 +17,6 @@ alias dm="docker-machine"
 alias be="bundle exec"
 alias rspec="clear; rspec"
 alias fs="foreman start"
-alias rr="rake routes"
-alias rrg="rake routes G"
+alias rr="be rake routes"
+alias rrg="be rake routes G"
 
