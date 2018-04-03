@@ -37,7 +37,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
-Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons'
+Plug 'wakatime/vim-wakatime'
 " Linting
 Plug 'w0rp/ale'
 if has('nvim')
@@ -55,7 +56,6 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
 Plug 'zcodes/vim-colors-basic'
-Plug 'herrbischoff/cobalt2.vim'
 Plug 'endel/vim-github-colorscheme'
 Plug 'antlypls/vim-colors-codeschool'
 Plug 'ayu-theme/ayu-vim'
@@ -365,14 +365,6 @@ nnoremap <leader>ue :UltiSnipsEdit<cr>
 
 " IndentLine
 let g:indentLine_char = '│'
-
-" Vim-Startify
-autocmd VimEnter *
-              \ if !argc()
-              \ | Startify
-              \ | NERDTree
-              \ | wincmd w
-              \ | endif
 
 " }}}
 
