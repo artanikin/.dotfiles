@@ -24,7 +24,7 @@ window:
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 2
+    x: 5
     y: 5
 
   # Window decorations
@@ -64,7 +64,7 @@ font:
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
-    y: 2
+    y: 3
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
@@ -104,7 +104,7 @@ colors:
     black:   '0x000000'
     red:     '0xff3333'
     green:   '0xc2d94c'
-    yellow:  '0xffee99'
+    yellow:  '0xffb454'
     blue:    '0x39bae6'
     magenta: '0xc397d8'
     cyan:    '0x95e6cb'
@@ -115,7 +115,7 @@ colors:
     black:   '0x666666'
     red:     '0xff3334'
     green:   '0x9ec400'
-    yellow:  '0xe7c547'
+    yellow:  '0xffb454'
     blue:    '0x7aa6da'
     magenta: '0xb77ee0'
     cyan:    '0x54ced6'
