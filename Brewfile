@@ -1,6 +1,5 @@
 tap "phinze/cask"
 tap "homebrew/core"
-tap "homebrew/gui"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "goles/battery"
@@ -40,9 +39,9 @@ brew "vim", args: ["with-override-system-vi"]
 brew "yarn"
 
 # DB
-brew 'postgresql', restart_service: true
-brew "pgcli"
-brew "redis", restart_service: true
+# brew 'postgresql', restart_service: true
+# brew "pgcli"
+# brew "redis", restart_service: true
 cask "phinze/cask/dbeaver-community"
 
 # Zsh
@@ -60,14 +59,13 @@ brew "thoughtbot/formulae/gitsh"
 # Casks
 cask "caskroom/fonts/font-fira-code"
 cask "phinze/cask/alfred"
-cask "phinze/cask/betterzipql"
 cask "phinze/cask/flux"
 cask "phinze/cask/sublime-text"
 cask "phinze/cask/suspicious-package"
 cask "phinze/cask/time-out"
-cask "phinze/cask/vagrant"
-cask "phinze/cask/vagrant-manager"
-cask "phinze/cask/virtualbox"
+# cask "phinze/cask/vagrant"
+# cask "phinze/cask/vagrant-manager"
+# cask "phinze/cask/virtualbox"
 cask "phinze/cask/vlc"
 cask "phinze/cask/webpquicklook"
 cask "phinze/cask/wkhtmltopdf"
