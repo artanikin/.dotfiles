@@ -39,6 +39,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
+Plug 'vim-scripts/delimitMate.vim'
 " Linting
 Plug 'w0rp/ale'
 if has('nvim')
@@ -245,6 +246,16 @@ function! StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
+
+" Apidock
+function! OpenDoc(type, keyword)
+  let url = 'http://apidock.com/'.a:type.'/'.a:keyword
+  execute "!open ". url
+endfunction
+
+noremap RR :call OpenDoc('rails', expand('<cword>'))<cr>
+noremap RB :call OpenDoc('ruby', expand('<cword>'))<cr>
+noremap RS :call OpenDoc('rspec', expand('<cword>'))<cr>
 " }}}
 
 " ===========================================================================
