@@ -112,6 +112,12 @@ set timeoutlen=1000
 set ttimeoutlen=0
 
 set tags+=.git/tags
+
+set foldmethod=syntax
+set foldcolumn=0
+let javaScript_fold=1
+let ruby_fold=1
+set foldlevelstart=99
 " }}}
 
 " ===========================================================================
