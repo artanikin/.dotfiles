@@ -1,0 +1,16 @@
+# ~/.tmuxinator/ed.yml
+
+name: eduson
+root: ~/projects/eduson
+
+startup_window: EDITOR
+
+startup_pane: 1
+
+windows:
+  - Editor:
+      layout: 04a6,190x68,0,0[190x54,0,0,0,190x13,0,55,3]
+      panes:
+        - v
+        - sleep 40s; open https://lvh.me:1443; exit
+  - Foreman: fs
