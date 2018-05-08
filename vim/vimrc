@@ -62,6 +62,8 @@ Plug 'antlypls/vim-colors-codeschool'
 Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'nanotech/jellybeans.vim'
+Plug 'ajh17/Spacegray.vim'
+Plug 'andreypopp/vim-colors-plain'
 call plug#end()
 " }}}
 
