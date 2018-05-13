@@ -64,6 +64,7 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ajh17/Spacegray.vim'
 Plug 'andreypopp/vim-colors-plain'
+Plug 'sjl/badwolf'
 call plug#end()
 " }}}
 
