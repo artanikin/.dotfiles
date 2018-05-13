@@ -7,6 +7,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="/usr/local/opt/postgresql@9.6/bin/:$PATH"
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
