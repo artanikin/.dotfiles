@@ -13,6 +13,5 @@ windows:
       panes:
         - v
         - guard
-  - Zeus: zs
   - Foreman: fs
   - Browser: sleep 40s; open https://lvh.me:1443; exit
