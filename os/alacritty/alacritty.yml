@@ -11,7 +11,8 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: xterm-256color
+  # TERM: xterm-256color
+  TERM: xterm-256color-italic
 
 window:
   # Window dimensions in character columns and lines
@@ -43,20 +44,20 @@ font:
   normal:
     family: OperatorMono Nerd Font
     # Style can be specified to pick a specific face.
-    style: Medium
+    style: Book
 
   # The bold font face
   bold:
     family: OperatorMono Nerd Font
     # Style can be specified to pick a specific face.
-    style: Bold
+    style: Medium
 
   # The italic font face
   italic:
-    family: Operator Mono
+    family: OperatorMono Nerd Font
     # Style can be specified to pick a specific face.
     # style: Italic
-    style: Italic
+    style: Book Italic
 
   # Point size of the font
   size: 15.0
@@ -65,19 +66,19 @@ font:
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
-    y: 0
+    y: 2
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
-    y: 0
+    y: 2
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: true
+  use_thin_strokes: false
 
 # Should display the render timer
 render_timer: false
