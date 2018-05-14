@@ -1,6 +1,6 @@
 # ~/.tmuxinator/cp.yml
 
-name: cp
+name: CP
 root: ~/projects/cp
 
 startup_window: Editor

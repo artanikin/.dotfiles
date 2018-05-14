@@ -1,6 +1,6 @@
 # ~/.tmuxinator/ed.yml
 
-name: eduson
+name: Eduson
 root: ~/projects/eduson
 
 startup_window: EDITOR
