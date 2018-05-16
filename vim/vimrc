@@ -227,6 +227,9 @@ augroup END
 " Vim AND Tmux Balancing
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
+
+" Redraw screen every time when focus gained
+au FocusGained * :redraw!
 " }}}
 
 " ===========================================================================
