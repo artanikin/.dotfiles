@@ -40,6 +40,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/delimitMate.vim'
+
 " Linting
 Plug 'w0rp/ale'
 if has('nvim')
@@ -62,9 +63,9 @@ Plug 'antlypls/vim-colors-codeschool'
 Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-two-firewatch'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ajh17/Spacegray.vim'
 Plug 'andreypopp/vim-colors-plain'
-Plug 'sjl/badwolf'
+Plug 'morhetz/gruvbox'
+
 call plug#end()
 " }}}
 
