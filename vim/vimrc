@@ -40,6 +40,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/delimitMate.vim'
+Plug 'chrisbra/NrrwRgn'
 
 " Linting
 Plug 'w0rp/ale'
@@ -50,7 +51,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-let g:deoplete#enable_at_startup = 1
+Plug 'fishbullet/deoplete-ruby'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -209,7 +210,7 @@ augroup END
 
 augroup ColorColumnOnlyInInsertMode
   autocmd!
-  autocmd InsertEnter * let &colorcolumn="111,".join(range(111,999),",")
+  autocmd InsertEnter * let &colorcolumn="159,".join(range(159,999),",")
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
 augroup END
 
@@ -330,11 +331,16 @@ map <leader>l :call RunLastSpec()<CR>
 map <leader>a :call RunAllSpecs()<CR>
 
 " ALE async linter
-let g:ale_enabled=0
+let g:ale_enabled=1
 let g:airline#extensions#ale#enabled=1
-let g:ale_fixers = { 'ruby': ['eruby', 'rubocop'] }
+
+let g:ale_fixers = { 'ruby': ['ruby', 'rubocop'], 'javascript': ['eslint'], 'coffeescript': ['coffee', 'coffeelint'], 'css': ['csslint', 'prettier', 'stylelint'], 'vim': ['vint'] }
 let g:ale_sign_error="E" " •
 let g:ale_sign_warning="W"
+
+" disable linting when typing
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
 
 " Vim-conflicted
 set stl+=%{ConflictedVersion()}
@@ -348,6 +354,17 @@ let g:fzf_files_options =
   \ '--reverse ' .
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+
+" DeoPlete
+let g:deoplete#enable_at_startup = 1
+
+" Disable deoplete when in multi cursor mode
+function! Multiple_cursors_before()
+    let b:deoplete_disable_auto_complete = 1
+endfunction
+function! Multiple_cursors_after()
+    let b:deoplete_disable_auto_complete = 0
+endfunction
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>b :Buffers<CR>
