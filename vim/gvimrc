@@ -1,6 +1,6 @@
 set linespace=5
-"set guifont=Menlo:h15  " if have space in font name use 'Courier\ New'
-set guifont=FuraCode\ Nerd\ Font\ Mono:h15
+" set guifont=FuraCode\ Nerd\ Font\ Mono:h15
+set guifont=Operator\ Mono\ Book\ Nerd\ Font\ Complete:h15
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
@@ -9,8 +9,8 @@ set guioptions-=L  "remove left-hand scroll bar
 set lines=45 columns=200
 set background=light
 let ayucolor="mirage"
-colorscheme ayu
-let g:airline_theme='ayu'
+colorscheme sexy-railscasts-256
+let g:airline_theme='base16_railscasts'
 
 augroup VimScript
   autocmd!
