@@ -7,5 +7,5 @@ PATH="/usr/local/bin:$PATH"
 dir="`git rev-parse --git-dir`"
 trap 'rm -f "$dir/$$.tags"' EXIT
 git ls-files | \
-  "${CTAGS:-ctags}" --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql
+  "${CTAGS:-ctags}" --tag-relative=yes -R -L - -f"$dir/$$.tags" --languages=-sql --exclude=.git --exclude=log . $(bundle list --paths)
 mv "$dir/$$.tags" "$dir/tags"

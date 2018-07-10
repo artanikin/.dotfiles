@@ -172,7 +172,7 @@ nnoremap <leader><leader> <c-^>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Tags
-noremap <leader>ct :Ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
+" noremap <leader>ct :Ctags -R -f $HOME/.tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
 
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -291,8 +291,8 @@ let NERDTreeShowHidden=0                               " show hidden files in NE
 let g:NERDTreeWinSize=50
 let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
 
-nmap <silent> <leader>y :NERDTreeToggle<cr>            " toggle NERDTree
-nmap <silent> <leader>q :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
+nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
+nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
 
 " NERDTree syntax highlight
 let g:NERDTreeFileExtensionHighlightFullName = 1
