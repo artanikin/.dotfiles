@@ -9,6 +9,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
@@ -41,6 +42,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/delimitMate.vim'
 Plug 'chrisbra/NrrwRgn'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'majutsushi/tagbar'
+Plug 'ecomba/vim-ruby-refactoring'
 
 " Linting
 Plug 'w0rp/ale'
@@ -139,6 +143,7 @@ let mapleader=','
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>eg :e $MYGVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <silent> <leader>sh :terminal<cr>
 
 nnoremap j gj
 nnoremap k gk
@@ -167,7 +172,7 @@ nnoremap <leader><leader> <c-^>
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Tags
-" noremap <leader>ct :!ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
+noremap <leader>ct :Ctags -R -f $HOME/tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
 
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -286,8 +291,8 @@ let NERDTreeShowHidden=0                               " show hidden files in NE
 let g:NERDTreeWinSize=50
 let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
 
-nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
-nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
+nmap <silent> <leader>y :NERDTreeToggle<cr>            " toggle NERDTree
+nmap <silent> <leader>q :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
 
 " NERDTree syntax highlight
 let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -306,7 +311,19 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .giti
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+
+let g:airline_left_sep          = ''
+let g:airline_left_alt_sep      = ''
+let g:airline_right_sep         = ''
+let g:airline_right_alt_sep     = ''
+let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+let g:airline#extensions#readonly#symbol   = '⊘'
+let g:airline#extensions#linecolumn#prefix = '¶'
+let g:airline#extensions#paste#symbol      = 'ρ'
 
 " Silver Searcher
 if executable('ag')
@@ -334,13 +351,13 @@ map <leader>a :call RunAllSpecs()<CR>
 let g:ale_enabled=1
 let g:airline#extensions#ale#enabled=1
 
-let g:ale_fixers = { 'ruby': ['ruby', 'rubocop'], 'javascript': ['eslint'], 'coffeescript': ['coffee', 'coffeelint'], 'css': ['csslint', 'prettier', 'stylelint'], 'vim': ['vint'] }
-let g:ale_sign_error="E" " •
-let g:ale_sign_warning="W"
-
 " disable linting when typing
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+
+let g:ale_fixers = { 'ruby': ['ruby', 'rubocop'] }
+let g:ale_sign_error="E" " •
+let g:ale_sign_warning="W"
 
 " Vim-conflicted
 set stl+=%{ConflictedVersion()}
@@ -407,6 +424,8 @@ nnoremap <leader>ue :UltiSnipsEdit<cr>
 " IndentLine
 let g:indentLine_char = '│'
 
+" Tagbar
+nnoremap <leader>tg :TagbarToggle<cr>
 " }}}
 
 syntax on
