@@ -7,7 +7,7 @@ set nocompatible
 " PLUGINS {{{
 " ===========================================================================
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rails'
