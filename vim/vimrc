@@ -76,6 +76,10 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'nanotech/jellybeans.vim'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'morhetz/gruvbox'
+Plug 'cocopon/iceberg.vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 " }}}
@@ -391,7 +395,7 @@ endfunction
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>tg :Tags<CR>
 
 nnoremap <leader>ga :Files app/<cr>
 nnoremap <leader>gm :Files app/models/<cr>
@@ -413,6 +417,7 @@ command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles',
       \ extend(uncommited_files_options, { 'options': s:diff_options }), 0))
 nnoremap <silent> <leader>gp :BranchFiles<cr>
 nnoremap <silent> <leader>GP :UncommitedFiles<cr>
+nnoremap <silent> <leader>gb :Gblame<cr>
 
 " GitGutter styling to use · instead of +/-
 let g:gitgutter_sign_added = '∙'
@@ -423,7 +428,7 @@ let g:gitgutter_sign_modified_removed = '∙'
 " UltiSnips - Snippet manager
 let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger           = '<tab>'
+let g:UltiSnipsExpandTrigger='<tab>'
 
 nnoremap <leader>ue :UltiSnipsEdit<cr>
 
@@ -431,7 +436,7 @@ nnoremap <leader>ue :UltiSnipsEdit<cr>
 let g:indentLine_char = '│'
 
 " Tagbar
-nnoremap <leader>tg :TagbarToggle<cr>
+nnoremap <leader>t :TagbarToggle<cr>
 " }}}
 
 syntax on
