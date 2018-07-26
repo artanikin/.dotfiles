@@ -12,5 +12,5 @@ windows:
       layout: 04a6,190x68,0,0[190x54,0,0,0,190x13,0,55,3]
       panes:
         - v
-        - sleep 10s; open http://localhost:3001; exit
-  - Server: ruby script/server thin -p 3001
+        - sleep 10s; open http://localhost:3000; exit
+  - Server: overmind start
