@@ -12,6 +12,6 @@ windows:
       layout: 04a6,190x68,0,0[190x54,0,0,0,190x13,0,55,3]
       panes:
         - v
-        - guard
+        - bundle exec guard
   - Foreman: overmind start
   - Browser: sleep 40s; open https://lvh.me:1443; exit
