@@ -47,6 +47,7 @@ hi PmenuThumb   guifg=#646464   guibg=#646464   gui=none
 hi TabLine      guifg=#f0f0f0   guibg=#646464   gui=none
 hi TabLineSel   guifg=#ffffff   guibg=#323232   gui=none
 hi TabLineFill  guifg=#646464   guibg=#646464   gui=none
+hi ColorColumn                  guibg=#f0f0f0
 hi CursorColumn                 guibg=#e1f5ff
 hi CursorLine                   guibg=#e1f5ff   gui=none
 hi Cursor       guifg=#ffffff   guibg=#323232
