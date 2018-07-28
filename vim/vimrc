@@ -65,6 +65,7 @@ Plug 'fishbullet/deoplete-ruby'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
+Plug 'artanikin/bclear'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 Plug 'jacoborus/tender'
