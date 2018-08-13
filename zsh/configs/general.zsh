@@ -1,4 +1,3 @@
-export TERM=xterm-256color-italic
 export LANG=en_US.UTF-8
 export EDITOR=nvim
 export GREP_OPTIONS='--color=auto'

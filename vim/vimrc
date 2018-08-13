@@ -435,6 +435,7 @@ nnoremap <leader>ue :UltiSnipsEdit<cr>
 
 " IndentLine
 let g:indentLine_char = '│'
+let g:indentLine_color_term = 239
 
 " Tagbar
 nnoremap <leader>t :TagbarToggle<cr>
