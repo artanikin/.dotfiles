@@ -9,11 +9,14 @@ set guioptions-=L  "remove left-hand scroll bar
 set lines=45 columns=200
 set background=light
 
-let ayucolor="mirage"
-colorscheme sexy-railscasts-256
-let g:airline_theme='base16_railscasts'
+set background=dark
+colorscheme two-firewatch
+let g:airline_theme='twofirewatch'
 
 augroup VimScript
   autocmd!
   autocmd BufWritePost $MYGVIMRC source $MYGVIMRC | AirlineRefresh
 augroup END
+
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic

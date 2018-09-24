@@ -7,8 +7,7 @@ set nocompatible
 " PLUGINS {{{
 " ===========================================================================
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum' | Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
@@ -51,6 +50,7 @@ Plug 'vim-scripts/LargeFile'
 Plug 'vim-scripts/rainbow-end'
 Plug 'ap/vim-css-color'
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'itchyny/vim-cursorword'
 
 " Linting
 Plug 'w0rp/ale'
@@ -81,6 +81,9 @@ Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'ajh17/spacegray.vim'
+Plug 'KabbAmine/yowish.vim'
+Plug 'owickstrom/vim-colors-paramount'
 
 call plug#end()
 " }}}
@@ -359,8 +362,8 @@ map <leader>l :call RunLastSpec()<CR>
 map <leader>a :call RunAllSpecs()<CR>
 
 " ALE async linter
-let g:ale_enabled=1
-let g:airline#extensions#ale#enabled=1
+let g:ale_enabled=0
+let g:airline#extensions#ale#enabled=0
 
 " disable linting when typing
 let g:ale_lint_on_text_changed = 'never'
