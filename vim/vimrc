@@ -68,7 +68,6 @@ Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'artanikin/bclear'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
-Plug 'jacoborus/tender'
 Plug 'zcodes/vim-colors-basic'
 Plug 'endel/vim-github-colorscheme'
 Plug 'antlypls/vim-colors-codeschool'
@@ -79,11 +78,11 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'ajh17/spacegray.vim'
-Plug 'KabbAmine/yowish.vim'
-Plug 'owickstrom/vim-colors-paramount'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'neutaaaaan/monosvkem'
+
+
+
 
 call plug#end()
 " }}}
