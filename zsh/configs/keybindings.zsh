@@ -11,3 +11,6 @@ _fuzzy_history() {
 }
 zle -N fuzzy-history _fuzzy_history
 bindkey '^r' fuzzy-history
+
+bindkey "^P" history-beginning-search-backward # Ctrl+P
+bindkey "^N" history-beginning-search-forward  # Ctrl+N
