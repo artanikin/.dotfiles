@@ -41,6 +41,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'vim-scripts/rainbow-end'
 Plug 'ap/vim-css-color'
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'junegunn/limelight.vim'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -166,7 +167,6 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
-
 " }}}
 
 " ===========================================================================
@@ -380,6 +380,10 @@ let g:gitgutter_sign_modified_removed = '∙'
 " IndentLine
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
+
+" Limelight
+nnoremap <leader>lt :Limelight!!<cr>
+
 " }}}
 
 syntax on
