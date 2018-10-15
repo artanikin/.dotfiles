@@ -37,6 +37,7 @@ brew "tree"
 brew "v8@3.15"
 brew "vim", args: ["with-override-system-vi"]
 brew "yarn"
+brew "bat"
 
 # DB
 # brew 'postgresql', restart_service: true
