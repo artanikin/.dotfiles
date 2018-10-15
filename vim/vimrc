@@ -7,7 +7,8 @@ set nocompatible
 " PLUGINS {{{
 " ===========================================================================
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum' | Plug 'vim-ruby/vim-ruby'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum'
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-surround'
@@ -18,58 +19,36 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-ragtag'
+Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock' | Plug 'kana/vim-textobj-line' | Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-indent'
 Plug 'christoomey/vim-conflicted'
-Plug 'Townk/vim-autoclose'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'jiangmiao/auto-pairs'
+Plug 'mg979/vim-visual-multi'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec'
-Plug 'jgdavey/tslime.vim'
-Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'tommcdo/vim-exchange'
-Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-system-copy'
-Plug 'christoomey/vim-titlecase'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
-Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/delimitMate.vim'
-Plug 'chrisbra/NrrwRgn'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'majutsushi/tagbar'
-Plug 'ecomba/vim-ruby-refactoring'
-Plug 'p0deje/vim-ruby-interpolation'
-Plug 'vim-scripts/LargeFile'
 Plug 'vim-scripts/rainbow-end'
 Plug 'ap/vim-css-color'
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'itchyny/vim-cursorword'
-
-" Linting
-Plug 'w0rp/ale'
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'fishbullet/deoplete-ruby'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'artanikin/bclear'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
+Plug 'joshdick/onedark.vim'
 Plug 'zcodes/vim-colors-basic'
-Plug 'endel/vim-github-colorscheme'
 Plug 'antlypls/vim-colors-codeschool'
 Plug 'ayu-theme/ayu-vim'
 Plug 'rakr/vim-two-firewatch'
@@ -78,11 +57,11 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'morhetz/gruvbox'
 Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'tyrannicaltoucan/vim-quantum'
-Plug 'neutaaaaan/monosvkem'
-
-
-
+Plug 'fxn/vim-monochrome'
+Plug 'AlessandroYorba/Despacio'
+Plug 'ajmwagar/vim-deus'
+Plug 'cormacrelf/vim-colors-github'
+Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
 " }}}
@@ -183,9 +162,6 @@ nnoremap <leader><leader> <c-^>
 
 " In command mode '%%' insert current directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-" Tags
-" noremap <leader>ct :Ctags -R -f $HOME/.tags --languages=ruby,javascript --exclude=.git --exclude=log . $(bundle list --paths)<CR><CR>
 
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
@@ -360,25 +336,6 @@ map <leader>s :call RunNearestSpec()<CR>
 map <leader>l :call RunLastSpec()<CR>
 map <leader>a :call RunAllSpecs()<CR>
 
-" ALE async linter
-let g:ale_enabled=0
-let g:airline#extensions#ale#enabled=0
-
-" disable linting when typing
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-
-let g:ale_fixers = { 'ruby': ['ruby', 'rubocop'] }
-let g:ale_sign_error="E" " •
-let g:ale_sign_warning="W"
-
-" Vim-conflicted
-set stl+=%{ConflictedVersion()}
-
-" ReplaceWithRegister
-  " replace text from system clipboard
-nmap <leader>gr "*gr
-
 " FZF (Replace for Ctrl-P)
 let g:fzf_files_options =
   \ '--reverse ' .
@@ -387,14 +344,6 @@ let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
 
 " DeoPlete
 let g:deoplete#enable_at_startup = 1
-
-" Disable deoplete when in multi cursor mode
-function! Multiple_cursors_before()
-    let b:deoplete_disable_auto_complete = 1
-endfunction
-function! Multiple_cursors_after()
-    let b:deoplete_disable_auto_complete = 0
-endfunction
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>b :Buffers<CR>
@@ -428,19 +377,9 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
-" UltiSnips - Snippet manager
-let g:UltiSnipsSnippetsDir='~/.vim/snippets'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsExpandTrigger='<tab>'
-
-nnoremap <leader>ue :UltiSnipsEdit<cr>
-
 " IndentLine
 let g:indentLine_char = '│'
 let g:indentLine_color_term = 239
-
-" Tagbar
-nnoremap <leader>t :TagbarToggle<cr>
 " }}}
 
 syntax on
