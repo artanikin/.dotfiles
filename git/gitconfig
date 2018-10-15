@@ -71,7 +71,7 @@
   summary = true
 [core]
   editor = nvim
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/artyomanikin/.gitignore_global
   pager = diff-so-fancy | less --tabs=4 -RFX
 [filter "hawser"]
   clean = git hawser clean %f
@@ -90,3 +90,9 @@
   gitcommand = hub
   nogreeting = true
   prompt = "\n%D %c(%b%#)%w ➜"
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
