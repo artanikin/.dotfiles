@@ -36,12 +36,12 @@ alias st="spring rspec"
 alias ssh="TERM=xterm-256color ssh"
 
 # quick config
-alias vimconfig='vim -o ~/.vimrc ~/.vimrc.local'
+alias vimconfig='vim ~/.vimrc ~/.vimrc.local'
 alias muxconfig='vim ~/.tmux.conf'
 alias sshconfig='vim ~/.ssh/config'
 alias aliasconfig='vim ~/.zsh/configs/aliases.zsh && source ~/.zsh/config/aliases.zsh'
 alias hostsconfig='sudo nvim /etc/hosts'
-alias zshconfig="vim -o ~/.zshrc && source ~/.zshrc"
+alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 
 # curl
 # usage postjson '{"key": "value"}' http://example.com/create_record

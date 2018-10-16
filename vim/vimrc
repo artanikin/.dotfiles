@@ -8,9 +8,9 @@ set nocompatible
 " ===========================================================================
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum'
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rake'
-Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rake', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
@@ -19,16 +19,25 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-ragtag'
-Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock' | Plug 'kana/vim-textobj-line' | Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-indent'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-jdaddy', { 'for': 'json' }
+Plug 'easymotion/vim-easymotion'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-indent'
 Plug 'christoomey/vim-conflicted'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
+Plug 'mattn/gist-vim'
+Plug 'brooth/far.vim' " Find/Replace
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'thoughtbot/vim-rspec'
+Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -38,30 +47,19 @@ Plug 'Yggdroot/indentLine'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/delimitMate.vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'vim-scripts/rainbow-end'
-Plug 'ap/vim-css-color'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'simeji/winresizer'
+Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'junegunn/limelight.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'artanikin/bclear'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'rakr/vim-one'
-Plug 'joshdick/onedark.vim'
-Plug 'zcodes/vim-colors-basic'
-Plug 'antlypls/vim-colors-codeschool'
-Plug 'ayu-theme/ayu-vim'
-Plug 'rakr/vim-two-firewatch'
-Plug 'nanotech/jellybeans.vim'
-Plug 'andreypopp/vim-colors-plain'
-Plug 'morhetz/gruvbox'
-Plug 'cocopon/iceberg.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'fxn/vim-monochrome'
-Plug 'AlessandroYorba/Despacio'
-Plug 'ajmwagar/vim-deus'
-Plug 'cormacrelf/vim-colors-github'
 Plug 'jonathanfilip/vim-lucius'
 
 call plug#end()
@@ -301,8 +299,10 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .giti
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
-let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#show_buffers = 1
 let g:airline_skip_empty_sections = 1
 
 let g:airline_left_sep          = ''
@@ -341,6 +341,10 @@ let g:fzf_files_options =
   \ '--reverse ' .
   \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " DeoPlete
 let g:deoplete#enable_at_startup = 1
@@ -384,6 +388,14 @@ let g:indentLine_color_term = 239
 " Limelight
 nnoremap <leader>lt :Limelight!!<cr>
 
+" Easymotion
+map <Leader>e <Plug>(easymotion-prefix)
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 " }}}
 
 syntax on
@@ -394,8 +406,8 @@ runtime macros/matchit.vim
 
 set t_Co=256
 set background=dark
-colorscheme tomorrow-night
-let g:airline_theme='tomorrow'
+colorscheme lucius
+let g:airline_theme='lucius'
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
