@@ -48,6 +48,3 @@ alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 alias postjson='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '
 # usage postjson http://example.com/record/1
 alias getjson='curl -i -H "Accept: application/json" -H "Content-Type: application/json"'
-
-# language servers
-alias sgraph="solargraph socket"
