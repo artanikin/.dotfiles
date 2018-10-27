@@ -6,6 +6,7 @@ zplug 'zsh-users/zsh-autosuggestions', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
 zplug 'zsh-users/zsh-completions', defer:3
 zplug "plugins/vi-mode", from:oh-my-zsh
+zplug "plugins/osx", from:oh-my-zsh
 zplug "sobolevn/wakatime-zsh-plugin", from:oh-my-zsh
 
 if ! zplug check --verbose; then
