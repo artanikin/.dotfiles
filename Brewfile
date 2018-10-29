@@ -6,6 +6,7 @@ tap "goles/battery"
 tap "caskroom/fonts"
 tap "caskroom/cask"
 tap "thoughtbot/formulae"
+tap "dteoh/sqa"
 
 brew "autojump"
 brew "ctags"
@@ -71,6 +72,7 @@ cask "phinze/cask/time-out"
 cask "phinze/cask/vlc"
 cask "phinze/cask/webpquicklook"
 cask "phinze/cask/wkhtmltopdf"
+cask "slowquitapps"
 
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 cask "phinze/cask/qlcolorcode"
