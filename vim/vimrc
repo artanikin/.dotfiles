@@ -61,6 +61,7 @@ Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'artanikin/bclear'
 Plug 'arcticicestudio/nord-vim'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'AlessandroYorba/Breve'
 
 call plug#end()
 " }}}
