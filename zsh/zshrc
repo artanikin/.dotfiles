@@ -8,6 +8,7 @@ zplug 'zsh-users/zsh-completions', defer:3
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug "sobolevn/wakatime-zsh-plugin", from:oh-my-zsh
+zplug 'wfxr/forgit', defer:1
 
 if ! zplug check --verbose; then
 printf "Install? [y/N]: "
@@ -24,3 +25,6 @@ done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
