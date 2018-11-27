@@ -37,6 +37,7 @@ Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'jgdavey/tslime.vim'
 Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -55,6 +56,8 @@ Plug 'honza/vim-snippets'
 Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -64,6 +67,10 @@ Plug 'jonathanfilip/vim-lucius'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'AlessandroYorba/Breve'
 Plug 'AlessandroYorba/Arcadia'
+Plug 'nightsense/snow'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'phanviet/vim-monokai-pro'
+Plug 'bluz71/vim-moonfly-colors'
 
 call plug#end()
 " }}}
@@ -385,8 +392,10 @@ let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
 " IndentLine
-let g:indentLine_char = '│'
-let g:indentLine_color_term = 239
+let g:indentLine_enabled = 0
+let g:indentLine_setColors = 0
+let g:indentLine_char = ' ' " '│'
+" let g:indentLine_color_term = 239
 
 " Limelight
 nnoremap <leader>lt :Limelight!!<cr>
@@ -399,6 +408,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" Markdown
+let g:vim_markdown_conceal = 0
+
 " }}}
 
 syntax on
