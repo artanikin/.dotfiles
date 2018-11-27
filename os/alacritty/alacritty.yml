@@ -25,12 +25,30 @@ window:
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 5
-    y: 5
+    x: 2
+    y: 0
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: true
+  decorations: false
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+  # Faux Scrolling
+  #
+  # The `faux_multiplier` setting controls the number of lines the terminal
+  # should scroll when the alternate screen buffer is active. This is used
+  # to allow mouse scrolling for applications like `man`.
+  #
+  # Specifying `0` will disable faux scrolling.
+  faux_multiplier: 3
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -42,38 +60,32 @@ draw_bold_text_with_bright_colors: false
 font:
   # The normal (roman) font face to use.
   normal:
-    family: OperatorMono Nerd Font
-    # Style can be specified to pick a specific face.
-    style: Book
+    family: FuraCode Nerd Font Mono
+    style: Regular
 
-  # The bold font face
   bold:
-    family: OperatorMono Nerd Font
-    # Style can be specified to pick a specific face.
-    style: Medium
+    family: Fira Code
+    style: Bold
 
-  # The italic font face
   italic:
-    family: OperatorMono Nerd Font
-    # Style can be specified to pick a specific face.
-    # style: Italic
+    family: Operator Mono
     style: Book Italic
 
   # Point size of the font
-  size: 15.0
+  size: 14.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0
-    y: 2
+    x: -0.3
+    y: 4
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
-    y: 2
+    y: 4
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
