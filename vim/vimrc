@@ -3,8 +3,7 @@
 
 set nocompatible
 
-" ===========================================================================
-" PLUGINS {{{ ===========================================================================
+" PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -71,13 +70,12 @@ Plug 'nightsense/snow'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'phanviet/vim-monokai-pro'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'tyrannicaltoucan/vim-deep-space'
 
 call plug#end()
 " }}}
 
-" ===========================================================================
 " OPTIONS {{{
-" ===========================================================================
 " Settings to replace tab. Use :retab for replacing tab in existing files.
 set tabstop=2
 set shiftwidth=2
@@ -107,6 +105,7 @@ set colorcolumn=0
 
 set list
 set listchars=tab:»·,trail:∙
+set fillchars=fold:·,diff:-,vert:│
 
 set hlsearch
 set incsearch
@@ -130,9 +129,7 @@ let ruby_fold=1
 set foldlevelstart=99
 " }}}
 
-" ===========================================================================
 " MAPPINGS {{{
-" ===========================================================================
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
 nnoremap n nzz
 nnoremap N Nzz
@@ -177,17 +174,13 @@ nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
 " }}}
 
-" ===========================================================================
 " MENU CONFIGURATION {{{
-" ===========================================================================
 set wildmenu
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 " }}}
 
-" ===========================================================================
 " AUTOCOMMANDS {{{
-" ===========================================================================
 if has("autocmd")
   " Have Vim jump to the last position when reopening a file
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -236,9 +229,7 @@ autocmd VimResized * :wincmd =
 au FocusGained * :redraw!
 " }}}
 
-" ===========================================================================
 " ABBREVIATIONS {{{
-" ===========================================================================
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Wq wq
@@ -249,9 +240,7 @@ cnoreabbrev Ц w
 cnoreabbrev Цй wq
 " }}}
 
-" ===========================================================================
 " FUNCTIONS {{{
-" ===========================================================================
 " strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
 function! StripTrailingWhitespaces()
   " save last search & cursor position
@@ -274,9 +263,7 @@ noremap RB :call OpenDoc('ruby', expand('<cword>'))<cr>
 noremap RS :call OpenDoc('rspec', expand('<cword>'))<cr>
 " }}}
 
-" ===========================================================================
 " PLUGIN OPTIONS {{{
-" ===========================================================================
 
 " NERDTree let NERDTreeShowBookmarks=0
 let NERDTreeWinPos="left"
@@ -355,6 +342,23 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+let g:fzf_layout = { 'down': '~40%' }
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " DeoPlete
 let g:deoplete#enable_at_startup = 1
