@@ -5,7 +5,7 @@ set nocompatible
 
 " PLUGINS {{{
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' | Plug 'ntpeters/vim-airline-colornum'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' " | Plug 'ntpeters/vim-airline-colornum'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -57,6 +57,7 @@ Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'wincent/pinnacle'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -71,6 +72,13 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'phanviet/vim-monokai-pro'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'dikiaap/minimalist'
+Plug 'mhinz/vim-janah'
+Plug 'ajmwagar/vim-deus'
+Plug 'fxn/vim-monochrome'
+Plug 'drewtempelmeyer/palenight.vim'
+Plug 'haishanh/night-owl.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 " }}}
@@ -425,9 +433,6 @@ filetype plugin indent on
 runtime macros/matchit.vim
 
 set t_Co=256
-set background=dark
-colorscheme lucius
-let g:airline_theme='lucius'
 
 " Local config
 if filereadable($HOME . "/.vimrc.local")
