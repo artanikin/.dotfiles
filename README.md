@@ -29,7 +29,13 @@ Clone repo to `~/.dotfiles` holder:
 
 ```console
 $ cd ~
-$ git clone https://github.com/arty88/dotfiles.git ~/.dotfiles
+$ git clone https://github.com/artanikin/dotfiles.git ~/.dotfiles
+```
+
+Update submodules
+```console
+$ cd ~/.dotfiles
+$ git submodule update
 ```
 
 ### Git
@@ -127,13 +133,13 @@ $ ln -s ~/.dotfiles/bin ~/bin
 
 Terminal:
 * [iTerm2](https://www.iterm2.com/)
-* Theme [railscasts](https://github.com/arty88/.dotfiles/blob/master/os/iterm2/railscasts.itermcolors)
-* Font [Menlo Regular](https://github.com/arty88/.dotfiles/blob/master/os/fonts/Menlo-Regular.ttf) 15px
+* Theme [railscasts](https://github.com/artanikin/.dotfiles/blob/master/os/iterm2/railscasts.itermcolors)
+* Font [Menlo Regular](https://github.com/artanikin/.dotfiles/blob/master/os/fonts/Menlo-Regular.ttf) 15px
 
-![dotfiles](https://github.com/arty88/.dotfiles/blob/master/docs/screenshots/console.png)
+![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/console.png)
 
 ### Vim Screenshot
 
-Theme [sexy-railscasts-256](https://github.com/arty88/sexy-railscasts-256-theme)
+Theme [sexy-railscasts-256](https://github.com/artanikin/sexy-railscasts-256-theme)
 
-![dotfiles](https://github.com/arty88/.dotfiles/blob/master/docs/screenshots/vim.png)
+![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/vim.png)
