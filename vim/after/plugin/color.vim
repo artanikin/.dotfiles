@@ -25,6 +25,7 @@ function s:CheckColorScheme()
   endif
 
   execute 'highlight Comment ' . pinnacle#italicize('Comment')
+  execute 'highlight Folded ' . pinnacle#italicize('Folded')
 
   " Hide (or at least make less obvious) the EndOfBuffer region
   highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
@@ -60,9 +61,13 @@ if v:progname !=# 'vi'
   if has('autocmd')
     augroup WincentAutocolor
       autocmd!
-      autocmd FocusGained * call s:CheckColorScheme()
+      " autocmd FocusGained * call s:CheckColorScheme()
     augroup END
   endif
 
   call s:CheckColorScheme()
 endif
+
+function CheckColorScheme()
+  call s:CheckColorScheme()
+endfunction

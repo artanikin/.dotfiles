@@ -130,11 +130,19 @@ set ttimeoutlen=0
 
 set tags+=.git/tags
 
-set foldmethod=syntax
-set foldcolumn=0
-let javaScript_fold=1
-let ruby_fold=1
-set foldlevelstart=99
+if has('folding')
+  if has('windows')
+    set fillchars=vert:│
+    set fillchars+=fold:·
+  endif
+  set foldmethod=indent
+  " set foldmethod=syntax
+  " set foldcolumn=0
+  " let javaScript_fold=1
+  " let ruby_fold=1
+  set foldlevelstart=99
+  " set foldtextlk
+endif
 " }}}
 
 " MAPPINGS {{{
@@ -180,6 +188,8 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
+
+nnoremap <leader>cu :call CheckColorScheme()<CR>
 " }}}
 
 " MENU CONFIGURATION {{{
@@ -438,3 +448,5 @@ set t_Co=256
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+set clipboard=unnamed,unnamedplus  " Copy into system (*, +) registers.
