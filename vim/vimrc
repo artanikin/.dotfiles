@@ -176,8 +176,10 @@ nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
-noremap  <leader>d :bdelete<CR>
+noremap  <leader>d :Bd<CR>
 noremap  <leader>D :bufdo bd<CR>
+command! Bd :bp | :sp | :bn | :bd  " Close buffer without closing window
+
 
 " Switch between last two buffers
 nnoremap <leader><leader> <c-^>
