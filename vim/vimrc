@@ -59,6 +59,7 @@ Plug 'tpope/vim-haml', { 'for': 'haml' }
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'wincent/pinnacle'
+Plug 'sjl/gundo.vim'
 
 let g:plug_timeout = 300 " Increase vim-plug timeout for YouCompleteMe.
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -449,6 +450,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " Markdown
 let g:vim_markdown_conceal = 0
 
+" Gundo
+noremap <leader>u :GundoToggle<cr>
 " }}}
 
 syntax on
