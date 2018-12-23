@@ -31,53 +31,54 @@ Plug 'mg979/vim-visual-multi'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim'
-Plug 'brooth/far.vim' " Find/Replace
+" Plug 'brooth/far.vim' " Find/Replace
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
-Plug 'jgdavey/tslime.vim'
-Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
-Plug 'christoomey/vim-system-copy'
+" Plug 'jgdavey/tslime.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
+Plug 'ryanoasis/vim-devicons'
+" Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/delimitMate.vim'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'AndrewRadev/splitjoin.vim'
-Plug 'simeji/winresizer'
+" Plug 'simeji/winresizer'
 Plug 'ap/vim-css-color', { 'for': 'css' }
-Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'junegunn/limelight.vim'
+Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " focus window
+" Plug 'junegunn/limelight.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'tweekmonster/startuptime.vim' " profiling vim startup
+" Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'wincent/pinnacle'
 
 " Colors
-Plug 'artanikin/sexy-railscasts-256-theme'
-Plug 'artanikin/bclear'
-Plug 'arcticicestudio/nord-vim'
-Plug 'jonathanfilip/vim-lucius'
-Plug 'danilo-augusto/vim-afterglow'
-Plug 'AlessandroYorba/Breve'
-Plug 'AlessandroYorba/Arcadia'
-Plug 'nightsense/snow'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'phanviet/vim-monokai-pro'
-Plug 'bluz71/vim-moonfly-colors'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'dikiaap/minimalist'
-Plug 'mhinz/vim-janah'
-Plug 'ajmwagar/vim-deus'
-Plug 'fxn/vim-monochrome'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'haishanh/night-owl.vim'
+" Plug 'artanikin/sexy-railscasts-256-theme'
+" Plug 'artanikin/bclear'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'jonathanfilip/vim-lucius'
+" Plug 'danilo-augusto/vim-afterglow'
+" Plug 'AlessandroYorba/Breve'
+" Plug 'AlessandroYorba/Arcadia'
+" Plug 'nightsense/snow'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'phanviet/vim-monokai-pro'
+" Plug 'bluz71/vim-moonfly-colors'
+" Plug 'tyrannicaltoucan/vim-deep-space'
+" Plug 'dikiaap/minimalist'
+" Plug 'mhinz/vim-janah'
+" Plug 'ajmwagar/vim-deus'
+" Plug 'fxn/vim-monochrome'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'haishanh/night-owl.vim'
 Plug 'chriskempson/base16-vim'
 
 call plug#end()
@@ -119,6 +120,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+set clipboard=unnamed,unnamedplus  " Copy into system (*, +) registers.
 
 " Backupds
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -179,7 +182,6 @@ nnoremap <silent> ]B :blast<CR>
 noremap  <leader>d :Bd<CR>
 noremap  <leader>D :bufdo bd<CR>
 command! Bd :bp | :sp | :bn | :bd  " Close buffer without closing window
-
 
 " Switch between last two buffers
 nnoremap <leader><leader> <c-^>
@@ -285,7 +287,7 @@ noremap RS :call OpenDoc('rspec', expand('<cword>'))<cr>
 
 " PLUGIN OPTIONS {{{
 
-" NERDTree let NERDTreeShowBookmarks=0
+" NERDTree
 let NERDTreeWinPos="left"
 let NERDTreeHijackNetrw=1
 let NERDTreeChDirMode=2
@@ -294,6 +296,7 @@ let g:NERDTreeQuitOnOpen=1                             " close after a file is o
 let NERDTreeShowHidden=0                               " show hidden files in NERDTree
 let g:NERDTreeWinSize=50
 let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
+let NERDTreeShowBookmarks = 1                          " Display bookmarks on startup
 
 nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
 nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
@@ -450,5 +453,3 @@ set t_Co=256
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
-
-set clipboard=unnamed,unnamedplus  " Copy into system (*, +) registers.
