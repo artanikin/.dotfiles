@@ -60,6 +60,9 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'wincent/pinnacle'
 
+let g:plug_timeout = 300 " Increase vim-plug timeout for YouCompleteMe.
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
 " Colors
 " Plug 'artanikin/sexy-railscasts-256-theme'
 " Plug 'artanikin/bclear'
@@ -431,10 +434,17 @@ nnoremap <leader>lt :Limelight!!<cr>
 map <Leader>e <Plug>(easymotion-prefix)
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
+
+" YouCompleteMe
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Markdown
 let g:vim_markdown_conceal = 0
