@@ -66,9 +66,6 @@
 # [format]
 #   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
 
-[merge]
-  tool = meld
-  summary = true
 [core]
   editor = nvim
 	excludesfile = /Users/artyomanikin/.gitignore_global
@@ -90,11 +87,16 @@
   gitcommand = hub
   nogreeting = true
   prompt = "\n%D %c(%b%#)%w ➜"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [github]
-	user = artanikin
+  user = artanikin
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+  prompt = false
+[diff]
+  tool = vimdiff
