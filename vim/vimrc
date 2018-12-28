@@ -5,7 +5,7 @@ set nocompatible
 
 " PLUGINS {{{
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' " | Plug 'ntpeters/vim-airline-colornum'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -19,71 +19,45 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-jdaddy', { 'for': 'json' }
-Plug 'easymotion/vim-easymotion'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
-Plug 'christoomey/vim-conflicted'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi'
 Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
-Plug 'mattn/gist-vim'
-" Plug 'brooth/far.vim' " Find/Replace
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
-" Plug 'jgdavey/tslime.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
-" Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Plug 'Yggdroot/indentLine'
 Plug 'wakatime/vim-wakatime'
-Plug 'vim-scripts/delimitMate.vim'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'simeji/winresizer'
 Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " focus window
-" Plug 'junegunn/limelight.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-" Plug 'tweekmonster/startuptime.vim' " profiling vim startup
+Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'wincent/pinnacle'
-Plug 'sjl/gundo.vim'
-
-let g:plug_timeout = 300 " Increase vim-plug timeout for YouCompleteMe.
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 " Colors
-" Plug 'artanikin/sexy-railscasts-256-theme'
+Plug 'vim-scripts/ScrollColors' " Scroll colorscheme by type :SCROLLCOLOR
+Plug 'artanikin/sexy-railscasts-256-theme'
+Plug 'chriskempson/base16-vim'
 " Plug 'artanikin/bclear'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'jonathanfilip/vim-lucius'
-" Plug 'danilo-augusto/vim-afterglow'
 " Plug 'AlessandroYorba/Breve'
-" Plug 'AlessandroYorba/Arcadia'
-" Plug 'nightsense/snow'
 " Plug 'dracula/vim', { 'as': 'dracula' }
-" Plug 'phanviet/vim-monokai-pro'
-" Plug 'bluz71/vim-moonfly-colors'
-" Plug 'tyrannicaltoucan/vim-deep-space'
-" Plug 'dikiaap/minimalist'
 " Plug 'mhinz/vim-janah'
 " Plug 'ajmwagar/vim-deus'
-" Plug 'fxn/vim-monochrome'
-" Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'haishanh/night-owl.vim'
-Plug 'chriskempson/base16-vim'
 
 call plug#end()
 " }}}
@@ -143,12 +117,7 @@ if has('folding')
     set fillchars+=fold:·
   endif
   set foldmethod=indent
-  " set foldmethod=syntax
-  " set foldcolumn=0
-  " let javaScript_fold=1
-  " let ruby_fold=1
   set foldlevelstart=99
-  " set foldtextlk
 endif
 " }}}
 
@@ -190,14 +159,9 @@ command! Bd :bp | :sp | :bn | :bd  " Close buffer without closing window
 " Switch between last two buffers
 nnoremap <leader><leader> <c-^>
 
-" In command mode '%%' insert current directory
-cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
-
-nnoremap <leader>cu :call CheckColorScheme()<CR>
 " }}}
 
 " MENU CONFIGURATION {{{
@@ -277,16 +241,6 @@ function! StripTrailingWhitespaces()
   let @/=_s
   call cursor(l, c)
 endfunction
-
-" Apidock
-function! OpenDoc(type, keyword)
-  let url = 'http://apidock.com/'.a:type.'/'.a:keyword
-  execute "!open ". url
-endfunction
-
-noremap RR :call OpenDoc('rails', expand('<cword>'))<cr>
-noremap RB :call OpenDoc('ruby', expand('<cword>'))<cr>
-noremap RS :call OpenDoc('rspec', expand('<cword>'))<cr>
 " }}}
 
 " PLUGIN OPTIONS {{{
@@ -342,6 +296,7 @@ let g:airline#extensions#paste#symbol      = 'ρ'
 if executable('ag')
   let g:ackprg = 'ag --nogroup --nocolor --column'
   nnoremap \ :Ag!<space>
+  nnoremap <leader>ga :Ag <c-r><c-w><cr>
 endif
 
 " Ruby-motion (:help ruby-motion)
@@ -370,7 +325,7 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-let g:fzf_layout = { 'down': '~40%' }
+let g:fzf_layout = { 'down': '~50%' }
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -390,17 +345,16 @@ let g:fzf_colors =
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                         : fzf#vim#with_preview('right:50%', '?'),
   \                 <bang>0)
 
-" DeoPlete
-let g:deoplete#enable_at_startup = 1
+command! -bang Colors
+  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <Leader>tg :Tags<CR>
 
-nnoremap <leader>ga :Files app/<cr>
 nnoremap <leader>gm :Files app/models/<cr>
 nnoremap <leader>gv :Files app/views/<cr>
 nnoremap <leader>gc :Files app/controllers/<cr>
@@ -428,18 +382,6 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '∙'
 let g:gitgutter_sign_modified_removed = '∙'
 
-" IndentLine
-let g:indentLine_enabled = 0
-let g:indentLine_setColors = 0
-let g:indentLine_char = ' ' " '│'
-" let g:indentLine_color_term = 239
-
-" Limelight
-nnoremap <leader>lt :Limelight!!<cr>
-
-" Easymotion
-map <Leader>e <Plug>(easymotion-prefix)
-
 " UltiSnips
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
@@ -447,17 +389,8 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-" YouCompleteMe
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
 " Markdown
 let g:vim_markdown_conceal = 0
-
-" Gundo
-noremap <leader>u :GundoToggle<cr>
 " }}}
 
 syntax on
