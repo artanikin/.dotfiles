@@ -5,55 +5,49 @@ set nocompatible
 
 " PLUGINS {{{
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+Plug 'ap/vim-buftabline'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-jdaddy', { 'for': 'json' }
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-indent'
+Plug 'tpope/vim-fugitive'                                " Git wrapper
+Plug 'tpope/vim-rhubarb'                                 " :Gbrowse
+Plug 'tpope/vim-ragtag', { 'for': 'eruby' }              " eRuby <% %> <%= %> ...
+Plug 'tpope/vim-eunuch'                                  " Vim sugar for the UNIX shell commands :Delete, :Rename, :SudoWrite
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi'
-Plug 'powerman/vim-plugin-ruscmd'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
-Plug 'ryanoasis/vim-devicons'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'wakatime/vim-wakatime'
-Plug 'bronson/vim-trailing-whitespace'
+" Plug 'bronson/vim-trailing-whitespace'
 Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " focus window
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
+" Slowly plugins
+" Plug 'powerman/vim-plugin-ruscmd'
+" Plug 'ryanoasis/vim-devicons'
+
 " Colors
-Plug 'vim-scripts/ScrollColors' " Scroll colorscheme by type :SCROLLCOLOR
 Plug 'artanikin/sexy-railscasts-256-theme'
-Plug 'chriskempson/base16-vim'
-" Plug 'artanikin/bclear'
+" Plug 'chriskempson/base16-vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'jonathanfilip/vim-lucius'
+" Plug 'artanikin/bclear'
 " Plug 'AlessandroYorba/Breve'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'mhinz/vim-janah'
@@ -148,8 +142,6 @@ nnoremap <C-l> <C-w>l
 " Buffers
 nnoremap <tab> :bnext<CR>
 nnoremap <S-tab> :bprevious<CR>
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 noremap  <leader>d :Bd<CR>
@@ -162,12 +154,6 @@ nnoremap <leader><leader> <c-^>
 " Zoom a vim pane, <C-w>= to re-balance
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
 nnoremap <leader>= :wincmd =<cr>
-" }}}
-
-" MENU CONFIGURATION {{{
-set wildmenu
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,assets/*,.idea/*,*.jpg,*.png,*.gif
 " }}}
 
 " AUTOCOMMANDS {{{
@@ -187,9 +173,9 @@ endif
 augroup VimScript
   autocmd!
   if has("gui_running")
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC | source $MYGVIMRC | AirlineRefresh
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | source $MYGVIMRC
   else
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
   endif
 augroup END
 
@@ -274,23 +260,39 @@ let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the c
 let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
 let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .gitignore files
 
-" Airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-let g:airline#extensions#branch#enabled = 0
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline_skip_empty_sections = 1
+" LightLine
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \   'active': {
+      \     'left':[ [ 'mode', 'paste' ],
+      \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+      \     ]
+      \   },
+      \ 'inactive': {
+      \   'left': [ [ 'filename' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+      \ },
+      \   'component': {
+      \     'lineinfo': ' %3l:%-2v',
+      \   },
+      \   'component_function': {
+      \     'gitbranch': 'fugitive#head',
+      \     'filename': 'LightlineFilename',
+      \   }
+      \ }
 
-let g:airline_left_sep          = ''
-let g:airline_left_alt_sep      = ''
-let g:airline_right_sep         = ''
-let g:airline_right_alt_sep     = ''
-let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
-let g:airline#extensions#readonly#symbol   = '⊘'
-let g:airline#extensions#linecolumn#prefix = '¶'
-let g:airline#extensions#paste#symbol      = 'ρ'
+let g:lightline.subseparator = {
+  \   'left': '', 'right': ''
+  \}
+
+function! LightlineFilename()
+  let root = fnamemodify(get(b:, 'git_dir'), ':h')
+  let path = expand('%:p')
+  if path[:len(root)-1] ==# root
+    return path[len(root)+1:]
+  endif
+  return expand('%')
+endfunction
 
 " Silver Searcher
 if executable('ag')
