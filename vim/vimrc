@@ -262,7 +262,7 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .giti
 
 " LightLine
 let g:lightline = {
-      \ 'colorscheme': 'powerline',
+      \ 'colorscheme': 'deus',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
