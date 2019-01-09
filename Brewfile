@@ -40,6 +40,7 @@ brew "vim", args: ["with-override-system-vi"]
 brew "yarn"
 brew "bat"
 brew "ripgrep"
+brew "exa"
 
 # DB
 # brew 'postgresql', restart_service: true
