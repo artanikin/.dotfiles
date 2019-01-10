@@ -1,5 +1,5 @@
 " The folding settings above make the {{{ and }}} sections fold up.
-" vim:foldmethod=marker:foldlevel=-1
+" vim:foldmethod=marker:foldlevel=0
 
 set nocompatible
 
@@ -47,6 +47,7 @@ Plug 'junegunn/limelight.vim'
 
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
+Plug 'romainl/Apprentice'
 " Plug 'chriskempson/base16-vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'jonathanfilip/vim-lucius'
@@ -126,7 +127,8 @@ nmap 0 ^
 
 " Leader Shortcuts
 let mapleader=','
-nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>ev :e ~/.vimrc<cr>
+nnoremap <leader>el :e ~/.vimrc.local<cr>
 nnoremap <leader>eg :e $MYGVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <silent> <leader>sh :terminal<cr>
@@ -392,8 +394,11 @@ let g:UltiSnipsEditSplit="vertical"
 let g:vim_markdown_conceal = 0
 " }}}
 " Goyo {{{2
+nnoremap <leader>goo :Goyo<cr>
+nnoremap <leader>goc :Goyo!<cr>
+
 function! s:goyo_enter()
-  silent !tmux set status off
+  " silent !tmux set status off
   silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   set noshowmode
   set noshowcmd
@@ -402,7 +407,7 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-  silent !tmux set status on
+  " silent !tmux set status on
   silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   set showmode
   set showcmd

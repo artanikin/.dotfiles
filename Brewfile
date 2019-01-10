@@ -41,6 +41,10 @@ brew "yarn"
 brew "bat"
 brew "ripgrep"
 brew "exa"
+# Fast terminal filemanager
+brew "nnn"
+# Usefull utils
+brew "moreutils"
 
 # DB
 # brew 'postgresql', restart_service: true
