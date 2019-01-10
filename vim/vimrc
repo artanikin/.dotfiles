@@ -48,6 +48,7 @@ Plug 'junegunn/limelight.vim'
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'romainl/Apprentice'
+Plug 'liuchengxu/space-vim-dark'
 " Plug 'chriskempson/base16-vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'jonathanfilip/vim-lucius'
