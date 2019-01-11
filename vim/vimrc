@@ -33,11 +33,12 @@ Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " fo
 Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 " Plug 'bronson/vim-trailing-whitespace'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
@@ -391,9 +392,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 " }}}
-" Markdown {{{2
-let g:vim_markdown_conceal = 0
-" }}}
 " Goyo {{{2
 nnoremap <leader>goo :Goyo<cr>
 nnoremap <leader>goc :Goyo!<cr>
@@ -418,6 +416,21 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
+" VimWiki {{{2
+let g:vimwiki_ext2syntax = { '.md': 'markdown', '.markdown': '.markdown', '.mdown': 'markdown' }
+let g:vimwiki_conceallevel = 0
+let g:vimwiki_list = [{'path': '~/notes/', 'index': 'main',
+                     \ 'syntax': 'markdown', 'ext': '.md'}]
+" }}}
+" MarkdownPreview {{{2
+" Stop auto opening markdown preview
+let g:mkdp_auto_start = 0
+" Close markdown preview if close md file
+let g:mkdp_auto_close = 1
+" Default browser markdown preview
+let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
+nmap <silent> <F8> <Plug>MarkdownPreview
 " }}}
 " }}}
 
