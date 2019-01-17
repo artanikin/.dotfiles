@@ -1,5 +1,5 @@
 export LANG=en_US.UTF-8
-export EDITOR=vim
+export EDITOR=nvim
 export GREP_OPTIONS='--color=auto'
 export DEFAULT_USER='arty'
 

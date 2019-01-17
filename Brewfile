@@ -40,9 +40,10 @@ brew "vim", args: ["with-override-system-vi"]
 brew "yarn"
 brew "bat"
 brew "ripgrep"
-brew "exa"
+brew "lsd"
 # Fast terminal filemanager
 brew "nnn"
+brew "vifm"
 # Usefull utils
 brew "moreutils"
 
