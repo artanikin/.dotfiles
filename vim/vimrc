@@ -28,36 +28,39 @@ Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " focus window
 Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 " Plug 'bronson/vim-trailing-whitespace'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
+Plug 'mattn/calendar-vim', { 'for': 'vimwiki' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 " Slowly plugins
-" Plug 'powerman/vim-plugin-ruscmd'
+Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
 " Plug 'ryanoasis/vim-devicons'
+" Plug 'ap/vim-css-color', { 'for': 'css' }
 
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'romainl/Apprentice'
 Plug 'liuchengxu/space-vim-dark'
 " Plug 'chriskempson/base16-vim'
-" Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 " Plug 'jonathanfilip/vim-lucius'
 " Plug 'artanikin/bclear'
-" Plug 'AlessandroYorba/Breve'
+Plug 'AlessandroYorba/Breve'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'mhinz/vim-janah'
 " Plug 'ajmwagar/vim-deus'
+Plug 'cocopon/iceberg.vim'
 " }}}
 
 call plug#end()
@@ -89,6 +92,8 @@ set hidden                                  " Allow buffer change w/o saving
 set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
 set colorcolumn=0
+" Only highlight the first 159 columns.
+set synmaxcol=159
 
 set list
 set listchars=tab:»·,trail:∙
@@ -241,7 +246,9 @@ let g:NERDTreeQuitOnOpen=1                             " close after a file is o
 let NERDTreeShowHidden=0                               " show hidden files in NERDTree
 let g:NERDTreeWinSize=50
 let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
+let NERDTreeMinimalUI = 1
 let NERDTreeShowBookmarks = 1                          " Display bookmarks on startup
+let NERDTreeAutoDeleteBuffer = 1                       " Close open buffer if delete file from context NERDTree menu
 
 nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
 nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
@@ -264,7 +271,7 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .giti
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'deus',
+      \ 'colorscheme': 'iceberg',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -422,6 +429,7 @@ let g:vimwiki_ext2syntax = { '.md': 'markdown', '.markdown': '.markdown', '.mdow
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_list = [{'path': '~/notes/', 'index': 'main',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
+autocmd FileType vimwiki map <space> :VimwikiToggleListItem<cr>
 " }}}
 " MarkdownPreview {{{2
 " Stop auto opening markdown preview
@@ -432,6 +440,46 @@ let g:mkdp_auto_close = 1
 let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
 nmap <silent> <F8> <Plug>MarkdownPreview
 " }}}
+" Calendar-vim {{{
+function! ToggleCalendar()
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+autocmd FileType vimwiki map cal :call ToggleCalendar()<cr>
+" }}}
+" vim-buftabline {{{2
+" Show buffers if > 2 buffers open
+let g:buftabline_show = 1
+
+" Show buff numeber
+let g:buftabline_numbers = 2
+
+" Indicate if buffers change
+let g:buftabline_indicators = 1
+
+let g:buftabline_separators = 1
+
+" Switch between buffers
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
+"}}}
 " }}}
 
 syntax on
