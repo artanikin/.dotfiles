@@ -18,7 +18,7 @@ Plug 'tpope/vim-fugitive'                                " Git wrapper
 Plug 'tpope/vim-rhubarb'                                 " :Gbrowse
 Plug 'tpope/vim-ragtag'                                  " eRuby <% %> <%= %> ...
 Plug 'tpope/vim-eunuch'                                  " Vim sugar for the UNIX shell commands :Delete, :Rename, :SudoWrite
-Plug 'jiangmiao/auto-pairs'
+Plug 'tmsvg/pear-tree'
 Plug 'mg979/vim-visual-multi'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
@@ -52,15 +52,16 @@ Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
 Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'romainl/Apprentice'
 Plug 'liuchengxu/space-vim-dark'
-" Plug 'chriskempson/base16-vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'AlessandroYorba/Breve'
+Plug 'cocopon/iceberg.vim'
+Plug 'robertmeta/nofrils'
+" Plug 'chriskempson/base16-vim'
 " Plug 'jonathanfilip/vim-lucius'
 " Plug 'artanikin/bclear'
-Plug 'AlessandroYorba/Breve'
 " Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'mhinz/vim-janah'
 " Plug 'ajmwagar/vim-deus'
-Plug 'cocopon/iceberg.vim'
 " }}}
 
 call plug#end()
@@ -121,7 +122,7 @@ if has('folding')
     set fillchars=vert:│
     set fillchars+=fold:·
   endif
-  set foldmethod=indent
+  set foldmethod=syntax
   set foldlevelstart=99
 endif
 " }}}
@@ -329,7 +330,7 @@ map <leader>a :call RunAllSpecs()<CR>
 " FZF (Replace for Ctrl-P) {{{2
 let g:fzf_files_options =
   \ '--reverse ' .
-  \ '--preview "(coderay {} || cat {}) 2> /dev/null | head -'.&lines.'"'
+  \ '--preview "(coderay {} || bat --color \"always\" --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
 let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -378,7 +379,7 @@ let uncommited_files_options = { 'source': '( git status --porcelain | awk ''{pr
 
 let s:diff_options =
   \ '--reverse ' .
-  \ '--preview "(git diff --color=always master -- {} | tail -n +5 || cat {}) 2> /dev/null | head -'.&lines.'"'
+  \ '--preview "(git diff --color=always master -- {} | tail -n +5 || bat {}) 2> /dev/null | head -'.&lines.'"'
 command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', extend(branch_files_options, { 'options': s:diff_options }), 0))
 command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', extend(uncommited_files_options, { 'options': s:diff_options }), 0))
 
@@ -409,6 +410,7 @@ function! s:goyo_enter()
   set noshowmode
   set noshowcmd
   set scrolloff=999
+  set synmaxcol=3000
   Limelight
 endfunction
 
@@ -418,6 +420,7 @@ function! s:goyo_leave()
   set showmode
   set showcmd
   set scrolloff=5
+  set synmaxcol=159
   Limelight!
 endfunction
 
@@ -425,10 +428,10 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 " VimWiki {{{2
-let g:vimwiki_ext2syntax = { '.md': 'markdown', '.markdown': '.markdown', '.mdown': 'markdown' }
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_list = [{'path': '~/notes/', 'index': 'main',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_listsyms = ' ○◐●✓'
 autocmd FileType vimwiki map <space> :VimwikiToggleListItem<cr>
 " }}}
 " MarkdownPreview {{{2
@@ -480,6 +483,24 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 "}}}
+" pear-tree {{{2
+let g:pear_tree_pairs = {
+            \ '(': {'closer': ')'},
+            \ '[': {'closer': ']'},
+            \ '{': {'closer': '}'},
+            \ "'": {'closer': "'"},
+            \ '"': {'closer': '"'},
+            \ '/*': {'closer': '*/'},
+            \ '<!--': {'closer': '-->'},
+            \ '<%': {'closer': '%>'},
+            \ '<%=': {'closer': '%>'}}
+
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+
+imap <C-n> <Plug>(PearTreeJump)
+" }}}
 " }}}
 
 syntax on
