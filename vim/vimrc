@@ -32,6 +32,10 @@ Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " fo
 Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
+Plug 'posva/vim-vue', {'for': 'vue'}                     " Vim syntax highlighting for Vue components.
+
+" Code completion
+Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() }, 'for': ['ruby', 'json', 'html', 'yml', 'css'] }
 " Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
@@ -431,7 +435,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_list = [{'path': '~/notes/', 'index': 'main',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
-let g:vimwiki_listsyms = ' ○◐●✓'
 autocmd FileType vimwiki map <space> :VimwikiToggleListItem<cr>
 " }}}
 " MarkdownPreview {{{2
