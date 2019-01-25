@@ -41,13 +41,14 @@
   dc = diff --cached --word-diff --color-words
   ds = diff --staged --word-diff --color-words
   aa = add --all
-  pom = push origin master
   b = branch
   pd  = push origin dev
   pld = pull origin dev
   pm  = push origin master
   plm = pull origin master
   browse = !hub browse
+  ph = push origin HEAD
+  phf = push origin HEAD --force
 
   amend = commit --amend                                                        # change last commit message
   car = commit --amend --no-edit                                                # change last commit files
