@@ -18,7 +18,7 @@ Plug 'tpope/vim-fugitive'                                " Git wrapper
 Plug 'tpope/vim-rhubarb'                                 " :Gbrowse
 Plug 'tpope/vim-ragtag'                                  " eRuby <% %> <%= %> ...
 Plug 'tpope/vim-eunuch'                                  " Vim sugar for the UNIX shell commands :Delete, :Rename, :SudoWrite
-Plug 'tmsvg/pear-tree'
+Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
@@ -40,7 +40,6 @@ Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() }, 'for': ['ruby', 'js
 
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
-Plug 'mattn/calendar-vim', { 'for': 'vimwiki' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
@@ -435,7 +434,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:vimwiki_conceallevel = 0
 let g:vimwiki_list = [{'path': '~/notes/', 'index': 'main',
                      \ 'syntax': 'markdown', 'ext': '.md'}]
-autocmd FileType vimwiki map <space> :VimwikiToggleListItem<cr>
+autocmd FileType vimwiki map ,<space> :VimwikiToggleListItem<cr>
 " }}}
 " MarkdownPreview {{{2
 " Stop auto opening markdown preview
@@ -445,22 +444,6 @@ let g:mkdp_auto_close = 1
 " Default browser markdown preview
 let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
 nmap <silent> <F8> <Plug>MarkdownPreview
-" }}}
-" Calendar-vim {{{
-function! ToggleCalendar()
-  execute ":Calendar"
-  if exists("g:calendar_open")
-    if g:calendar_open == 1
-      execute "q"
-      unlet g:calendar_open
-    else
-      g:calendar_open = 1
-    end
-  else
-    let g:calendar_open = 1
-  end
-endfunction
-autocmd FileType vimwiki map cal :call ToggleCalendar()<cr>
 " }}}
 " vim-buftabline {{{2
 " Show buffers if > 2 buffers open
@@ -486,24 +469,6 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 "}}}
-" pear-tree {{{2
-let g:pear_tree_pairs = {
-            \ '(': {'closer': ')'},
-            \ '[': {'closer': ']'},
-            \ '{': {'closer': '}'},
-            \ "'": {'closer': "'"},
-            \ '"': {'closer': '"'},
-            \ '/*': {'closer': '*/'},
-            \ '<!--': {'closer': '-->'},
-            \ '<%': {'closer': '%>'},
-            \ '<%=': {'closer': '%>'}}
-
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
-
-imap <C-n> <Plug>(PearTreeJump)
-" }}}
 " }}}
 
 syntax on
