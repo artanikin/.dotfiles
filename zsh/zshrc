@@ -1,13 +1,18 @@
 source ~/.zplug/init.zsh
+setopt combiningchars
+setopt no_global_rcs
 
-zplug 'mafredri/zsh-async'
-zplug 'sindresorhus/pure'
+
+zplug 'mafredri/zsh-async', from:'github', use:'async.zsh'
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 zplug 'zsh-users/zsh-autosuggestions', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
-zplug 'zsh-users/zsh-completions', defer:3
 zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
 zplug 'wfxr/forgit', defer:1
+
+zplug 'zsh-users/zsh-completions', defer:3
+autoload -U compinit && compinit
 
 if ! zplug check --verbose; then
 printf "Install? [y/N]: "
@@ -26,4 +31,3 @@ done
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-

@@ -1,3 +1,4 @@
+alias dl="cd ~/Downloads/"
 alias cp="cp -ivr"
 alias scp="scp -r"
 alias rm="rm -ivr"
@@ -38,6 +39,8 @@ alias sr="spring rake"
 alias srr="spring rake routes"
 alias srg="spring rake routes G"
 alias st="spring rspec"
+alias rails="bundle exec rails"
+alias rake="bundle exec rake"
 
 # SSH fix for working with xterm-color256-italic
 alias ssh="TERM=xterm-256color ssh"
