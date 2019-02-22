@@ -25,6 +25,7 @@ Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
+Plug 'jgdavey/tslime.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -59,7 +60,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'AlessandroYorba/Breve'
 Plug 'cocopon/iceberg.vim'
 Plug 'robertmeta/nofrils'
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim' | Plug 'felixjung/vim-base16-lightline'
 " Plug 'jonathanfilip/vim-lucius'
 " Plug 'artanikin/bclear'
 " Plug 'dracula/vim', { 'as': 'dracula' }
@@ -97,7 +98,7 @@ set lazyredraw                              " Don't update while executing macro
 set shell=/bin/zsh
 set colorcolumn=0
 " Only highlight the first 159 columns.
-set synmaxcol=159
+" set synmaxcol=159
 
 set list
 set listchars=tab:»·,trail:∙
@@ -181,7 +182,7 @@ if has("autocmd")
   au BufRead,BufNewFile Brewfile set filetype=sh
 
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType javascript,html,eruby,sass setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType javascript,html,eruby,sass setlocal ts=2 sts=2 sw=2 et
 endif
 
 augroup VimScript
@@ -275,7 +276,7 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .giti
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'iceberg',
+      \ 'colorscheme': 'base16_railscasts',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -413,7 +414,7 @@ function! s:goyo_enter()
   set noshowmode
   set noshowcmd
   set scrolloff=999
-  set synmaxcol=3000
+  " set synmaxcol=3000
   Limelight
 endfunction
 
@@ -423,7 +424,7 @@ function! s:goyo_leave()
   set showmode
   set showcmd
   set scrolloff=5
-  set synmaxcol=159
+  " set synmaxcol=159
   Limelight!
 endfunction
 
@@ -469,6 +470,10 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 "}}}
+" vim-vue {{{2
+autocmd FileType vue syntax sync fromstart
+let g:vue_disable_pre_processors=1
+" }}}
 " }}}
 
 syntax on
