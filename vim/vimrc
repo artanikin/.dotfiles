@@ -377,6 +377,7 @@ nnoremap <leader>gc :Files app/controllers/<cr>
 nnoremap <leader>gy :Files app/assets/stylesheets/<cr>
 nnoremap <leader>gj :Files app/assets/javascripts/<cr>
 nnoremap <leader>gs :Files spec/<cr>
+nnoremap <leader>gw :Files app/javascript/<cr>
 
 let branch_files_options = { 'source': '( git status --porcelain | awk ''{print $2}''; git diff --name-only HEAD $(git merge-base HEAD master) ) | sort | uniq'}
 let uncommited_files_options = { 'source': '( git status --porcelain | awk ''{print $2}'' ) | sort | uniq'}
