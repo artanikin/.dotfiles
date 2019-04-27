@@ -13,5 +13,5 @@ windows:
       panes:
         - v
         # - bundle exec guard
-  - Overmind: make brun; overmind start
+  - Foreman: make prepare; foreman start
   - Browser: sleep 40s; open https://lvh.me:1443; exit
