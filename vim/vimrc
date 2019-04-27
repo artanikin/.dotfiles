@@ -16,11 +16,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'                                " Git wrapper
 Plug 'tpope/vim-rhubarb'                                 " :Gbrowse
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-ragtag'                                  " eRuby <% %> <%= %> ...
 Plug 'tpope/vim-eunuch'                                  " Vim sugar for the UNIX shell commands :Delete, :Rename, :SudoWrite
 Plug 'jiangmiao/auto-pairs'
 Plug 'mg979/vim-visual-multi'
-Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'christoomey/vim-tmux-navigator'
@@ -34,22 +34,19 @@ Plug 'tweekmonster/startuptime.vim' " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
 Plug 'posva/vim-vue', {'for': 'vue'}                     " Vim syntax highlighting for Vue components.
+Plug 'pangloss/vim-javascript'
 
-" Code completion
-Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() }, 'for': ['ruby', 'json', 'html', 'yml', 'css'] }
-" Plug 'bronson/vim-trailing-whitespace'
-
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+" Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+" Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
+" Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Slowly plugins
 Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 " Plug 'ap/vim-css-color', { 'for': 'css' }
 
 " Colors {{{2
@@ -61,6 +58,8 @@ Plug 'AlessandroYorba/Breve'
 Plug 'cocopon/iceberg.vim'
 Plug 'robertmeta/nofrils'
 Plug 'chriskempson/base16-vim' | Plug 'felixjung/vim-base16-lightline'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'mhartington/oceanic-next'
 " Plug 'jonathanfilip/vim-lucius'
 " Plug 'artanikin/bclear'
 " Plug 'dracula/vim', { 'as': 'dracula' }
@@ -276,23 +275,23 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .giti
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'base16_railscasts',
+      \ 'colorscheme': 'monokai_tasty',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
       \     ]
       \   },
-      \ 'inactive': {
-      \   'left': [ [ 'filename' ] ],
-      \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
-      \ },
-      \   'component': {
-      \     'lineinfo': ' %3l:%-2v',
+      \   'inactive': {
+      \     'left': [ [ 'filename' ] ],
+      \     'right': [ [ 'lineinfo' ], [ 'percent' ] ]
       \   },
       \   'component_function': {
       \     'gitbranch': 'fugitive#head',
       \     'filename': 'LightlineFilename',
-      \   }
+      \   },
+      \   'component': {
+      \     'lineinfo': ' %3l:%-2v',
+      \   },
       \ }
 
 let g:lightline.subseparator = {
@@ -474,6 +473,18 @@ nmap <leader>0 <Plug>BufTabLine.Go(10)
 " vim-vue {{{2
 autocmd FileType vue syntax sync fromstart
 let g:vue_disable_pre_processors=1
+" }}}
+" vim-javascript {{{2
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+" }}}
+" auto-paird {{{2
+let g:AutoPairsMultilineClose = 0
+" }}}
+" vim-signify {{{2
+autocmd User Fugitive SignifyRefresh
 " }}}
 " }}}
 
