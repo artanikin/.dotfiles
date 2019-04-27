@@ -44,6 +44,7 @@ brew "lsd"
 # Fast terminal filemanager
 brew "nnn"
 brew "vifm"
+brew "brew-gem"
 # Usefull utils
 brew "moreutils"
 
@@ -79,6 +80,7 @@ cask "phinze/cask/vlc"
 cask "phinze/cask/webpquicklook"
 cask "phinze/cask/wkhtmltopdf"
 cask "slowquitapps"
+cask "dozer"
 
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 cask "phinze/cask/qlcolorcode"
