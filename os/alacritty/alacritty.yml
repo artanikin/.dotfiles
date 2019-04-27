@@ -78,7 +78,8 @@ font:
     # family: Inconsolata-g
     # style: g
     family: SF Mono
-    style: Heavy
+    # style: Heavy
+    style: Bold
 
   italic:
     family: Operator Mono
@@ -255,38 +256,67 @@ render_timer: false
 #     cyan:    '0x5fb3b3'
 #     white:   '0xd8dee9'
 
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x2b303b'
+#     foreground: '0xc0c5ce'
+
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text: '0x2b303b'
+#     cursor: '0xc0c5ce'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x2b303b'
+#     red:     '0xbf616a'
+#     green:   '0xa3be8c'
+#     yellow:  '0xebcb8b'
+#     blue:    '0x8fa1b3'
+#     magenta: '0xb48ead'
+#     cyan:    '0x96b5b4'
+#     white:   '0xc0c5ce'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x65737e'
+#     red:     '0xd08770'
+#     green:   '0x343d46'
+#     yellow:  '0x4f5b66'
+#     blue:    '0xa7adba'
+#     magenta: '0xdfe1e8'
+#     cyan:    '0xab7967'
+#     white:   '0xeff1f5'
+
+# Colors (Monokai Dark)
 colors:
   # Default colors
   primary:
-    background: '0x2b303b'
-    foreground: '0xc0c5ce'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x2b303b'
-    cursor: '0xc0c5ce'
+    background: '0x272822'
+    foreground: '0xF8F8F2'
 
   # Normal colors
   normal:
-    black:   '0x2b303b'
-    red:     '0xbf616a'
-    green:   '0xa3be8c'
-    yellow:  '0xebcb8b'
-    blue:    '0x8fa1b3'
-    magenta: '0xb48ead'
-    cyan:    '0x96b5b4'
-    white:   '0xc0c5ce'
+   black:   '0x272822'
+   red:     '0xF92672'
+   green:   '0xA6E22E'
+   yellow:  '0xF4BF75'
+   blue:    '0x66D9EF'
+   magenta: '0xAE81FF'
+   cyan:    '0xA1EFE4'
+   white:   '0xF8F8F2'
 
   # Bright colors
   bright:
-    black:   '0x65737e'
-    red:     '0xd08770'
-    green:   '0x343d46'
-    yellow:  '0x4f5b66'
-    blue:    '0xa7adba'
-    magenta: '0xdfe1e8'
-    cyan:    '0xab7967'
-    white:   '0xeff1f5'
+   black:   '0x75715E'
+   red:     '0xF92672'
+   green:   '0xA6E22E'
+   yellow:  '0xF4BF75'
+   blue:    '0x66D9EF'
+   magenta: '0xAE81FF'
+   cyan:    '0xA1EFE4'
+   white:   '0xF9F8F5'
 
 # Visual Bell
 #
