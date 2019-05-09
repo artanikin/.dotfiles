@@ -38,25 +38,17 @@ Plug 'pangloss/vim-javascript'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
-" Plug 'junegunn/goyo.vim'
-" Plug 'junegunn/limelight.vim'
 
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Slowly plugins
 Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
-Plug 'ryanoasis/vim-devicons'
-" Plug 'ap/vim-css-color', { 'for': 'css' }
 
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
-Plug 'romainl/Apprentice'
-Plug 'liuchengxu/space-vim-dark'
 Plug 'arcticicestudio/nord-vim'
-Plug 'AlessandroYorba/Breve'
 Plug 'cocopon/iceberg.vim'
-Plug 'robertmeta/nofrils'
 Plug 'chriskempson/base16-vim' | Plug 'felixjung/vim-base16-lightline'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'mhartington/oceanic-next'
@@ -486,6 +478,16 @@ let g:AutoPairsMultilineClose = 0
 " vim-signify {{{2
 autocmd User Fugitive SignifyRefresh
 " }}}
+" }}}
+" Highlight customization {{{
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
+hi Folded gui=italic cterm=italic
+
+highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2b2b2b guibg=#a5c261
+highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=#da4939
+highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#2b2b2b guibg=#6d9cbe
+highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#2b2b2b guibg=#6d9cbe
 " }}}
 
 syntax on
