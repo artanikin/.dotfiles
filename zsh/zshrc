@@ -3,15 +3,17 @@ setopt combiningchars
 setopt no_global_rcs
 
 zplug 'mafredri/zsh-async', from:'github', use:'async.zsh'
-zplug 'sindresorhus/pure', use:'pure.zsh', from:'github', as:'theme'
 zplug 'zsh-users/zsh-autosuggestions', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
-zplug "plugins/vi-mode", from:oh-my-zsh
+# zplug "plugins/vi-mode", from:oh-my-zsh
 zplug "plugins/osx", from:oh-my-zsh
-zplug 'wfxr/forgit', defer:1
-
 zplug 'zsh-users/zsh-completions', defer:3
+
 autoload -U compinit && compinit
+
+for zsh_source in $HOME/.zsh/configs/*.zsh; do
+  source $zsh_source
+done
 
 if ! zplug check --verbose; then
 printf "Install? [y/N]: "
@@ -21,10 +23,6 @@ fi
 fi
 
 zplug load
-
-for zsh_source in $HOME/.zsh/configs/*.zsh; do
-  source $zsh_source
-done
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
