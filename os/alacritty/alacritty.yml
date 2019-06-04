@@ -65,27 +65,9 @@ draw_bold_text_with_bright_colors: false
 font:
   # The normal (roman) font face to use.
   normal:
-    # family: InconsolataGo Nerd Font Mono
-    # style: Regular
-    # family: Inconsolata-g
-    # style: g
-    family: SF Mono
-    style: Regular
+    family: Dank Mono
 
-  bold:
-    # family: InconsolataGo Nerd Font Mono
-    # style: Bold
-    # family: Inconsolata-g
-    # style: g
-    family: SF Mono
-    # style: Heavy
-    style: Bold
-
-  italic:
-    family: Operator Mono
-    style: Book Italic
-
-  size: 12
+  size: 14
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
