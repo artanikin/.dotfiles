@@ -11,22 +11,17 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'                                " Git wrapper
 Plug 'tpope/vim-rhubarb'                                 " :Gbrowse
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-ragtag'                                  " eRuby <% %> <%= %> ...
-Plug 'tpope/vim-eunuch'                                  " Vim sugar for the UNIX shell commands :Delete, :Rename, :SudoWrite
 Plug 'jiangmiao/auto-pairs'
-Plug 'mg979/vim-visual-multi'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'jgdavey/tslime.vim'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " focus window
@@ -44,6 +39,10 @@ Plug 'honza/vim-snippets'
 
 " Slowly plugins
 Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
+Plug 'mg979/vim-visual-multi'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'                                " Git wrapper
+Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -88,8 +87,7 @@ set hidden                                  " Allow buffer change w/o saving
 set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
 set colorcolumn=0
-" Only highlight the first 159 columns.
-" set synmaxcol=159
+set synmaxcol=159                           " Only highlight the first 159 columns.
 
 set list
 set listchars=tab:»·,trail:∙
@@ -100,11 +98,31 @@ set incsearch
 set ignorecase
 set smartcase
 
-set clipboard=unnamed,unnamedplus  " Copy into system (*, +) registers.
+set clipboard=unnamed,unnamedplus            " Copy into system (*, +) registers.
 
 " Backupds
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+
+"more characters will be sent to the screen for redrawing
+set ttyfast
+"time waited for key press(es) to complete. It makes for a faster key response
+set ttimeout
+set ttimeoutlen=50
+"make backspace behave properly in insert mode
+set backspace=indent,eol,start
+"a better menu in command mode
+set wildmenu
+set wildmode=longest:full,full
+"hide buffers instead of closing them even if they contain unwritten changes
+set hidden
+
+"remove current line highlight in unfocused window
+au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
+au WinLeave,FocusLost,CmdwinLeave * set nocul
+"
+"remove trailing whitespace on save
+autocmd! BufWritePre * :%s/\s\+$//e
 
 " Timeout when switching modes
 set timeoutlen=1000
@@ -135,6 +153,20 @@ nnoremap <leader>el :e ~/.vimrc.local<cr>
 nnoremap <leader>eg :e $MYGVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <silent> <leader>sh :terminal<cr>
+nnoremap <leader>w :w<cr>
+"replace the word under cursor
+nnoremap <leader>* :%s/\<<c-r><c-w>\>//<left>
+"move lines around
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
+"keep text selected after indentation
+vnoremap < <gv
+vnoremap > >gv
+"Ctags
+set tags+=.git/tags
+nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
 
 nnoremap j gj
 nnoremap k gk
@@ -191,11 +223,6 @@ augroup ColorColumnOnlyInInsertMode
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
 augroup END
 
-augroup ConfigGroup
-    autocmd!
-    autocmd BufWritePost * :call StripTrailingWhitespaces()
-augroup END
-
 augroup rails_shortcuts
   autocmd!
   autocmd User Rails nnoremap <Leader>m :Emodel<Space>
@@ -220,34 +247,22 @@ cnoreabbrev Qa qa
 cnoreabbrev Ц w
 cnoreabbrev Цй wq
 " }}}
-" FUNCTIONS {{{1
-" strips trailing whitespace at the end of files. this is called on buffer write in the autogroup above.
-function! StripTrailingWhitespaces()
-  " save last search & cursor position
-  let _s=@/
-  let l=line(".")
-  let c=col(".")
-  %s/\s\+$//e
-  let @/=_s
-  call cursor(l, c)
-endfunction
-" }}}
 " PLUGIN OPTIONS {{{1
 " NERDTree {{{2
 let NERDTreeWinPos="left"
 let NERDTreeHijackNetrw=1
 let NERDTreeChDirMode=2
 let NERDTreeDirArrows=1
-let g:NERDTreeQuitOnOpen=1                             " close after a file is opened
-let NERDTreeShowHidden=0                               " show hidden files in NERDTree
+let g:NERDTreeQuitOnOpen=1                                          " close after a file is opened
+let NERDTreeShowHidden=0                                            " show hidden files in NERDTree
 let g:NERDTreeWinSize=50
-let NERDTreeAutoDeleteBuffer=1                         " delete buffer when rename or delete file
+let NERDTreeAutoDeleteBuffer=1                                      " delete buffer when rename or delete file
 let NERDTreeMinimalUI = 1
-let NERDTreeShowBookmarks = 1                          " Display bookmarks on startup
-let NERDTreeAutoDeleteBuffer = 1                       " Close open buffer if delete file from context NERDTree menu
+let NERDTreeShowBookmarks = 1                                       " Display bookmarks on startup
+let NERDTreeAutoDeleteBuffer = 1                                    " Close open buffer if delete file from context NERDTree menu
 
-nmap <silent> <leader>q :NERDTreeToggle<cr>            " toggle NERDTree
-nmap <silent> <leader>y :NERDTreeFind<cr>              " expand to the path of the file in the current buffer
+nmap <silent> <leader>q :NERDTreeToggle<cr>                         " toggle NERDTree
+nmap <silent> <leader>y :NERDTreeFind<cr>                           " expand to the path of the file in the current buffer
 
 " NERDTree syntax highlight {{{3
 let g:NERDTreeFileExtensionHighlightFullName = 1
@@ -258,16 +273,16 @@ let g:NERDTreeHighlightFoldersFullName = 1
 let s:blue = "689FB6"
 let s:git_orange = 'F54D27'
 
-let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor = {}                         " this line is needed to avoid error
 let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
 
-let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
-let g:NERDTreeExtensionHighlightColor['yml'] = s:blue " sets the color for .gitignore files
+let g:NERDTreeExtensionHighlightColor = {}                          " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['yml'] = s:blue               " sets the color for .gitignore files
 " }}}
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'monokai_tasty',
+      \ 'colorscheme': 'base16_oceanicnext',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -302,7 +317,7 @@ endfunction
 " Silver Searcher {{{2
 if executable('ag')
   let g:ackprg = 'ag --nogroup --nocolor --column'
-  nnoremap \ :Ag!<space>
+  nnoremap \| :Ag<space>
   nnoremap <leader>ga :Ag <c-r><c-w><cr>
 endif
 " }}}
@@ -326,7 +341,7 @@ map <leader>a :call RunAllSpecs()<CR>
 let g:fzf_files_options =
   \ '--reverse ' .
   \ '--preview "(coderay {} || bat --color \"always\" --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
-let $FZF_DEFAULT_COMMAND = 'ag -g "" --hidden'
+let $FZF_DEFAULT_COMMAND = 'ag -l --nogroup --nocolor -g "" --hidden'
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
@@ -360,7 +375,8 @@ command! -bang Colors
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <Leader>tg :Tags<CR>
+nnoremap <Leader>t :Tags<CR>
+nnoremap <leader>o :Lines<cr>
 
 nnoremap <leader>gm :Files app/models/<cr>
 nnoremap <leader>gv :Files app/views/<cr>
@@ -396,39 +412,6 @@ let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 " }}}
-" Goyo {{{2
-nnoremap <leader>goo :Goyo<cr>
-nnoremap <leader>goc :Goyo!<cr>
-
-function! s:goyo_enter()
-  " silent !tmux set status off
-  silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  " set synmaxcol=3000
-  Limelight
-endfunction
-
-function! s:goyo_leave()
-  " silent !tmux set status on
-  silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  set showmode
-  set showcmd
-  set scrolloff=5
-  " set synmaxcol=159
-  Limelight!
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-" }}}
-" VimWiki {{{2
-let g:vimwiki_conceallevel = 0
-let g:vimwiki_list = [{'path': '~/notes/', 'index': 'main',
-                     \ 'syntax': 'markdown', 'ext': '.md'}]
-autocmd FileType vimwiki map ,<space> :VimwikiToggleListItem<cr>
-" }}}
 " MarkdownPreview {{{2
 " Stop auto opening markdown preview
 let g:mkdp_auto_start = 0
@@ -439,15 +422,9 @@ let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
 nmap <silent> <F8> <Plug>MarkdownPreview
 " }}}
 " vim-buftabline {{{2
-" Show buffers if > 2 buffers open
-let g:buftabline_show = 1
-
-" Show buff numeber
-let g:buftabline_numbers = 2
-
-" Indicate if buffers change
-let g:buftabline_indicators = 1
-
+let g:buftabline_show = 1                                   " Show buffers if > 2 buffers open
+let g:buftabline_numbers = 2                                " Show buff numeber
+let g:buftabline_indicators = 1                             " Indicate if buffers change
 let g:buftabline_separators = 1
 
 " Switch between buffers
@@ -479,16 +456,6 @@ let g:AutoPairsMultilineClose = 0
 autocmd User Fugitive SignifyRefresh
 " }}}
 " }}}
-" Highlight customization {{{
-hi Comment gui=italic cterm=italic
-hi htmlArg gui=italic cterm=italic
-hi Folded gui=italic cterm=italic
-
-highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2b2b2b guibg=#a5c261
-highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=#da4939
-highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#2b2b2b guibg=#6d9cbe
-highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#2b2b2b guibg=#6d9cbe
-" }}}
 
 syntax on
 filetype on
@@ -502,3 +469,14 @@ set t_Co=256
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
+
+" Highlight customization {{{
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
+hi Folded gui=italic cterm=italic
+
+highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2b2b2b guibg=#a5c261
+highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=#da4939
+highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#2b2b2b guibg=#6d9cbe
+highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#2b2b2b guibg=#6d9cbe
+" }}}
