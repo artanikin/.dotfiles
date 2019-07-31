@@ -13,9 +13,9 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-rhubarb'                                 " :Gbrowse
+Plug 'tpope/vim-rhubarb'                                                            " :Gbrowse
 Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-ragtag'                                  " eRuby <% %> <%= %> ...
+Plug 'tpope/vim-ragtag'                                                             " eRuby <% %> <%= %> ...
 Plug 'jiangmiao/auto-pairs'
 Plug 'mileszs/ack.vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -24,12 +24,14 @@ Plug 'thoughtbot/vim-rspec', { 'for': 'ruby' }
 Plug 'jgdavey/tslime.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'  " focus window
-Plug 'tweekmonster/startuptime.vim' " profiling vim startup
+Plug 'blueyed/vim-diminactive' | Plug 'tmux-plugins/vim-tmux-focus-events'          " focus window
+Plug 'tweekmonster/startuptime.vim'                                                 " profiling vim startup
 Plug 'slim-template/vim-slim', { 'for': 'slim' }
 Plug 'tpope/vim-haml', { 'for': 'haml' }
-Plug 'posva/vim-vue', {'for': 'vue'}                     " Vim syntax highlighting for Vue components.
-Plug 'pangloss/vim-javascript'
+Plug 'posva/vim-vue', {'for': 'vue'}                                                " Vim syntax highlighting for Vue components.
+Plug 'pangloss/vim-javascript', { 'for': 'js' }
+Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript.jsx'] }
+Plug 'lifepillar/vim-colortemplate'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
@@ -42,20 +44,27 @@ Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
 Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'                                " Git wrapper
-Plug 'scrooloose/nerdtree' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+Plug 'scrooloose/nerdtree'  | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
-Plug 'arcticicestudio/nord-vim'
+Plug 'lucasprag/simpleblack'
 Plug 'cocopon/iceberg.vim'
-Plug 'chriskempson/base16-vim' | Plug 'felixjung/vim-base16-lightline'
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'mhartington/oceanic-next'
+Plug 'axvr/photon.vim'
+Plug 'owickstrom/vim-colors-paramount'
+Plug 'davidosomething/vim-colors-meh'
+Plug 'lifepillar/vim-gruvbox8'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'chriskempson/base16-vim' | Plug 'mike-hearn/base16-vim-lightline'
+" Plug 'patstockwell/vim-monokai-tasty'
+" Plug 'mhartington/oceanic-next'
+" Plug 'fenetikm/falcon'
+" Plug 'dracula/vim'
 " Plug 'jonathanfilip/vim-lucius'
 " Plug 'artanikin/bclear'
-" Plug 'dracula/vim', { 'as': 'dracula' }
 " Plug 'mhinz/vim-janah'
 " Plug 'ajmwagar/vim-deus'
+" Plug 'shapeoflambda/dark-purple.vim'
+" Plug 'cormacrelf/vim-colors-github'
 " }}}
 
 call plug#end()
@@ -87,7 +96,9 @@ set hidden                                  " Allow buffer change w/o saving
 set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
 set colorcolumn=0
-set synmaxcol=159                           " Only highlight the first 159 columns.
+set termguicolors
+" set synmaxcol=159                         " Only highlight the first 159 columns.
+set signcolumn=yes                          " Always show signcolumns
 
 set list
 set listchars=tab:»·,trail:∙
@@ -205,7 +216,7 @@ if has("autocmd")
   au BufRead,BufNewFile Brewfile set filetype=sh
 
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType javascript,html,eruby,sass setlocal ts=2 sts=2 sw=2 et
+  autocmd FileType javascript,html,eruby,sass setlocal ts=4 sts=4 sw=4 et
 endif
 
 augroup VimScript
@@ -282,11 +293,11 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue               " sets the c
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'base16_oceanicnext',
+      \ 'colorscheme': 'jellybeans',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
-      \              [ 'gitbranch', 'readonly', 'filename', 'modified' ]
-      \     ]
+      \              [ 'gitbranch', 'git', 'readonly', 'filename', 'modified' ]
+      \     ],
       \   },
       \   'inactive': {
       \     'left': [ [ 'filename' ] ],
@@ -295,15 +306,14 @@ let g:lightline = {
       \   'component_function': {
       \     'gitbranch': 'fugitive#head',
       \     'filename': 'LightlineFilename',
+      \     'filetype': 'MyFiletype',
+      \     'fileformat': 'MyFileformat',
       \   },
       \   'component': {
       \     'lineinfo': ' %3l:%-2v',
       \   },
+      \ 'subseparator': { 'left': '', 'right': '' }
       \ }
-
-let g:lightline.subseparator = {
-  \   'left': '', 'right': ''
-  \}
 
 function! LightlineFilename()
   let root = fnamemodify(get(b:, 'git_dir'), ':h')
@@ -312,6 +322,14 @@ function! LightlineFilename()
     return path[len(root)+1:]
   endif
   return expand('%')
+endfunction
+
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
+endfunction
+
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 " }}}
 " Silver Searcher {{{2
@@ -399,27 +417,12 @@ nnoremap <silent> <leader>gp :BranchFiles<cr>
 nnoremap <silent> <leader>GP :UncommitedFiles<cr>
 nnoremap <silent> <leader>gb :Gblame<cr>
 " }}}
-" GitGutter styling to use · instead of +/- {{{2
-let g:gitgutter_sign_added = '∙'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '∙'
-let g:gitgutter_sign_modified_removed = '∙'
-" }}}
 " UltiSnips {{{2
 " better key bindings for UltiSnipsExpandTrigger
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
-" }}}
-" MarkdownPreview {{{2
-" Stop auto opening markdown preview
-let g:mkdp_auto_start = 0
-" Close markdown preview if close md file
-let g:mkdp_auto_close = 1
-" Default browser markdown preview
-let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
-nmap <silent> <F8> <Plug>MarkdownPreview
 " }}}
 " vim-buftabline {{{2
 let g:buftabline_show = 1                                   " Show buffers if > 2 buffers open
@@ -454,6 +457,8 @@ let g:AutoPairsMultilineClose = 0
 " }}}
 " vim-signify {{{2
 autocmd User Fugitive SignifyRefresh
+let g:signify_vcs_list = ['git']
+let g:signify_realtime = 0
 " }}}
 " }}}
 
@@ -471,9 +476,15 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 " Highlight customization {{{
-hi Comment gui=italic cterm=italic
-hi htmlArg gui=italic cterm=italic
-hi Folded gui=italic cterm=italic
+ hi Comment gui=italic cterm=italic
+ hi htmlArg gui=italic cterm=italic
+ hi Folded gui=italic cterm=italic
+ hi String gui=italic cterm=italic
+
+" hi rubyBlockParameter gui=italic cterm=italic
+" hi rubyClass gui=italic cterm=italic
+" hi rubyDefine gui=italic cterm=italic
+" hi rubyFunction gui=italic cterm=italic
 
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2b2b2b guibg=#a5c261
 highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=#da4939
