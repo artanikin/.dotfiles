@@ -63,11 +63,12 @@ draw_bold_text_with_bright_colors: false
 # family: Fira Code
 
 font:
+  size: 14.5
   # The normal (roman) font face to use.
+
   normal:
     family: Dank Mono
 
-  size: 14
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -88,7 +89,8 @@ font:
   use_thin_strokes: true
 
 # Should display the render timer
-render_timer: false
+debug:
+  render_timer: false
 
 # Colors (Tomorrow Night Bright)
 # colors:
@@ -272,33 +274,62 @@ render_timer: false
 #     white:   '0xeff1f5'
 
 # Colors (Monokai Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x272822'
+#     foreground: '0xF8F8F2'
+
+#   # Normal colors
+#   normal:
+#    black:   '0x272822'
+#    red:     '0xF92672'
+#    green:   '0xA6E22E'
+#    yellow:  '0xF4BF75'
+#    blue:    '0x66D9EF'
+#    magenta: '0xAE81FF'
+#    cyan:    '0xA1EFE4'
+#    white:   '0xF8F8F2'
+
+#   # Bright colors
+#   bright:
+#    black:   '0x75715E'
+#    red:     '0xF92672'
+#    green:   '0xA6E22E'
+#    yellow:  '0xF4BF75'
+#    blue:    '0x66D9EF'
+#    magenta: '0xAE81FF'
+#    cyan:    '0xA1EFE4'
+#    white:   '0xF9F8F5'
+
+# Colors (Dracula)
 colors:
   # Default colors
   primary:
-    background: '0x272822'
-    foreground: '0xF8F8F2'
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
 
   # Normal colors
   normal:
-   black:   '0x272822'
-   red:     '0xF92672'
-   green:   '0xA6E22E'
-   yellow:  '0xF4BF75'
-   blue:    '0x66D9EF'
-   magenta: '0xAE81FF'
-   cyan:    '0xA1EFE4'
-   white:   '0xF8F8F2'
+    black:   '0x000000'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xcaa9fa'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
 
   # Bright colors
   bright:
-   black:   '0x75715E'
-   red:     '0xF92672'
-   green:   '0xA6E22E'
-   yellow:  '0xF4BF75'
-   blue:    '0x66D9EF'
-   magenta: '0xAE81FF'
-   cyan:    '0xA1EFE4'
-   white:   '0xF9F8F5'
+    black:   '0x575b70'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
 
 # Visual Bell
 #
