@@ -216,7 +216,7 @@ if has("autocmd")
   au BufRead,BufNewFile Brewfile set filetype=sh
 
   autocmd FileType ruby setlocal ts=2 sts=2 sw=2 et
-  autocmd FileType javascript,html,eruby,sass setlocal ts=4 sts=4 sw=4 et
+  autocmd FileType javascript,html,eruby,sass,vue setlocal ts=4 sts=4 sw=4 et
 endif
 
 augroup VimScript
@@ -293,7 +293,7 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue               " sets the c
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'deus',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'git', 'readonly', 'filename', 'modified' ]
@@ -304,7 +304,8 @@ let g:lightline = {
       \     'right': [ [ 'lineinfo' ], [ 'percent' ] ]
       \   },
       \   'component_function': {
-      \     'gitbranch': 'fugitive#head',
+      \     'gitbranch': 'LightlineFugitive',
+      \     'readonly': 'LightlineReadonly',
       \     'filename': 'LightlineFilename',
       \     'filetype': 'MyFiletype',
       \     'fileformat': 'MyFileformat',
@@ -312,6 +313,7 @@ let g:lightline = {
       \   'component': {
       \     'lineinfo': ' %3l:%-2v',
       \   },
+      \ 'separator': { 'left': '', 'right': '' },
       \ 'subseparator': { 'left': '', 'right': '' }
       \ }
 
@@ -322,6 +324,18 @@ function! LightlineFilename()
     return path[len(root)+1:]
   endif
   return expand('%')
+endfunction
+
+function! LightlineReadonly()
+  return &readonly ? '' : ''
+endfunction
+
+function! LightlineFugitive()
+  if exists('*fugitive#head')
+    let branch = fugitive#head()
+    return branch !=# '' ? ' '.branch : ''
+  endif
+  return ''
 endfunction
 
 function! MyFiletype()
