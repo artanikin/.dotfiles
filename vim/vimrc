@@ -32,6 +32,7 @@ Plug 'posva/vim-vue', {'for': 'vue'}                                            
 Plug 'pangloss/vim-javascript', { 'for': 'js' }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript.jsx'] }
 Plug 'lifepillar/vim-colortemplate'
+Plug 'segeljakt/vim-silicon'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
@@ -47,6 +48,7 @@ Plug 'tpope/vim-fugitive'                                " Git wrapper
 Plug 'scrooloose/nerdtree'  | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
+Plug 'artanikin/vim-synthwave84'
 Plug 'lucasprag/simpleblack'
 Plug 'cocopon/iceberg.vim'
 Plug 'axvr/photon.vim'
@@ -473,6 +475,25 @@ let g:AutoPairsMultilineClose = 0
 autocmd User Fugitive SignifyRefresh
 let g:signify_vcs_list = ['git']
 let g:signify_realtime = 0
+" }}}
+" vim-silicon {{{2
+vmap <leader>p :'<,'>Silicon ~/Downloads/code_screenshot_%:t:r.png<cr>
+
+let g:silicon = {
+      \ 'theme':              'OneHalfDark',
+      \ 'font':                  'Hack',
+      \ 'background':         '#ffffff',
+      \ 'shadow-color':       '#555555',
+      \ 'line-pad':                   2,
+      \ 'pad-horiz':                 30,
+      \ 'pad-vert':                 50,
+      \ 'shadow-blur-radius':         0,
+      \ 'shadow-offset-x':            0,
+      \ 'shadow-offset-y':            0,
+      \ 'line-number':           v:true,
+      \ 'round-corner':          v:true,
+      \ 'window-controls':       v:true,
+      \ }
 " }}}
 " }}}
 
