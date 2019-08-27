@@ -83,7 +83,7 @@ call plug#end()
 " }}}
 " OPTIONS {{{1
 " Settings to replace tab. Use :retab for replacing tab in existing files.
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 set softtabstop=2
 set expandtab
@@ -103,7 +103,8 @@ set pastetoggle=<F10>                       " Toggle PASTE mode
 set autowrite                               " Autosave closed buffers
 set splitbelow                              " Open new split panes to bottom
 set splitright                              " Open new split panes to right
-set scrolloff=7                             " Minimal number of screen lines to keep above and below the cursor
+set scrolloff=3                             " Minimal number of screen lines to keep above and below the cursor
+set sidescrolloff=5
 set hidden                                  " Allow buffer change w/o saving
 set lazyredraw                              " Don't update while executing macros
 set shell=/bin/zsh
@@ -111,6 +112,12 @@ set colorcolumn=0
 set termguicolors
 " set synmaxcol=159                         " Only highlight the first 159 columns.
 set signcolumn=yes                          " Always show signcolumns
+set mouse=a
+set autoindent
+set encoding=utf-8
+set linebreak
+set exrc                                    " enable project specific vimrc
+set fileformat=unix
 
 set list
 set listchars=tab:»·,trail:∙
@@ -216,6 +223,7 @@ vnoremap . :normal.<cr>
 " Move visual selection
 vnoremap J :m '>+1<cr>gv=gv
 vnoremap K :m '<-2<cr>gv=gv
+
 "Ctags
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
