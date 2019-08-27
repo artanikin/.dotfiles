@@ -138,6 +138,9 @@ set hidden
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
 "
+
+" highlight trailing whitespace
+match ErrorMsg '\s\+$'
 "remove trailing whitespace on save
 autocmd! BufWritePre * :%s/\s\+$//e
 
