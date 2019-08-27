@@ -5,7 +5,7 @@ set nocompatible
 
 " PLUGINS {{{1
 call plug#begin('~/.vim/plugged')
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -130,9 +130,16 @@ set ttimeoutlen=50
 set backspace=indent,eol,start
 "a better menu in command mode
 set wildmenu
-set wildmode=longest:full,full
+set wildmode=list:longest,full
 "hide buffers instead of closing them even if they contain unwritten changes
 set hidden
+
+set statusline=
+set statusline+=%<%f\ %h%m%r             " filename and flags
+set statusline+=%{fugitive#statusline()} " git info
+set statusline+=%=                       " alignment separator
+set statusline+=[%{&ft}]                 " filetype
+set statusline+=%-14.([%l/%L],%c%V%)     " cursor info
 
 "	To enable mode shapes, "Cursor" highlight, and blinking: >
 set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
