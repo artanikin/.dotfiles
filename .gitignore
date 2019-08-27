@@ -5,4 +5,4 @@ vim/.netrwhist
 vim/autoload/
 vim/.base16
 vim/.base16.previous
-
+vim/undodir
