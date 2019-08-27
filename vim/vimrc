@@ -487,12 +487,6 @@ nmap <leader>0 <Plug>BufTabLine.Go(10)
 autocmd FileType vue syntax sync fromstart
 let g:vue_disable_pre_processors=1
 " }}}
-" vim-javascript {{{2
-augroup javascript_folding
-    au!
-    au FileType javascript setlocal foldmethod=syntax
-augroup END
-" }}}
 " auto-paird {{{2
 let g:AutoPairsMultilineClose = 0
 " }}}
@@ -502,24 +496,23 @@ let g:signify_vcs_list = ['git']
 let g:signify_realtime = 0
 " }}}
 " vim-silicon {{{2
-vmap <leader>p :'<,'>Silicon ~/Downloads/code_screenshot_%:t:r.png<cr>
+vmap <leader>s :'<,'>Silicon ~/Downloads/<cr>
 
 let g:silicon = {
-      \ 'theme':              'OneHalfDark',
-      \ 'font':                  'Hack',
-      \ 'background':         '#E9E9E9',
-      \ 'shadow-color':       '#000000',
-      \ 'line-pad':                   5,
-      \ 'pad-horiz':                 80,
-      \ 'pad-vert':                 100,
-      \ 'shadow-blur-radius':         5,
+      \ 'theme':              'Dracula',
+      \ 'font':               'Fira Code',
+      \ 'background':         '#aaaacc',
+      \ 'shadow-color':       '#555555',
+      \ 'line-pad':                   2,
+      \ 'pad-horiz':                 30,
+      \ 'pad-vert':                  40,
+      \ 'shadow-blur-radius':         0,
       \ 'shadow-offset-x':            0,
       \ 'shadow-offset-y':            0,
       \ 'line-number':           v:true,
       \ 'round-corner':          v:true,
       \ 'window-controls':       v:true,
       \ }
-" }}}
 " }}}
 
 syntax on
