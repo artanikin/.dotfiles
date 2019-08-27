@@ -123,6 +123,10 @@ set smartcase
 
 set clipboard=unnamed,unnamedplus            " Copy into system (*, +) registers.
 
+" Undo
+set undofile                                 " Maintain undo history between sessions
+set undodir=~/.vim/undodir,~/.tmp,~/tmp,/var/tmp,/tmp
+
 " Backupds
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
