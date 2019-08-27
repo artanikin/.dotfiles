@@ -269,6 +269,11 @@ autocmd VimResized * :wincmd =
 
 " Redraw screen every time when focus gained
 au FocusGained * :redraw!
+
+augroup toggle_relative_number
+  autocmd InsertEnter * :setlocal norelativenumber
+  autocmd InsertLeave * :setlocal relativenumber
+augroup END
 " }}}
 " ABBREVIATIONS {{{1
 cnoreabbrev W w
