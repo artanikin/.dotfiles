@@ -160,8 +160,13 @@ if has('folding')
     set fillchars=vert:│
     set fillchars+=fold:·
   endif
-  set foldmethod=syntax
+  set foldenable
   set foldlevelstart=99
+  set foldnestmax=10
+  set foldmethod=syntax
+
+  let ruby_fold=1
+  let javaScript_fold=1
 endif
 " }}}
 " MAPPINGS {{{1
