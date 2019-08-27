@@ -181,6 +181,9 @@ xnoremap <leader>j :m'>+<cr>gv=gv
 "keep text selected after indentation
 vnoremap < <gv
 vnoremap > >gv
+" Move visual selection
+vnoremap J :m '>+1<cr>gv=gv
+vnoremap K :m '<-2<cr>gv=gv
 "Ctags
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
