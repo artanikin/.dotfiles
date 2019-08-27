@@ -134,6 +134,11 @@ set wildmode=longest:full,full
 "hide buffers instead of closing them even if they contain unwritten changes
 set hidden
 
+"	To enable mode shapes, "Cursor" highlight, and blinking: >
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
+
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
