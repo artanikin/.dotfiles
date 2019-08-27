@@ -33,6 +33,10 @@ Plug 'pangloss/vim-javascript', { 'for': 'js' }
 Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript.jsx'] }
 Plug 'lifepillar/vim-colortemplate'
 Plug 'segeljakt/vim-silicon'
+Plug 'machakann/vim-highlightedyank'
+Plug 'andrewradev/splitjoin.vim'
+Plug 'andrewradev/switch.vim'
+Plug 'AndrewRadev/tagalong.vim'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
