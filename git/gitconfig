@@ -14,17 +14,17 @@
   local = yellow
   remote = green
 [color "diff"]
-  frag = magenta bold
-  meta = yellow bold
-  new = green
-  old = red
-  commit = yellow
-  whitespace = red reverse
+    frag = magenta bold
+    meta = 11
+    new = green bold
+    old = red bold
+    commit = yellow bold
+    whitespace = red reverse
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 [color "status"]
   added = green
   changed = blue
@@ -37,9 +37,9 @@
   ci = commit
   co = checkout
   br = branch
-  di = diff --word-diff --color-words
-  dc = diff --cached --word-diff --color-words
-  ds = diff --staged --word-diff --color-words
+  di = diff
+  dc = diff --cached
+  ds = diff --staged
   aa = add --all
   b = branch
   pd  = push origin dev
@@ -69,8 +69,8 @@
 
 [core]
   editor = nvim
-	excludesfile = /Users/artyomanikin/.gitignore_global
-  pager = diff-so-fancy | less --tabs=4 -RFX
+    excludesfile = /Users/artyomanikin/.gitignore_global
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f

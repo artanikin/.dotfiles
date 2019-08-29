@@ -7,6 +7,7 @@ zplug 'zsh-users/zsh-autosuggestions', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
 zplug "plugins/osx", from:oh-my-zsh
 zplug 'zsh-users/zsh-completions', defer:3
+zplug 'wfxr/forgit'
 
 autoload -U compinit && compinit
 
