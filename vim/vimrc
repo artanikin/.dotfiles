@@ -37,6 +37,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'andrewradev/switch.vim'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'mhinz/vim-startify'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
@@ -57,6 +58,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 Plug 'huyvohcmc/atlas.vim'
+Plug 'nightsense/cosmic_latte'
 " Plug 'Lokaltog/vim-monotone'
 " Plug 'AlessandroYorba/Sierra'
 " Plug 'fxn/vim-monochrome'
@@ -573,12 +575,45 @@ let g:silicon = {
       \ 'default-file-pattern':  '~/Downloads/code-{time:%Y-%m-%d-%H%M%S}.png',
       \ }
 "}}}
-" Fugitive {{{2
-" autocmd User fugitive
-" if fugitive#buffer().type() =~# '^\%(tree\|blob\)$'
-"   nnoremap <buffer> .. :edit %:h<CR>
-" endif
-"}}}
+" Startify: Fancy startup screen for vim {{{2
+    " Don't change to directory when selecting a file
+    let g:startify_files_number = 5
+    let g:startify_change_to_dir = 0
+    let g:startify_custom_header = [ ]
+    let g:startify_relative_path = 1
+    let g:startify_use_env = 1
+
+    function! Listcommits()
+      let git = 'git -C ' . getcwd()
+      let commits = systemlist(git . ' log --oneline | head -n5')
+      let git = 'G' . git[1:]
+      return map(commits, '{"line": matchstr(v:val, "\\s\\zs.*"), "cmd": "'. git .' show ". matchstr(v:val, "^\\x\\+") }')
+    endfunction
+
+    " Custom startup list, only show MRU from current directory/project
+    let g:startify_lists = [
+    \  { 'type': 'dir',       'header': [ 'Files '. getcwd() ] },
+    \  { 'type': function('Listcommits'), 'header': [ 'Recent Commits' ] },
+    \  { 'type': 'sessions',  'header': [ 'Sessions' ]       },
+    \  { 'type': 'bookmarks', 'header': [ 'Bookmarks' ]      },
+    \  { 'type': 'commands',  'header': [ 'Commands' ]       },
+    \ ]
+
+    let g:startify_commands = [
+    \   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
+    \   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
+    \ ]
+
+    let g:startify_bookmarks = [
+        \ { 'c': '~/.vimrc' },
+        \ { 'l': '~/.vimrc.local' },
+        \ { 'g': '~/.gitconfig' },
+        \ { 'z': '~/.zshrc' }
+    \ ]
+
+    autocmd User Startified setlocal cursorline
+    nmap <leader>st :Startify<cr>
+" }}}
 " }}}
 
 syntax on
