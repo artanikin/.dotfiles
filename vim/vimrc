@@ -554,7 +554,7 @@ let g:signify_vcs_list = ['git']
 let g:signify_realtime = 0
 " }}}
 " vim-silicon {{{2
-vmap <leader>s :'<,'>Silicon ~/Downloads/<cr>
+vmap <leader>s :'<,'>Silicon<cr>
 
 let g:silicon = {
       \ 'theme':              'Dracula',
@@ -570,6 +570,7 @@ let g:silicon = {
       \ 'line-number':           v:true,
       \ 'round-corner':          v:true,
       \ 'window-controls':       v:true,
+      \ 'default-file-pattern':  '~/Downloads/code-{time:%Y-%m-%d-%H%M%S}.png',
       \ }
 "}}}
 " Fugitive {{{2
