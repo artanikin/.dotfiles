@@ -424,9 +424,7 @@ map <leader>l :call RunLastSpec()<CR>
 map <leader>a :call RunAllSpecs()<CR>
 " }}}
 " FZF (Replace for Ctrl-P) {{{2
-let g:fzf_files_options =
-  \ '--reverse ' .
-  \ '--preview "(coderay {} || bat --color \"always\" --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
+let g:fzf_files_options = '--preview "(bat --color \"always\" --theme=\"OneHalfDark\" --style=numbers,changes --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
 let $FZF_DEFAULT_COMMAND = 'ag -l --nogroup --nocolor -g "" --hidden'
 imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
@@ -459,18 +457,51 @@ command! -bang -nargs=* Ag
 command! -bang Colors
   \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'}, <bang>0)
 
-nnoremap <C-p> :Files<cr>
+" Files + devicons
+" before install devicon-lookup (https://crates.io/crates/devicon-lookup)
+" cargo install devicon-lookup
+function! Fzf_files_with_dev_icons(command)
+  let l:fzf_files_options = '--preview "bat --color always --style numbers {2..} | head -'.&lines.'"'
+   function! s:edit_devicon_prepended_file(item)
+    let l:file_path = a:item[4:-1]
+    execute 'silent e' l:file_path
+  endfunction
+   call fzf#run({
+        \ 'source': a:command.' | devicon-lookup',
+        \ 'sink': function('s:edit_devicon_prepended_file'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down': '40%' })
+endfunction
+ function! Fzf_git_diff_files_with_dev_icons()
+  let l:fzf_files_options = '--ansi --preview "sh -c \"(git diff --color=always -- {3..} | sed 1,4d; bat --color always --style numbers {3..}) | head -'.&lines.'\""'
+   function! s:edit_devicon_prepended_file_diff(item)
+    echom a:item
+    let l:file_path = a:item[7:-1]
+    echom l:file_path
+    let l:first_diff_line_number = system("git diff -U0 ".l:file_path." | rg '^@@.*\+' -o | rg '[0-9]+' -o | head -1")
+     execute 'silent e' l:file_path
+    execute l:first_diff_line_number
+  endfunction
+   call fzf#run({
+        \ 'source': 'git -c color.status=always status --short --untracked-files=all | devicon-lookup',
+        \ 'sink': function('s:edit_devicon_prepended_file_diff'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down': '40%' })
+endfunction
+
+nnoremap <C-p> :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND)<cr>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <Leader>t :Tags<CR>
 nnoremap <leader>o :Lines<cr>
 
-nnoremap <leader>gm :Files app/models/<cr>
-nnoremap <leader>gv :Files app/views/<cr>
-nnoremap <leader>gc :Files app/controllers/<cr>
-nnoremap <leader>gy :Files app/assets/stylesheets/<cr>
-nnoremap <leader>gj :Files app/assets/javascripts/<cr>
-nnoremap <leader>gs :Files spec/<cr>
-nnoremap <leader>gw :Files app/javascript/<cr>
+nnoremap <leader>gd :call Fzf_git_diff_files_with_dev_icons()<cr>
+nnoremap <leader>gm :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' app/models/')<cr>
+nnoremap <leader>gv :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' app/views/')<cr>
+nnoremap <leader>gc :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' app/controllers/')<cr>
+nnoremap <leader>gy :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' app/assets/stylesheets/')<cr>
+nnoremap <leader>gj :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' app/assets/javascripts/')<cr>
+nnoremap <leader>gs :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' spec/')<cr>
+nnoremap <leader>gw :call Fzf_files_with_dev_icons($FZF_DEFAULT_COMMAND . ' app/javascript/')<cr>
 
 let branch_files_options = { 'source': '( git status --porcelain | awk ''{print $2}''; git diff --name-only HEAD $(git merge-base HEAD master) ) | sort | uniq'}
 let uncommited_files_options = { 'source': '( git status --porcelain | awk ''{print $2}'' ) | sort | uniq'}
