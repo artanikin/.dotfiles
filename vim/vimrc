@@ -58,7 +58,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'rakr/vim-one'
 Plug 'huyvohcmc/atlas.vim'
-Plug 'nightsense/cosmic_latte'
+" Plug 'nightsense/cosmic_latte'
 " Plug 'Lokaltog/vim-monotone'
 " Plug 'AlessandroYorba/Sierra'
 " Plug 'fxn/vim-monochrome'
@@ -336,17 +336,11 @@ let g:NERDTreeIndicatorMapCustom = {
       \ "Deleted"   : "✖",
       \ "Dirty"     : "✗",
       \ "Clean"     : "✔︎",
-      \ 'Ignored'   : '☒',
       \ "Unknown"   : "?"
       \ }
 
 nmap <silent> <leader>q :NERDTreeToggle<cr>                         " toggle NERDTree
 nmap <silent> <leader>y :NERDTreeFind<cr>                           " expand to the path of the file in the current buffer
-
-augroup nerdtree
-  autocmd!
-  autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
-augroup END
 
 let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
