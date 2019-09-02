@@ -49,7 +49,7 @@ Plug 'honza/vim-snippets'
 Plug 'powerman/vim-plugin-ruscmd', { 'for': 'markdown' }
 Plug 'mg979/vim-visual-multi'
 Plug 'tpope/vim-fugitive'                                " Git wrapper
-Plug 'scrooloose/nerdtree'  | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'  | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' | Plug 'ryanoasis/vim-devicons' | Plug 'Xuyuanp/nerdtree-git-plugin'
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'artanikin/vim-synthwave84'
@@ -327,9 +327,34 @@ let NERDTreeAutoDeleteBuffer=1                                      " delete buf
 let NERDTreeMinimalUI = 1
 let NERDTreeShowBookmarks = 1                                       " Display bookmarks on startup
 let NERDTreeAutoDeleteBuffer = 1                                    " Close open buffer if delete file from context NERDTree menu
+let g:NERDTreeIndicatorMapCustom = {
+      \ "Modified"  : "✹",
+      \ "Staged"    : "✚",
+      \ "Untracked" : "✭",
+      \ "Renamed"   : "➜",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : "✖",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔︎",
+      \ 'Ignored'   : '☒',
+      \ "Unknown"   : "?"
+      \ }
 
 nmap <silent> <leader>q :NERDTreeToggle<cr>                         " toggle NERDTree
 nmap <silent> <leader>y :NERDTreeFind<cr>                           " expand to the path of the file in the current buffer
+
+augroup nerdtree
+  autocmd!
+  autocmd FileType nerdtree setlocal nolist " turn off whitespace characters
+augroup END
+
+let g:WebDevIconsOS = 'Darwin'
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:DevIconsEnableFolderExtensionPatternMatching = 1
+let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
+let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
+let NERDTreeNodeDelimiter = "\u263a" " smiley face
 
 " NERDTree syntax highlight {{{3
 let g:NERDTreeFileExtensionHighlightFullName = 1
