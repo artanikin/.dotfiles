@@ -194,6 +194,9 @@ if has('folding')
   let ruby_fold=1
   let javaScript_fold=1
 endif
+
+" Clearly diff look
+set diffopt+=internal,indent-heuristic
 " }}}
 " MAPPINGS {{{1
 nnoremap <silent> <Space> :nohl<Bar>:echo<CR>
