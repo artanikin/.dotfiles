@@ -651,10 +651,12 @@ if filereadable($HOME . "/.vimrc.local")
 endif
 
 " Highlight customization {{{
- hi Comment gui=italic cterm=italic
- hi htmlArg gui=italic cterm=italic
- hi Folded gui=italic cterm=italic
- hi String gui=italic cterm=italic
+hi Comment gui=italic cterm=italic
+hi htmlArg gui=italic cterm=italic
+hi Folded gui=italic cterm=italic
+hi String gui=italic cterm=italic
+
+hi HighlightedyankRegion guibg=#65BE64 guifg=#1F631A
 
 " hi rubyBlockParameter gui=italic cterm=italic
 " hi rubyClass gui=italic cterm=italic
