@@ -5,7 +5,7 @@ set nocompatible
 
 " PLUGINS {{{1
 call plug#begin('~/.vim/plugged')
-" Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-buftabline'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
@@ -370,7 +370,7 @@ let g:NERDTreeExtensionHighlightColor['yml'] = s:blue               " sets the c
 " }}}
 " LightLine {{{2
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'Tomorrow_Night_Bright',
       \   'active': {
       \     'left':[ [ 'mode', 'paste' ],
       \              [ 'gitbranch', 'git', 'readonly', 'filename', 'modified' ]
