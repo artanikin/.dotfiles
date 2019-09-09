@@ -55,29 +55,20 @@ Plug 'artanikin/sexy-railscasts-256-theme'
 Plug 'artanikin/vim-synthwave84'
 Plug 'lucasprag/simpleblack'
 Plug 'cocopon/iceberg.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'rakr/vim-one'
 Plug 'huyvohcmc/atlas.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'marcopaganini/termschool-vim-theme'
+Plug 'liuchengxu/space-vim-theme'
 " Plug 'Lokaltog/vim-monotone'
 " Plug 'AlessandroYorba/Sierra'
 " Plug 'fxn/vim-monochrome'
-" Plug 'axvr/photon.vim'
-" Plug 'Rigellute/shades-of-purple.vim'
 " Plug 'Rigellute/rigel'
-" Plug 'owickstrom/vim-colors-paramount'
 " Plug 'davidosomething/vim-colors-meh'
 " Plug 'lifepillar/vim-gruvbox8'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'chriskempson/base16-vim' | Plug 'mike-hearn/base16-vim-lightline'
 " Plug 'patstockwell/vim-monokai-tasty'
 " Plug 'mhartington/oceanic-next'
-" Plug 'jonathanfilip/vim-lucius'
-" Plug 'artanikin/bclear'
 " Plug 'mhinz/vim-janah'
 " Plug 'ajmwagar/vim-deus'
-" Plug 'shapeoflambda/dark-purple.vim'
-" Plug 'cormacrelf/vim-colors-github'
 " }}}
 
 call plug#end()
@@ -348,9 +339,6 @@ let g:WebDevIconsOS = 'Darwin'
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 let g:DevIconsEnableFolderExtensionPatternMatching = 1
-let NERDTreeDirArrowExpandable = "\u00a0" " make arrows invisible
-let NERDTreeDirArrowCollapsible = "\u00a0" " make arrows invisible
-let NERDTreeNodeDelimiter = "\u263a" " smiley face
 
 " NERDTree syntax highlight {{{3
 let g:NERDTreeFileExtensionHighlightFullName = 1
