@@ -635,6 +635,11 @@ let g:silicon = {
     autocmd User Startified setlocal cursorline
     nmap <leader>st :Startify<cr>
 " }}}
+" vim-diminactive {{{2
+let g:diminactive_use_syntax = 1
+let g:diminactive_enable_focus = 1
+let g:diminactive_filetype_blacklist = ['startify']
+" }}}
 " }}}
 
 syntax on
