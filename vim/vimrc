@@ -707,7 +707,10 @@ let g:vista#renderer#enable_icon = 1
 
 " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
 let g:vista#renderer#icons = {
+\   "modules": "\uf1b2",
+\   "classes": "\ue716",
 \   "methods": "\uf794",
+\   "singleton methods": "\uf794",
 \   "function": "\uf794",
 \   "variable": "\uf71b",
 \  }
