@@ -40,6 +40,7 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'mhinz/vim-startify'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'liuchengxu/vista.vim'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
@@ -280,13 +281,6 @@ augroup ColorColumnOnlyInInsertMode
   autocmd!
   autocmd InsertEnter * let &colorcolumn="159,".join(range(159,999),",")
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
-augroup END
-
-augroup rails_shortcuts
-  autocmd!
-  autocmd User Rails nnoremap <Leader>m :Emodel<Space>
-  autocmd User Rails nnoremap <Leader>c :Econtroller<Space>
-  autocmd User Rails nnoremap <Leader>v :Eview<Space>
 augroup END
 
 " Vim AND Tmux Balancing
@@ -692,6 +686,32 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 let g:coc_global_extensions = ['coc-solargraph']
 
+" }}}
+" Vista {{{2
+" How each level is indented and what to prepend.
+" This could make the display more compact or more spacious.
+" e.g., more compact: ["▸ ", ""]
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_echo_cursor_strategy="floating_win"
+let g:vista_sidebar_width = 61
+
+" To enable fzf's preview window set g:vista_fzf_preview.
+" The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
+" For example:
+let g:vista_fzf_preview = ['right:50%']
+
+" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+let g:vista#renderer#enable_icon = 1
+
+" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+let g:vista#renderer#icons = {
+\   "methods": "\uf794",
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+
+nnoremap vf :Vista finder lcn<cr>
+nnoremap <leader>v :Vista!!<cr>
 " }}}
 " }}}
 
