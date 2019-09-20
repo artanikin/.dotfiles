@@ -39,8 +39,10 @@ Plug 'andrewradev/switch.vim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'mhinz/vim-startify'
 
+" Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vista.vim'
+Plug 'Shougo/echodoc.vim'
 
 " Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Plug 'iamcco/markdown-preview.vim', { 'for': 'markdown' }
