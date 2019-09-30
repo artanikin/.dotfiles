@@ -53,6 +53,9 @@ alias aliasconfig='vim ~/.zsh/configs/aliases.zsh && source ~/.zsh/config/aliase
 alias hostsconfig='sudo nvim /etc/hosts'
 alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 
+# Docker
+alias dcr='docker-compose run --rm'
+
 # curl
 # usage postjson '{"key": "value"}' http://example.com/create_record
 alias postjson='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '
