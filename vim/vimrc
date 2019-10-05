@@ -38,7 +38,7 @@ Plug 'andrewradev/splitjoin.vim'
 Plug 'andrewradev/switch.vim'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'mhinz/vim-startify'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'wellle/targets.vim'
 
 " Completion
@@ -184,7 +184,7 @@ endfunction
 "
 
 " highlight trailing whitespace
-match ErrorMsg '\s\+$'
+" match ErrorMsg '\s\+$'
 "remove trailing whitespace on save
 autocmd! BufWritePre * :%s/\s\+$//e
 
@@ -761,7 +761,7 @@ hi htmlArg gui=italic cterm=italic
 hi Folded gui=italic cterm=italic
 hi String gui=italic cterm=italic
 
-hi HighlightedyankRegion guibg=#65BE64 guifg=#1F631A
+hi HighlightedyankRegion guibg=#DDFFDD guifg=#1F631A
 
 " hi rubyBlockParameter gui=italic cterm=italic
 " hi rubyClass gui=italic cterm=italic
