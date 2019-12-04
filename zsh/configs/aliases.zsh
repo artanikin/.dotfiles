@@ -54,6 +54,7 @@ alias hostsconfig='sudo nvim /etc/hosts'
 alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 
 # Docker
+alias dc='docker-compose'
 alias dcr='docker-compose run --rm'
 
 # curl
