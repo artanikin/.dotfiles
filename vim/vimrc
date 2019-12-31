@@ -62,7 +62,6 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-icons'
 Plug 'kristijanhusak/defx-git'
 " Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "| Plug 'ryanoasis/vim-devicons'
-" Plug 'cocopon/vaffle.vim'
 
 " Colors {{{2
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -74,8 +73,6 @@ Plug 'mhinz/vim-janah'
 Plug 'tomasiser/vim-code-dark'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'lucasprag/simpleblack'
-Plug 'cseelus/vim-colors-lucid'
-Plug 'cseelus/vim-colors-tone'
 " Plug 'marcopaganini/termschool-vim-theme'
 " Plug 'ajmwagar/vim-deus'
 " Plug 'artanikin/vim-synthwave84'
@@ -174,19 +171,13 @@ au WinLeave,FocusLost,CmdwinLeave * call FocusOff()
 
 function FocusOn()
   set cursorline
-  " let g:indentLine_enabled = 1
-  " normal! :IndentLineEnable<cr>
 endfunction
 
 function FocusOff()
   set nocursorline
-  " let g:indentLine_enabled = 0
-  " normal! :IndentLineDisable<cr>
 endfunction
 "
 
-" highlight trailing whitespace
-" match ErrorMsg '\s\+$'
 "remove trailing whitespace on save
 autocmd! BufWritePre * :%s/\s\+$//e
 
@@ -403,17 +394,7 @@ let g:lightline = {
 
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
-  " return blame
   return winwidth(0) > 120 ? blame : ''
-endfunction
-
-function! LightlineFilename()
-  let root = fnamemodify(get(b:, 'gitbranch_path'), ':h:h')
-  let path = expand('%:p')
-  if path[:len(root)-1] ==# root
-    return path[len(root)+1:]
-  endif
-  return expand('%')
 endfunction
 
 " Show full path of filename
@@ -659,50 +640,50 @@ let g:diminactive_enable_focus = 1
 let g:diminactive_filetype_blacklist = ['startify']
 " }}}
 " Coc {{{2
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ <SID>check_back_space() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
+" " Use <c-space> to trigger completion.
+" inoremap <silent><expr> <c-space> coc#refresh()
 
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" " Remap keys for gotos
+" nmap <silent> gd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+" " Use K to show documentation in preview window
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
+" function! s:show_documentation()
+"   if (index(['vim','help'], &filetype) >= 0)
+"     execute 'h '.expand('<cword>')
+"   else
+"     call CocAction('doHover')
+"   endif
+" endfunction
 
-" " Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+" " " Highlight symbol under cursor on CursorHold
+" " autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+" " Remap for rename current word
+" nmap <leader>rn <Plug>(coc-rename)
 
-" Use <tab> for select selections ranges, needs server support
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
+" " Use <tab> for select selections ranges, needs server support
+" nmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <TAB> <Plug>(coc-range-select)
+" xmap <silent> <S-TAB> <Plug>(coc-range-select-backword)
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" " Use `[g` and `]g` to navigate diagnostics
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " let g:coc_global_extensions = ['coc-solargraph']
 
@@ -711,36 +692,31 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " How each level is indented and what to prepend.
 " This could make the display more compact or more spacious.
 " e.g., more compact: ["▸ ", ""]
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_echo_cursor_strategy="floating_win"
-let g:vista_sidebar_width = 61
+" let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+" let g:vista_echo_cursor_strategy="floating_win"
+" let g:vista_sidebar_width = 61
 
-" To enable fzf's preview window set g:vista_fzf_preview.
-" The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
-" For example:
-let g:vista_fzf_preview = ['right:50%']
+" " To enable fzf's preview window set g:vista_fzf_preview.
+" " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
+" " For example:
+" let g:vista_fzf_preview = ['right:50%']
 
-" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
-let g:vista#renderer#enable_icon = 1
+" " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+" let g:vista#renderer#enable_icon = 1
 
-" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
-let g:vista#renderer#icons = {
-\   "modules": "\uf1b2",
-\   "classes": "\ue716",
-\   "methods": "\uf794",
-\   "singleton methods": "\uf794",
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
+" " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+" let g:vista#renderer#icons = {
+" \   "modules": "\uf1b2",
+" \   "classes": "\ue716",
+" \   "methods": "\uf794",
+" \   "singleton methods": "\uf794",
+" \   "function": "\uf794",
+" \   "variable": "\uf71b",
+" \  }
 
-nnoremap <leader>c :Vista finder lcn<cr>
-nnoremap <leader>v :Vista!!<cr>
-" }}}
-" IndentLine {{{2
-let g:indentLine_char = '│'
-let g:indentLine_bufTypeExclude = ['help', 'terminal']
-let g:indentLine_concealcursor = ''
-" }}}
+" nnoremap <leader>c :Vista finder lcn<cr>
+" nnoremap <leader>v :Vista!!<cr>
+" " }}}
 " Buffers {{{2
 nnoremap <tab> :bnext<CR>
 nnoremap <S-tab> :bprevious<CR>
@@ -749,10 +725,6 @@ nnoremap <silent> ]B :blast<CR>
 noremap  <leader>d :Bd<CR>
 noremap  <leader>D :bufdo bd<CR>
 command! Bd :bp | :sp | :bn | :bd  " Close buffer without closing window
-" }}}
-" Vaffle {{{2
-" Open the parent directory, or the current directory if empty
-" nnoremap <silent> <leader>q :Vaffle<CR>
 " }}}
 " Defx {{{2
 augroup vimrc_defx
@@ -813,7 +785,7 @@ function! s:defx_open(...) abort
     call execute(printf('Defx %s -search=%s %s', l:args, expand('%:p'), l:path))
   else
     call execute(printf('Defx -toggle %s %s', l:args, l:path))
-    call execute('wincmd p')
+    " call execute('wincmd p')
   endif
 
   return execute("norm!\<C-w>=")
@@ -879,11 +851,6 @@ hi Folded gui=italic cterm=italic
 hi String gui=italic cterm=italic
 
 hi HighlightedyankRegion guibg=#DDFFDD guifg=#1F631A
-
-" hi rubyBlockParameter gui=italic cterm=italic
-" hi rubyClass gui=italic cterm=italic
-" hi rubyDefine gui=italic cterm=italic
-" hi rubyFunction gui=italic cterm=italic
 
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2b2b2b guibg=#a5c261
 highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=#da4939
