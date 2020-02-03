@@ -48,7 +48,7 @@ scrolling:
   # to allow mouse scrolling for applications like `man`.
   #
   # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
+  # faux_multiplier: 3
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -63,11 +63,11 @@ draw_bold_text_with_bright_colors: false
 # family: Fira Code
 
 font:
-  size: 14
+  size: 12
   # The normal (roman) font face to use.
 
   normal:
-    family: Iosevka Nerd Font
+    family: JetBrains Mono
     style: Regular
 
 
