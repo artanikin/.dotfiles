@@ -129,17 +129,6 @@ $ ln -s ~/.dotfiles/bin ~/bin
 
 ## Screenshots
 
-### Console Screenshot
-
-Terminal:
-* [iTerm2](https://www.iterm2.com/)
-* Theme [railscasts](https://github.com/artanikin/.dotfiles/blob/master/os/iterm2/railscasts.itermcolors)
-* Font [Menlo Regular](https://github.com/artanikin/.dotfiles/blob/master/os/fonts/Menlo-Regular.ttf) 15px
-
-![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/console.png)
-
 ### Vim Screenshot
 
-Theme [sexy-railscasts-256](https://github.com/artanikin/sexy-railscasts-256-theme)
-
-![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/vim.png)
+![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/vim_updated.png)
