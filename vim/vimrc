@@ -1,5 +1,6 @@
 " vim:foldmethod=marker:foldlevel=0
 
+" General {{{1
 " Not support Vi
 set nocompatible
 " Enable syntax highlighting
@@ -11,6 +12,11 @@ filetype indent on
 " Enable filetype-specific plugins
 filetype plugin indent on
 runtime macros/matchit.vim
+
+" Colorscheme
+set background=dark
+colorscheme vwilight
+" }}}
 
 " PLUGINS {{{1
 call plug#begin('~/.vim/plugged')
@@ -95,9 +101,12 @@ Plug 'arzg/vim-corvine'
 Plug 'arzg/vim-colors-xcode'
 Plug 'doums/darcula'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'fenetikm/falcon'
 Plug 'christophermca/meta5'
 Plug 'rakr/vim-two-firewatch'
+Plug 'ayu-theme/ayu-vim'
+Plug 'sjl/badwolf'
 call plug#end()
 " }}}
 
@@ -237,6 +246,29 @@ augroup ColorColumnOnlyInInsertMode
   autocmd InsertEnter * let &colorcolumn="159,".join(range(159,999),",")
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
 augroup END
+
+function! RelativeNumberActivity(mode)
+    if &diff
+        " For diffs, do nothing since we want relativenumbers in all windows.
+        return
+    endif
+    if &buftype == "nofile" || &buftype == "nowrite"
+        setlocal nonumber
+    elseif a:mode == "active"
+        setlocal relativenumber
+        setlocal cursorline
+    else
+      setlocal norelativenumber
+      setlocal nocursorline
+    endif
+endfunction
+
+" Enable/Disable relativenumber for active panel
+augroup CustomWindowActivity
+    autocmd!
+    autocmd WinEnter * call RelativeNumberActivity("active")
+    autocmd WinLeave * call RelativeNumberActivity("inactive")
+augroup END
 " }}}
 
 " MAPPINGS {{{1
@@ -369,6 +401,7 @@ let g:startify_commands = [
 let g:startify_bookmarks = [
       \ { 'c': '~/.vimrc' },
       \ { 'l': '~/.vimrc.local' },
+      \ { 't': '~/.tmux.conf' },
       \ { 'g': '~/.gitconfig' },
       \ { 'z': '~/.zshrc' }
       \ ]
@@ -510,7 +543,7 @@ imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8, 'highlight': 'Comment', 'rounded': v:false } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.7, 'highlight': 'Comment', 'border': 'sharp' } }
 let g:fzf_colors = {
       \ 'fg':      ['fg', 'Normal'],
       \ 'bg':      ['bg', 'Normal'],
@@ -560,6 +593,12 @@ nnoremap <leader>gy :Files app/assets/stylesheets/<cr>
 nnoremap <leader>gj :Files app/assets/javascripts/<cr>
 nnoremap <leader>gs :Files spec/<cr>
 nnoremap <leader>gw :Files app/javascript/<cr>
+
+if has('nvim') && !exists('g:fzf_layout')
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+endif
 " }}}
 
 " UltiSnips {{{2
@@ -574,9 +613,11 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Blamer {{{2
 " Enable blamer (:BlamerToggle to enable/disable)
-let g:blamer_enabled = 1
+let g:blamer_enabled = 0
 " Delay for display blamer (Default: 1000)
 let g:blamer_delay = 1000
+" Dont show blamer in visual mode
+let g:blamer_show_in_visual_modes = 0
 " Blamer prefix (Default: ' ')
 let g:blamer_prefix = ' > '
 " Info format
@@ -616,11 +657,21 @@ nnoremap <silent> <leader>tv :TestVisit<CR>
 " User iterm terminal
 let g:gtfo#terminals = { 'mac': 'iterm' }
 " }}}
+
+" tpope/vim-rails {{{2
+" Add map for alternative file in Ruby project
+autocmd FileType ruby nnoremap <leader>a :A<cr>
+" }}}
 " }}}
 
-colorscheme vwilight
+" Local config {{{1
+if filereadable($HOME . "/.vimrc.local")
+  source ~/.vimrc.local
+endif
+" }}}
 
 " Highlight customization {{{
+
 " Add Some italic style
 highlight Comment gui=italic cterm=italic
 highlight htmlArg gui=italic cterm=italic
@@ -631,7 +682,7 @@ highlight String gui=italic cterm=italic
 highlight! link SignColumn LineNr
 
 " change color for highlight yank text
-highlight HighlightedyankRegion guibg=#DDFFDD guifg=#1F631A
+highlight! link HighlightedyankRegion String
 
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
@@ -641,10 +692,4 @@ highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2b2b2b guibg=#a5c261
 highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=#da4939
 highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#2b2b2b guibg=#6d9cbe
 highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#2b2b2b guibg=#6d9cbe
-" }}}
-
-" Local config {{{1
-if filereadable($HOME . "/.vimrc.local")
-  source ~/.vimrc.local
-endif
 " }}}
