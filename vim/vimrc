@@ -107,6 +107,7 @@ Plug 'christophermca/meta5'
 Plug 'rakr/vim-two-firewatch'
 Plug 'ayu-theme/ayu-vim'
 Plug 'sjl/badwolf'
+Plug 'drewtempelmeyer/palenight.vim'
 call plug#end()
 " }}}
 
@@ -169,67 +170,6 @@ set directory=~/.vim/swapdir,/var/tmp,/tmp
 set splitbelow
 " Open new split panes to right
 set splitright
-
-" Statusline
-" :h mode() to see all modes
-let g:currentmode={
-       \ "n":      "NORMAL ",
-       \ "v":      "VISUAL ",
-       \ "V":      "V·Line ",
-       \ "\<C-v>": "V·Block ",
-       \ "i":      "INSERT ",
-       \ "R":      "R ",
-       \ "Rv":     "V·Replace ",
-       \ "c":      "Command ",
-       \ "t":      "Terminal ",
-       \ "s":      "Select by Char"
-       \}
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'   '.l:branchname.' ':''
-endfunction
-
-set statusline=
-" Current mode
-set statusline+=%#PmenuSel#
-set statusline+=\ %{toupper(g:currentmode[mode()])}
-" change color (another good highlight: PmenuSel)
-set statusline+=%#String#
-" Git status
-set statusline+=%{StatuslineGit()}
-" change color
-set statusline+=%#LineNr#
-" tail of the filename
-set statusline+=\ %f
-" modified flag
-set statusline+=\ %m
-" read only flag
-set statusline+=\ %r
-" help file flag
-set statusline+=\ %h
-" left/right separator
-set statusline+=%=
-" change color
-set statusline+=%#CursorColumn#
-" filetype
-set statusline+=\ %y
-" fileencoding/encoding
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-" fileformat
-set statusline+=\ [%{&fileformat}\]
-" cursor line
-set statusline+=\ %l:
-" cursor column
-set statusline+=%c
-" current line percent
-set statusline+=\ %p%%
-" always show last status
-set laststatus=2
 " }}}
 
 " AUTOGROUPS {{{1
@@ -693,3 +633,5 @@ highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#2b2b2b guibg=
 highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#2b2b2b guibg=#6d9cbe
 highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#2b2b2b guibg=#6d9cbe
 " }}}
+
+source $HOME/.vim/modules/statusline.vim
