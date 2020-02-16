@@ -1,9 +1,10 @@
-" Statusline colors
+" Statusline Default colors
 hi! link Base CursorColumn
 hi! link Mode PmenuSel
-hi! link Git String
+hi! link Git Function
 hi! link Filetype CursorColumn
 hi! link LineCol PmenuSel
+
 " Get current mode
 let g:currentmode={
       \'n' : 'Normal ',
@@ -27,17 +28,18 @@ let g:currentmode={
       \'t' : 'Terminal '
       \}
 
+" Change colors when mode change
 function! ModeColor() abort
     let l:modecurrent = mode()
     if l:modecurrent == 'n'
       hi! link Mode PmenuSel
       hi! link LineCol PmenuSel
     elseif l:modecurrent == 'i'
-      hi! link Mode ErrorMsg
-      hi! link LineCol ErrorMsg
+      hi! link Mode DiffChange
+      hi! link LineCol DiffChange
     else
-      hi! link Mode Normal
-      hi! link LineCol Normal
+      hi! link Mode DiffDelete
+      hi! link LineCol DiffDelete
     endif
     return ''
 endfunction
@@ -50,10 +52,12 @@ function! ModeCurrent() abort
     return l:current_status_mode
 endfunction
 
+" Get Git branch name
 function! GitBranch()
   return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
 endfunction
 
+" Show git branch if exist
 function! StatuslineGit()
   let l:branchname = GitBranch()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
@@ -71,13 +75,13 @@ endfunction
 " Check modified status
 function! CheckMod(modi)
   if a:modi == 1
-    hi Modi guifg=#efefef guibg=#212333
-    hi Filename guifg=#efefef guibg=#212333
-    return expand('%f').'*'
+    hi! link Modi String
+    hi! link Filename String
+    return '*'
   else
-    hi Modi guifg=#929dcb guibg=#212333
-    hi Filename guifg=#929dcb guibg=#212333
-    return expand('%f')
+    hi! link Modi Folded
+    hi! link Filename Folded
+    return ''
   endif
 endfunction
 
@@ -96,7 +100,7 @@ function! ActiveLine()
   let statusline .= "%#Base#"
 
   " Current modified status and filename
-  let statusline .= "%#Modi# %{CheckMod(&modified)} "
+  let statusline .= "%#Modi# %F %{CheckMod(&modified)} "
 
   " Align items to right
   let statusline .= "%="
@@ -109,6 +113,7 @@ function! ActiveLine()
   return statusline
 endfunction
 
+" Set incative statusline
 function! InactiveLine()
   " Set empty statusline and colors
   let statusline = ""
