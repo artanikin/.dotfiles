@@ -31,15 +31,12 @@ let g:currentmode={
 " Change colors when mode change
 function! ModeColor() abort
     let l:modecurrent = mode()
-    if l:modecurrent == 'n'
+    if l:modecurrent == 'i'
+      hi! link Mode DiffAdd
+      hi! link LineCol DiffAdd
+    else
       hi! link Mode PmenuSel
       hi! link LineCol PmenuSel
-    elseif l:modecurrent == 'i'
-      hi! link Mode DiffChange
-      hi! link LineCol DiffChange
-    else
-      hi! link Mode DiffDelete
-      hi! link LineCol DiffDelete
     endif
     return ''
 endfunction
@@ -63,6 +60,19 @@ function! StatuslineGit()
   return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
 
+function! FilePrefix() abort
+  let l:basename=expand('%:h')
+  if l:basename ==# '' || l:basename ==# '.'
+    return ''
+  elseif has('modify_fname')
+    " Make sure we show $HOME as ~.
+    return substitute(fnamemodify(l:basename, ':~:.'), '/$', '', '') . '/'
+  else
+    " Make sure we show $HOME as ~.
+    return substitute(l:basename . '/', '\C^' . $HOME, '~', '')
+  endif
+endfunction
+
 " Get current filetype
 function! CheckFT(filetype)
   if a:filetype == ''
@@ -77,7 +87,7 @@ function! CheckMod(modi)
   if a:modi == 1
     hi! link Modi String
     hi! link Filename String
-    return '*'
+    return '✘'
   else
     hi! link Modi Folded
     hi! link Filename Folded
@@ -99,8 +109,11 @@ function! ActiveLine()
 
   let statusline .= "%#Base#"
 
-  " Current modified status and filename
-  let statusline .= "%#Modi# %F %{CheckMod(&modified)} "
+  " Truncation point, if not enough width available.
+  let statusline .= "%<"
+
+  let statusline .= "%#Comment#%{FilePrefix()}"
+  let statusline .= "%#Modi#%t %{CheckMod(&modified)}"
 
   " Align items to right
   let statusline .= "%="
@@ -109,7 +122,7 @@ function! ActiveLine()
   let statusline .= "%#Filetype# %{CheckFT(&filetype)} "
 
   " Current line and column
-  let statusline .= "%#LineCol# Ln %l, Col %c "
+  let statusline .= "%#LineCol# ℓ %l / 𝚌 %c "
   return statusline
 endfunction
 
@@ -119,8 +132,13 @@ function! InactiveLine()
   let statusline = ""
   let statusline .= "%#Base#"
 
+  " Truncation point, if not enough width available.
+  let statusline .= "%<"
+
+  let statusline .= "%#Comment#%{FilePrefix()}"
+  let statusline .= "%#Modi#%t %{CheckMod(&modified)}"
   " Full path of the file
-  let statusline .= "%#Filename# %F "
+  " let statusline .= "%#Filename# %F "
 
   return statusline
 endfunction

@@ -86,6 +86,8 @@ Plug 'andrewradev/splitjoin.vim'
 Plug 'andrewradev/switch.vim'
 " Change an HTML(ish) opening tag and take the closing one along as well
 Plug 'AndrewRadev/tagalong.vim'
+" Multi-file search for Vim
+Plug 'wincent/ferret'
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -108,6 +110,10 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'ayu-theme/ayu-vim'
 Plug 'sjl/badwolf'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'smallwat3r/vim-simplicity'
+Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'mhartington/oceanic-next'
+Plug 'danishprakash/vim-yami'
 call plug#end()
 " }}}
 
@@ -564,6 +570,8 @@ let g:blamer_prefix = ' > '
 let g:blamer_template = '[<committer>] • <committer-time> • <summary>'
 " Date format
 let g:blamer_date_format = '%Y-%m-%d'
+" Toggle blamer
+nnoremap <leader>tb :BlamerToggle
 " }}}
 
 " Vim-illuminate {{{2
