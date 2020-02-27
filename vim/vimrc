@@ -571,7 +571,7 @@ let g:blamer_template = '[<committer>] • <committer-time> • <summary>'
 " Date format
 let g:blamer_date_format = '%Y-%m-%d'
 " Toggle blamer
-nnoremap <leader>tb :BlamerToggle
+nnoremap <leader>tb :BlamerToggle<cr>
 " }}}
 
 " Vim-illuminate {{{2
