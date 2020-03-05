@@ -69,8 +69,8 @@
 
 [core]
   editor = nvim
-    excludesfile = /Users/artyomanikin/.gitignore_global
-    pager = diff-so-fancy | less --tabs=4 -RFX
+  excludesfile = /Users/artyomanikin/.gitignore_global
+  pager = delta --dark
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f
