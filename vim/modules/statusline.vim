@@ -86,11 +86,11 @@ endfunction
 function! CheckMod(modi)
   if a:modi == 1
     hi! link Modi String
-    hi! link Filename String
+    hi! link Filename Type
     return '✘'
   else
-    hi! link Modi Folded
-    hi! link Filename Folded
+    hi! link Modi Comment
+    hi! link Filename Comment
     return ''
   endif
 endfunction
