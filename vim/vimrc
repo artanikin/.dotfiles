@@ -85,9 +85,11 @@ Plug 'andrewradev/splitjoin.vim'
 " Switch segments of text with predefined replacements
 Plug 'andrewradev/switch.vim'
 " Change an HTML(ish) opening tag and take the closing one along as well
-Plug 'AndrewRadev/tagalong.vim'
+" Plug 'AndrewRadev/tagalong.vim'
 " Multi-file search for Vim
 Plug 'wincent/ferret'
+" Slim Syntax highlighting
+Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 
 " Colors
 Plug 'artanikin/sexy-railscasts-256-theme'
@@ -114,6 +116,8 @@ Plug 'smallwat3r/vim-simplicity'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'mhartington/oceanic-next'
 Plug 'danishprakash/vim-yami'
+Plug 'whatyouhide/vim-gotham'
+Plug 'tpope/vim-vividchalk'
 call plug#end()
 " }}}
 
@@ -317,7 +321,7 @@ let g:signify_realtime = 0
 
 " Startify: Fancy startup screen for vim {{{2
 " Don't change to directory when selecting a file
-let g:startify_files_number = 5
+let g:startify_files_number = 8
 let g:startify_change_to_dir = 0
 let g:startify_custom_header = [ ]
 let g:startify_relative_path = 1
@@ -565,7 +569,7 @@ let g:blamer_delay = 1000
 " Dont show blamer in visual mode
 let g:blamer_show_in_visual_modes = 0
 " Blamer prefix (Default: ' ')
-let g:blamer_prefix = ' > '
+let g:blamer_prefix = '··············> '
 " Info format
 let g:blamer_template = '[<committer>] • <committer-time> • <summary>'
 " Date format
