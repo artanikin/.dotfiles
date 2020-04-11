@@ -11,7 +11,7 @@ let g:currentmode={
       \'no' : 'N·Operator Pending ',
       \'v' : 'Visual ',
       \'V' : 'V·Line ',
-      \'^V' : 'V·Block ',
+      \'' : 'V·Block ',
       \'s' : 'Select ',
       \'S': 'S·Line ',
       \'^S' : 'S·Block ',
@@ -32,11 +32,17 @@ let g:currentmode={
 function! ModeColor() abort
     let l:modecurrent = mode()
     if l:modecurrent == 'i'
-      hi! link Mode DiffAdd
-      hi! link LineCol DiffAdd
+      highlight Mode guibg=#35312F guifg=#E0A929 gui=bold
+      highlight LineCol guibg=#35312F guifg=#E0A929 gui=bold
+    elseif l:modecurrent == 'c'
+      highlight Mode guibg=#35312F guifg=#CF3226 gui=bold
+      highlight LineCol guibg=#35312F guifg=#CF3226 gui=bold
+    elseif l:modecurrent == 'v' || l:modecurrent == 'V' || l:modecurrent == ''
+      highlight Mode guibg=#35312F guifg=#769B8D gui=bold
+      highlight LineCol guibg=#35312F guifg=#769B8D gui=bold
     else
-      hi! link Mode PmenuSel
-      hi! link LineCol PmenuSel
+      highlight Mode guibg=#35312F guifg=#AFB322 gui=bold
+      highlight LineCol guibg=#35312F guifg=#AFB322 gui=bold
     endif
     return ''
 endfunction
@@ -44,7 +50,7 @@ endfunction
 " Get current mode
 function! ModeCurrent() abort
     let l:modecurrent = mode()
-    let l:modelist = toupper(get(g:currentmode, l:modecurrent, 'V·Block '))
+    let l:modelist = toupper(get(g:currentmode, l:modecurrent))
     let l:current_status_mode = l:modelist
     return l:current_status_mode
 endfunction
@@ -103,8 +109,10 @@ function! ActiveLine()
 
   " Current mode
   let statusline .= "%{ModeColor()}%#Mode# %{ModeCurrent()}"
+  " let statusline .= "%{ModeColor()}%#Mode#     "
 
   " Current git branch
+  " let statusline .= "%#Git# %{StatuslineGit()} %)"
   let statusline .= "%#Git# %{StatuslineGit()} %)"
 
   let statusline .= "%#Base#"
@@ -115,11 +123,11 @@ function! ActiveLine()
   let statusline .= "%#Comment#%{FilePrefix()}"
   let statusline .= "%#Modi#%t %{CheckMod(&modified)}"
 
+  " Current filetype
+  let statusline .= "%#Comment# [ %{CheckFT(&filetype)} ]"
+  "
   " Align items to right
   let statusline .= "%="
-
-  " Current filetype
-  let statusline .= "%#Filetype# %{CheckFT(&filetype)} "
 
   " Current line and column
   let statusline .= "%#LineCol# ℓ %l / 𝚌 %c "
