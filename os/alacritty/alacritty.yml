@@ -11,8 +11,9 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  # TERM: xterm-256color
-  TERM: xterm-256color-italic
+  TERM: xterm-256color
+  # TERM: xterm-256color-italic
+
 
 window:
   # Window dimensions in character columns and lines
@@ -50,9 +51,6 @@ scrolling:
   # Specifying `0` will disable faux scrolling.
   # faux_multiplier: 3
 
-# Display tabs using this many cells (changes require restart)
-tabspaces: 8
-
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
 
@@ -67,9 +65,16 @@ font:
   # The normal (roman) font face to use.
 
   normal:
-    family: JetBrains Mono
+    family: SF Mono
+    style: Light
+
+  bold:
+    family: SF Mono
     style: Regular
 
+  italic:
+    family: SF Mono
+    style: Light Italic
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -94,50 +99,50 @@ debug:
   render_timer: false
 
 # Colors (Tomorrow Night Bright)
-# colors:
-#   # Default colors
-#   primary:
-#     # background: '0x191919'
-#     # foreground: '0xeaeaea'
-#     background: '0x0f1419'
-#     foreground: '0xe6e1cf'
+colors:
+  # Default colors
+  primary:
+    # background: '0x191919'
+    # foreground: '0xeaeaea'
+    background: '0x0f1419'
+    foreground: '0xe6e1cf'
 
-#   # cursor:
-#   #   text: '0x1d1f21'
-#   #   cursor: '0xffffff'
+  # cursor:
+  #   text: '0x1d1f21'
+  #   cursor: '0xffffff'
 
-#   # Normal colors
-#   normal:
-#     black:   '0x000000'
-#     red:     '0xff3333'
-#     green:   '0xc2d94c'
-#     yellow:  '0xffb454'
-#     blue:    '0x39bae6'
-#     magenta: '0xc397d8'
-#     cyan:    '0x95e6cb'
-#     white:   '0xffffff'
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff3333'
+    green:   '0xc2d94c'
+    yellow:  '0xffb454'
+    blue:    '0x39bae6'
+    magenta: '0xc397d8'
+    cyan:    '0x95e6cb'
+    white:   '0xcccccc'
 
-#   # Bright colors
-#   bright:
-#     black:   '0x666666'
-#     red:     '0xff3334'
-#     green:   '0x9ec400'
-#     yellow:  '0xffb454'
-#     blue:    '0x7aa6da'
-#     magenta: '0xb77ee0'
-#     cyan:    '0x54ced6'
-#     white:   '0xffffff'
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xff3334'
+    green:   '0x9ec400'
+    yellow:  '0xffb454'
+    blue:    '0x7aa6da'
+    magenta: '0xb77ee0'
+    cyan:    '0x54ced6'
+    white:   '0xcccccc'
 
-#   # Dim colors (Optional)
-#   dim:
-#     black:   '0x333333'
-#     red:     '0xf2777a'
-#     green:   '0x99cc99'
-#     yellow:  '0xffcc66'
-#     blue:    '0x6699cc'
-#     magenta: '0xcc99cc'
-#     cyan:    '0x66cccc'
-#     white:   '0xdddddd'
+  # Dim colors (Optional)
+  dim:
+    black:   '0x333333'
+    red:     '0xf2777a'
+    green:   '0x99cc99'
+    yellow:  '0xffcc66'
+    blue:    '0x6699cc'
+    magenta: '0xcc99cc'
+    cyan:    '0x66cccc'
+    white:   '0xdddddd'
 
 # Colors (Tomorrow Night)
 # colors:
@@ -275,33 +280,33 @@ debug:
 #     white:   '0xeff1f5'
 
 # Colors (Monokai Dark)
-colors:
-  # Default colors
-  primary:
-    background: '0x272822'
-    foreground: '0xF8F8F2'
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x272822'
+#     foreground: '0xF8F8F2'
 
-  # Normal colors
-  normal:
-    black:   '0x272822'
-    red:     '0xF92672'
-    green:   '0xA6E22E'
-    yellow:  '0xF4BF75'
-    blue:    '0x66D9EF'
-    magenta: '0xAE81FF'
-    cyan:    '0xA1EFE4'
-    white:   '0xF8F8F2'
+#   # Normal colors
+#   normal:
+#     black:   '0x272822'
+#     red:     '0xF92672'
+#     green:   '0xA6E22E'
+#     yellow:  '0xF4BF75'
+#     blue:    '0x66D9EF'
+#     magenta: '0xAE81FF'
+#     cyan:    '0xA1EFE4'
+#     white:   '0xF8F8F2'
 
-  # Bright colors
-  bright:
-    red:     '0xF92672'
-    black:   '0x75715E'
-    green:   '0xA6E22E'
-    yellow:  '0xF4BF75'
-    blue:    '0x66D9EF'
-    magenta: '0xAE81FF'
-    cyan:    '0xA1EFE4'
-    white:   '0xF9F8F5'
+#   # Bright colors
+#   bright:
+#     red:     '0xF92672'
+#     black:   '0x75715E'
+#     green:   '0xA6E22E'
+#     yellow:  '0xF4BF75'
+#     blue:    '0x66D9EF'
+#     magenta: '0xAE81FF'
+#     cyan:    '0xA1EFE4'
+#     white:   '0xF9F8F5'
 
 # Colors (Dracula)
 # colors:
@@ -389,7 +394,7 @@ mouse:
   triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: false
+  hide_when_typing: true
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
