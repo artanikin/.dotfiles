@@ -654,6 +654,14 @@ let g:any_jump_remove_comments_from_results = 1
 " Cursor keyword selection mode (full, word)
 let g:any_jump_keyword_match_cursor_mode = 'full'
 " }}}
+"
+" vim-fugitive {{{2
+nnoremap gs :Gstatus<cr>
+" }}}
+
+" switch.vim {{{2
+let g:switch_mapping = "-"
+" }}}
 " }}}
 
 " Local config {{{1
