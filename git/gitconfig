@@ -1,5 +1,5 @@
 [init]
-  templatedir = ~/.git_template
+  #  templatedir = ~/.git_template
 [user]
   name = Anikin Artyom
   email = anikinartyom@gmail.com
@@ -78,9 +78,10 @@
 [push]
   default = simple
 [filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [gitsh "color"]
   default = cyan
 [gitsh]
