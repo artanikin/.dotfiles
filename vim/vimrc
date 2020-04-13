@@ -682,7 +682,7 @@ highlight String gui=italic cterm=italic
 highlight! link SignColumn LineNr
 
 " change color for highlight yank text
-highlight! link HighlightedyankRegion String
+highlight HighlightedyankRegion guibg=#AFB322 guifg=#35312F
 
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
