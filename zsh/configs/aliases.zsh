@@ -4,7 +4,6 @@ alias scp="scp -r"
 alias rm="rm -ivr"
 alias mv="mv -iv"
 alias mkdir="mkdir -p"
-alias x="ranger ."
 # alias ls="ls -FGh"
 # alias ll="ls -laFGh"
 # alias ll="exa --long --all --header --git --sort=ext"
@@ -29,6 +28,7 @@ alias fz="fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbc
 alias vfz='vim $(fz)'
 alias preview="fzf --preview 'bat --color \"always\" --line-range 0:30 {}'"
 alias n="nnn"
+alias x="vifm ."
 
 alias be="bundle exec"
 alias rspec="clear; rspec"

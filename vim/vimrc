@@ -1,126 +1,166 @@
 " vim:foldmethod=marker:foldlevel=0
 
-" General {{{1
 " Not support Vi
 set nocompatible
-" Enable syntax highlighting
-syntax on
-" Enable filetype detection
-filetype on
-" Enable filetype-specific indenting
-filetype indent on
-" Enable filetype-specific plugins
-filetype plugin indent on
-runtime macros/matchit.vim
 
-" Colorscheme
-set background=dark
-colorscheme vwilight
-" }}}
+" PLUGGINS DEIN {{{1
+function! s:prefix(str, args)
+  return map(a:args, {_, s -> a:str . s})
+endfunction
 
-" PLUGINS {{{1
-call plug#begin('~/.vim/plugged')
-" Navigation through vim windows and tmux panels
-Plug 'christoomey/vim-tmux-navigator'
-" Buffer list on tabline
-Plug 'ap/vim-buftabline'
-" Plugin for editing Ruby on Rails applications
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-" A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
-Plug 'tpope/vim-ragtag'
-" Wisely add `end` in ruby, endfunction/endif/more in vim script
-Plug 'tpope/vim-endwise'
-" Commenting lines
-Plug 'tpope/vim-commentary'
-" Move to github page on current line (:Gbrowse)
-Plug 'tpope/vim-rhubarb'
-" Git wrapper
-Plug 'tpope/vim-fugitive'
-" Show a diff using Vim its sign column
-Plug 'mhinz/vim-signify'
-" Insert or delete brackets, parens, quotes in pair
-Plug 'jiangmiao/auto-pairs'
-" Surrounding
-Plug 'machakann/vim-sandwich'
-" Profiling vim startup
-Plug 'tweekmonster/startuptime.vim'
-" Highlight yanked text
-Plug 'machakann/vim-highlightedyank'
-" Yank code to the clipboard (Remove spaces on start line)
-Plug 'AaronLasseigne/yank-code'
-" Multiline editing
-Plug 'mg979/vim-visual-multi'
-" Startup Screen
-Plug 'mhinz/vim-startify'
-" Filemanager
-Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-" Show icons on Defx filemanager
-Plug 'kristijanhusak/defx-icons'
-" Show git state on Defx filemanager
-Plug 'kristijanhusak/defx-git'
-" FZF
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-" Git blame
-Plug 'APZelos/blamer.nvim'
-" Vim/Ruby Configuration Files
-Plug 'vim-ruby/vim-ruby'
-" Auto close (X)HTML tags
-Plug 'alvan/vim-closetag', { 'for': ['html', 'javascript.jsx'] }
-" Automatically highlighting other uses of the current word under the cursor
-Plug 'RRethy/vim-illuminate'
-" Asynchronously displaying the colours (need install Go)
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-" Run tests from Vim
-Plug 'janko/vim-test'
-" Interact with tmux
-Plug 'benmills/vimux'
-" Opens the file manager or terminal at the directory of the current file in Vim
-Plug 'justinmk/vim-gtfo'
-" Switch between single-line and multiline forms of code
-Plug 'andrewradev/splitjoin.vim'
-" Switch segments of text with predefined replacements
-Plug 'andrewradev/switch.vim'
-" Change an HTML(ish) opening tag and take the closing one along as well
-" Plug 'AndrewRadev/tagalong.vim'
-" Multi-file search for Vim
-Plug 'wincent/ferret'
-" Slim Syntax highlighting
-Plug 'slim-template/vim-slim', { 'for': ['slim'] }
-" Jumping to defitinitions
-Plug 'pechorin/any-jump.vim'
+let s:has_exec_cache = {}
+function! s:has_exec(command)
+    if !has_key(s:has_exec_cache, a:command)
+        let s:has_exec_cache[a:command] = executable(a:command)
+    endif
+    return s:has_exec_cache[a:command]
+endfunction
 
-" Colors
-Plug 'artanikin/sexy-railscasts-256-theme'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'davidosomething/vim-colors-meh'
-Plug 'tomasiser/vim-code-dark'
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'lucasprag/simpleblack'
-Plug 'nanotech/jellybeans.vim'
-Plug 'arzg/vim-substrata'
-Plug 'arzg/vim-corvine'
-Plug 'arzg/vim-colors-xcode'
-Plug 'doums/darcula'
-Plug 'bluz71/vim-moonfly-colors'
-Plug 'bluz71/vim-nightfly-guicolors'
-Plug 'fenetikm/falcon'
-Plug 'christophermca/meta5'
-Plug 'rakr/vim-two-firewatch'
-Plug 'ayu-theme/ayu-vim'
-Plug 'sjl/badwolf'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'smallwat3r/vim-simplicity'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'mhartington/oceanic-next'
-Plug 'danishprakash/vim-yami'
-Plug 'whatyouhide/vim-gotham'
-Plug 'tpope/vim-vividchalk'
-call plug#end()
+set runtimepath+=/Users/artyomanikin/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Navigation through vim windows and tmux panels
+  call dein#add('christoomey/vim-tmux-navigator')
+
+  " Buffer list on tabline
+  call dein#add('ap/vim-buftabline')
+  " Plugin for editing Ruby on Rails applications
+  call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
+  " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
+  call dein#add('tpope/vim-ragtag')
+  " Wisely add `end` in ruby, endfunction/endif/more in vim script
+  call dein#add('tpope/vim-endwise', {
+    \ 'on_ft': 'ruby',
+    \ 'on_event': 'InsertEnter'
+  \ })
+  " Commenting lines
+  call dein#add('tpope/vim-commentary', {
+    \ 'on_cmd': 'Commentary',
+    \ 'on_map': 'gc'
+  \ })
+  " Git wrapper
+  call dein#add('tpope/vim-fugitive', {
+    \ 'if': s:has_exec('git')
+  \ })
+  " Move to github page on current line (:Gbrowse)
+  call dein#add('tpope/vim-rhubarb', {
+    \ 'depends': 'vim-fugitive',
+    \ 'if': s:has_exec('git')
+  \})
+  " Show a diff using Vim its sign column
+  call dein#add('mhinz/vim-signify', {
+    \ 'if': has('signs') && s:has_exec('git')
+  \ })
+  " Insert or delete brackets, parens, quotes in pair
+  call dein#add('jiangmiao/auto-pairs', {
+    \ 'on_event': 'InsertEnter'
+  \ })
+  " Surrounding
+  call dein#add('machakann/vim-sandwich')
+  " Profiling vim startup
+  call dein#add('tweekmonster/startuptime.vim', {
+    \ 'on_cmd': 'StartupTime'
+  \ })
+  " Highlight yanked text
+  call dein#add('machakann/vim-highlightedyank', {
+    \ 'on_map': {
+      \ 'n': ['yy', 'Y'],
+      \ 'v': ['y']
+    \ }
+  \ })
+  " Yank code to the clipboard (Remove spaces on start line)
+  " call dein#add('AaronLasseigne/yank-code')
+  " Multiline editing
+  call dein#add('mg979/vim-visual-multi', {
+    \ 'on_map': '<C-n>'
+  \ })
+  " Startup Screen
+  call dein#add('mhinz/vim-startify')
+  " Filemanager
+  call dein#add('Shougo/defx.nvim')
+  " Show icons on Defx filemanager
+  call dein#add('kristijanhusak/defx-icons', { 'depends': 'defx.nvim' })
+  " Show git state on Defx filemanager
+  call dein#add('kristijanhusak/defx-git', { 'depends': 'defx.nvim' })
+  " FZF
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  " Snippets
+  " call dein#add('SirVer/ultisnips')
+  " call dein#add('honza/vim-snippets')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+  " Git blame
+  call dein#add('APZelos/blamer.nvim', {
+    \ 'on_cmd': 'BlamerToggle'
+  \ })
+  " Vim/Ruby Configuration Files
+  call dein#add('vim-ruby/vim-ruby', { 'on_ft': 'ruby' })
+  " Auto close (X)HTML tags
+  call dein#add('alvan/vim-closetag', { 'on_ft': ['html', 'javascript.jsx'] })
+  " Automatically highlighting other uses of the current word under the cursor
+  call dein#add('RRethy/vim-illuminate')
+  " Asynchronously displaying the colours (need install Go)
+  " Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+  " Run tests from Vim
+  call dein#add('janko/vim-test', {
+    \ 'on_cmd': [
+      \ 'TestNearest',
+      \ 'TestFile',
+      \ 'TestSuite',
+      \ 'TestLast',
+      \ 'TestVisit'
+    \ ]
+  \ })
+  " Interact with tmux
+  call dein#add('benmills/vimux')
+  " Opens the file manager or terminal at the directory of the current file in Vim
+  " call dein#add('justinmk/vim-gtfo')
+  " Switch between single-line and multiline forms of code
+  call dein#add('andrewradev/splitjoin.vim', {
+    \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
+    \ 'on_map': { 'n': ['gJ', 'gS'] }
+  \ })
+  " Switch segments of text with predefined replacements
+  call dein#add('andrewradev/switch.vim', {
+    \ 'on_cmd': 'Switch',
+    \ 'on_func': 'switch#Switch',
+    \ 'on_map': { 'n': '-' }
+  \ })
+  " Change an HTML(ish) opening tag and take the closing one along as well
+  call dein#add('AndrewRadev/tagalong.vim', {
+    \ 'on_ft': 'html',
+    \ 'on_event': 'InsertEnter'
+  \ })
+  " Multi-file search for Vim
+  call dein#add('wincent/ferret', {
+        \ 'on_cmd': 'Ack'
+        \ })
+  " Slim Syntax highlighting
+  call dein#add('slim-template/vim-slim', { 'on_ft': 'html' })
+  " Jumping to defitinitions
+  " Plug 'pechorin/any-jump.vim'
+
+  " Colorschemes
+  call dein#add('morhetz/gruvbox')
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 " }}}
 
 " OPTIONS {{{1
@@ -346,8 +386,8 @@ let g:startify_lists = [
       \ ]
 
 let g:startify_commands = [
-      \   { 'up': [ 'Update Plugins', ':PlugUpdate' ] },
-      \   { 'ug': [ 'Upgrade Plugin Manager', ':PlugUpgrade' ] },
+      \   { 'up': [ 'Update Plugins', ':call dein#update()' ] },
+      \   { 'uc': [ 'Recache runtimepath', ':call dein#recache_runtimepath()' ] },
       \ ]
 
 let g:startify_bookmarks = [
@@ -663,6 +703,20 @@ nnoremap gs :Gstatus<cr>
 let g:switch_mapping = "-"
 " }}}
 " }}}
+
+" Enable syntax highlighting
+syntax on
+" Enable filetype detection
+filetype on
+" Enable filetype-specific indenting
+filetype indent on
+" Enable filetype-specific plugins
+filetype plugin indent on
+runtime macros/matchit.vim
+
+" Colorscheme
+set background=dark
+colorscheme vwilight
 
 " Local config {{{1
 if filereadable($HOME . "/.vimrc.local")
