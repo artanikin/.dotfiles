@@ -162,6 +162,8 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
+set background=dark
+
 " Set Encoding
 set encoding=utf-8
 " Set UNIX fileformat
@@ -208,6 +210,9 @@ set undodir=~/.vim/undodir,/var/tmp,/tmp
 set backupdir=~/.vim/backupdir,/var/tmp,/tmp
 " List of directory names for the swap files
 set directory=~/.vim/swapdir,/var/tmp,/tmp
+
+" Cursor can be positioned where there is no actual character
+set virtualedit=all
 
 " Open new split panes to bottom
 set splitbelow
@@ -704,10 +709,6 @@ filetype indent on
 " Enable filetype-specific plugins
 filetype plugin indent on
 runtime macros/matchit.vim
-
-" Colorscheme
-set background=dark
-colorscheme vwilight
 
 " Local config {{{1
 if filereadable($HOME . "/.vimrc.local")
