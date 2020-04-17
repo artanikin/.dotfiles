@@ -43,6 +43,8 @@ alias srg="spring rake routes G"
 alias st="spring rspec"
 alias rails="bundle exec rails"
 alias rake="bundle exec rake"
+alias fix="git diff --name-only | uniq | xargs nvim"
+
 
 # SSH fix for working with xterm-color256-italic
 alias ssh="TERM=xterm-256color ssh"
