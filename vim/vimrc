@@ -82,6 +82,18 @@ if dein#load_state('~/.cache/dein')
   \ })
   " Startup Screen
   call dein#add('mhinz/vim-startify')
+  " ViFm Filemanager
+  call dein#add('vifm/vifm.vim', {
+    \ 'merged': 0,
+    \ 'on_cmd': [
+      \ 'EditVifm',
+      \ 'Vifm',
+      \ 'SplitVifm',
+      \ 'VsplitVifm',
+      \ 'DiffVifm',
+      \ 'TabVifm',
+    \ ]
+  \ })
   " Filemanager
   call dein#add('Shougo/defx.nvim')
   if !has('nvim')
@@ -272,7 +284,7 @@ let mapleader=','
 nnoremap <leader><leader> <C-^>
 
 " Clear search highlight
-nnoremap <Space> :nohl<CR>
+nnoremap <leader>h :nohl<CR>
 " Copy to end of line
 nnoremap Y y$
 " Move UP to the wrapping line
@@ -703,6 +715,10 @@ nnoremap gs :Gstatus<cr>
 
 " switch.vim {{{2
 let g:switch_mapping = "-"
+" }}}
+
+" Vifm {{{2
+nnoremap <space> :EditVifm<CR>
 " }}}
 " }}}
 
