@@ -124,7 +124,7 @@ function! ActiveLine()
   let statusline .= "%#Modi#%t %{CheckMod(&modified)}"
 
   " Current filetype
-  let statusline .= "%#Comment# [ %{CheckFT(&filetype)} ]"
+  let statusline .= "%#Comment# [%{CheckFT(&filetype)}]"
   "
   " Align items to right
   let statusline .= "%="
