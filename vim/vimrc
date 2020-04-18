@@ -160,11 +160,15 @@ if dein#load_state('~/.cache/dein')
         \ })
   " Slim Syntax highlighting
   call dein#add('slim-template/vim-slim', { 'on_ft': 'html' })
+  " CoffeeScript syntax highlighting
+  call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
+
   " Jumping to defitinitions
   " Plug 'pechorin/any-jump.vim'
 
   " Colorschemes
   call dein#add('morhetz/gruvbox')
+  call dein#add('lifepillar/vim-gruvbox8')
 
   " Required:
   call dein#end()
@@ -327,6 +331,8 @@ noremap  <leader>d :Bd<CR>
 noremap  <leader>D :bufdo bd<CR>
 " Close buffer without closing window
 command! Bd :bp | :sp | :bn | :bd
+" Command to copy the current file's full absolute path.
+command CopyFilePath let @+ = expand('%:p')
 " }}}
 
 " ABBREVIATIONS {{{1
