@@ -249,6 +249,7 @@ autocmd! BufWritePre * :%s/\s\+$//e
 " Change some <Tab> configs for different filetypes
 autocmd FileType ruby,javascript,vue setlocal ts=2 sts=2 sw=2 et
 autocmd FileType html,eruby,sass setlocal ts=4 sts=4 sw=4 et
+autocmd FileType gitcommit,markdown setlocal spell spelllang=en_us,ru_ru
 
 " Add colorcolumn on Insert Mode
 augroup ColorColumnOnlyInInsertMode
