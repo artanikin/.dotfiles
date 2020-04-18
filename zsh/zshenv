@@ -2,8 +2,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/lo
 
 # Add my custom commands
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.emacs.d/bin/:$PATH"
-export PATH="$HOME/bin-eduson:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@11/bin/:$PATH"
 
