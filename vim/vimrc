@@ -98,6 +98,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('APZelos/blamer.nvim', {
     \ 'on_cmd': 'BlamerToggle'
   \ })
+  " Weapon to fight against conflicts in Vim
+  call dein#add('rhysd/conflict-marker.vim')
   " Vim/Ruby Configuration Files
   call dein#add('vim-ruby/vim-ruby', { 'on_ft': 'ruby' })
   " Auto close (X)HTML tags
