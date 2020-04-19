@@ -167,8 +167,8 @@ if dein#load_state('~/.cache/dein')
   " Plug 'pechorin/any-jump.vim'
 
   " Colorschemes
-  call dein#add('morhetz/gruvbox')
   call dein#add('lifepillar/vim-gruvbox8')
+  call dein#add('chriskempson/base16-vim')
 
   " Required:
   call dein#end()
@@ -770,3 +770,8 @@ highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=
 " }}}
 
 source $HOME/.vim/modules/statusline.vim
+
+augroup VimScript
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
