@@ -333,7 +333,7 @@ noremap  <leader>D :bufdo bd<CR>
 " Close buffer without closing window
 command! Bd :bp | :sp | :bn | :bd
 " Command to copy the current file's full absolute path.
-command CopyFilePath let @+ = expand('%:p')
+command! CopyFilePath let @+ = expand('%:p')
 " }}}
 
 " ABBREVIATIONS {{{1
@@ -528,6 +528,8 @@ endfunction
 " }}}
 
 " FZF {{{2
+
+let g:fzf_tags_command = 'ctags -R -f tags --languages=ruby --exclude=.git --exclude=node_modules --exclude=db --exclude=log'
 let g:fzf_files_options = '--preview "(bat --color \"always\" --theme=\"Railscasts\" --style=numbers,changes --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
 let branch_files_options = { 'source': '( git status --porcelain | awk ''{print $2}''; git diff --name-only HEAD $(git merge-base HEAD master) ) | sort | uniq'}
 let uncommited_files_options = { 'source': '( git status --porcelain | awk ''{print $2}'' ) | sort | uniq'}
@@ -595,6 +597,8 @@ let g:fzf_action = {
 nnoremap <silent> <C-p> :Files<cr>
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>o :Lines<cr>
+nnoremap <silent> <leader>t :Tags<cr>
+nnoremap <silent> <leader>bt :BTags<cr>
 nnoremap <silent> <leader>gp :BranchFiles<cr>
 nnoremap <silent> <leader>GP :UncommitedFiles<cr>
 nnoremap <silent> <leader>gb :Gblame<cr>
@@ -773,5 +777,5 @@ source $HOME/.vim/modules/statusline.vim
 
 augroup VimScript
   autocmd!
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd BufWritePost ~/.vimrc,$MYVIMRC source $MYVIMRC
 augroup END
