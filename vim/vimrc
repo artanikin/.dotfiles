@@ -234,7 +234,7 @@ set backupdir=~/.vim/backupdir,/var/tmp,/tmp
 set directory=~/.vim/swapdir,/var/tmp,/tmp
 
 " Cursor can be positioned where there is no actual character
-set virtualedit=all
+" set virtualedit=all
 
 " Open new split panes to bottom
 set splitbelow
@@ -334,6 +334,11 @@ noremap  <leader>D :bufdo bd<CR>
 command! Bd :bp | :sp | :bn | :bd
 " Command to copy the current file's full absolute path.
 command! CopyFilePath let @+ = expand('%:p')
+
+nnoremap <Up> :resize +2<CR>
+nnoremap <Down> :resize -2<CR>
+nnoremap <Left> :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
 " }}}
 
 " ABBREVIATIONS {{{1
