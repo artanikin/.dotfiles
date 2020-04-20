@@ -369,6 +369,7 @@ nnoremap q? q?
 nnoremap q= q=
 
 nnoremap <space> :q<cr>
+map T tj
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
