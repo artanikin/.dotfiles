@@ -1,3 +1,4 @@
+alias r=clear
 alias dl="cd ~/Downloads/"
 alias cp="cp -ivr"
 alias scp="scp -r"
