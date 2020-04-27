@@ -26,7 +26,7 @@ window:
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 0
+    x: 3
     y: 0
 
   # Window decorations
@@ -61,33 +61,33 @@ draw_bold_text_with_bright_colors: false
 # family: Fira Code
 
 font:
-  size: 12
+  size: 14
   # The normal (roman) font face to use.
 
   normal:
-    family: SF Mono
+    family: Source Code Pro
     style: Light
 
   bold:
-    family: SF Mono
+    family: Source Code Pro
     style: Regular
 
   italic:
-    family: SF Mono
+    family: Source Code Pro
     style: Light Italic
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
-    y: 8
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
-    y: 4
+    y: 0
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -99,50 +99,108 @@ debug:
   render_timer: false
 
 # Colors (Tomorrow Night Bright)
+# colors:
+#   # Default colors
+#   primary:
+#     # background: '0x191919'
+#     # foreground: '0xeaeaea'
+#     background: '0x0f1419'
+#     foreground: '0xe6e1cf'
+
+#   # cursor:
+#   #   text: '0x1d1f21'
+#   #   cursor: '0xffffff'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xff3333'
+#     green:   '0xc2d94c'
+#     yellow:  '0xffb454'
+#     blue:    '0x39bae6'
+#     magenta: '0xc397d8'
+#     cyan:    '0x95e6cb'
+#     white:   '0xcccccc'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x666666'
+#     red:     '0xff3334'
+#     green:   '0x9ec400'
+#     yellow:  '0xffb454'
+#     blue:    '0x7aa6da'
+#     magenta: '0xb77ee0'
+#     cyan:    '0x54ced6'
+#     white:   '0xcccccc'
+
+#   # Dim colors (Optional)
+#   dim:
+#     black:   '0x333333'
+#     red:     '0xf2777a'
+#     green:   '0x99cc99'
+#     yellow:  '0xffcc66'
+#     blue:    '0x6699cc'
+#     magenta: '0xcc99cc'
+#     cyan:    '0x66cccc'
+#     white:   '0xdddddd'
+
+# Nord theme
+# colors:
+#   primary:
+#     background: '0x2E3440'
+#     foreground: '0xD8DEE9'
+#   cursor:
+#     text: '0x2E3440'
+#     cursor: '0xD8DEE9'
+#   normal:
+#     black: '0x3B4252'
+#     red: '0xBF616A'
+#     green: '0xA3BE8C'
+#     yellow: '0xEBCB8B'
+#     blue: '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan: '0x88C0D0'
+#     white: '0xE5E9F0'
+#   bright:
+#     black: '0x4C566A'
+#     red: '0xBF616A'
+#     green: '0xA3BE8C'
+#     yellow: '0xEBCB8B'
+#     blue: '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan: '0x8FBCBB'
+#     white: '0xECEFF4'
+
+# Colors (Gruvbox dark)
 colors:
   # Default colors
   primary:
-    # background: '0x191919'
-    # foreground: '0xeaeaea'
-    background: '0x0f1419'
-    foreground: '0xe6e1cf'
-
-  # cursor:
-  #   text: '0x1d1f21'
-  #   cursor: '0xffffff'
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
   # Normal colors
   normal:
-    black:   '0x000000'
-    red:     '0xff3333'
-    green:   '0xc2d94c'
-    yellow:  '0xffb454'
-    blue:    '0x39bae6'
-    magenta: '0xc397d8'
-    cyan:    '0x95e6cb'
-    white:   '0xcccccc'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
 
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xffb454'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0xcccccc'
-
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
-    blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
 
 # Colors (Tomorrow Night)
 # colors:
