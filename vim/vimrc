@@ -24,6 +24,7 @@ if dein#load_state('~/.cache/dein')
   " Let dein manage dein
   " Required:
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('wsdjeg/dein-ui.vim')
 
   " Navigation through vim windows and tmux panels
   call dein#add('christoomey/vim-tmux-navigator')
@@ -147,7 +148,7 @@ if dein#load_state('~/.cache/dein')
         \ 'on_cmd': 'Ack'
         \ })
   " Slim Syntax highlighting
-  call dein#add('slim-template/vim-slim', { 'on_ft': 'html' })
+  call dein#add('slim-template/vim-slim', { 'on_ft': 'html', 'merged': 0 })
   " CoffeeScript syntax highlighting
   call dein#add('kchmck/vim-coffee-script', { 'on_ft': 'coffee' })
 
@@ -156,6 +157,7 @@ if dein#load_state('~/.cache/dein')
 
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
+  call dein#add('arcticicestudio/nord-vim')
   call dein#add('chriskempson/base16-vim')
 
   " Required:
@@ -277,7 +279,7 @@ let mapleader=','
 nnoremap <leader><leader> <C-^>
 
 " Clear search highlight
-nnoremap <leader>h :nohl<CR>
+nnoremap <space> :nohl<CR>
 " Copy to end of line
 nnoremap Y y$
 " Move UP to the wrapping line
@@ -299,6 +301,18 @@ vnoremap . :normal.<cr>
 nnoremap ss :split<CR>
 " Vertical Split
 nnoremap sv :vsplit<CR>
+
+" Horizontal split to vertical
+map <leader>th <C-w>t<C-w>H
+" Vertical split to horizontal
+map <leader>tk <C-w>t<C-w>K
+
+" Resize horizontal panel
+nnoremap <Up> :resize +5<CR>
+nnoremap <Down> :resize -5<CR>
+" Resize vertical panel
+nnoremap <Left> :vertical resize +5<CR>
+nnoremap <Right> :vertical resize -5<CR>
 
 " Switch between panels
 nnoremap <C-j> <C-w>j
@@ -322,11 +336,6 @@ noremap  <leader>D :bufdo bd<CR>
 command! Bd :bp | :sp | :bn | :bd
 " Command to copy the current file's full absolute path.
 command! CopyFilePath let @+ = expand('%:p')
-
-nnoremap <Up> :resize +2<CR>
-nnoremap <Down> :resize -2<CR>
-nnoremap <Left> :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
 " }}}
 
 " ABBREVIATIONS {{{1
@@ -400,7 +409,7 @@ let g:startify_lists = [
       \ ]
 
 let g:startify_commands = [
-      \   { 'up': [ 'Update Plugins', ':call dein#update()' ] },
+      \   { 'up': [ 'Update Plugins', ':DeinUpdate' ] },
       \   { 'uc': [ 'Recache runtimepath', ':call dein#recache_runtimepath()' ] },
       \ ]
 
@@ -523,7 +532,7 @@ endfunction
 " FZF {{{2
 
 let g:fzf_tags_command = 'ctags -R -f tags --languages=ruby --exclude=.git --exclude=node_modules --exclude=db --exclude=log'
-let g:fzf_files_options = '--preview "(bat --color \"always\" --theme=\"Railscasts\" --style=numbers,changes --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
+let g:fzf_files_options = '--preview "(bat --color \"always\" --style=numbers,changes --line-range 0:30 {}) 2> /dev/null | head -'.&lines.'"'
 let branch_files_options = { 'source': '( git status --porcelain | awk ''{print $2}''; git diff --name-only HEAD $(git merge-base HEAD master) ) | sort | uniq'}
 let uncommited_files_options = { 'source': '( git status --porcelain | awk ''{print $2}'' ) | sort | uniq'}
 let s:diff_options =
