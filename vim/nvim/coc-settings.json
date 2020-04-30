@@ -1,18 +1,26 @@
 {
-    "coc.preferences.formatOnSaveFiletypes": ["ruby"],
+    "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "html", "yaml", "json", "ruby"],
 
-    "solargraph.autoformat": false,
+    // Ruby config
+    "solargraph.commandPath": "/Users/artyomanikin/.rbenv/shims/solargraph",
     "solargraph.checkGemVersion": false,
-    "solargraph.completion": true,
-    "solargraph.diagnostics": true,
+    "solargraph.promptDownload": true,
     "solargraph.definitions": true,
-    "solargraph.enable": true,
-    "solargraph.filetypes": ["ruby"],
+    "solargraph.completion": true,
+    "solargraph.autoformat": false,
     "solargraph.formatting": true,
-    "solargraph.hover": true,
     "solargraph.rename": true,
     "solargraph.symbols": true,
-    "solargraph.useBundler": false,
+    "solargraph.folding": true,
 
+    // Git config
     "git.enableGlobalStatus": true,
+    "git.enableGutters": true,
+
+    "snippets.ultisnips.directories":
+    [
+      "UltiSnips",
+      "~/.config/nvim/utils/snips"
+    ]
+
 }
