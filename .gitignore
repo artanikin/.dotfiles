@@ -3,3 +3,4 @@
 vim/plugged
 vim/.netrwhist
 vim/autoload/
+nvim/autoload/plugged
