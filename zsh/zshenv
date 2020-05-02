@@ -4,6 +4,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/lo
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@11/bin/:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 export BAT_CONFIG_PATH="$HOME/.dotfiles/os/bat/bat.conf"
