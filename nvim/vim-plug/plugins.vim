@@ -78,5 +78,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   Plug 'joshdick/onedark.vim'
   Plug 'tomasiser/vim-code-dark'
   Plug 'lifepillar/vim-gruvbox8'
+  Plug 'artanikin/vwilight'
 
 call plug#end()
