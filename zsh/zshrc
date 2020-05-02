@@ -38,9 +38,3 @@ zplug load
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 source /Users/artyomanikin/Library/Preferences/org.dystroy.broot/launcher/bash/br
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.dotfiles/os/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
