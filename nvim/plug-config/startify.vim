@@ -1,3 +1,5 @@
+let g:startify_session_dir = '~/.config/nvim/sessions'
+
 " Don't change to directory when selecting a file
 let g:startify_files_number = 8
 let g:startify_change_to_dir = 0
