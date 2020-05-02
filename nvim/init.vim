@@ -2,7 +2,7 @@ source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/abbreviations.vim
 source $HOME/.config/nvim/general/mappings.vim
-source $HOME/.config/nvim/themes/vim-gruvbox8.vim
+source $HOME/.config/nvim/themes/xcodedark.vim
 source $HOME/.config/nvim/general/statusline.vim
 
 source $HOME/.config/nvim/pluggins/buftabline.vim

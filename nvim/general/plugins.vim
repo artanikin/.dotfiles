@@ -156,8 +156,10 @@ if dein#load_state('~/.cache/dein')
 
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
-  " call dein#add('arcticicestudio/nord-vim')
-  " call dein#add('chriskempson/base16-vim')
+  call dein#add('artanikin/vwilight')
+  call dein#add('arcticicestudio/nord-vim')
+  call dein#add('blueshirts/darcula')
+  call dein#add('arzg/vim-colors-xcode')
 
   " Required:
   call dein#end()
