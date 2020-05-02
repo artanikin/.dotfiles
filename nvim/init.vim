@@ -5,12 +5,12 @@ source $HOME/.config/nvim/general/mappings.vim
 source $HOME/.config/nvim/themes/xcodedark.vim
 source $HOME/.config/nvim/general/statusline.vim
 
-source $HOME/.config/nvim/pluggins/buftabline.vim
-source $HOME/.config/nvim/pluggins/blamer.vim
-source $HOME/.config/nvim/pluggins/vim-illuminate.vim
-source $HOME/.config/nvim/pluggins/vim-tests.vim
-source $HOME/.config/nvim/pluggins/fzf.vim
-source $HOME/.config/nvim/pluggins/coc.vim
-source $HOME/.config/nvim/pluggins/startify.vim
-source $HOME/.config/nvim/pluggins/defx.vim
-luafile $HOME/.config/nvim/pluggins/colorizer.lua
+source $HOME/.config/nvim/plugins/buftabline.vim
+source $HOME/.config/nvim/plugins/blamer.vim
+source $HOME/.config/nvim/plugins/vim-illuminate.vim
+source $HOME/.config/nvim/plugins/vim-tests.vim
+source $HOME/.config/nvim/plugins/fzf.vim
+source $HOME/.config/nvim/plugins/coc.vim
+source $HOME/.config/nvim/plugins/startify.vim
+source $HOME/.config/nvim/plugins/defx.vim
+luafile $HOME/.config/nvim/plugins/colorizer.lua
