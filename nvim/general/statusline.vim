@@ -1,10 +1,3 @@
-" Statusline Default colors
-hi! link Base CursorColumn
-hi! link Mode PmenuSel
-hi! link Git Function
-hi! link Filetype CursorColumn
-hi! link LineCol PmenuSel
-
 " Get current mode
 let g:currentmode={
       \'n' : 'Normal ',
@@ -32,17 +25,17 @@ let g:currentmode={
 function! ModeColor() abort
     let l:modecurrent = mode()
     if l:modecurrent == 'i'
-      highlight Mode guibg=#35312F guifg=#E0A929 gui=bold
-      highlight LineCol guibg=#35312F guifg=#E0A929 gui=bold
+      highlight! link UserMode UserInsertMode
+      highlight! link UserLineCol UserInsertMode
     elseif l:modecurrent == 'c'
-      highlight Mode guibg=#35312F guifg=#CF3226 gui=bold
-      highlight LineCol guibg=#35312F guifg=#CF3226 gui=bold
+      highlight! link UserMode UserCommandMode
+      highlight! link UserLineCol UserCommandMode
     elseif l:modecurrent == 'v' || l:modecurrent == 'V' || l:modecurrent == ''
-      highlight Mode guibg=#35312F guifg=#769B8D gui=bold
-      highlight LineCol guibg=#35312F guifg=#769B8D gui=bold
+      highlight! link UserMode UserVisualMode
+      highlight! link UserLineCol UserVisualMode
     else
-      highlight Mode guibg=#35312F guifg=#AFB322 gui=bold
-      highlight LineCol guibg=#35312F guifg=#AFB322 gui=bold
+      highlight! link UserMode UserNormalMode
+      highlight! link UserLineCol UserNormalMode
     endif
     return ''
 endfunction
@@ -91,12 +84,12 @@ endfunction
 " Check modified status
 function! CheckMod(modi)
   if a:modi == 1
-    hi! link Modi String
-    hi! link Filename Type
+    hi! link UserModi UserModiModified
+    hi! link UserFilename UserModiModified
     return '✘'
   else
-    hi! link Modi Comment
-    hi! link Filename Comment
+    hi! link UserModi UserModiNotModified
+    hi! link UserFilename UserModiNotModified
     return ''
   endif
 endfunction
@@ -105,23 +98,23 @@ endfunction
 function! ActiveLine()
   " Set empty statusline and colors
   let statusline = ""
-  let statusline .= "%#Base#"
+  let statusline .= "%#UserBase#"
 
   " Current mode
-  let statusline .= "%{ModeColor()}%#Mode# %{ModeCurrent()}"
-  " let statusline .= "%{ModeColor()}%#Mode#     "
+  let statusline .= "%{ModeColor()}%#UserMode# %{ModeCurrent()}"
+  " let statusline .= "%{ModeColor()}%#UserMode#     "
 
   " Current git branch
-  " let statusline .= "%#Git# %{StatuslineGit()} %)"
-  let statusline .= "%#Git# %{StatuslineGit()} %)"
+  " let statusline .= "%#UserGit# %{StatuslineGit()} %)"
+  let statusline .= "%#UserGit# %{StatuslineGit()} %)"
 
-  let statusline .= "%#Base#"
+  let statusline .= "%#UserBase#"
 
   " Truncation point, if not enough width available.
   let statusline .= "%<"
 
   let statusline .= "%#Comment#%{FilePrefix()}"
-  let statusline .= "%#Modi#%t %{CheckMod(&modified)}"
+  let statusline .= "%#UserModi#%t %{CheckMod(&modified)}"
 
   " Current filetype
   let statusline .= "%#Comment# [%{CheckFT(&filetype)}]"
@@ -130,7 +123,7 @@ function! ActiveLine()
   let statusline .= "%="
 
   " Current line and column
-  let statusline .= "%#LineCol# ℓ %l / 𝚌 %c "
+  let statusline .= "%#UserLineCol# ℓ %l / 𝚌 %c "
   return statusline
 endfunction
 
@@ -138,15 +131,15 @@ endfunction
 function! InactiveLine()
   " Set empty statusline and colors
   let statusline = ""
-  let statusline .= "%#Base#"
+  let statusline .= "%#UserBase#"
 
   " Truncation point, if not enough width available.
   let statusline .= "%<"
 
   let statusline .= "%#Comment#%{FilePrefix()}"
-  let statusline .= "%#Modi#%t %{CheckMod(&modified)}"
+  let statusline .= "%#UserModi#%t %{CheckMod(&modified)}"
   " Full path of the file
-  " let statusline .= "%#Filename# %F "
+  " let statusline .= "%#UserFilename# %F "
 
   return statusline
 endfunction
