@@ -23,7 +23,7 @@ let g:startify_lists = [
       \  { 'type': 'commands',  'header': [ 'Commands' ]       },
       \ ]
 
-let g:startify_commands = [ { 'up': [ 'Update Plugins', ':PlugUpdate' ] } ]
+let g:startify_commands = [ { 'up': [ 'Update Plugins', ':DeinUpdate' ] } ]
 
 let g:startify_bookmarks = [
       \ { 'c': '~/.config/nvim/init.vim' },
