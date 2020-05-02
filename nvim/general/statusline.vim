@@ -118,7 +118,10 @@ function! ActiveLine()
 
   " Current filetype
   let statusline .= "%#Comment# [%{CheckFT(&filetype)}]"
-  "
+
+  " Add Coc info
+  let statusline .= " %{coc#status()}%{get(b:,'coc_current_function','')}"
+
   " Align items to right
   let statusline .= "%="
 

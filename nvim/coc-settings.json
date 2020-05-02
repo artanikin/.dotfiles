@@ -1,14 +1,15 @@
 {
   "solargraph.checkGemVersion": false,
   "solargraph.promptDownload": true,
-  "solargraph.definitions": true,
   "solargraph.completion": true,
+  "solargraph.definitions": true,
+  "solargraph.diagnostics": true,
   "solargraph.autoformat": true,
-  "solargraph.formatting": false,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
   "solargraph.rename": true,
   "solargraph.symbols": true,
   "solargraph.folding": true,
-  "solargraph.hover": true,
 
   "git.enableGlobalStatus": true,
   "git.enableGutters": true,
