@@ -1,7 +1,7 @@
 source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/abbreviations.vim
-source $HOME/.config/nvim/keys/mappings.vim
+source $HOME/.config/nvim/general/mappings.vim
 source $HOME/.config/nvim/themes/vim-gruvbox8.vim
 source $HOME/.config/nvim/general/statusline.vim
 
@@ -13,4 +13,4 @@ source $HOME/.config/nvim/pluggins/fzf.vim
 source $HOME/.config/nvim/pluggins/coc.vim
 source $HOME/.config/nvim/pluggins/startify.vim
 source $HOME/.config/nvim/pluggins/defx.vim
-luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/pluggins/colorizer.lua
