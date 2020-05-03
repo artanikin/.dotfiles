@@ -1,1 +1,1 @@
-autocmd FileType json syntax match Comment +\/\/.\+$+
+syntax match Comment +\/\/.\+$+
