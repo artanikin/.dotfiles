@@ -1,5 +1,6 @@
 source $HOME/.config/nvim/general/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
+source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/general/abbreviations.vim
 source $HOME/.config/nvim/general/mappings.vim
 source $HOME/.config/nvim/themes/xcodedark.vim
