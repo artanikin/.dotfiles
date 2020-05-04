@@ -10,11 +10,6 @@
         nnoremap j <C-w>-2
         nnoremap k <C-w>+2
         nnoremap l <C-w>>
-        " Switch to window moving keys
-        nnoremap H <C-w>H
-        nnoremap J <C-w>J
-        nnoremap K <C-w>K
-        nnoremap L <C-w>L
         nnoremap = <C-w>=
         nnoremap _ <C-w>_
         nnoremap + <C-w><bar>
@@ -27,10 +22,6 @@
         nnoremap k gk
         nnoremap j gj
         nnoremap l l
-        nnoremap K {
-        nnoremap J }
-        nnoremap H ^
-        nnoremap L $
         nnoremap = =
         nnoremap _ _
         nnoremap + +
