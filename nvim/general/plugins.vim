@@ -160,6 +160,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('arcticicestudio/nord-vim')
   call dein#add('blueshirts/darcula')
   call dein#add('arzg/vim-colors-xcode')
+  call dein#add('sonph/onehalf', {'rtp': 'vim/'})
+  call dein#add('joshdick/onedark.vim')
 
   " Required:
   call dein#end()
