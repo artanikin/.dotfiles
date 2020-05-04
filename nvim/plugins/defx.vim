@@ -7,6 +7,16 @@ augroup END
 nnoremap <silent><Leader>q :call <sid>defx_open()<CR>
 nnoremap <silent><Leader>y :call <sid>defx_open({ 'find_current_file': v:true })<CR>
 let s:default_columns = 'indent:git:icons:filename'
+let g:defx_git#indicators = {
+      \ 'Modified'  : '!',
+      \ 'Staged'    : '✚',
+      \ 'Untracked' : '?',
+      \ 'Renamed'   : '»',
+      \ 'Unmerged'  : '≠',
+      \ 'Ignored'   : 'ⁱ',
+      \ 'Deleted'   : '✖',
+      \ 'Unknown'   : '*'
+      \ }
 
 function! s:setup_defx() abort
   silent! call defx#custom#option('_', {
