@@ -10,7 +10,7 @@ command! BranchFiles call fzf#run(fzf#wrap('BranchFiles', extend(branch_files_op
 command! UncommitedFiles call fzf#run(fzf#wrap('UncommitedFiles', extend(uncommited_files_options, { 'options': s:diff_options }), 0))
 
 " Searching via ripgrep with preview
-function! RipgrepFzf(query, fllscreen)
+function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --colors="path:fg:cyan" --colors="path:style:underline" --smart-case %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
@@ -41,21 +41,6 @@ let g:fzf_colors = {
       \ 'pointer': ['fg', 'Exception'],
       \ 'marker':  ['fg', 'Keyword'],
       \ 'spinner': ['fg', 'Label'],
-      \ 'header':  ['fg', 'Comment']
-      \ }
-let g:fzf_colors = {
-      \ 'fg':      ['fg', 'Normal'],
-      \ 'bg':      ['bg', 'Normal'],
-      \ 'hl':      ['fg', 'Comment'],
-      \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-      \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-      \ 'hl+':     ['fg', 'Statement'],
-      \ 'info':    ['fg', 'PreProc'],
-      \ 'border':  ['fg', 'Ignore'],
-      \ 'prompt':  ['fg', 'Function'],
-      \ 'pointer': ['fg', 'Exception'],
-      \ 'marker':  ['fg', 'Keyword'],
-      \ 'spinner': ['fg', 'PreProc'],
       \ 'header':  ['fg', 'Comment']
       \ }
 let g:fzf_action = {
