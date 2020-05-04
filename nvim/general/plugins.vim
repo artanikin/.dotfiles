@@ -52,6 +52,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('mhinz/vim-signify', {
     \ 'if': has('signs') && s:has_exec('git')
   \ })
+  call dein#add('junegunn/gv.vim', { 'on_cmd': ['RV', 'RV!', 'RV?'] })
   " Insert or delete brackets, parens, quotes in pair
   call dein#add('jiangmiao/auto-pairs', {
     \ 'on_event': 'InsertEnter'
