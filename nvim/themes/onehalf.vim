@@ -14,15 +14,15 @@ highlight! link ColorColumn CursorLine
 highlight HighlightedyankRegion guibg=#56b6c2 guifg=#282c34
 
 " Diff
-highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#282c34 guibg=#e5c07b
+highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#282c34 guibg=#98c379
 highlight DiffDelete term=bold ctermfg=0 ctermbg=1 gui=bold guifg=#282c34 guibg=#e06c75
-highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#282c34 guibg=#98c379
+highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#282c34 guibg=#e5c07b
 highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#282c34 guibg=#98c379
 
 " Diff Gutter
-highlight GutterAdd    term=bold ctermfg=0 ctermbg=2 guibg=#282c34 guifg=#e5c07b
+highlight GutterAdd    term=bold ctermfg=0 ctermbg=2 guibg=#282c34 guifg=#98c379
 highlight GutterDelete term=bold ctermfg=0 ctermbg=1 gui=bold guibg=#282c34 guifg=#e06c75
-highlight GutterChange term=bold ctermfg=0 ctermbg=4 guibg=#282c34 guifg=#98c379
+highlight GutterChange term=bold ctermfg=0 ctermbg=4 guibg=#282c34 guifg=#e5c07b
 
 " Statusline
 hi! link UserBase CursorColumn

@@ -14,4 +14,5 @@ source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/startify.vim
 source $HOME/.config/nvim/plugins/defx.vim
+source $HOME/.config/nvim/plugins/signify.vim
 luafile $HOME/.config/nvim/plugins/colorizer.lua

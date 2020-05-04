@@ -50,19 +50,6 @@
   "solargraph.symbols": true,
   "solargraph.folding": true,
 
-  "git.enableGlobalStatus": true,
-  "git.enableGutters": true,
-  "git.addedSign.text": "▌",
-  "git.addedSign.hlGroup": "GutterAdd",
-  "git.changedSign.text": "▌",
-  "git.changedSign.hlGroup": "GutterChange",
-  "git.topRemovedSign.text": "▔",
-  "git.topRemovedSign.hlGroup": "GutterDelete",
-  "git.removedSign.text": "▁",
-  "git.removedSign.hlGroup": "GutterDelete",
-  "git.changeRemovedSign.text": "▌",
-  "git.changeRemovedSign.hlGroup": "GutterDelete",
-
   "markdownlint.config": {
     "default": true,
     "line-length": false
