@@ -1,5 +1,11 @@
 colorscheme onehalfdark
 
+" Add Some italic style
+highlight Comment gui=italic cterm=italic
+highlight htmlArg gui=italic cterm=italic
+highlight Folded gui=italic cterm=italic
+highlight String gui=italic cterm=italic
+
 " highlight SignColumn same color as LineNr
 highlight! link SignColumn LineNr
 " highlight colorcolumn
