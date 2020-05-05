@@ -3,7 +3,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/general/abbreviations.vim
 source $HOME/.config/nvim/general/mappings.vim
-source $HOME/.config/nvim/themes/onehalf.vim
+source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/general/statusline.vim
 
 source $HOME/.config/nvim/plugins/buftabline.vim
