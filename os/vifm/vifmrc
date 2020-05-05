@@ -117,6 +117,7 @@ mark h ~/
 mark n ~/notes
 mark e ~/projects/eduson
 mark d ~/Downloads
+mark y ~/.yandex.disk/183688642/Yandex.Disk.localized/
 
 " ------------------------------------------------------------------------------
 
@@ -171,6 +172,7 @@ command! reload :write | restart
 
 " Pdf
 filetype *.pdf
+       \ zathura,
        \ {Open in Preview}
        \ open -a Preview.app,
        \ {Open in Skim}
