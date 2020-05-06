@@ -1,79 +1,71 @@
-tap "phinze/cask"
-tap "homebrew/core"
-tap "homebrew/bundle"
-tap "homebrew/services"
-tap "caskroom/fonts"
-tap "caskroom/cask"
+# frozen_string_literal: true
 
-brew "autojump"
-brew "ctags"
-brew "dash"
-brew "dnsmasq", restart_service: true
-brew "ffmpeg"
-brew "graphicsmagick", args: ["with-ghostscript"]
-brew "heroku"
-brew "highlight"
-brew "hiredis"
-brew "htop"
-brew "imagemagick@6"
-brew "openssl"
-brew "libxml2"
-brew "sqlite", args: ["with-json1"]
-brew "python"
-brew "python3"
-brew "memcached", restart_service: true
-brew "neovim"
-brew "p7zip"
-brew "poppler"
-brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
-brew "tmux"
-brew "fzf"
-brew "vim", args: ["with-override-system-vi"]
-brew "yarn"
-brew "bat"
-brew "ripgrep"
-brew "lsd"
-brew "macvim"
-brew "vifm"
-brew "brew-gem"
-# Usefull utils
-brew "moreutils"
+tap 'phinze/cask'
+tap 'homebrew/core'
+tap 'homebrew/bundle'
+tap 'homebrew/services'
+tap 'caskroom/fonts'
+tap 'caskroom/cask'
+
+brew 'mas'                                                # CLI for the Mac App Store
+brew 'autojump'                                           # Make it easier to jump between directories
+brew 'ctags'
+brew 'dash'
+brew 'ffmpeg'
+brew 'graphicsmagick', args: ['with-ghostscript']
+brew 'htop'                                               # Process manager
+brew 'imagemagick'
+brew 'openssl'
+brew 'libxml2'
+brew 'python'
+brew 'python3'
+brew 'memcached', restart_service: true
+brew 'neovim'                                             # Prefered text editor
+brew 'p7zip'
+brew 'poppler'                                            # PDF rendering library
+brew 'reattach-to-user-namespace'
+brew 'the_silver_searcher'
+brew 'tmux'
+brew 'fzf'
+brew 'yarn'                                               # Frontend package manager
+brew 'bat'                                                # Replace for cat
+brew 'ripgrep'                                            # Better search
+brew 'lsd'                                                # Replace for ls
+brew 'vifm'                                               # Prefered filemanager
+brew 'brew-gem'                                           # Install gem from brew
+brew 'moreutils'                                          # Usefull utils
 
 # DB
-cask "phinze/cask/dbeaver-community"
+cask 'phinze/cask/dbeaver-community'
 
 # Zsh
-brew "zsh"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
 
 # Git client
-brew "git"
-brew "gh"
-brew "hub"
+brew 'gh'                                                 # CLI tool for GitHub
+brew 'git'                                                # VCM
+brew 'hub'                                                # I use hub browse
 
 # Casks
-cask "phinze/cask/alfred"
-cask "phinze/cask/flux"
-cask "phinze/cask/sublime-text"
-cask "phinze/cask/suspicious-package"
-cask "phinze/cask/time-out"
-cask "phinze/cask/vlc"
-cask "phinze/cask/webpquicklook"
-cask "phinze/cask/wkhtmltopdf"
-cask "slowquitapps"
-cask "dozer"
-cask "caskroom/fonts/font-fira-code"
-cask font-jetbrains-mono
-cask font-jetbrainsmono-nerd-font
-caks macdown
+cask 'alfred'
+cask 'suspicious-package'                                 # Inspecting Mac installer package
+cask 'vlc'                                                # Best video player
+cask 'webpquicklook'                                      # Quicklook for Webp files
+cask 'wkhtmltopdf'                                        # Html to PDF converter
+caks 'macdown'                                            # Cool Markdown Editor
+cask 'hiddenbar'                                          # Hide icons in menubar
+
+# Fonts
+cask 'font-fira-code'
+cask 'font-jetbrains-mono'
+cask 'font-jetbrainsmono-nerd-font'
 
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
-cask "phinze/cask/qlcolorcode"
-cask "phinze/cask/qlimagesize"
-cask "phinze/cask/qlmarkdown"
-cask "phinze/cask/qlprettypatch"
-cask "phinze/cask/qlstephen"
-cask "phinze/cask/quicklook-csv"
-cask "phinze/cask/quicklook-json"
+cask 'qlcolorcode'                                        # Syntax highlighting for source code in quicklook
+cask 'qlimagesize'                                        # Display the dimensions, DPI and file size
+cask 'qlmarkdown'                                         # Quicklook markdown files
+cask 'qlstephen'                                          # Quicklook plain text files without file extension
+cask 'quicklook-csv'                                      # Quicklook CSM files
+cask 'quicklook-json'                                     # Quicklook JSON files
