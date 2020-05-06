@@ -68,6 +68,8 @@ cask 'alacritty'
 cask 'font-fira-code'
 cask 'font-jetbrains-mono'
 cask 'font-jetbrainsmono-nerd-font'
+cask 'font-ibm-plex'
+cask 'font-ibmplexmono-nerd-font-mono'
 
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 cask 'qlcolorcode'                                        # Syntax highlighting for source code in quicklook
