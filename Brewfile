@@ -67,6 +67,7 @@ cask "dozer"
 cask "caskroom/fonts/font-fira-code"
 cask font-jetbrains-mono
 cask font-jetbrainsmono-nerd-font
+caks macdown
 
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 cask "phinze/cask/qlcolorcode"
