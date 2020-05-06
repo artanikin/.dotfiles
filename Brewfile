@@ -27,6 +27,7 @@ brew 'reattach-to-user-namespace'
 brew 'the_silver_searcher'
 brew 'tmux'
 brew 'fzf'
+brew 'node'
 brew 'yarn'                                               # Frontend package manager
 brew 'bat'                                                # Replace for cat
 brew 'ripgrep'                                            # Better search
@@ -34,6 +35,7 @@ brew 'lsd'                                                # Replace for ls
 brew 'vifm'                                               # Prefered filemanager
 brew 'brew-gem'                                           # Install gem from brew
 brew 'moreutils'                                          # Usefull utils
+brew 'jq'                                                 # CLI JSON processor
 
 # DB
 cask 'phinze/cask/dbeaver-community'
@@ -48,7 +50,6 @@ brew 'gh'                                                 # CLI tool for GitHub
 brew 'git'                                                # VCM
 brew 'hub'                                                # I use hub browse
 
-# Casks
 cask 'alfred'
 cask 'suspicious-package'                                 # Inspecting Mac installer package
 cask 'vlc'                                                # Best video player
@@ -56,6 +57,12 @@ cask 'webpquicklook'                                      # Quicklook for Webp f
 cask 'wkhtmltopdf'                                        # Html to PDF converter
 caks 'macdown'                                            # Cool Markdown Editor
 cask 'hiddenbar'                                          # Hide icons in menubar
+cask 'docker'
+cask 'google-chrome'
+cask 'telegram'
+cask 'iterm2'
+cask 'kitty'
+cask 'alacritty'
 
 # Fonts
 cask 'font-fira-code'
