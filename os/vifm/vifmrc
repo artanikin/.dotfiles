@@ -172,7 +172,7 @@ command! reload :write | restart
 
 " Pdf
 filetype *.pdf
-       \ zathura,
+       \ zathura &,
        \ {Open in Preview}
        \ open -a Preview.app,
        \ {Open in Skim}
