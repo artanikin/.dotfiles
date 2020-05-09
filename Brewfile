@@ -6,6 +6,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/services'
 tap 'caskroom/fonts'
 tap 'caskroom/cask'
+tap 'zegervdv/zathura'
 
 brew 'mas'                                                # CLI for the Mac App Store
 brew 'autojump'                                           # Make it easier to jump between directories
@@ -36,6 +37,8 @@ brew 'vifm'                                               # Prefered filemanager
 brew 'brew-gem'                                           # Install gem from brew
 brew 'moreutils'                                          # Usefull utils
 brew 'jq'                                                 # CLI JSON processor
+brew 'zathura --with-synctex'
+brew 'zathura-pdf-poppler'
 
 # DB
 cask 'phinze/cask/dbeaver-community'
@@ -63,6 +66,7 @@ cask 'telegram'
 cask 'iterm2'
 cask 'kitty'
 cask 'alacritty'
+cask 'xquartz'
 
 # Fonts
 cask 'font-fira-code'
