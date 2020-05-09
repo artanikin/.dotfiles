@@ -152,6 +152,8 @@ if dein#load_state('~/.cache/dein')
   " The fastest Neovim colorizer
   call dein#add('norcalli/nvim-colorizer.lua', { 'merged': 0 })
 
+  " Markdown preview
+  call dein#add('shime/vim-livedown', { 'on_ft': ['markdown', 'md'] })
   " Jumping to defitinitions
   " Plug 'pechorin/any-jump.vim'
 
