@@ -19,6 +19,7 @@ alias mux="tmuxinator"
 alias tmuxstart="tmux new -s `basename $PWD`"
 alias vim="nvim"
 alias v="vim"
+alias vi="nvim --noplugin -u ~/.config/nvim/minimal.vim"
 alias reload!="source ~/.zshrc"
 alias gcob='git checkout $(git branch | fzf)'
 alias fz="fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort' --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
