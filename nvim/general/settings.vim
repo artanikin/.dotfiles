@@ -60,27 +60,29 @@ set iskeyword+=-
 " Support 256 colors
 set t_Co=256
 " Makes tabbing smarter will realize you have 2 vs 4
-set smarttab                       
+set smarttab
 " Makes indenting smart
 set smartindent
 " Good auto indent
-set autoindent                         
+set autoindent
 " Always show tabs
-set showtabline=2                      
+set showtabline=2
 " We don't need to see things like -- INSERT -- anymore
-set noshowmode                     
+set noshowmode
 " This is recommended by coc
-set nobackup     
+set nobackup
 " This is recommended by coc
-set nowritebackup                      
+set nowritebackup
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 " Faster completion
-set updatetime=300 
+set updatetime=300
 " By default timeoutlen is 1000 ms
 set timeoutlen=300
+" Time in milliseconds to wait for a key code sequence to complete
+set ttimeoutlen=10
 " Stop newline continution of comments
-set formatoptions-=cro   
+set formatoptions-=cro
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -113,3 +115,6 @@ augroup ColorColumnOnlyInInsertMode
   autocmd InsertEnter * let &colorcolumn="159,".join(range(159,999),",")
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
 augroup END
+
+" Support RU locale in naviation
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
