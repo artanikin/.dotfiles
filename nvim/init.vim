@@ -16,4 +16,5 @@ source $HOME/.config/nvim/plugins/startify.vim
 source $HOME/.config/nvim/plugins/defx.vim
 source $HOME/.config/nvim/plugins/signify.vim
 source $HOME/.config/nvim/plugins/goyo.vim
+source $HOME/.config/nvim/plugins/vim-instant-markdown.vim
 luafile $HOME/.config/nvim/plugins/colorizer.lua

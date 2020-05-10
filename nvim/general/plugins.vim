@@ -153,12 +153,12 @@ if dein#load_state('~/.cache/dein')
   call dein#add('norcalli/nvim-colorizer.lua', { 'merged': 0 })
 
   " Markdown preview
-  call dein#add('shime/vim-livedown', { 'on_ft': ['markdown', 'md'] })
+  call dein#add('suan/vim-instant-markdown', {'on_ft': ['markdown']})
   " Jumping to defitinitions
   " Plug 'pechorin/any-jump.vim'
 
   " Distraction-free writing in Vim
-  call dein#add('junegunn/goyo.vim', { 'on_ft': ['markdown', 'md'], 'on_cmd': ['Goyo'] })
+  call dein#add('junegunn/goyo.vim', { 'on_ft': ['markdown'], 'on_cmd': ['Goyo'] })
   call dein#add('junegunn/limelight.vim', { 'on_cmd': ['Limelight'] } )
 
   " Colorschemes
