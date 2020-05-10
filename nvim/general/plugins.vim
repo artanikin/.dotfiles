@@ -157,6 +157,10 @@ if dein#load_state('~/.cache/dein')
   " Jumping to defitinitions
   " Plug 'pechorin/any-jump.vim'
 
+  " Distraction-free writing in Vim
+  call dein#add('junegunn/goyo.vim', { 'on_ft': ['markdown', 'md'], 'on_cmd': ['Goyo'] })
+  call dein#add('junegunn/limelight.vim', { 'on_cmd': ['Limelight'] } )
+
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
   call dein#add('artanikin/vwilight')
