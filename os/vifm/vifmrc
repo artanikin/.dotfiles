@@ -231,10 +231,16 @@ filetype *.[1-8] man ./%c
 fileviewer *.[1-8] man ./%c | col -b
 
 " Image
+" filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,
+"        \ open -a Preview.app,
+" fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
+"          \ identify %f
 filetype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm,
        \ open -a Preview.app,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-         \ identify %f
+       \ kitty icat --transfer-mode=file --place=%pwx%ph@%pxx%py %c
+       \ %pc
+       \ kitty icat --transfer-mode=file --clear
 
 " MD5
 filetype *.md5
