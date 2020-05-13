@@ -23,7 +23,12 @@ let g:startify_lists = [
       \  { 'type': 'commands',  'header': [ 'Commands' ]       },
       \ ]
 
-let g:startify_commands = [ { 'up': [ 'Update Plugins', ':DeinUpdate' ] } ]
+let g:startify_commands = [
+  \ { 'ip': [ 'Install Plugins', ':call dein#install()' ] },
+  \ { 'up': [ 'Update Plugins', ':DeinUpdate' ] },
+  \ { 'rp': [ 'Recache Runtimepath Plugins', ':call dein#recache_runtimepath()' ] },
+  \ { 'st': [ 'Show Startup Time', ':StartupTime' ] },
+  \]
 
 let g:startify_bookmarks = [
       \ { 'c': '~/.config/nvim/init.vim' },
