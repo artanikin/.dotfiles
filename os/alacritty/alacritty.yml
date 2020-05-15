@@ -70,7 +70,7 @@ font:
 
   bold:
     family: SauceCodePro Nerd Font
-    style: Semibold
+    style: Regular
 
   italic:
     family: SauceCodePro Nerd Font
@@ -98,311 +98,11 @@ font:
 debug:
   render_timer: false
 
-# Colors (Tomorrow Night Bright)
-# colors:
-#   # Default colors
-#   primary:
-#     # background: '0x191919'
-#     # foreground: '0xeaeaea'
-#     background: '0x0f1419'
-#     foreground: '0xe6e1cf'
-
-#   # cursor:
-#   #   text: '0x1d1f21'
-#   #   cursor: '0xffffff'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x000000'
-#     red:     '0xff3333'
-#     green:   '0xc2d94c'
-#     yellow:  '0xffb454'
-#     blue:    '0x39bae6'
-#     magenta: '0xc397d8'
-#     cyan:    '0x95e6cb'
-#     white:   '0xcccccc'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x666666'
-#     red:     '0xff3334'
-#     green:   '0x9ec400'
-#     yellow:  '0xffb454'
-#     blue:    '0x7aa6da'
-#     magenta: '0xb77ee0'
-#     cyan:    '0x54ced6'
-#     white:   '0xcccccc'
-
-#   # Dim colors (Optional)
-#   dim:
-#     black:   '0x333333'
-#     red:     '0xf2777a'
-#     green:   '0x99cc99'
-#     yellow:  '0xffcc66'
-#     blue:    '0x6699cc'
-#     magenta: '0xcc99cc'
-#     cyan:    '0x66cccc'
-#     white:   '0xdddddd'
-
-# Nord theme
-# colors:
-#   primary:
-#     background: '0x2E3440'
-#     foreground: '0xD8DEE9'
-#   cursor:
-#     text: '0x2E3440'
-#     cursor: '0xD8DEE9'
-#   normal:
-#     black: '0x3B4252'
-#     red: '0xBF616A'
-#     green: '0xA3BE8C'
-#     yellow: '0xEBCB8B'
-#     blue: '0x81A1C1'
-#     magenta: '0xB48EAD'
-#     cyan: '0x88C0D0'
-#     white: '0xE5E9F0'
-#   bright:
-#     black: '0x4C566A'
-#     red: '0xBF616A'
-#     green: '0xA3BE8C'
-#     yellow: '0xEBCB8B'
-#     blue: '0x81A1C1'
-#     magenta: '0xB48EAD'
-#     cyan: '0x8FBCBB'
-#     white: '0xECEFF4'
-
-# Colors (Gruvbox dark)
-# colors:
-#   # Default colors
-#   primary:
-#     # hard contrast: background = '#1d2021'
-#     background: '#282828'
-#     # soft contrast: background = '#32302f'
-#     foreground: '#ebdbb2'
-
-#   # Normal colors
-#   normal:
-#     black:   '#282828'
-#     red:     '#cc241d'
-#     green:   '#98971a'
-#     yellow:  '#d79921'
-#     blue:    '#458588'
-#     magenta: '#b16286'
-#     cyan:    '#689d6a'
-#     white:   '#a89984'
-
-#   # Bright colors
-#   bright:
-#     black:   '#928374'
-#     red:     '#fb4934'
-#     green:   '#b8bb26'
-#     yellow:  '#fabd2f'
-#     blue:    '#83a598'
-#     magenta: '#d3869b'
-#     cyan:    '#8ec07c'
-#     white:   '#ebdbb2'
-
-# Colors (Tomorrow Night)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x1d1f21'
-#     foreground: '0xc5c8c6'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0x1d1f21'
-#     cursor: '0xffffff'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x1d1f21'
-#     red:     '0xcc6666'
-#     green:   '0xb5bd68'
-#     yellow:  '0xe6c547'
-#     blue:    '0x81a2be'
-#     magenta: '0xb294bb'
-#     cyan:    '0x70c0ba'
-#     white:   '0x373b41'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x666666'
-#     red:     '0xff3334'
-#     green:   '0x9ec400'
-#     yellow:  '0xf0c674'
-#     blue:    '0x81a2be'
-#     magenta: '0xb77ee0'
-#     cyan:    '0x54ced6'
-    # white:   '0x282a2e'
-
-# Colors (Base16 Default Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x181818'
-#     foreground: '0xd8d8d8'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0xd8d8d8'
-#     cursor: '0xd8d8d8'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x181818'
-#     red:     '0xab4642'
-#     green:   '0xa1b56c'
-#     yellow:  '0xf7ca88'
-#     blue:    '0x7cafc2'
-#     magenta: '0xba8baf'
-#     cyan:    '0x86c1b9'
-#     white:   '0xd8d8d8'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x585858'
-#     red:     '0xab4642'
-#     green:   '0xa1b56c'
-#     yellow:  '0xf7ca88'
-#     blue:    '0x7cafc2'
-#     magenta: '0xba8baf'
-#     cyan:    '0x86c1b9'
-#     white:   '0xf8f8f8'
-
-# Colors (Oceanic Next)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x1b2b34'
-#     foreground: '0xd8dee9'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0x1b2b34'
-#     cursor: '0xffffff'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x343d46'
-#     red:     '0xEC5f67'
-#     green:   '0x99C794'
-#     yellow:  '0xFAC863'
-#     blue:    '0x6699cc'
-#     magenta: '0xc594c5'
-#     cyan:    '0x5fb3b3'
-#     white:   '0xd8dee9'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x343d46'
-#     red:     '0xEC5f67'
-#     green:   '0x99C794'
-#     yellow:  '0xFAC863'
-#     blue:    '0x6699cc'
-#     magenta: '0xc594c5'
-#     cyan:    '0x5fb3b3'
-#     white:   '0xd8dee9'
-
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x2b303b'
-#     foreground: '0xc0c5ce'
-
-#   # Colors the cursor will use if `custom_cursor_colors` is true
-#   cursor:
-#     text: '0x2b303b'
-#     cursor: '0xc0c5ce'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x2b303b'
-#     red:     '0xbf616a'
-#     green:   '0xa3be8c'
-#     yellow:  '0xebcb8b'
-#     blue:    '0x8fa1b3'
-#     magenta: '0xb48ead'
-#     cyan:    '0x96b5b4'
-#     white:   '0xc0c5ce'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x65737e'
-#     red:     '0xd08770'
-#     green:   '0x343d46'
-#     yellow:  '0x4f5b66'
-#     blue:    '0xa7adba'
-#     magenta: '0xdfe1e8'
-#     cyan:    '0xab7967'
-#     white:   '0xeff1f5'
-
-# Colors (Monokai Dark)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x272822'
-#     foreground: '0xF8F8F2'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x272822'
-#     red:     '0xF92672'
-#     green:   '0xA6E22E'
-#     yellow:  '0xF4BF75'
-#     blue:    '0x66D9EF'
-#     magenta: '0xAE81FF'
-#     cyan:    '0xA1EFE4'
-#     white:   '0xF8F8F2'
-
-#   # Bright colors
-#   bright:
-#     red:     '0xF92672'
-#     black:   '0x75715E'
-#     green:   '0xA6E22E'
-#     yellow:  '0xF4BF75'
-#     blue:    '0x66D9EF'
-#     magenta: '0xAE81FF'
-#     cyan:    '0xA1EFE4'
-#     white:   '0xF9F8F5'
-
-# Colors (Dracula)
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x282a36'
-#     foreground: '0xf8f8f2'
-
-#   # Normal colors
-#   normal:
-#     black:   '0x000000'
-#     red:     '0xff5555'
-#     green:   '0x50fa7b'
-#     yellow:  '0xf1fa8c'
-#     blue:    '0xcaa9fa'
-#     magenta: '0xff79c6'
-#     cyan:    '0x8be9fd'
-#     white:   '0xbfbfbf'
-
-#   # Bright colors
-#   bright:
-#     black:   '0x575b70'
-#     red:     '0xff6e67'
-#     green:   '0x5af78e'
-#     yellow:  '0xf4f99d'
-#     blue:    '0xcaa9fa'
-#     magenta: '0xff92d0'
-#     cyan:    '0x9aedfe'
-#     white:   '0xe6e6e6'
-
-# Colors (One Dark)
-colors:
+theme_onedark: &theme_onedark
   # Default colors
   primary:
     background: '#282c34'
     foreground: '#abb2bf'
-
-  # Normal colors
   normal:
     # NOTE: Use '#131613' for the `black` color if you'd like to see
     # black text on the background.
@@ -414,8 +114,6 @@ colors:
     magenta: '#c678dd'
     cyan:    '#56b6c2'
     white:   '#abb2bf'
-
-  # Bright colors
   bright:
     black:   '#5c6370'
     red:     '#e06c75'
@@ -425,6 +123,107 @@ colors:
     magenta: '#c678dd'
     cyan:    '#56b6c2'
     white:   '#ffffff'
+
+theme_nord: &theme_nord
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+  cursor:
+    text: '0x2E3440'
+    cursor: '0xD8DEE9'
+  normal:
+    black: '0x3B4252'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x88C0D0'
+    white: '0xE5E9F0'
+  bright:
+    black: '0x4C566A'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x8FBCBB'
+    white: '0xECEFF4'
+
+theme_gruvbox_dark: &theme_gruvbox_dark
+  primary:
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
+  normal:
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+
+theme_monokai_dark: &theme_monokai_dark
+  primary:
+    background: '0x272822'
+    foreground: '0xF8F8F2'
+  normal:
+    black:   '0x272822'
+    red:     '0xF92672'
+    green:   '0xA6E22E'
+    yellow:  '0xF4BF75'
+    blue:    '0x66D9EF'
+    magenta: '0xAE81FF'
+    cyan:    '0xA1EFE4'
+    white:   '0xF8F8F2'
+  bright:
+    red:     '0xF92672'
+    black:   '0x75715E'
+    green:   '0xA6E22E'
+    yellow:  '0xF4BF75'
+    blue:    '0x66D9EF'
+    magenta: '0xAE81FF'
+    cyan:    '0xA1EFE4'
+    white:   '0xF9F8F5'
+
+theme_dracula: &theme_dracula
+  primary:
+    background: '0x282a36'
+    foreground: '0xf8f8f2'
+  normal:
+    black:   '0x000000'
+    red:     '0xff5555'
+    green:   '0x50fa7b'
+    yellow:  '0xf1fa8c'
+    blue:    '0xcaa9fa'
+    magenta: '0xff79c6'
+    cyan:    '0x8be9fd'
+    white:   '0xbfbfbf'
+  bright:
+    black:   '0x575b70'
+    red:     '0xff6e67'
+    green:   '0x5af78e'
+    yellow:  '0xf4f99d'
+    blue:    '0xcaa9fa'
+    magenta: '0xff92d0'
+    cyan:    '0x9aedfe'
+    white:   '0xe6e6e6'
+
+# Colors (One Dark)
+colors: *theme_gruvbox_dark
+
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -452,7 +251,7 @@ visual_bell:
   duration: 0
 
 # Background opacity
-background_opacity: 0.95
+background_opacity: 1
 
 # Mouse bindings
 #
