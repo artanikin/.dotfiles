@@ -99,7 +99,6 @@ debug:
   render_timer: false
 
 theme_onedark: &theme_onedark
-  # Default colors
   primary:
     background: '#282c34'
     foreground: '#abb2bf'
@@ -221,8 +220,7 @@ theme_dracula: &theme_dracula
     cyan:    '0x9aedfe'
     white:   '0xe6e6e6'
 
-# Colors (One Dark)
-colors: *theme_gruvbox_dark
+colors: *theme_onedark
 
 # Visual Bell
 #
