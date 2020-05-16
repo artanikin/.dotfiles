@@ -161,13 +161,18 @@ if dein#load_state('~/.cache/dein')
   call dein#add('junegunn/goyo.vim', { 'on_ft': ['markdown'], 'on_cmd': ['Goyo'] })
   call dein#add('junegunn/limelight.vim', { 'on_cmd': ['Limelight'] } )
 
+  " Shows keybindings in popup
+  call dein#add('liuchengxu/vim-which-key', { 'on_cmd': ['WhichKey', 'WhichKey!'] })
+
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
-  call dein#add('artanikin/vwilight')
+  call dein#add('artanikin/vim-vwilight')
   call dein#add('arcticicestudio/nord-vim')
   call dein#add('blueshirts/darcula')
   call dein#add('arzg/vim-colors-xcode')
+  call dein#add('joshdick/onedark.vim')
   call dein#add('sonph/onehalf', {'rtp': 'vim/'})
+  call dein#add('marcopaganini/termschool-vim-theme')
 
   " Required:
   call dein#end()

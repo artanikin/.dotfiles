@@ -1,8 +1,8 @@
 " Leader key
-let mapleader=','
+let mapleader=' '
 
 " Enable syntax highlighting
-syntax enable
+syntax on
 " Enable filetype detection
 filetype on
 " Enable filetype-specific indenting
