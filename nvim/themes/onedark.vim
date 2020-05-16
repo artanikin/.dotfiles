@@ -37,9 +37,9 @@ highlight DiffChange term=bold ctermfg=0 ctermbg=4 guifg=#282c34 guibg=#d19a66
 highlight DiffText   term=reverse cterm=bold ctermfg=0 ctermbg=4 gui=bold guifg=#282c34 guibg=#98c379
 
 " Diff Gutter
-highlight GutterAdd    term=bold ctermfg=0 ctermbg=2 guibg=#282c34 guifg=#98c379
-highlight GutterDelete term=bold ctermfg=0 ctermbg=1 gui=bold guibg=#282c34 guifg=#e06c75
-highlight GutterChange term=bold ctermfg=0 ctermbg=4 guibg=#282c34 guifg=#d19a66
+highlight GutterAdd    term=bold ctermfg=0 ctermbg=2 guibg=NONE guifg=#98c379
+highlight GutterDelete term=bold ctermfg=0 ctermbg=1 gui=bold guibg=NONE guifg=#e06c75
+highlight GutterChange term=bold ctermfg=0 ctermbg=4 guibg=NONE guifg=#d19a66
 
 " Statusline
 hi! link UserBase CursorColumn
