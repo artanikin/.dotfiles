@@ -162,7 +162,10 @@ if dein#load_state('~/.cache/dein')
   call dein#add('junegunn/limelight.vim', { 'on_cmd': ['Limelight'] } )
 
   " Shows keybindings in popup
-  call dein#add('liuchengxu/vim-which-key', { 'on_cmd': ['WhichKey', 'WhichKey!'] })
+  call dein#add('liuchengxu/vim-which-key') ", { 'on_cmd': ['WhichKey', 'WhichKey!'] })
+
+  " Floating/popup window
+  call dein#add('voldikss/vim-floaterm', { 'on_cmd': ['FloatermNew'] })
 
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')

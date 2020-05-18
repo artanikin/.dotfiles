@@ -48,23 +48,6 @@ let g:fzf_action = {
       \ 'ctrl-v': 'vsplit'
       \ }
 
-nnoremap <silent> <C-p> :Files<cr>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>o :Lines<cr>
-nnoremap <silent> <leader>t :Tags<cr>
-nnoremap <silent> <leader>bt :BTags<cr>
-nnoremap <silent> <leader>gp :BranchFiles<cr>
-nnoremap <silent> <leader>GP :UncommitedFiles<cr>
-nnoremap <silent> <leader>gb :Gblame<cr>
-
-nnoremap <leader>gm :Files app/models/<cr>
-nnoremap <leader>gv :Files app/views/<cr>
-nnoremap <leader>gc :Files app/controllers/<cr>
-nnoremap <leader>gy :Files app/assets/stylesheets/<cr>
-nnoremap <leader>gj :Files app/assets/javascripts/<cr>
-nnoremap <leader>gs :Files spec/<cr>
-nnoremap <leader>gw :Files app/javascript/<cr>
-
 if has('nvim') && !exists('g:fzf_layout')
   autocmd! FileType fzf
   autocmd  FileType fzf set laststatus=0 noshowmode noruler

@@ -4,7 +4,7 @@ augroup vimrc_defx
   autocmd VimEnter * call s:setup_defx()
 augroup END
 
-nnoremap <silent><Leader>q :call <sid>defx_open()<CR>
+nnoremap <silent><Leader>e :call <sid>defx_open()<CR>
 nnoremap <silent><Leader>y :call <sid>defx_open({ 'find_current_file': v:true })<CR>
 let s:default_columns = 'indent:git:icons:filename'
 let g:defx_git#indicators = {

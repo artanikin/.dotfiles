@@ -28,5 +28,4 @@
         echom ''
       endif
     endfunction
-    nnoremap <silent> <Leader>r :call ToggleResizeMode()<CR>
   " }}}
