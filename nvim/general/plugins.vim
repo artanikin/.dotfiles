@@ -92,7 +92,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   " Snippets
-  call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
   " Git blame
   call dein#add('APZelos/blamer.nvim', {
@@ -167,6 +166,9 @@ if dein#load_state('~/.cache/dein')
   " Floating/popup window
   call dein#add('voldikss/vim-floaterm', { 'on_cmd': ['FloatermNew'] })
 
+  " Search and edit multiple files
+  call dein#add('dyng/ctrlsf.vim', { 'on_cmd': ['CtrlSF', 'CtrlSFOpen', 'CtrlSFToggle'] })
+
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
   call dein#add('artanikin/vim-vwilight')
@@ -176,6 +178,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('joshdick/onedark.vim')
   call dein#add('sonph/onehalf', {'rtp': 'vim/'})
   call dein#add('marcopaganini/termschool-vim-theme')
+  call dein#add('whatyouhide/vim-gotham')
 
   " Required:
   call dein#end()
