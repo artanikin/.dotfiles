@@ -165,12 +165,9 @@ let g:which_key_map.l = {
 let g:which_key_map.t = {
       \ 'name' : '+terminal',
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
-      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
-      \ 'v' : [':FloatermNew vifm'                              , 'vifm'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'h' : [':FloatermNew htop'                              , 'htop'],
-      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
       \ }
 
 " r is for Rails projects

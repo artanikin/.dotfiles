@@ -15,3 +15,6 @@ export LC_ALL=en_US.UTF-8
 
 # Hide docker legacy commands on `docker help`
 export DOCKER_HIDE_LEGACY_COMMANDS=true
+
+export DOCKER_CLIENT_TIMEOUT=120
+export COMPOSE_HTTP_TIMEOUT=120
