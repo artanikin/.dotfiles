@@ -29,11 +29,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
   " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
   call dein#add('tpope/vim-ragtag')
-  " Wisely add `end` in ruby, endfunction/endif/more in vim script
-  " call dein#add('tpope/vim-endwise', {
-  "   \ 'on_ft': 'ruby',
-  "   \ 'on_event': 'InsertEnter'
-  " \ })
   " Commenting lines
   call dein#add('tpope/vim-commentary', {
     \ 'on_cmd': 'Commentary',
@@ -105,8 +100,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('alvan/vim-closetag', { 'on_ft': ['html', 'javascript.jsx'] })
   " Automatically highlighting other uses of the current word under the cursor
   call dein#add('RRethy/vim-illuminate')
-  " Asynchronously displaying the colours (need install Go)
-  " Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
   " Run tests from Vim
   call dein#add('janko/vim-test', {
     \ 'on_cmd': [
@@ -119,8 +112,6 @@ if dein#load_state('~/.cache/dein')
   \ })
   " Interact with tmux
   call dein#add('benmills/vimux')
-  " Opens the file manager or terminal at the directory of the current file in Vim
-  " call dein#add('justinmk/vim-gtfo')
   " Switch between single-line and multiline forms of code
   call dein#add('andrewradev/splitjoin.vim', {
     \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
@@ -153,21 +144,22 @@ if dein#load_state('~/.cache/dein')
 
   " Markdown preview
   call dein#add('suan/vim-instant-markdown', {'on_ft': ['markdown']})
-  " Jumping to defitinitions
-  " Plug 'pechorin/any-jump.vim'
 
   " Distraction-free writing in Vim
   call dein#add('junegunn/goyo.vim', { 'on_ft': ['markdown'], 'on_cmd': ['Goyo'] })
   call dein#add('junegunn/limelight.vim', { 'on_cmd': ['Limelight'] } )
 
   " Shows keybindings in popup
-  call dein#add('liuchengxu/vim-which-key') ", { 'on_cmd': ['WhichKey', 'WhichKey!'] })
+  call dein#add('liuchengxu/vim-which-key')
 
   " Floating/popup window
   call dein#add('voldikss/vim-floaterm', { 'on_cmd': ['FloatermNew'] })
 
   " Search and edit multiple files
   call dein#add('dyng/ctrlsf.vim', { 'on_cmd': ['CtrlSF', 'CtrlSFOpen', 'CtrlSFToggle'] })
+
+  " File Explorer
+  call dein#add('justinmk/vim-dirvish', { 'on_cmd': ['Dirvish'] })
 
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
