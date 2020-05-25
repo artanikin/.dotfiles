@@ -4,8 +4,9 @@ colorscheme gruvbox8
 highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
-" change color for highlight yank text
-highlight HighlightedyankRegion guibg=#d79921 guifg=#282828
+
+" Highlight yank text
+highlight UserTextYankPost guibg=#d79921 guifg=#282828
 
 " Diff
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#282828 guibg=#98971a

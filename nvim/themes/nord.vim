@@ -10,8 +10,9 @@ highlight String gui=italic cterm=italic
 highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
-" change color for highlight yank text
-highlight HighlightedyankRegion guibg=#5E81AC guifg=#2E3440
+
+" Highlight yank text
+highlight UserTextYankPost guibg=#5E81AC guifg=#2E3440
 
 " Diff
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#2E3440 guibg=#A3BE8C

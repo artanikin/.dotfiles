@@ -11,8 +11,9 @@ colorscheme xcodedark
 highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
-" change color for highlight yank text
-highlight HighlightedyankRegion guibg=#ffa14f guifg=#292a30
+
+" Highlight yank text
+highlight UserTextYankPost guibg=#ffa14f guifg=#292a30
 
 " Diff
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#292a30 guibg=#d9c97c

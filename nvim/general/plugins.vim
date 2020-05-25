@@ -58,13 +58,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tweekmonster/startuptime.vim', {
     \ 'on_cmd': 'StartupTime'
   \ })
-  " Highlight yanked text
-  call dein#add('machakann/vim-highlightedyank', {
-    \ 'on_map': {
-      \ 'n': ['yy', 'Y'],
-      \ 'v': ['y']
-    \ }
-  \ })
   " Yank code to the clipboard (Remove spaces on start line)
   " call dein#add('AaronLasseigne/yank-code')
   " Multiline editing

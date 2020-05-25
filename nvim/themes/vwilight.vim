@@ -4,8 +4,9 @@ colorscheme vwilight
 highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
-" change color for highlight yank text
-highlight HighlightedyankRegion guibg=#dad085 guifg=#1f1f1f
+
+" Highlight yank text
+highlight UserTextYankPost guibg=#dad085 guifg=#1f1f1f
 
 " Diff
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#1f1f1f guibg=#8f9d6a

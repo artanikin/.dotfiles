@@ -8,8 +8,9 @@ highlight! link TabLineFill Normal
 highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
-" change color for highlight yank text
-highlight HighlightedyankRegion guibg=#ecc48d guifg=#011627
+
+" Highlight yank text
+highlight UserTextYankPost guibg=#ecc48d guifg=#011627
 
 " Diff
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#011627 guibg=#addb67

@@ -116,5 +116,9 @@ augroup ColorColumnOnlyInInsertMode
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
 augroup END
 
+if exists('##TextYankPost')
+  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('Substitute', 200)
+endif
+
 " Support RU locale in naviation
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz

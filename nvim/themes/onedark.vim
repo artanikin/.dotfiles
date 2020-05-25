@@ -27,8 +27,9 @@ endif
 highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
-" change color for highlight yank text
-highlight HighlightedyankRegion guibg=#56b6c2 guifg=#282c34
+
+" Highlight yank text
+highlight UserTextYankPost guibg=#56b6c2 guifg=#282c34
 
 " Diff
 highlight DiffAdd    term=bold ctermfg=0 ctermbg=2 guifg=#282c34 guibg=#98c379
