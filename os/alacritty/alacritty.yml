@@ -66,15 +66,15 @@ font:
 
   normal:
     family: SauceCodePro Nerd Font
-    style: ExtraLight
+    style: Light
 
   bold:
     family: SauceCodePro Nerd Font
-    style: Regular
+    style: Bold
 
   italic:
     family: SauceCodePro Nerd Font
-    style: ExtraLight Italic
+    style: Italic
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -92,7 +92,7 @@ font:
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
   # false.
-  use_thin_strokes: false
+  use_thin_strokes: true
 
 # Should display the render timer
 debug:
