@@ -31,3 +31,10 @@ endsnippet
 snippet :. "key: key"
 ${1:key}: ${2:$1}$0
 endsnippet
+
+snippet dst "Strong params"
+def ${1}_params
+	params.require(:${2:$1}).permit(${3})${0}
+end
+endsnippet
+
