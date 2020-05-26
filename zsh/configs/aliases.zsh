@@ -25,8 +25,7 @@ alias gcob='git checkout $(git branch | fzf)'
 alias fz="fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort' --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
 alias vfz='vim $(fz)'
 alias preview="fzf --preview 'bat --color \"always\" --line-range 0:30 {}'"
-alias n="nnn"
-alias x="vifm ."
+alias x="ranger ."
 
 alias be="bundle exec"
 alias rspec="clear; rspec"

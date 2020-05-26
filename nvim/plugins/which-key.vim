@@ -168,6 +168,7 @@ let g:which_key_map.t = {
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'h' : [':FloatermNew htop'                              , 'htop'],
+      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
       \ }
 
 " r is for Rails projects
