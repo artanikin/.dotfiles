@@ -1,7 +1,3 @@
-function! s:prefix(str, args)
-  return map(a:args, {_, s -> a:str . s})
-endfunction
-
 let s:has_exec_cache = {}
 function! s:has_exec(command)
     if !has_key(s:has_exec_cache, a:command)
@@ -107,7 +103,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('benmills/vimux')
   " Switch between single-line and multiline forms of code
   call dein#add('andrewradev/splitjoin.vim', {
-    \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
+    \ 'on_cmd': ['SplitjoinJoin', 'SplitjoinSplit'],
     \ 'on_map': { 'n': ['gJ', 'gS'] }
   \ })
   " Switch segments of text with predefined replacements
