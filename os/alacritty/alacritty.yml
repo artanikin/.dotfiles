@@ -54,45 +54,45 @@ scrolling:
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
 
-# Font configuration (changes require restart)
-
-#
-# family: FuraCode Nerd Font Mono
-# family: Fira Code
-
-font:
+font_jetbrains: &font_jetbrains
   size: 14
-  # The normal (roman) font face to use.
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Medium
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  offset:
+    x: 0
+    y: 3
+  glyph_offset:
+    x: 0
+    y: 3
+  use_thin_strokes: true
 
+font_saucecodepro: &font_saucecodepro
+  size: 14
   normal:
     family: SauceCodePro Nerd Font
     style: Light
-
   bold:
     family: SauceCodePro Nerd Font
     style: Bold
-
   italic:
     family: SauceCodePro Nerd Font
     style: Italic
-
-  # Offset is the extra space around each character. offset.y can be thought of
-  # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
     x: 0
     y: 2
-
-  # Glyph offset determines the locations of the glyphs within their cells with
-  # the default being at the bottom. Increase the x offset to move the glyph to
-  # the right, increase the y offset to move the glyph upward.
   glyph_offset:
     x: 0
     y: 2
-
-  # OS X only: use thin stroke font rendering. Thin strokes are suitable
-  # for retina displays, but for non-retina you probably want this set to
-  # false.
   use_thin_strokes: true
+
+font: *font_jetbrains
 
 # Should display the render timer
 debug:
@@ -107,12 +107,12 @@ theme_onedark: &theme_onedark
     # black text on the background.
     black:   '#282c34'
     red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
+    green:   '#a5a681'
+    yellow:  '#d5b18e'
     blue:    '#61afef'
     magenta: '#c678dd'
     cyan:    '#56b6c2'
-    white:   '#abb2bf'
+    white:   '#e1e9f5'
   bright:
     black:   '#5c6370'
     red:     '#e06c75'
@@ -243,7 +243,55 @@ theme_gotham: &theme_gotham
     cyan: '0x599caa'
     white: '0xd3ebe9'
 
-colors: *theme_gruvbox_dark
+theme_darksilent: &theme_darksilent
+  primary:
+    background: '#0e0e13'
+    foreground: '#abb2bf'
+  normal:
+    # NOTE: Use '#131613' for the `black` color if you'd like to see
+    # black text on the background.
+    black:   '#0e0e13'
+    red:     '#ffd7dc'
+    green:   '#acf2bd'
+    yellow:  '#d5b18e'
+    blue:    '#3a5677'
+    magenta: '#d7d4ef'
+    cyan:    '#82BBC2'
+    white:   '#e1e9f2'
+  bright:
+    black:   '#5c6370'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#ffffff'
+
+theme_apprentice: &theme_apprentice
+  primary:
+    background: '#262626'
+    foreground: '#BCBCBC'
+  normal:
+    black:   '#1C1C1C'
+    red:     '#AF5F5F'
+    green:   '#5F875F'
+    yellow:  '#87875F'
+    blue:    '#5F87AF'
+    magenta: '#5F5F87'
+    cyan:    '#5F8787'
+    white:   '#6C6C6C'
+  bright:
+    black:   '#444444'
+    red:     '#FF8700'
+    green:   '#87AF87'
+    yellow:  '#FFFFAF'
+    blue:    '#8FAFD7'
+    magenta: '#8787AF'
+    cyan:    '#5FAFAF'
+    white:   '#FFFFFF'
+
+colors: *theme_apprentice
 
 # Visual Bell
 #
