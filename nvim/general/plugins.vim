@@ -160,6 +160,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('sonph/onehalf', {'rtp': 'vim/'})
   call dein#add('marcopaganini/termschool-vim-theme')
   call dein#add('whatyouhide/vim-gotham')
+  call dein#add('romainl/Apprentice')
+  call dein#add('vim-scripts/xoria256.vim')
 
   " Required:
   call dein#end()
