@@ -85,6 +85,8 @@ set ttimeoutlen=10
 set formatoptions-=cro
 " Give more space for displaying messages.
 set cmdheight=2
+" Display [1 of 3] search match
+set shortmess-=S
 
 " Maintain undo history between sessions
 set undofile

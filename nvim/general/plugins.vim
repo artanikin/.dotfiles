@@ -39,11 +39,13 @@ if dein#load_state('~/.cache/dein')
     \ 'depends': 'vim-fugitive',
     \ 'if': s:has_exec('git')
   \})
+  " Readline style insertion
+  call dein#add('tpope/vim-rsi')
   " Show a diff using Vim its sign column
   call dein#add('mhinz/vim-signify', {
     \ 'if': has('signs') && s:has_exec('git')
   \ })
-  call dein#add('junegunn/gv.vim', { 'on_cmd': ['RV', 'RV!', 'RV?'] })
+  " call dein#add('junegunn/gv.vim', { 'on_cmd': ['RV', 'RV!', 'RV?'] })
   " Insert or delete brackets, parens, quotes in pair
   call dein#add('jiangmiao/auto-pairs', {
     \ 'on_event': 'InsertEnter'
@@ -62,16 +64,6 @@ if dein#load_state('~/.cache/dein')
   \ })
   " Startup Screen
   call dein#add('mhinz/vim-startify')
-  " Filemanager
-  call dein#add('Shougo/defx.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  " Show icons on Defx filemanager
-  call dein#add('kristijanhusak/defx-icons', { 'depends': 'defx.nvim' })
-  " Show git state on Defx filemanager
-  call dein#add('kristijanhusak/defx-git', { 'depends': 'defx.nvim' })
   " FZF
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
@@ -102,31 +94,31 @@ if dein#load_state('~/.cache/dein')
   " Interact with tmux
   call dein#add('benmills/vimux')
   " Switch between single-line and multiline forms of code
-  call dein#add('andrewradev/splitjoin.vim', {
-    \ 'on_cmd': ['SplitjoinJoin', 'SplitjoinSplit'],
-    \ 'on_map': { 'n': ['gJ', 'gS'] }
-  \ })
-  " Switch segments of text with predefined replacements
-  call dein#add('andrewradev/switch.vim', {
-    \ 'on_cmd': 'Switch',
-    \ 'on_func': 'switch#Switch',
-    \ 'on_map': { 'n': '-' }
-  \ })
+  " call dein#add('andrewradev/splitjoin.vim', {
+  "   \ 'on_cmd': ['SplitjoinJoin', 'SplitjoinSplit'],
+  "   \ 'on_map': { 'n': ['gJ', 'gS'] }
+  " \ })
+  " " Switch segments of text with predefined replacements
+  " call dein#add('andrewradev/switch.vim', {
+  "   \ 'on_cmd': 'Switch',
+  "   \ 'on_func': 'switch#Switch',
+  "   \ 'on_map': { 'n': '-' }
+  " \ })
   " Change an HTML(ish) opening tag and take the closing one along as well
   call dein#add('AndrewRadev/tagalong.vim', {
     \ 'on_ft': 'html',
     \ 'on_event': 'InsertEnter'
   \ })
   " Multi-file search for Vim
-  call dein#add('wincent/ferret', {
-        \ 'on_cmd': 'Ack'
-        \ })
+  " call dein#add('wincent/ferret', {
+  "       \ 'on_cmd': 'Ack'
+  "       \ })
 
   " Intellisense engine
   call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 
   " Better Synatx Support
-  call dein#add('sheerun/vim-polyglot')
+  " call dein#add('sheerun/vim-polyglot')
 
   " The fastest Neovim colorizer
   call dein#add('norcalli/nvim-colorizer.lua', { 'merged': 0 })

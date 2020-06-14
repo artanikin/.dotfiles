@@ -58,20 +58,20 @@ font_jetbrains: &font_jetbrains
   size: 14
   normal:
     family: JetBrainsMono Nerd Font
-    style: Regular
+    style: Medium
   bold:
     family: JetBrainsMono Nerd Font
-    style: Medium
+    style: Bold
   italic:
     family: JetBrainsMono Nerd Font
     style: Italic
   offset:
     x: 0
-    y: 3
+    y: 7
   glyph_offset:
     x: 0
-    y: 3
-  use_thin_strokes: true
+    y: 7
+  use_thin_strokes: false
 
 font_saucecodepro: &font_saucecodepro
   size: 14
@@ -90,9 +90,9 @@ font_saucecodepro: &font_saucecodepro
   glyph_offset:
     x: 0
     y: 2
-  use_thin_strokes: true
+  use_thin_strokes: false
 
-font: *font_jetbrains
+font: *font_saucecodepro
 
 # Should display the render timer
 debug:
@@ -100,12 +100,14 @@ debug:
 
 theme_onedark: &theme_onedark
   primary:
-    background: '#282c34'
+    # background: '#282c34'
+    background: '#131613'
     foreground: '#abb2bf'
   normal:
     # NOTE: Use '#131613' for the `black` color if you'd like to see
     # black text on the background.
-    black:   '#282c34'
+    # black:   '#282c34'
+    black:   '#131613'
     red:     '#e06c75'
     green:   '#a5a681'
     yellow:  '#d5b18e'
@@ -291,7 +293,7 @@ theme_apprentice: &theme_apprentice
     cyan:    '#5FAFAF'
     white:   '#FFFFFF'
 
-colors: *theme_apprentice
+colors: *theme_onedark
 
 # Visual Bell
 #

@@ -1,3 +1,14 @@
+" Filemanager
+" call dein#add('Shougo/defx.nvim')
+" if !has('nvim')
+"   call dein#add('roxma/nvim-yarp')
+"   call dein#add('roxma/vim-hug-neovim-rpc')
+" endif
+" " Show icons on Defx filemanager
+" call dein#add('kristijanhusak/defx-icons', { 'depends': 'defx.nvim' })
+" " Show git state on Defx filemanager
+" call dein#add('kristijanhusak/defx-git', { 'depends': 'defx.nvim' })
+
 augroup vimrc_defx
   autocmd!
   autocmd FileType defx call s:defx_mappings()                                  "Defx mappings

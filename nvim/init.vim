@@ -3,7 +3,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/general/abbreviations.vim
 source $HOME/.config/nvim/general/mappings.vim
-source $HOME/.config/nvim/themes/apprentice.vim
+source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/general/statusline.vim
 
 source $HOME/.config/nvim/plugins/buftabline.vim
@@ -13,7 +13,7 @@ source $HOME/.config/nvim/plugins/vim-tests.vim
 source $HOME/.config/nvim/plugins/fzf.vim
 source $HOME/.config/nvim/plugins/coc.vim
 source $HOME/.config/nvim/plugins/startify.vim
-source $HOME/.config/nvim/plugins/defx.vim
+source $HOME/.config/nvim/plugins/dirvish.vim
 source $HOME/.config/nvim/plugins/signify.vim
 source $HOME/.config/nvim/plugins/goyo.vim
 source $HOME/.config/nvim/plugins/vim-instant-markdown.vim
