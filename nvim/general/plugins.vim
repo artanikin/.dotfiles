@@ -68,6 +68,10 @@ if dein#load_state('~/.cache/dein')
   call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   " Snippets
+  call dein#add('Shougo/deoplete.nvim')
+  let g:deoplete#enable_at_startup = 1
+
+  call dein#add('SirVer/ultisnips')
   call dein#add('honza/vim-snippets')
   " Git blame
   call dein#add('APZelos/blamer.nvim', {
@@ -110,15 +114,15 @@ if dein#load_state('~/.cache/dein')
     \ 'on_event': 'InsertEnter'
   \ })
   " Multi-file search for Vim
-  " call dein#add('wincent/ferret', {
-  "       \ 'on_cmd': 'Ack'
-  "       \ })
+  call dein#add('wincent/ferret', {
+        \ 'on_cmd': 'Ack'
+        \ })
 
   " Intellisense engine
-  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+  " call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
 
   " Better Synatx Support
-  " call dein#add('sheerun/vim-polyglot')
+  call dein#add('sheerun/vim-polyglot')
 
   " The fastest Neovim colorizer
   call dein#add('norcalli/nvim-colorizer.lua', { 'merged': 0 })
@@ -142,18 +146,21 @@ if dein#load_state('~/.cache/dein')
   " File Explorer
   call dein#add('justinmk/vim-dirvish', { 'on_cmd': ['Dirvish'] })
 
+  call dein#add('pangloss/vim-javascript') ", { 'on_ft': ['javascript', 'vue'] })
+
+  call dein#add('dense-analysis/ale', { 'on_ft': ['ruby', 'javascript', 'vue'] })
+
   " Colorschemes
   call dein#add('lifepillar/vim-gruvbox8')
   call dein#add('artanikin/vim-vwilight')
   call dein#add('arcticicestudio/nord-vim')
-  call dein#add('blueshirts/darcula')
   call dein#add('arzg/vim-colors-xcode')
   call dein#add('joshdick/onedark.vim')
   call dein#add('sonph/onehalf', {'rtp': 'vim/'})
-  call dein#add('marcopaganini/termschool-vim-theme')
-  call dein#add('whatyouhide/vim-gotham')
-  call dein#add('romainl/Apprentice')
-  call dein#add('vim-scripts/xoria256.vim')
+  call dein#add('wadackel/vim-dogrun')
+  call dein#add('artanikin/vim-synthwave84')
+  call dein#add('YorickPeterse/happy_hacking.vim')
+  call dein#add('kaicataldo/material.vim')
 
   " Required:
   call dein#end()

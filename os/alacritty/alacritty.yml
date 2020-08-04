@@ -33,6 +33,9 @@ window:
   # Setting this to false will result in window without borders and title bar.
   decorations: transparent
 
+  dynamic_title: true
+
+
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
@@ -74,23 +77,23 @@ font_jetbrains: &font_jetbrains
   use_thin_strokes: false
 
 font_saucecodepro: &font_saucecodepro
-  size: 14
+  size: 16
   normal:
     family: SauceCodePro Nerd Font
-    style: Light
+    style: ExtraLight
   bold:
     family: SauceCodePro Nerd Font
-    style: Bold
+    style: Medium
   italic:
     family: SauceCodePro Nerd Font
-    style: Italic
+    style: ExtraLight Italic
   offset:
     x: 0
-    y: 2
+    y: 4
   glyph_offset:
     x: 0
     y: 2
-  use_thin_strokes: false
+  use_thin_strokes: true
 
 font: *font_saucecodepro
 
@@ -100,14 +103,14 @@ debug:
 
 theme_onedark: &theme_onedark
   primary:
-    # background: '#282c34'
-    background: '#131613'
+    background: '#282c34'
+    # background: '#131613'
     foreground: '#abb2bf'
   normal:
     # NOTE: Use '#131613' for the `black` color if you'd like to see
     # black text on the background.
-    # black:   '#282c34'
-    black:   '#131613'
+    black:   '#282c34'
+    # black:   '#131613'
     red:     '#e06c75'
     green:   '#a5a681'
     yellow:  '#d5b18e'
@@ -317,7 +320,7 @@ colors: *theme_onedark
 #
 # To completely disable the visual bell, set its duration to 0.
 #
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -357,9 +360,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
-
-dynamic_title: true
-
 
 cursor:
   # Cursor style

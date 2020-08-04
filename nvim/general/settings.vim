@@ -84,7 +84,7 @@ set ttimeoutlen=10
 " Stop newline continution of comments
 set formatoptions-=cro
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 " Display [1 of 3] search match
 set shortmess-=S
 
@@ -104,6 +104,9 @@ set splitright
 
 " Reload config when writing init.vim
 au! BufWritePost $MYVIMRC source %
+
+set showmatch
+set matchtime=3
 
 " Save as root
 cmap w!! w !sudo tee %

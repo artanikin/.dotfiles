@@ -94,6 +94,19 @@ function! CheckMod(modi)
   endif
 endfunction
 
+function! LinterStatus() abort
+  let l:counts = ale#statusline#Count(bufnr(''))
+
+  let l:all_errors = l:counts.error + l:counts.style_error
+  let l:all_non_errors = l:counts.total - l:all_errors
+
+  return l:counts.total == 0 ? '✅ all good' : printf(
+        \   '🤬 %dW %dE',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+
 " Set active statusline
 function! ActiveLine()
   " Set empty statusline and colors
@@ -120,7 +133,8 @@ function! ActiveLine()
   let statusline .= "%#Comment# [%{CheckFT(&filetype)}]"
 
   " Add Coc info
-  let statusline .= " %{coc#status()}%{get(b:,'coc_current_function','')}"
+  " let statusline .= " %{coc#status()}%{get(b:,'coc_current_function','')}"
+  let statusline .=" %{LinterStatus()}"
 
   " Align items to right
   let statusline .= "%="
