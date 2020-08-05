@@ -71,6 +71,16 @@
   editor = nvim
   excludesfile = /Users/artyomanikin/.gitignore_global
   pager = delta --dark
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  features = side-by-side line-numbers decorations
+  whitespace-error-style = 22 reverse
+  syntax-theme = OneHalfDark
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold yellow ul
+  file-decoration-style = none
 [filter "hawser"]
   clean = git hawser clean %f
   smudge = git hawser smudge %f

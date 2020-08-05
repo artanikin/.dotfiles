@@ -4,8 +4,8 @@ tap 'phinze/cask'
 tap 'homebrew/core'
 tap 'homebrew/bundle'
 tap 'homebrew/services'
-tap 'caskroom/fonts'
-tap 'caskroom/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask'
 tap 'zegervdv/zathura'
 
 brew 'mas'                                                # CLI for the Mac App Store
@@ -13,7 +13,7 @@ brew 'autojump'                                           # Make it easier to ju
 brew 'ctags'
 brew 'dash'
 brew 'ffmpeg'
-brew 'graphicsmagick', args: ['with-ghostscript']
+brew 'graphicsmagick'
 brew 'htop'                                               # Process manager
 brew 'imagemagick'
 brew 'openssl'
@@ -37,7 +37,7 @@ brew 'vifm'                                               # Prefered filemanager
 brew 'brew-gem'                                           # Install gem from brew
 brew 'moreutils'                                          # Usefull utils
 brew 'jq'                                                 # CLI JSON processor
-brew 'zathura --with-synctex'
+brew 'zathura'
 brew 'zathura-pdf-poppler'
 
 # DB
@@ -52,13 +52,14 @@ brew 'zsh-syntax-highlighting'
 brew 'gh'                                                 # CLI tool for GitHub
 brew 'git'                                                # VCM
 brew 'hub'                                                # I use hub browse
+brew 'git-delta'                                          # Diff tool for CLI
 
 cask 'alfred'
 cask 'suspicious-package'                                 # Inspecting Mac installer package
 cask 'vlc'                                                # Best video player
 cask 'webpquicklook'                                      # Quicklook for Webp files
 cask 'wkhtmltopdf'                                        # Html to PDF converter
-caks 'macdown'                                            # Cool Markdown Editor
+cask 'macdown'                                            # Cool Markdown Editor
 cask 'hiddenbar'                                          # Hide icons in menubar
 cask 'docker'
 cask 'google-chrome'
@@ -71,9 +72,9 @@ cask 'xquartz'
 # Fonts
 cask 'font-fira-code'
 cask 'font-jetbrains-mono'
-cask 'font-jetbrainsmono-nerd-font'
+cask 'font-jetbrains-mono-nerd-font'
 cask 'font-ibm-plex'
-cask 'font-ibmplexmono-nerd-font-mono'
+cask 'font-blex-mono-nerd-font'
 
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 cask 'qlcolorcode'                                        # Syntax highlighting for source code in quicklook
