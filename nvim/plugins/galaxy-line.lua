@@ -134,6 +134,25 @@ gls.left[12] = {
     highlight = {colors.purple,colors.bg}
   }
 }
+gls.left[13] = {
+  DiagnosticError = {
+    provider = 'DiagnosticError',
+    icon = '  ',
+    highlight = {colors.red,colors.bg}
+  }
+}
+gls.left[14] = {
+  Space = {
+    provider = function () return '' end
+  }
+}
+gls.left[15] = {
+  DiagnosticWarn = {
+    provider = 'DiagnosticWarn',
+    icon = '  ',
+    highlight = {colors.blue,colors.bg},
+  }
+}
 gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
