@@ -1,3 +1,28 @@
-snippet date "DD.MM.YYYY"
+snippet dater "DD.MM.YYYY (Date Russia format)"
 `!v strftime("%d.%m.%Y")`
+endsnippet
+
+snippet unix "Unix timestamp" w
+`date +%s`
+endsnippet
+
+snippet file "file name" w
+`!v expand('%:t')`
+endsnippet
+
+snippet path "absolute file path" w
+`!v expand('%:p')`
+endsnippet
+
+# symbols
+snippet .- "• " w
+•
+endsnippet
+
+snippet .v "✓" w
+✓
+endsnippet
+
+snippet coffee "☕" w
+☕
 endsnippet

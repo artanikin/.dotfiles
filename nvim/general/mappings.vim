@@ -65,3 +65,9 @@ command! CopyFilePath let @+ = expand('%:p')
 
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" makes Ascii art font
+nmap <leader>aF :.!toilet -w 200 -f 'ANSI Shadow'<CR>
+nmap <leader>af :.!toilet -w 200 -f small<CR>
+" makes Ascii border
+nmap <leader>a1 :.!toilet -w 200 -f term -F border<CR>

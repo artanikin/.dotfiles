@@ -1,5 +1,6 @@
 " Leader key
 let mapleader=' '
+let maplocalleader=','
 
 " Enable syntax highlighting
 syntax on
@@ -103,10 +104,13 @@ set splitbelow
 set splitright
 
 " Reload config when writing init.vim
-au! BufWritePost $MYVIMRC source %
+" au! BufWritePost $MYVIMRC source %
 
 set showmatch
 set matchtime=3
+
+" Indent wrapped lines up to the same level
+set breakindent
 
 " Save as root
 cmap w!! w !sudo tee %
@@ -121,9 +125,10 @@ augroup ColorColumnOnlyInInsertMode
   autocmd BufRead,BufNewFile,InsertLeave * setlocal colorcolumn=0
 augroup END
 
-if exists('##TextYankPost')
-  autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('Substitute', 200)
-endif
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+augroup END
 
 " Support RU locale in naviation
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz

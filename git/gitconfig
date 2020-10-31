@@ -34,7 +34,7 @@
   auto = 1
 [alias]
   st = status
-  ci = commit
+  cm = commit
   co = checkout
   br = branch
   di = diff
@@ -103,7 +103,7 @@
   user = artanikin
 [merge]
   tool = vimdiff
-  conflictstyle = diff3
+  ; conflictstyle = diff3
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]

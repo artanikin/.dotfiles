@@ -134,7 +134,7 @@ function! ActiveLine()
 
   " Add Coc info
   " let statusline .= " %{coc#status()}%{get(b:,'coc_current_function','')}"
-  let statusline .=" %{LinterStatus()}"
+  " let statusline .=" %{LinterStatus()}"
 
   " Align items to right
   let statusline .= "%="

@@ -76,6 +76,9 @@ cask 'font-jetbrains-mono-nerd-font'
 cask 'font-ibm-plex'
 cask 'font-blex-mono-nerd-font'
 
+tap 'federico-terzi/espanso'
+cask 'espanso'
+
 # Quicklook plugins https://github.com/sindresorhus/quick-look-plugins
 cask 'qlcolorcode'                                        # Syntax highlighting for source code in quicklook
 cask 'qlimagesize'                                        # Display the dimensions, DPI and file size

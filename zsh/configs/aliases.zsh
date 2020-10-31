@@ -22,10 +22,12 @@ alias v="vim"
 alias vi="nvim --noplugin -u ~/.config/nvim/minimal.vim"
 alias reload!="source ~/.zshrc"
 alias gcob='git checkout $(git branch | fzf)'
+alias gconf="git ls-files -u | awk '{print $4}' | sort -u | xargs -o nvim"
 alias fz="fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort' --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
 alias vfz='vim $(fz)'
 alias preview="fzf --preview 'bat --color \"always\" --line-range 0:30 {}'"
 alias x="ranger ."
+alias man="vman"
 
 alias be="bundle exec"
 alias rspec="clear; rspec"
@@ -33,6 +35,7 @@ alias fs="foreman start"
 alias rr="be rake routes"
 alias rrg="be rake routes G"
 alias rails="bundle exec rails"
+alias .rails="rails"
 alias rake="bundle exec rake"
 alias fix="git diff --name-only | uniq | xargs nvim"
 

@@ -18,9 +18,9 @@ env:
 window:
   # Window dimensions in character columns and lines
   # (changes require restart)
-  dimensions:
-    columns: 200
-    lines: 50
+  # dimensions:
+  #   columns: 200
+  #   lines: 50
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
@@ -58,35 +58,35 @@ scrolling:
 draw_bold_text_with_bright_colors: false
 
 font_jetbrains: &font_jetbrains
-  size: 14
+  size: 17
   normal:
-    family: JetBrainsMono Nerd Font
-    style: Medium
+    family: JetBrainsMono
+    style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: JetBrainsMono
     style: Italic
   offset:
-    x: 0
-    y: 7
+    x: 1
+    y: 4
   glyph_offset:
     x: 0
-    y: 7
-  use_thin_strokes: false
+    y: 3
+  use_thin_strokes: true
 
 font_saucecodepro: &font_saucecodepro
   size: 16
   normal:
     family: SauceCodePro Nerd Font
-    style: ExtraLight
+    style: Regular
   bold:
     family: SauceCodePro Nerd Font
     style: Medium
   italic:
     family: SauceCodePro Nerd Font
-    style: ExtraLight Italic
+    style: Regular Italic
   offset:
     x: 0
     y: 4
@@ -95,11 +95,75 @@ font_saucecodepro: &font_saucecodepro
     y: 2
   use_thin_strokes: true
 
-font: *font_saucecodepro
+font_fantasque: &font_fantasque
+  size: 16
+  normal:
+    family: FantasqueSansMono Nerd Font
+    style: Regular
+  bold:
+    family: SauceCodePro Nerd Font
+    style: bold
+  italic:
+    family: SauceCodePro Nerd Font
+    style: Italic
+  offset:
+    x: 0
+    y: 1
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+
+font_dankmono: &font_dankmono
+  antialias: lcd # Can have values like lcd, lcdv, gray, and none
+  hinting: true
+  size: 16
+  normal:
+    family: Dank Mono
+    style: Regular
+  bold:
+    family: Dank Mono
+    style: Bold
+  italic:
+    family: Dank Mono
+    style: Italic
+  offset:
+    x: 1
+    y: 4
+  glyph_offset:
+    x: 0
+    y: 2
+  use_thin_strokes: true
+
+font: *font_jetbrains
 
 # Should display the render timer
 debug:
   render_timer: false
+
+theme_material: &theme_material
+  primary:
+    # background: '0x1e282d'
+    background: '0x212121'
+    foreground: '0xc4c7d1'
+  normal:
+    black:   '0x666666'
+    red:     '0xeb606b'
+    green:   '0xc3e88d'
+    yellow:  '0xf7eb95'
+    blue:    '0x80cbc4'
+    magenta: '0xff2f90'
+    cyan:    '0xaeddff'
+    white:   '0xffffff'
+  bright:
+    black:   '0xff262b'
+    red:     '0xeb606b'
+    green:   '0xc3e88d'
+    yellow:  '0xf7eb95'
+    blue:    '0x7dc6bf'
+    magenta: '0x6c71c4'
+    cyan:    '0x35434d'
+    white:   '0xffffff'
 
 theme_onedark: &theme_onedark
   primary:
@@ -168,7 +232,8 @@ theme_gruvbox_dark: &theme_gruvbox_dark
     blue:    '#458588'
     magenta: '#b16286'
     cyan:    '#689d6a'
-    white:   '#a89984'
+    # white:   '#a89984'
+    white:   '#ebdbb2'
   bright:
     black:   '#928374'
     red:     '#fb4934'
@@ -295,6 +360,29 @@ theme_apprentice: &theme_apprentice
     magenta: '#8787AF'
     cyan:    '#5FAFAF'
     white:   '#FFFFFF'
+
+theme_iceberg: &theme_iceberg
+  primary:
+    background: '#161821'
+    foreground: '#d2d4de'
+  normal:
+    black:   '#161821'
+    red:     '#e27878'
+    green:   '#b4be82'
+    yellow:  '#e2a478'
+    blue:    '#84a0c6'
+    magenta: '#a093c7'
+    cyan:    '#89b8c2'
+    white:   '#c6c8d1'
+  bright:
+    black:   '#6b7089'
+    red:     '#e98989'
+    green:   '#c0ca8e'
+    yellow:  '#e9b189'
+    blue:    '#91acd1'
+    magenta: '#ada0d3'
+    cyan:    '#95c4ce'
+    white:   '#d2d4de'
 
 colors: *theme_onedark
 

@@ -31,6 +31,9 @@ let g:which_key_map['='] = [ '<C-W>='                     , 'balance windows' ]
 let g:which_key_map[','] = [ 'Startify'                   , 'start screen' ]
 let g:which_key_map['d'] = [ ':bd'                        , 'delete buffer']
 let g:which_key_map['f'] = [ ':Files'                     , 'search files' ]
+let g:which_key_map['c'] = [ ':Files app/controllers'     , 'search files in controllers' ]
+let g:which_key_map['m'] = [ ':Files app/models'          , 'search files in models' ]
+let g:which_key_map['v'] = [ ':Files app/views'          , 'search files in views' ]
 let g:which_key_map['q'] = [ 'q'                          , 'quit' ]
 let g:which_key_map['S'] = [ ':SSave'                     , 'save session' ]
 let g:which_key_map['T'] = [ ':Rg'                        , 'search text' ]
@@ -49,23 +52,25 @@ let g:which_key_map.a = {
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffer' ,
-      \ '1' : ['<Plug>BufTabLine.Go(1)'        , 'buffer 1']        ,
-      \ '2' : ['<Plug>BufTabLine.Go(2)'        , 'buffer 2']        ,
-      \ '3' : ['<Plug>BufTabLine.Go(3)'        , 'buffer 3']        ,
-      \ '4' : ['<Plug>BufTabLine.Go(4)'        , 'buffer 4']        ,
-      \ '5' : ['<Plug>BufTabLine.Go(5)'        , 'buffer 5']        ,
-      \ '6' : ['<Plug>BufTabLine.Go(6)'        , 'buffer 6']        ,
-      \ '7' : ['<Plug>BufTabLine.Go(7)'        , 'buffer 7']        ,
-      \ '8' : ['<Plug>BufTabLine.Go(8)'        , 'buffer 8']        ,
-      \ '9' : ['<Plug>BufTabLine.Go(9)'        , 'buffer 9']        ,
-      \ '0' : ['<Plug>BufTabLine.Go(10)'       , 'buffer 10']       ,
-      \ 'd' : ['bd'        , 'delete-buffer']   ,
-      \ 'f' : ['bfirst'    , 'first-buffer']    ,
-      \ 'h' : ['Startify'  , 'home-buffer']     ,
-      \ 'l' : ['blast'     , 'last-buffer']     ,
-      \ 'n' : ['bnext'     , 'next-buffer']     ,
-      \ 'p' : ['bprevious' , 'previous-buffer'] ,
-      \ '?' : ['Buffers'   , 'fzf-buffer']      ,
+      \ '1' : [':BufferGoto 1'         , 'buffer 1'],
+      \ '2' : [':BufferGoto 2'         , 'buffer 2'],
+      \ '3' : [':BufferGoto 3'         , 'buffer 3'],
+      \ '4' : [':BufferGoto 4'         , 'buffer 4'],
+      \ '5' : [':BufferGoto 5'         , 'buffer 5'],
+      \ '6' : [':BufferGoto 6'         , 'buffer 6'],
+      \ '7' : [':BufferGoto 7'         , 'buffer 7'],
+      \ '8' : [':BufferGoto 8'         , 'buffer 8'],
+      \ '9' : [':BufferGoto 9'         , 'buffer 9'],
+      \ '0' : [':BufferGoto 0'         , 'buffer 0'],
+      \ 'b' : [':BufferPick'           , 'pick buffer'],
+      \ 'd' : [':Bdelete'              , 'delete-buffer'],
+      \ 'D' : [':BufferOrderByLanguage', 'delete-buffer'],
+      \ 'f' : ['bfirst'                , 'first-buffer'],
+      \ 'h' : ['Startify'              , 'home-buffer'],
+      \ 'l' : ['blast'                 , 'last-buffer'],
+      \ 'n' : ['bnext'                 , 'next-buffer'],
+      \ 'p' : ['bprevious'             , 'previous-buffer'],
+      \ '?' : ['Buffers'               , 'fzf-buffer'],
       \ }
 
 " s is for search
@@ -168,7 +173,7 @@ let g:which_key_map.t = {
       \ 'g' : [':FloatermNew lazygit'                           , 'git'],
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'h' : [':FloatermNew htop'                              , 'htop'],
-      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
+      \ 'j' : [':FloatermNew vifm'                            , 'vifm'],
       \ }
 
 " r is for Rails projects

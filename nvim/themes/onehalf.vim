@@ -18,6 +18,8 @@ highlight! link SignColumn LineNr
 " highlight colorcolumn
 highlight! link ColorColumn CursorLine
 
+" black_bg = #282c34
+" light_bg = #fafafa
 " Highlight yank text
 highlight UserTextYankPost guibg=#56b6c2 guifg=#282c34
 
