@@ -145,9 +145,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('pangloss/vim-javascript', { 'on_ft': ['javascript', 'vue'] })
 
   " call dein#add('dense-analysis/ale')
-  " call dein#add('Shougo/deoplete.nvim')
-  " call dein#add('Shougo/deoplete-lsp')
-  " call dein#add('neovim/nvim-lsp')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/deoplete-lsp')
+  call dein#add('neovim/nvim-lsp')
 
   " Neomake
   call dein#add('neomake/neomake')
