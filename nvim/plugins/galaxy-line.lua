@@ -28,7 +28,7 @@ end
 gls.left[1] = {
   FirstElement = {
     provider = function() return ' ' end,
-    highlight = {colors.bg,colors.purple}
+    highlight = {colors.bg,colors.bg}
   },
 }
 gls.left[2] = {
@@ -38,13 +38,13 @@ gls.left[2] = {
       return alias[vim.fn.mode()]
     end,
     separator = ' ',
-    separator_highlight = {colors.yellow,function()
+    separator_highlight = {colors.grey,function()
       if not buffer_not_empty() then
-        return colors.purple
+        return colors.bg
       end
-      return colors.purple
+      return colors.bg
     end},
-    highlight = {colors.grey,colors.purple,'bold'},
+    highlight = {colors.grey,colors.bg,'bold'},
   },
 }
 
@@ -130,8 +130,8 @@ gls.left[12] = {
   LeftEnd = {
     provider = function() return ' ' end,
     separator = ' ',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.purple,colors.bg}
+    separator_highlight = {colors.bg,colors.bg},
+    highlight = {colors.grey,colors.bg}
   }
 }
 gls.left[13] = {
@@ -157,30 +157,30 @@ gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
     separator = ' ',
-    separator_highlight = {colors.bg,colors.purple},
-    highlight = {colors.grey,colors.purple},
+    separator_highlight = {colors.grey,colors.bg},
+    highlight = {colors.grey,colors.bg},
   }
 }
 gls.right[2] = {
   LineInfo = {
     provider = 'LineColumn',
     separator = ' | ',
-    separator_highlight = {colors.darkblue,colors.purple},
-    highlight = {colors.grey,colors.purple},
+    separator_highlight = {colors.grey,colors.bg},
+    highlight = {colors.grey,colors.bg},
   },
 }
 gls.right[3] = {
   PerCent = {
     provider = 'LinePercent',
     separator = ' ',
-    separator_highlight = {colors.darkblue,colors.purple},
-    highlight = {colors.grey,colors.darkblue},
+    separator_highlight = {colors.grey,colors.bg},
+    highlight = {colors.grey,colors.bg},
   }
 }
 gls.right[4] = {
   ScrollBar = {
     provider = 'ScrollBar',
-    highlight = {colors.yellow,colors.purple},
+    highlight = {colors.grey,colors.bg},
   }
 }
 
@@ -188,7 +188,7 @@ gls.short_line_left[1] = {
   LeftEnd = {
     provider = function() return ' ' end,
     separator = ' ',
-    separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.purple,colors.bg}
+    separator_highlight = {colors.grey,colors.bg},
+    highlight = {colors.bg,colors.bg}
   }
 }

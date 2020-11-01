@@ -189,8 +189,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('glepnir/galaxyline.nvim')
 
   " Colorschemes
+  call dein#add('nvim-treesitter/nvim-treesitter', { 'merged': 0 })
   call dein#add('christianchiarulli/nvcode-color-schemes.vim')
-  call dein#add('nvim-treesitter/nvim-treesitter')
 
   " Colorschemes switcher
   call dein#add('xolox/vim-misc')
