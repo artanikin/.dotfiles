@@ -62,6 +62,6 @@ if has('autocmd')
     endif
 
     autocmd FileType javascript,typescript,vim,ruby  call s:ConfigureBuffer()
-    autocmd ColorScheme * call s:SetUpLspHighlights()
+    " autocmd ColorScheme * call s:SetUpLspHighlights()
   augroup END
 endif

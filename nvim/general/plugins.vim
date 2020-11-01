@@ -19,8 +19,6 @@ if dein#load_state('~/.cache/dein')
   " Navigation through vim windows and tmux panels
   call dein#add('christoomey/vim-tmux-navigator')
 
-  " Buffer list on tabline
-  " call dein#add('ap/vim-buftabline')
   " Plugin for editing Ruby on Rails applications
   call dein#add('tpope/vim-rails', { 'on_ft': 'ruby' })
   " A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
@@ -190,29 +188,33 @@ if dein#load_state('~/.cache/dein')
   " Statusline
   call dein#add('glepnir/galaxyline.nvim')
 
+  " Colorschemes
+  call dein#add('christianchiarulli/nvcode-color-schemes.vim')
+  call dein#add('nvim-treesitter/nvim-treesitter')
+
   " Colorschemes switcher
   call dein#add('xolox/vim-misc')
   call dein#add('xolox/vim-colorscheme-switcher')
   " Colorschemes
-  call dein#add('lifepillar/vim-gruvbox8')
-  call dein#add('artanikin/vim-vwilight')
-  call dein#add('arcticicestudio/nord-vim')
-  call dein#add('arzg/vim-colors-xcode')
-  call dein#add('joshdick/onedark.vim')
-  call dein#add('sonph/onehalf', {'rtp': 'vim/'})
+  " call dein#add('lifepillar/vim-gruvbox8')
+  " call dein#add('artanikin/vim-vwilight')
+  " call dein#add('arcticicestudio/nord-vim')
+  " call dein#add('arzg/vim-colors-xcode')
+  " call dein#add('joshdick/onedark.vim')
+  " call dein#add('sonph/onehalf', {'rtp': 'vim/'})
   " call dein#add('wadackel/vim-dogrun')
-  call dein#add('artanikin/vim-synthwave84')
+  " call dein#add('artanikin/vim-synthwave84')
   " call dein#add('YorickPeterse/happy_hacking.vim')
-  call dein#add('kaicataldo/material.vim')
-  call dein#add('cocopon/iceberg.vim')
-  call dein#add('patstockwell/vim-monokai-tasty')
-  call dein#add('cormacrelf/vim-colors-github')
-  call dein#add('bluz71/vim-nightfly-guicolors')
-  call dein#add('chuling/equinusocio-material.vim')
-  call dein#add('sts10/vim-pink-moon')
-  call dein#add('habamax/vim-habanight')
-  call dein#add('tomasiser/vim-code-dark')
-  call dein#add('dracula/vim')
+  " call dein#add('kaicataldo/material.vim')
+  " call dein#add('cocopon/iceberg.vim')
+  " call dein#add('patstockwell/vim-monokai-tasty')
+  " call dein#add('cormacrelf/vim-colors-github')
+  " call dein#add('bluz71/vim-nightfly-guicolors')
+  " call dein#add('chuling/equinusocio-material.vim')
+  " call dein#add('sts10/vim-pink-moon')
+  " call dein#add('habamax/vim-habanight')
+  " call dein#add('tomasiser/vim-code-dark')
+  " call dein#add('dracula/vim')
   call dein#add('jonathanfilip/vim-lucius')
 
   " Required:

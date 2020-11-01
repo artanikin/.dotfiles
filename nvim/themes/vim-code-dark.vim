@@ -1,4 +1,4 @@
-colorscheme codedark
+colorscheme nvcode
 
 highlight! link SignColumn LineNr
 highlight! link ColorColumn CursorLine
