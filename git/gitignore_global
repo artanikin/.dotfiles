@@ -195,3 +195,4 @@ crashlytics-build.properties
 ### Vagrant ###
 .vagrant/
 
+vifminfo

@@ -116,7 +116,7 @@ if dein#load_state('~/.cache/dein')
         \ })
 
   " Better Synatx Support
-  call dein#add('sheerun/vim-polyglot')
+  " call dein#add('sheerun/vim-polyglot')
 
   " The fastest Neovim colorizer
   call dein#add('norcalli/nvim-colorizer.lua', { 'merged': 0 })

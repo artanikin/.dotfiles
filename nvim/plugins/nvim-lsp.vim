@@ -1,6 +1,8 @@
+scriptencoding utf-8
 lua << END
   require'nvim_lsp'.solargraph.setup{}
   require'nvim_lsp'.vimls.setup{}
+  require'nvim_lsp'.vuels.setup{}
 END
 
 " Autocomplition
