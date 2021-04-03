@@ -14,7 +14,6 @@ env:
   # TERM: xterm-256color
   TERM: xterm-256color-italic
 
-
 window:
   # Window dimensions in character columns and lines
   # (changes require restart)
@@ -26,14 +25,14 @@ window:
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 20
-    y: 50
+    x: 5
+    y: 20
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
   decorations: transparent
 
-  dynamic_title: true
+  dynamic_title: false
 
 
 scrolling:
@@ -57,17 +56,36 @@ scrolling:
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
 
-font_jetbrains: &font_jetbrains
-  size: 17
+font_pragmatapro: &font_pragmatapro
+  size: 14
   normal:
-    family: JetBrainsMono
+    family: PragmataPro
     style: Regular
   bold:
-    family: JetBrainsMono
+    family: PragmataPro
     style: Bold
   italic:
-    family: JetBrainsMono
+    family: PragmataPro
     style: Italic
+  offset:
+    x: 0
+    y: 6
+  glyph_offset:
+    x: 0
+    y: 3
+  use_thin_strokes: true
+
+font_jetbrains: &font_jetbrains
+  size: 13
+  normal:
+    family: JetBrains Mono
+    style: Light
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: Light Italic
   offset:
     x: 1
     y: 4
@@ -76,13 +94,13 @@ font_jetbrains: &font_jetbrains
     y: 3
   use_thin_strokes: true
 
-font_saucecodepro: &font_saucecodepro
-  size: 16
+font_source_code_pro: &font_source_code_pro
+  size: 14
   normal:
-    family: SauceCodePro Nerd Font
+    family: Source Code Pro
     style: Regular
   bold:
-    family: SauceCodePro Nerd Font
+    family: Source Code Pro
     style: Medium
   italic:
     family: SauceCodePro Nerd Font
@@ -98,26 +116,26 @@ font_saucecodepro: &font_saucecodepro
 font_fantasque: &font_fantasque
   size: 16
   normal:
-    family: FantasqueSansMono Nerd Font
+    family: Fantasque Sans Mono
     style: Regular
   bold:
-    family: SauceCodePro Nerd Font
-    style: bold
+    family: Fantasque Sans Mono
+    style: Bold
   italic:
-    family: SauceCodePro Nerd Font
+    family: Fantasque Sans Mono
     style: Italic
   offset:
     x: 0
-    y: 1
+    y: 5
   glyph_offset:
     x: 0
     y: 0
   use_thin_strokes: true
 
 font_dankmono: &font_dankmono
-  antialias: lcd # Can have values like lcd, lcdv, gray, and none
+  antialias: none # Can have values like lcd, lcdv, gray, and none
   hinting: true
-  size: 16
+  size: 15
   normal:
     family: Dank Mono
     style: Regular
@@ -128,14 +146,14 @@ font_dankmono: &font_dankmono
     family: Dank Mono
     style: Italic
   offset:
-    x: 1
+    x: 0
     y: 4
   glyph_offset:
     x: 0
     y: 2
   use_thin_strokes: true
 
-font: *font_jetbrains
+font: *font_pragmatapro
 
 # Should display the render timer
 debug:
@@ -173,17 +191,18 @@ theme_onedark: &theme_onedark
   normal:
     # NOTE: Use '#131613' for the `black` color if you'd like to see
     # black text on the background.
-    black:   '#282c34'
-    # black:   '#131613'
-    red:     '#e06c75'
-    green:   '#a5a681'
-    yellow:  '#d5b18e'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#e1e9f5'
-  bright:
-    black:   '#5c6370'
+    # black:   '#282c34'
+    # # black:   '#131613'
+    # red:     '#e06c75'
+    # green:   '#a5a681'
+    # yellow:  '#d5b18e'
+    # blue:    '#61afef'
+    # magenta: '#c678dd'
+    # cyan:    '#56b6c2'
+    # white:   '#e1e9f5'
+  # bright:
+    # black:   '#5c6370'
+    black:   '#131613'
     red:     '#e06c75'
     green:   '#98c379'
     yellow:  '#d19a66'
@@ -384,7 +403,40 @@ theme_iceberg: &theme_iceberg
     cyan:    '#95c4ce'
     white:   '#d2d4de'
 
-colors: *theme_onedark
+theme_lucius: &theme_lucius
+  # Default colors
+  primary:
+    background: '#121212'
+    foreground: '#d7d7d7'
+
+  # Cursor colors
+  cursor:
+    text: '#121212'
+    cursor: '#87afd7'
+
+  # Normal colors
+  normal:
+    black:   '#121212'
+    red:     '#ff5f5f'
+    green:   '#afd787'
+    yellow:  '#d7d7af'
+    blue:    '#87d7ff'
+    magenta: '#d7afd7'
+    cyan:    '#87d7af'
+    white:   '#d7d7d7'
+
+  # Bright colors
+  bright:
+    black:   '#121212'
+    red:     '#ff5f5f'
+    green:   '#afd787'
+    yellow:  '#d7d7af'
+    blue:    '#87d7ff'
+    magenta: '#d7afd7'
+    cyan:    '#87d7af'
+    white:   '#d7d7d7'
+
+colors: *theme_lucius
 
 # Visual Bell
 #

@@ -43,3 +43,7 @@ PERL_LOCAL_LIB_ROOT="/Users/artyomanikin/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOC
 PERL_MB_OPT="--install_base \"/Users/artyomanikin/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/artyomanikin/perl5"; export PERL_MM_OPT;
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+
+eval $(thefuck --alias)
+
+. /usr/local/opt/asdf/asdf.sh

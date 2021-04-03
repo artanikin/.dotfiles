@@ -2,7 +2,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/lo
 
 # Add my custom commands
 export PATH="$HOME/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@11/bin/:$PATH"
 export PATH="$HOME/go/bin:$PATH"
@@ -17,10 +16,6 @@ export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
 
 # Java 8
 export JAVA_HOME=$JAVA_HOME_8
-
-# Java 11
-# export JAVA_HOME=$JAVA_HOME_11
-
 export SDKROOT=$(xcrun --show-sdk-path)
 
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
@@ -34,3 +29,8 @@ export DOCKER_HIDE_LEGACY_COMMANDS=true
 
 export DOCKER_CLIENT_TIMEOUT=120
 export COMPOSE_HTTP_TIMEOUT=120
+
+# Save history in IEX
+export ERL_AFLAGS="-kernel shell_history enabled"
+
+export ASDF_DIR="~/.asdf"

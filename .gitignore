@@ -5,3 +5,7 @@ vim/.netrwhist
 vim/autoload/
 nvim/autoload/plugged
 nvim/sessions
+
+os/pgcli/history
+os/pgcli/log
+os/vifm/vifminfo.json

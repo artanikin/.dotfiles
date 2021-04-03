@@ -26,7 +26,7 @@ multi_line_mode = psql
 expand = False
 
 # Enables auto expand mode, which is similar to `\x auto` in psql.
-auto_expand = False
+auto_expand = True
 
 # If set to True, table suggestions will include a table alias
 generate_aliases = False
@@ -85,12 +85,12 @@ timing = True
 # ascii, double, github, orgtbl, rst, mediawiki, html, latex, latex_booktabs,
 # textile, moinmoin, jira, vertical, tsv, csv.
 # Recommended: psql, fancy_grid and grid.
-table_format = psql
+table_format = fancy_grid
 
 # Syntax Style. Possible values: manni, igor, xcode, vim, autumn, vs, rrt,
 # native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
 # colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
-syntax_style = vim
+syntax_style = manni
 
 # Keybindings:
 # When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
@@ -159,7 +159,7 @@ Token.Toolbar.Transaction.Valid = 'bg:#222222 #00ff5f bold'
 Token.Toolbar.Transaction.Failed = 'bg:#222222 #ff005f bold'
 
 # color of table
-# you can use token or custom colors 
+# you can use token or custom colors
 Token.Output.Header = "#00ff5f bold"
 Token.Output.OddRow = ""
 Token.Output.EvenRow = ""

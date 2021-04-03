@@ -39,6 +39,7 @@ brew 'moreutils'                                          # Usefull utils
 brew 'jq'                                                 # CLI JSON processor
 brew 'zathura'
 brew 'zathura-pdf-poppler'
+brew 'tidy-html5'                                         # HTML tool
 
 # DB
 cask 'phinze/cask/dbeaver-community'

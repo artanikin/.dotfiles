@@ -28,6 +28,7 @@ alias vfz='vim $(fz)'
 alias preview="fzf --preview 'bat --color \"always\" --line-range 0:30 {}'"
 alias x="ranger ."
 alias man="vman"
+alias cpssh="\cat ~/.ssh/id_rsa.pub | pbcopy"
 
 alias be="bundle exec"
 alias rspec="clear; rspec"

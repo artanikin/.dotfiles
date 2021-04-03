@@ -71,6 +71,7 @@
   editor = nvim
   excludesfile = /Users/artyomanikin/.gitignore_global
   pager = delta --dark
+	attributesfile = /Users/artyomanikin/.gitattributes
 [interactive]
   diffFilter = delta --color-only
 [delta]
@@ -112,3 +113,7 @@
   prompt = false
 [diff]
   tool = vimdiff
+[diff "rspec"]
+        xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
+[diff "swift"]
+    xfuncname = ^[ \t]*((class|func)[ \t].*)$
