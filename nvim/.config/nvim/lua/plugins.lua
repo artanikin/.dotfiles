@@ -33,7 +33,6 @@ return require("packer").startup(function(use)
     use {"tpope/vim-rsi"}
     use {"tpope/vim-endwise"}
     use {"machakann/vim-sandwich"}
-    use {"mg979/vim-visual-multi"}
     use {"mhinz/vim-startify"}
     use {"rhysd/conflict-marker.vim"}
     use {"vim-ruby/vim-ruby"}
@@ -58,6 +57,8 @@ return require("packer").startup(function(use)
     use {"onsails/lspkind-nvim"}
     use {"kosayoda/nvim-lightbulb"}
     use {"wellle/tmux-complete.vim"}
+    use {"folke/lsp-colors.nvim"}
+    use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
 
     -- Git
     use {"lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim"}
