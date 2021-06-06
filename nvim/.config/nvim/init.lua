@@ -30,6 +30,7 @@ require("a-telescope")
 require("a-treesitter")
 require("a-nvimtree")
 require("a-emmet")
+require("a-vsnip")
 
 vim.cmd("source ~/.config/nvim/vimscripts/abbreviations.vim")
 vim.cmd("source ~/.config/nvim/vimscripts/functions.vim")

@@ -1,15 +1,11 @@
 .DS_Store
-nvim/.config/nvim/plugin
 AppSupport
-
+nvim/.config/nvim/plugin
+vifm/.config/vifm/vifminfo.json
 
 .netrwhist
-vim/plugged
-vim/.netrwhist
-vim/autoload/
-nvim/autoload/plugged
-nvim/sessions
+nvim/.config/nvim/sessions
 
-os/pgcli/history
-os/pgcli/log
-os/vifm/vifminfo.json
+pgcli/.config/pgcli/history
+pgcli/.config/pgcli/log
+vifm/.config/vifm/vifminfo.json
