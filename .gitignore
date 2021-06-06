@@ -8,4 +8,5 @@ nvim/.config/nvim/sessions
 
 pgcli/.config/pgcli/history
 pgcli/.config/pgcli/log
+vifm/.config/vifm/vifminfo
 vifm/.config/vifm/vifminfo.json

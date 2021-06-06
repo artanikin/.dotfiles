@@ -69,9 +69,9 @@
 
 [core]
   editor = nvim
-  excludesfile = /Users/artyomanikin/.gitignore_global
+  excludesfile = $HOME/.gitignore_global
   pager = delta --dark
-	attributesfile = /Users/artyomanikin/.gitattributes
+	attributesfile = $HOME/.gitattributes
 [interactive]
   diffFilter = delta --color-only
 [delta]
