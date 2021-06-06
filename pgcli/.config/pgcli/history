@@ -1,0 +1,2959 @@
+
+# 2021-02-12 09:27:20.064683
++\q
+
+# 2021-02-13 12:00:06.502085
++select * from users;
+
+# 2021-02-13 12:02:18.525654
++\e
+
+# 2021-02-13 12:02:39.174954
++select
++*
++from users
++where id = 144990;
+
+# 2021-02-13 12:03:51.541604
++\x on
+
+# 2021-02-13 12:03:54.801038
++select
++*
++from users
++where id = 144990;
+
+# 2021-02-13 12:04:03.197720
++\x off
+
+# 2021-02-13 12:04:04.768377
++select
++*
++from users
++where id = 144990;
+
+# 2021-02-13 12:04:10.269939
++\x auto
+
+# 2021-02-13 12:04:12.622260
++select
++*
++from users
++where id = 144990;
+
+# 2021-02-13 12:04:18.856462
++select
++*
++from users
++where id > 144990;
+
+# 2021-02-13 12:05:00.517880
++\colors
+
+# 2021-02-13 12:06:36.045980
++select * from users where id = 144990;
+
+# 2021-02-13 12:06:42.094078
++\q
+
+# 2021-02-13 12:06:46.296305
++select * from users where id = 144990;
+
+# 2021-02-13 12:06:56.326193
++\q
+
+# 2021-02-13 12:06:59.729573
++select * from users where id = 144990;
+
+# 2021-02-13 12:07:08.335502
++\q
+
+# 2021-02-13 12:07:11.030721
++select * from users where id = 144990;
+
+# 2021-02-13 12:07:21.477831
++\q
+
+# 2021-02-13 12:07:24.327034
++select * from users where id = 144990;
+
+# 2021-02-13 12:07:36.821789
++\q
+
+# 2021-02-13 12:07:39.609200
++select * from users where id = 144990;
+
+# 2021-02-13 12:07:52.197737
++\q
+
+# 2021-02-13 12:07:55.553032
++select * from users where id = 144990;
+
+# 2021-02-13 12:08:06.189397
++\q
+
+# 2021-02-13 12:08:08.478780
++select * from users where id = 144990;
+
+# 2021-02-13 12:08:16.830749
++\q
+
+# 2021-02-13 12:08:21.398567
++select * from users where id = 144990;
+
+# 2021-02-13 12:08:29.951547
++\q
+
+# 2021-02-13 12:08:32.129574
++select * from users where id = 144990;
+
+# 2021-02-13 12:08:43.405837
++\q
+
+# 2021-02-13 12:08:45.961800
++select * from users where id = 144990;
+
+# 2021-02-13 12:08:48.917959
++\q
+
+# 2021-02-13 12:09:12.502812
++select * from users where id = 144990;
+
+# 2021-02-13 12:09:18.701279
++\q
+
+# 2021-02-13 12:10:21.441100
++select * from users where id = 144990;
+
+# 2021-02-13 12:10:50.733953
++\q
+
+# 2021-02-13 12:11:01.726602
++select * from users where id = 144990;
+
+# 2021-02-13 12:11:13.567640
++\q
+
+# 2021-02-13 12:13:16.759154
++
++
+
+# 2021-02-13 12:13:26.671659
++select
++*
++from users
++where id > 144990;
+
+# 2021-02-13 12:14:01.367397
++\q
+
+# 2021-02-15 12:50:18.974873
++select * from lectures;
+
+# 2021-02-15 12:50:29.528379
++\q
+
+# 2021-02-15 12:51:13.174700
++select * from lectures;
+
+# 2021-02-15 12:51:29.005991
++\q
+
+# 2021-02-15 14:07:25.742994
++select * from eduson_courses;
+
+# 2021-02-15 14:07:34.542133
++\q
+
+# 2021-02-15 14:07:56.303853
++select * from eduson_courses;
+
+# 2021-02-15 14:08:01.839282
++\q
+
+# 2021-02-15 14:08:10.319363
++select * from eduson_courses;
+
+# 2021-02-15 14:08:21.527120
++\q
+
+# 2021-02-15 16:16:40.023243
++select * from eduson_courses;
+
+# 2021-02-15 16:16:49.951299
++select lectures from eduson_courses;
+
+# 2021-02-15 16:16:57.950203
++\q
+
+# 2021-02-15 16:19:27.800698
++select lectures from eduson_courses;
+
+# 2021-02-15 16:20:05.970792
++\q
+
+# 2021-02-15 16:42:53.527299
++select lectures from eduson_courses;
+
+# 2021-02-15 16:43:15.447228
++delete from eduson_courses;
+
+# 2021-02-15 16:43:22.679624
++delete from courses;
+
+# 2021-02-15 16:43:25.142570
++\q
+
+# 2021-02-15 16:44:21.223463
++delete from lectures;
+
+# 2021-02-15 16:44:25.559993
++\q
+
+# 2021-02-15 17:25:57.855862
++select lectures from eduson_courses;
+
+# 2021-02-15 17:26:10.855284
++\q
+
+# 2021-02-15 17:26:30.569342
++select lectures from eduson_courses;
+
+# 2021-02-15 17:26:41.773257
++select * from eduson_courses;
+
+# 2021-02-15 17:28:45.651767
++\q
+
+# 2021-02-15 22:48:38.136805
++select * from presentation_timelines;
+
+# 2021-02-15 22:48:51.597192
++\x auto
+
+# 2021-02-15 22:49:08.135813
++select * from presentation_timelines limit 1;
+
+# 2021-02-15 22:49:32.292843
++\q
+
+# 2021-02-16 12:17:35.364751
++select * from eduson_courses;
+
+# 2021-02-16 12:17:42.702529
++\x on
+
+# 2021-02-16 12:17:44.484600
++select * from eduson_courses;
+
+# 2021-02-16 12:17:56.316120
++\q
+
+# 2021-02-16 12:23:57.282591
++select * from eduson_courses;
+
+# 2021-02-16 12:24:07.010625
++select lectures from eduson_courses;
+
+# 2021-02-16 12:28:32.683993
++\q
+
+# 2021-02-16 13:40:03.179192
++select lectures from eduson_courses;
+
+# 2021-02-16 13:40:41.389592
++select * from lectures;
+
+# 2021-02-16 13:41:01.409263
++\q
+
+# 2021-02-16 13:45:02.293505
++select * from lectures;
+
+# 2021-02-16 13:46:07.405360
++select lectures from eduson_courses;
+
+# 2021-02-16 13:46:50.656673
++select * from lectures;
+
+# 2021-02-16 13:47:06.977056
++select lectures from eduson_courses;
+
+# 2021-02-16 13:48:01.496423
++select * from lectures where id = 20386;
+
+# 2021-02-16 13:49:25.894990
++\q
+
+# 2021-02-16 13:49:48.736614
++select * from lectures where id = 20386;
+
+# 2021-02-16 13:50:54.905426
++\q
+
+# 2021-02-16 13:57:42.575193
++select * from lectures where id = 20386;
+
+# 2021-02-16 13:57:51.311096
++select * from lectures where;
+
+# 2021-02-16 13:57:54.271156
++select * from lectures;
+
+# 2021-02-16 13:58:32.735420
++\q
+
+# 2021-02-16 16:38:01.562752
++delete from lectures;
+
+# 2021-02-16 16:38:23.617162
++delete from eduson_courses;
+
+# 2021-02-16 16:38:28.569358
++delete from courses;
+
+# 2021-02-16 16:38:32.471331
++\q
+
+# 2021-02-16 16:39:18.368228
++select * from courses;
+
+# 2021-02-16 16:39:25.745960
++select * from lectures;
+
+# 2021-02-16 16:39:40.745891
++select * from eduson_courses;
+
+# 2021-02-16 16:39:46.471423
++\x auto
+
+# 2021-02-16 16:39:49.049581
++select * from eduson_courses;
+
+# 2021-02-16 16:39:55.423768
++\q
+
+# 2021-02-16 18:44:09.405644
++select phone from users;
+
+# 2021-02-16 18:44:17.810544
++select phone from users where phone is not null;
+
+# 2021-02-16 18:44:31.875024
++select phone from users where phone is not null and phone != '';
+
+# 2021-02-16 18:44:50.051809
++select count(*) from users where phone is not null and phone != '';
+
+# 2021-02-16 18:45:03.003048
++\q
+
+# 2021-02-16 18:49:23.703116
++select id from companies where academy_course_set_file_name is not null;
++
+
+# 2021-02-16 18:49:47.254779
++select phone from users where company_id in (select id from companies where academy_course_set_file_name is not null);
++
+
+# 2021-02-16 18:50:01.248373
++select phone from users where phone is not null and company_id in (select id from companies where academy_course_set_file_name is not null);
++
+
+# 2021-02-16 18:50:23.558529
++\q
+
+# 2021-02-16 21:23:38.880394
++delete from eduson_;
+
+# 2021-02-16 21:23:47.799761
++delete from eduson_courses;
+
+# 2021-02-16 21:23:57.521300
++delete from lectures;
+
+# 2021-02-16 21:24:03.809805
++delete from courses;
+
+# 2021-02-16 21:24:06.873251
++\
+
+# 2021-02-16 21:24:07.751441
++\q
+
+# 2021-02-16 21:24:32.073061
++select * from lectures;
+
+# 2021-02-16 21:24:41.504005
++select * from eduson_courses;
+
+# 2021-02-16 21:24:50.240313
++select lectures from eduson_courses;
+
+# 2021-02-16 21:24:56.670777
++\q
+
+# 2021-02-17 09:11:25.836712
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-17 09:11:35.639005
++\q
+
+# 2021-02-17 09:17:25.884952
++select * from lectures;
+
+# 2021-02-17 09:17:37.020224
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-17 09:17:39.971975
++\q
+
+# 2021-02-17 09:17:47.253120
++select * from lectures;
+
+# 2021-02-17 09:17:48.754511
++\q
+
+# 2021-02-17 09:32:24.693759
++select * from lectures;
+
+# 2021-02-17 09:32:41.340180
++select lectures from eduson_courses;
+
+# 2021-02-17 09:32:46.937497
++\q
+
+# 2021-02-17 21:52:42.979845
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-17 21:52:47.884585
++\q
+
+# 2021-02-17 22:47:40.542823
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-17 22:47:45.050923
++\q
+
+# 2021-02-17 22:57:53.138100
++select * from eduson_courses where eduson_id = 6404 and language = "ru";
+
+# 2021-02-17 22:58:00.550304
++select * from eduson_courses where eduson_id = 6404 and language = 'ru';
+
+# 2021-02-17 22:58:13.913628
++\x auto
+
+# 2021-02-17 22:58:15.922580
++select * from eduson_courses where eduson_id = 6404 and language = 'ru';
+
+# 2021-02-17 22:59:13.564224
++\q
+
+# 2021-02-17 22:59:18.204827
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-17 23:01:31.312278
++\q
+
+# 2021-02-18 08:55:31.907653
++select * from lectures where course_id = 6404;
+
+# 2021-02-18 08:58:30.414526
++\x auto
+
+# 2021-02-18 08:58:54.906916
++select * from course_logos where course_id = 6404;
+
+# 2021-02-18 09:05:12.425971
++select * from courses_languages where course_id = 6404;
+
+# 2021-02-18 09:07:58.106102
++select * from names where nameable_id = 6404 and nameable_type='Course';
+
+# 2021-02-18 09:09:05.299981
++select * from descriptions where descrip_id = 6404 and nameable_type='Course';
+
+# 2021-02-18 09:09:38.186481
++select * from descriptions where descriptable_id = 6404 and descriptable_type='Course';
+
+# 2021-02-18 09:11:28.668839
++select * from course_logos where course_id = 6404;
+
+# 2021-02-18 09:14:15.600643
++select * from course_logos where course_id = 6406;
+
+# 2021-02-18 09:26:49.258281
++\q
+
+# 2021-02-18 09:28:59.061524
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 09:29:03.513798
++\q
+
+# 2021-02-18 09:30:22.132898
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 09:30:24.345941
++\q
+
+# 2021-02-18 09:32:15.356346
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 09:34:14.827408
++\q
+
+# 2021-02-18 09:45:13.931333
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 09:45:16.287712
++\q
+
+# 2021-02-18 09:48:26.366082
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 09:48:29.212501
++\q
+
+# 2021-02-18 12:17:19.327547
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 12:27:54.866272
++\q
+
+# 2021-02-18 15:07:54.322952
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 15:07:56.834389
++\q
+
+# 2021-02-18 15:27:54.464326
++select * from eduson_courses;
+
+# 2021-02-18 15:28:02.599635
++\x auto
+
+# 2021-02-18 15:28:05.008114
++select * from eduson_courses;
+
+# 2021-02-18 15:28:18.461505
++\q
+
+# 2021-02-18 15:30:49.628563
++select * from eduson_courses;
+
+# 2021-02-18 15:31:00.185543
++select * from eduson_lectures;
+
+# 2021-02-18 15:31:02.089408
++\q
+
+# 2021-02-18 15:31:11.605195
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 15:31:14.451364
++\q
+
+# 2021-02-18 15:32:47.405225
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 15:32:53.005047
++select * from eduson_lectures;
+
+# 2021-02-18 15:32:55.404635
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 15:33:06.182549
++select * from eduson_courses;
+
+# 2021-02-18 15:33:17.412404
++select * from eduson_lectures;
+
+# 2021-02-18 15:37:49.203985
++\q
+
+# 2021-02-18 15:38:02.373509
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 15:38:38.427494
++select * from eduson_courses;
+
+# 2021-02-18 15:43:54.939162
++select * from eduson_lectures;
+
+# 2021-02-18 15:44:37.675260
++\q
+
+# 2021-02-18 15:48:45.262897
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 15:48:47.197617
++\q
+
+# 2021-02-18 15:53:58.900480
++select * from courses;
+
+# 2021-02-18 15:54:06.382192
++select * from lectures;
+
+# 2021-02-18 15:54:23.916197
++select * from videos;
+
+# 2021-02-18 15:54:36.607856
++\x auto
+
+# 2021-02-18 15:54:37.848836
++select * from videos;
+
+# 2021-02-18 16:04:21.888991
++delete from eduson_courses; delete from lectures; delete from courses;
+
+# 2021-02-18 16:05:28.599410
++delete from eduson_lectures; delete from eduson_courses; delete from videos; delete from presentations; delete from scorm_lectures; delete from lectures; delete from courses;
+
+# 2021-02-18 16:05:59.283680
++delete from eduson_lectures; delete from eduson_courses; delete from videos; delete from presentations; delete from scorm_lectures; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-02-18 16:52:40.707548
++\q
+
+# 2021-02-18 17:07:42.064015
++select * from eduson_courses limit 1;
+
+# 2021-02-18 17:20:55.877205
++delete from eduson_lectures; delete from eduson_courses; delete from videos; delete from presentations; delete from scorm_lectures; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-02-18 17:21:24.016918
++select * from eduson_courses limit 1;
+
+# 2021-02-18 17:21:36.371214
++select * from eduson_lectures;
+
+# 2021-02-18 17:22:07.754575
++delete from eduson_lectures; delete from eduson_courses; delete from videos; delete from presentations; delete from scorm_lectures; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-02-18 17:34:06.805505
++\q
+
+# 2021-02-18 17:43:11.451472
++drop database academy-ng_dev;
+
+# 2021-02-18 17:43:18.260566
++drop database 'academy-ng_dev';
+
+# 2021-02-18 17:43:26.562123
++drop database "academy-ng_dev";
+
+# 2021-02-18 17:43:38.364189
++exit
+
+# 2021-02-18 18:10:46.722275
++select * from eduson_courses;
+
+# 2021-02-18 18:43:40.766248
++delete from eduson_courses;
+
+# 2021-02-18 18:43:43.332286
++\q
+
+# 2021-02-18 18:51:37.568553
++select * from eduson_lectures;
+
+# 2021-02-18 18:58:09.641186
++delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 18:58:23.505278
++select * from eduson_lectures;
+
+# 2021-02-18 19:00:28.554827
++delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 19:01:10.057367
++\q
+
+# 2021-02-18 19:06:26.675610
++delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 19:06:47.563372
++select * from eduson_videos;
+
+# 2021-02-18 19:07:08.804729
++delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 19:10:51.394917
++select * from eduson_presentations;
+
+# 2021-02-18 19:11:17.142782
++delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 19:18:27.152791
++select * from eduson_scorm_lectures;
+
+# 2021-02-18 19:18:57.547507
++delte from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 19:19:05.093149
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 19:19:08.688892
++\q
+
+# 2021-02-18 19:26:55.639030
++select * from eduson_courses where eduson_id=8419;
+
+# 2021-02-18 19:27:02.758031
++\q
+
+# 2021-02-18 19:27:38.528899
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 20:13:03.708455
++select * from eduson_courses limit 1;
+
+# 2021-02-18 20:14:52.959813
++\x auto
+
+# 2021-02-18 20:14:54.007329
++select * from eduson_courses limit 1;
+
+# 2021-02-18 20:16:01.928051
++select * from eduson_lectures where eduson_course_id = 3344;
+
+# 2021-02-18 20:16:11.448541
++select * from eduson_lectures;
+
+# 2021-02-18 20:16:45.769331
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 20:17:25.787239
++select * from eduson_courses limit 1;
+
+# 2021-02-18 20:17:44.618943
++select * from eduson_lectures where eduson_course_id = 2113;
+
+# 2021-02-18 21:02:52.836398
++\q
+
+# 2021-02-18 21:09:23.996599
++select * from eduson_lectures where eduson_course_id = 2113;
+
+# 2021-02-18 23:00:42.245984
++select * from eduson_lectures limit 1;
+
+# 2021-02-18 23:01:02.323916
++\q
+
+# 2021-02-18 23:30:51.271143
++select * from eduson_lectures;
+
+# 2021-02-18 23:31:20.211676
++select eduson_id, count(*) from eduson_lectures group by eduson_id;
+
+# 2021-02-18 23:31:33.902484
++select eduson_id, count(*) from eduson_lectures group by eduson_id having count(*) > 1;
+
+# 2021-02-18 23:32:04.722113
++\q
+
+# 2021-02-18 23:35:21.582514
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-18 23:35:25.918384
++\q
+
+# 2021-02-18 23:35:51.350079
++select eduson_id, count(*) from eduson_lectures group by eduson_id having count(*) > 1;
+
+# 2021-02-18 23:36:13.461361
++select * from eduson_lectures where eduson_id = 59;
+
+# 2021-02-19 08:29:08.575086
++\q
+
+# 2021-02-19 09:27:44.655108
++select * from eduson_lectures;
+
+# 2021-02-19 09:28:09.585023
++select * from eduson_lectures order by id;
+
+# 2021-02-19 09:28:21.755323
++select * from eduson_lectures order by eduson_id;
+
+# 2021-02-19 09:29:02.434932
++select * from eduson_courses limit 1;
+
+# 2021-02-19 09:53:36.092113
++select * from eduson_lectures where eduson_id = 59;
+
+# 2021-02-19 11:54:15.356815
++select * from eduson_lectures where eduson_course_id = 2200;
+
+# 2021-02-19 11:54:56.367561
++select * from eduson_lectures where eduson_course_id = 2200 and eduson_id = 922;
+
+# 2021-02-19 11:58:28.648246
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 11:58:42.065694
++select * from eduson_lectures where eduson_course_id = 2200 and eduson_id = 922;
+
+# 2021-02-19 11:58:52.879434
++select * from eduson_lectures where eduson_id = 922;
+
+# 2021-02-19 12:21:07.433179
++select eduson_id, eduson_course_id, count(*) from eduson_lectures group by eduson_id, eduson_coruse_id having count(*) > 1 order by 3;
+
+# 2021-02-19 12:21:27.251210
++select eduson_id, eduson_course_id, count(*) from eduson_lectures group by eduson_id, eduson_course_id having count(*) > 1 order by 3;
+
+# 2021-02-19 12:27:04.473644
++\e
+
+# 2021-02-19 12:27:57.380644
++\T csv
+
+# 2021-02-19 12:28:03.852463
++select eduson_id, eduson_course_id, count(*) from eduson_lectures group by eduson_id, eduson_course_id having count(*) > 1 order by 3;
+
+# 2021-02-19 12:28:18.979910
++\T fancy_grid
+
+# 2021-02-19 12:28:20.303472
++select eduson_id, eduson_course_id, count(*) from eduson_lectures group by eduson_id, eduson_course_id having count(*) > 1 order by 3;
+
+# 2021-02-19 12:29:59.288623
++select lecture_type from lectures where id in  (9523, 9534, 1223, 9521, 9499, 9535, 923, 926, 920, 925, 924, 921, 922);
+
+# 2021-02-19 12:30:03.110503
++\q
+
+# 2021-02-19 13:12:34.036180
++select * from eduson_lectures where eduson_id = 922;
+
+# 2021-02-19 15:51:33.944673
++\q
+
+# 2021-02-19 15:53:58.229983
++select * from eduson_lectures where eduson_id = 922;
+
+# 2021-02-19 15:54:21.466553
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 15:54:33.641933
++select * from eduson_lectures where eduson_id = 922;
+
+# 2021-02-19 15:54:47.669511
++select * from eduson_lectures;
+
+# 2021-02-19 15:54:57.082627
++\q
+
+# 2021-02-19 16:26:54.443893
++select * from eduson_lectures where eduson_course_id = 3447 and eduson_id == 1223;
+
+# 2021-02-19 16:26:57.566391
++select * from eduson_lectures where eduson_course_id = 3447 and eduson_id = 1223;
+
+# 2021-02-19 16:36:59.093143
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 16:37:17.028703
++select * from eduson_lectures where eduson_course_id = 3447 and eduson_id = 1223;
+
+# 2021-02-19 16:37:31.076844
++select * from eduson_lectures where eduson_id = 1223;
+
+# 2021-02-19 16:37:38.908142
++\q
+
+# 2021-02-19 16:39:52.662727
++select * from eduson_videos;
+
+# 2021-02-19 16:40:07.303350
++\q
+
+# 2021-02-19 17:04:13.512689
++select * from eduson_scorm_lectures;
+
+# 2021-02-19 17:04:40.543928
++select * from eduson_courses where eduson_id = 8524;
+
+# 2021-02-19 17:09:16.910343
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 17:10:18.382329
++select * from eduson_scorm_lectures;
+
+# 2021-02-19 17:14:46.349393
++select * from eduson_videos;
+
+# 2021-02-19 17:20:06.309026
++select * from eduson_videos where id = 402;
+
+# 2021-02-19 17:20:12.327756
++select * from eduson_videos where eduson_id = 402;
+
+# 2021-02-19 17:20:23.932230
++\q
+
+# 2021-02-19 17:36:38.650758
++select * from eduson_videos where eduson_id = 402;
+
+# 2021-02-19 17:38:51.865328
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 17:39:12.231507
++select * from eduson_videos where eduson_id = 402;
+
+# 2021-02-19 17:39:29.952714
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 17:39:33.583172
++\q
+
+# 2021-02-19 17:44:08.797721
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 17:44:23.709239
++select * from eduson_videos where eduson_id = 402;
+
+# 2021-02-19 17:44:31.116363
++select * from eduson_lectures;
+
+# 2021-02-19 17:44:35.735932
++\q
+
+# 2021-02-19 17:47:24.327106
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 17:47:41.344015
++select * from eduson_courses;
+
+# 2021-02-19 18:13:55.794532
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 18:31:54.962851
++select * from eduson_scorm_lectures;
+
+# 2021-02-19 18:32:16.744272
++select * from eduson__lectures;
+
+# 2021-02-19 18:32:19.866105
++select * from eduson_lectures;
+
+# 2021-02-19 18:34:50.264200
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 18:37:14.934955
++select * from eduson_lectures;
+
+# 2021-02-19 18:39:16.867359
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 18:39:41.712619
++select * from eduson_lectures;
+
+# 2021-02-19 18:39:59.690763
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 18:42:39.046507
++select * from eduson_lectures;
+
+# 2021-02-19 18:42:43.391790
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 18:43:00.599342
++select * from eduson_videos where eduson_id = 402;
+
+# 2021-02-19 18:54:46.834940
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses;
+
+# 2021-02-19 18:56:43.989795
++select * from eduson_videos where eduson_id = 402;
+
+# 2021-02-19 19:23:20.519230
++select * from courses;
+
+# 2021-02-19 19:23:33.523252
++select * from eduson_courses;
+
+# 2021-02-19 19:23:49.328709
++\x auto
+
+# 2021-02-19 19:23:53.240775
++select * from eduson_courses;
+
+# 2021-02-19 19:38:35.144125
++select * from course_lectures;
+
+# 2021-02-19 19:38:45.979722
++select * from lectures;
+
+# 2021-02-19 19:39:33.013069
++select * from lectures where id = 1;
+
+# 2021-02-19 19:39:44.394294
++select * from eduson_lectures where academy_id = 1;
+
+# 2021-02-19 19:41:37.463733
++select * from lectures where id = 1;
+
+# 2021-02-19 19:41:42.894522
++select * from eduson_lectures where academy_id = 1;
+
+# 2021-02-19 19:42:20.343276
++select * from lectures where id = 1;
+
+# 2021-02-19 22:13:46.508148
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-02-19 22:14:16.706976
++\q
+
+# 2021-03-01 17:54:41.307740
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 17:54:54.440294
++\q
+
+# 2021-03-01 17:55:47.665320
++select * from eduson_courses;
+
+# 2021-03-01 17:55:52.721548
++\q
+
+# 2021-03-01 18:00:14.967023
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 18:00:17.316129
++\q
+
+# 2021-03-01 18:26:14.255715
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 18:26:19.613548
++\q
+
+# 2021-03-01 22:24:09.366740
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 22:24:16.409831
++\q
+
+# 2021-03-01 22:28:37.910027
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 22:28:46.565804
++\q
+
+# 2021-03-01 22:35:41.537024
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 22:35:53.708275
++\q
+
+# 2021-03-01 22:47:31.723437
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 22:47:44.210472
++\q
+
+# 2021-03-01 22:53:05.262998
++select * from eduson_courses;
+
+# 2021-03-01 22:53:19.211723
++\x auto
+
+# 2021-03-01 22:53:22.092327
++select * from eduson_courses;
+
+# 2021-03-01 22:53:39.661891
++select * from eduson_lectures;
+
+# 2021-03-01 22:53:49.969469
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 22:53:59.056783
++\q
+
+# 2021-03-01 23:01:55.253270
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 23:01:58.470766
++\q
+
+# 2021-03-01 23:02:19.868557
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 23:02:23.420661
++\q
+
+# 2021-03-01 23:08:18.696442
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-01 23:09:16.564700
++\q
+
+# 2021-03-02 16:21:04.874030
++select * from videos;
+
+# 2021-03-02 16:21:10.985854
++\q
+
+# 2021-03-02 16:21:31.655852
++select * from videos;
+
+# 2021-03-02 16:21:40.863216
++\x auto
+
+# 2021-03-02 16:21:42.345776
++select * from videos;
+
+# 2021-03-02 16:21:57.905102
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 16:22:01.431266
++\q
+
+# 2021-03-02 16:24:04.824750
++select * from videos;
+
+# 2021-03-02 16:24:15.723034
++select lecture_id, * from videos;
+
+# 2021-03-02 16:24:31.068158
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 16:26:15.074406
++select lecture_id, * from videos;
+
+# 2021-03-02 16:28:57.011906
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 16:30:15.714723
++select * from eduson_videos;
+
+# 2021-03-02 16:32:16.381786
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 16:32:53.486271
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 16:33:12.864214
++select * from eduson_videos;
+
+# 2021-03-02 16:33:25.381189
++select lecture_id, * from videos;
+
+# 2021-03-02 16:35:37.769323
++select * from eduson_videos;
+
+# 2021-03-02 16:46:00.695450
++select * from eduson_presentations;
+
+# 2021-03-02 16:46:18.603557
++select * from presentations;
+
+# 2021-03-02 16:46:50.236896
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 16:55:42.451944
++select * from eduson_scorm_lectures;
+
+# 2021-03-02 16:55:51.173987
++select * from scorm_lectures;
+
+# 2021-03-02 16:58:33.669745
++select * from eduson_scorm_lectures;
+
+# 2021-03-02 17:22:46.143261
++select * from scorm_lectures;
+
+# 2021-03-02 17:27:49.197717
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 17:28:25.821275
++select * from scorm_lectures;
+
+# 2021-03-02 17:28:42.646565
++select * from scorm_lectures where mobile_secure_dir is not null;
+
+# 2021-03-02 17:28:51.620963
++select * from scorm_lectures;
+
+# 2021-03-02 17:28:58.349103
++select * from eduson_scorm_lectures;
+
+# 2021-03-02 17:29:26.498205
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 17:34:11.611703
++select * from eduson_scorm_lectures;
+
+# 2021-03-02 17:34:24.508118
++select * from scorm_lectures;
+
+# 2021-03-02 17:34:42.687829
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-02 17:35:27.405930
++select * from eduson_scorm_lectures;
+
+# 2021-03-02 17:37:53.971210
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 17:38:52.878613
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 17:39:00.260655
++\x auto
+
+# 2021-03-02 17:39:02.445426
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 17:39:23.855428
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 17:42:49.148091
++select * from eduson_scorm_lectures where academy_id is null;
+
+# 2021-03-02 17:44:08.750780
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 18:27:28.852533
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 18:28:24.015152
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 18:28:25.596924
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 18:28:58.705727
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 18:29:00.454807
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 18:30:14.290994
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 18:30:19.170920
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 18:30:38.513380
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 18:30:41.993001
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 21:21:06.518448
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 21:21:09.974006
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 21:21:58.758774
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 21:22:00.657227
++select * from scorm_lectures where id = 813;
+
+# 2021-03-02 21:23:30.217668
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-02 21:23:32.018204
++select * from scorm_lectures where id = 813;
+
+# 2021-03-03 12:13:03.982768
++\q
+
+# 2021-03-03 16:17:57.473012
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:18:10.312985
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:18:15.957429
++\q
+
+# 2021-03-03 16:18:21.861388
++\q
+
+# 2021-03-03 16:19:31.560631
++select * from eduson_courses;
+
+# 2021-03-03 16:19:42.726084
++select * from courses;
+
+# 2021-03-03 16:23:45.256452
++\q
+
+# 2021-03-03 16:26:58.618952
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:27:20.127993
++select * from eduson_lectures;
+
+# 2021-03-03 16:27:26.689859
++select * from lectures;
+
+# 2021-03-03 16:31:39.740005
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:32:01.130973
++select * from eduson_videos;
+
+# 2021-03-03 16:36:09.172503
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:36:44.514294
++select * from scorm_lectures where id = 813;
+
+# 2021-03-03 16:36:54.274636
++select * from scorm_lectures;
+
+# 2021-03-03 16:37:02.282394
++select * from eduson_scorm_lectures;
+
+# 2021-03-03 16:42:03.125530
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:42:22.290313
++select * from eduson_scorm_lectures;
+
+# 2021-03-03 16:42:27.970072
++select * from scorm_lectures;
+
+# 2021-03-03 16:42:37.650330
++select * from eduson_videos;
+
+# 2021-03-03 16:45:19.813352
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:45:43.969639
++select * from eduson_videos;
+
+# 2021-03-03 16:46:00.946402
++select * from videos;
+
+# 2021-03-03 16:46:07.357420
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 16:46:14.538195
++\q
+
+# 2021-03-03 16:47:33.373610
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 20:23:13.708119
++select * from eduson_scorm_lectures;
+
+# 2021-03-03 20:23:52.763671
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 20:24:03.563058
++\x auto
+
+# 2021-03-03 20:24:21.276100
++select * from scorm_lectures where id = 2973;
+
+# 2021-03-03 20:24:46.499832
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 20:24:56.491710
++select * from scorm_lectures where id = 2973;
+
+# 2021-03-03 20:25:17.851549
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 20:25:32.756467
++select * from scorm_lectures where id = 2973;
+
+# 2021-03-03 20:27:10.082026
++select count(*) from eduson_scorm_lectures;
+
+# 2021-03-03 20:27:45.906089
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 20:34:14.127950
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 20:43:00.507058
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 20:43:14.384658
++select * from eduson_lecture_id = 52011;
+
+# 2021-03-03 20:43:19.050839
++select * from eduson_lecture_id == 52011;
+
+# 2021-03-03 20:43:34.641557
++select * from eduson_lectures where eduson_lecture_id = 52011;
+
+# 2021-03-03 20:43:43.153551
++select * from eduson_lectures where id = 52011;
+
+# 2021-03-03 21:06:48.564944
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 21:07:03.085513
++select * from scorm_lectures where id = 3404;
+
+# 2021-03-03 21:07:35.799680
++select * from eduson_scorm_lectures where eduson_id = 7786;
+
+# 2021-03-03 21:18:14.414189
++\q
+
+# 2021-03-03 21:38:56.449198
++\?
+
+# 2021-03-03 21:41:42.667281
++\q
+
+# 2021-03-03 22:29:50.149496
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 22:30:30.361492
++select * from eduson_scorm_lectures;
+
+# 2021-03-03 22:30:57.172541
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-03 22:35:07.095269
++\q
+
+# 2021-03-03 22:47:41.597951
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 12:57:45.561386
++\q
+
+# 2021-03-04 15:57:14.017346
++select * from course_lectures;
+
+# 2021-03-04 15:57:19.556741
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 15:59:22.063109
++select * from course_lectures;
+
+# 2021-03-04 16:01:06.565636
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 16:14:55.591846
++\q
+
+# 2021-03-04 17:27:54.175603
++select * from eduson_courses;
+
+# 2021-03-04 17:28:06.197681
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 17:28:08.839326
++\q
+
+# 2021-03-04 17:28:17.216440
++select * from eduson_courses;
+
+# 2021-03-04 17:28:29.950595
++\x auto
+
+# 2021-03-04 17:28:45.455275
++select * from eduson_courses;
+
+# 2021-03-04 17:28:54.216679
++\x on
+
+# 2021-03-04 17:28:55.312111
++select * from eduson_courses;
+
+# 2021-03-04 17:29:01.090513
++select * from users;
+
+# 2021-03-04 17:29:09.897570
++\q
+
+# 2021-03-04 17:29:17.526407
++select * from users where id = 144990;
+
+# 2021-03-04 17:29:25.115423
++\x auto
+
+# 2021-03-04 17:29:26.699467
++select * from users where id = 144990;
+
+# 2021-03-04 17:30:29.996179
++\q
+
+# 2021-03-04 17:31:58.195010
++select
++*
++from users;
+
+# 2021-03-04 17:34:33.333215
++\q
+
+# 2021-03-04 19:08:23.828045
++select * from eduson_courses;
+
+# 2021-03-04 19:08:33.339253
++select * from course_lectures;
+
+# 2021-03-04 19:08:40.779434
++select * from coruses;
+
+# 2021-03-04 19:08:43.804570
++select * from courses;
+
+# 2021-03-04 19:08:53.766576
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 19:09:01.276267
++\q
+
+# 2021-03-04 19:25:19.711398
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 19:28:11.168991
++\q
+
+# 2021-03-04 19:53:57.867361
++\db
+
+# 2021-03-04 19:54:01.834946
++\?
+
+# 2021-03-04 19:54:29.083666
++\l
+
+# 2021-03-04 19:54:41.044589
++\q
+
+# 2021-03-04 19:57:11.391396
++\l
+
+# 2021-03-04 19:57:17.992679
++\q
+
+# 2021-03-04 20:40:25.709432
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-04 20:43:56.508498
++\q
+
+# 2021-03-04 20:44:00.820421
++select * from courses;
+
+# 2021-03-04 20:45:48.053265
++\q
+
+# 2021-03-05 11:38:18.750970
++select * from courses;
+
+# 2021-03-05 11:38:23.393511
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-05 11:38:25.854746
++\q
+
+# 2021-03-05 19:17:19.260060
++select * from admin_users;
+
+# 2021-03-05 19:20:53.165403
++\q
+
+# 2021-03-09 12:56:41.644209
++select * from courses;
+
+# 2021-03-09 12:56:46.532456
++\x auto
+
+# 2021-03-09 12:56:48.981200
++select * from courses;
+
+# 2021-03-09 13:01:17.390243
++\q
+
+# 2021-03-09 16:20:41.131766
++select * from course_lectures;
+
+# 2021-03-09 16:20:44.858989
++\q
+
+# 2021-03-09 16:26:39.431647
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from course_lectures; delete from lectures; delete from courses;
+
+# 2021-03-09 16:26:52.333833
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-09 16:26:57.251872
++\q
+
+# 2021-03-09 16:27:41.077384
++select * from courses;
+
+# 2021-03-09 16:27:47.869589
++select * from lectures;
+
+# 2021-03-09 16:27:54.149362
++\q
+
+# 2021-03-09 16:28:52.761608
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-09 16:29:06.247113
++\q
+
+# 2021-03-09 18:30:55.602303
++select * from courses limit 1;
+
+# 2021-03-09 18:30:59.577255
++\x auto
+
+# 2021-03-09 18:31:00.882160
++select * from courses limit 1;
+
+# 2021-03-09 18:31:27.505221
++\q
+
+# 2021-03-09 18:31:40.353964
++select * from courses limit 1;
+
+# 2021-03-09 18:31:44.308768
++\x auto
+
+# 2021-03-09 18:31:46.011920
++select * from courses limit 1;
+
+# 2021-03-09 18:31:54.333872
++\q
+
+# 2021-03-09 18:42:31.819950
++select * from lectures;
+
+# 2021-03-09 18:42:48.876034
++\q
+
+# 2021-03-09 18:50:47.823772
++\x auto
+
+# 2021-03-09 18:50:59.991873
++select * from coruses where id = 7804;
+
+# 2021-03-09 18:51:06.136835
++select * from courses where id = 7804;
+
+# 2021-03-09 18:51:30.152413
++\q
+
+# 2021-03-09 21:41:09.511515
++\x auto
+
+# 2021-03-09 21:41:38.355441
++select * from eduson_courses where title ILIKE "%excel%";
+
+# 2021-03-09 21:41:45.567900
++select * from eduson_courses where title ILIKE '%excel%';
+
+# 2021-03-09 21:42:51.520549
++select * from eduson_lectures where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-09 21:43:11.539825
++explain analyze select * from eduson_lectures where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-09 21:43:43.138634
++select * from eduson_lectures where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-09 21:44:36.067729
++select lectures.* from eduson_lectures where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%') inner join lectures on lectures.id = eduson_lectures.academy_id;
+
+# 2021-03-09 21:44:54.717905
++select lectures.* from eduson_lectures inner join lectures on lectures.id = eduson_lectures.academy_id where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-09 21:45:14.405107
++explain analys select lectures.* from eduson_lectures inner join lectures on lectures.id = eduson_lectures.academy_id where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-09 21:45:24.444655
++explain analyze select lectures.* from eduson_lectures inner join lectures on lectures.id = eduson_lectures.academy_id where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-09 21:45:49.885424
++select * from eduson_courses where title ILIKE "%excel%";
+
+# 2021-03-09 21:45:55.732322
++select * from eduson_courses where title ILIKE '%excel%';
+
+# 2021-03-09 21:46:27.894031
++select * from eduson_courses where title ILIKE '%excel%' and title ilike '%как%';
+
+# 2021-03-09 21:46:36.085112
++select * from eduson_courses where title ILIKE '%excel%' and title ilike 'как%';
+
+# 2021-03-09 21:46:40.247220
++select * from eduson_courses where title ILIKE '%excel%' and title ilike 'Как%';
+
+# 2021-03-09 21:47:13.248257
++select * from eduson_courses where title ILIKE '%excel%' and title ilike ':Как%';
+
+# 2021-03-09 21:47:19.288007
++select * from eduson_courses where title ILIKE '%excel%' and title ilike '%Как%';
+
+# 2021-03-09 21:47:34.325916
++select * from eduson_courses where title ILIKE '%excel%' and title ilike '%поиск%';
+
+# 2021-03-09 21:47:37.733655
++select * from eduson_courses where title ILIKE '%excel%' and title ilike '%Поиск%';
+
+# 2021-03-09 21:55:25.127176
++\q
+
+# 2021-03-09 22:04:54.262589
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE 'excel');
+
+# 2021-03-09 22:05:01.093934
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE '%excel%');
+
+# 2021-03-09 22:05:10.406308
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE '%как%');
+
+# 2021-03-09 22:05:26.534565
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE '%коучинг%');
+
+# 2021-03-09 22:05:55.127259
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE 'коучинг%');
+
+# 2021-03-09 22:05:59.438836
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE 'Коучинг%');
+
+# 2021-03-09 22:06:06.287288
++SELECT e0."id", e0."title" FROM "eduson_courses" AS e0 WHERE (e0."title" ILIKE '%Коучинг%');
+
+# 2021-03-09 23:12:55.717468
++\q
+
+# 2021-03-10 16:23:44.833136
++select * from users_answers;
+
+# 2021-03-10 16:23:53.680588
++\q
+
+# 2021-03-10 16:33:01.824310
++SELECT "questions".*
++FROM "questions"
++INNER JOIN "answers"
++  ON "questions"."id" = "answers"."question_id"
++INNER JOIN "users_answers"
++  ON "answers"."id" = "users_answers"."answer_id"
++WHERE "users_answers"."user_id" = 288014 AND "questions"."assessment_id" = 4432
+
+# 2021-03-10 16:33:56.591787
++SELECT "questions".*
++FROM "questions"
++INNER JOIN "answers"
++  ON "questions"."id" = "answers"."question_id"
++INNER JOIN "users_answers"
++  ON "answers"."id" = "users_answers"."answer_id"
++WHERE "users_answers"."user_id" = 288014 AND "questions"."assessment_id" = 4432
++order by pos;
+
+# 2021-03-10 16:34:10.893339
++\q
+
+# 2021-03-10 20:09:31.819741
++explain analys select lectures.* from eduson_lectures inner join lectures on lectures.id = eduson_lectures.academy_id where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-10 20:09:45.020243
++select lectures.* from eduson_lectures inner join lectures on lectures.id = eduson_lectures.academy_id where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-10 20:21:48.304329
++\q
+
+# 2021-03-10 20:25:00.212555
++select lectures.* from eduson_lectures inner join lectures on lectures.id = eduson_lectures.academy_id where eduson_course_id in (select id from eduson_courses where title ILIKE '%excel%');
+
+# 2021-03-10 20:25:31.949144
++select id from eduson_courses where title ILIKE '%excel%';
+
+# 2021-03-10 20:30:15.637477
++\q
+
+# 2021-03-11 12:34:06.353539
++select * from courses where course_sections != '[]';
+
+# 2021-03-11 12:34:11.017665
++select * from courses where course_sections != "[]";
+
+# 2021-03-11 12:34:19.335292
++select * from courses where course_sections is not null;
+
+# 2021-03-11 12:34:22.884936
++\x
+
+# 2021-03-11 12:34:25.418022
++\x auto
+
+# 2021-03-11 12:35:17.420507
++select * from courses where course_sections is not null;
+
+# 2021-03-11 12:35:27.953652
++select * from courses where course_sections = [];
+
+# 2021-03-11 12:35:31.737414
++select * from courses where course_sections = ["]";
+
+# 2021-03-11 12:35:35.437661
++select * from courses where course_sections = "[]";
+
+# 2021-03-11 12:35:43.703835
++select * from courses where course_sections = '[]';
+
+# 2021-03-11 12:36:43.859800
++select * from courses where course_sections = '[]'::jsonb;
+
+# 2021-03-11 12:38:27.007997
++select * from courses where json_array_length(course_sections) = 0;
+
+# 2021-03-11 12:38:37.090610
++select * from courses where jsonb_array_length(course_sections) = 0;
+
+# 2021-03-11 12:39:19.743844
++select * from courses where course_sections = [];
+
+# 2021-03-11 12:39:43.510239
++select * from courses where course_sections = '[]'::jsonb[];
+
+# 2021-03-11 12:39:45.775283
++select * from courses where course_sections = '[]'::jsonb;
+
+# 2021-03-11 12:39:52.658826
++select * from courses where course_sections = '[]';
+
+# 2021-03-11 16:03:45.723547
++\q
+
+# 2021-03-11 16:06:12.229309
++select id,course_sections from courses;
+
+# 2021-03-11 16:06:38.018162
++\q
+
+# 2021-03-12 16:44:57.574977
++\x auto
+
+# 2021-03-12 16:45:08.184288
++select * from users_prescription_items where id = 40624;
+
+# 2021-03-12 16:45:34.007468
++select * from users_prescription_assignments where prescription_item_id = 40624;
+
+# 2021-03-12 16:45:55.081431
++select * from groups where id = 20500;
+
+# 2021-03-12 16:46:22.488397
++select * from groups_users where group_id = 20500;
+
+# 2021-03-12 16:47:26.584453
++select * from groups_users where group_id = 20511;
+
+# 2021-03-12 16:49:06.484257
++select * from users_prescription_assignments where prescription_item_id = 40624;
+
+# 2021-03-12 16:49:31.209680
++select * from users_prescription_users where prescription_assignment_id = 72820;
+
+# 2021-03-12 16:51:23.629926
++select id, url from companies where url = 'academy-sales';
+
+# 2021-03-12 16:51:38.283520
++select * from groups where company_id = 15666;
+
+# 2021-03-12 16:52:01.853454
++select * from groups where id = 20500;
+
+# 2021-03-12 16:52:10.835040
++select * from users_prescription_assignments where prescription_item_id = 40624;
+
+# 2021-03-12 16:53:05.611932
++select * from groups_users where id = 24511;
+
+# 2021-03-12 17:00:29.736127
++select * from groups_users where id = 25000;
+
+# 2021-03-12 17:00:34.209082
++select * from groups_users where id = 2500;
+
+# 2021-03-12 17:00:43.401584
++select * from users_prescription_assignments where prescription_item_id = 40624;
+
+# 2021-03-12 17:00:48.800585
++select * from groups_users where id = 20500;
+
+# 2021-03-12 17:01:28.200538
++select * from users_prescription_items where id = 40624;
+
+# 2021-03-12 17:02:12.163324
++select * from users_prescription_assignments where prescription_item_id = 40624;
+
+# 2021-03-12 17:02:24.473076
++select * from groups where id = 20500;
+
+# 2021-03-12 17:02:57.687628
++select * from groups_users where group_id = 20500;
+
+# 2021-03-12 17:21:27.422351
++select * from groups where company_id = 15666;
+
+# 2021-03-12 17:22:25.732581
++select id, url from companies where url = 'academy-sales';
+
+# 2021-03-12 17:22:49.627560
++select * from users_prescription_assignments where assignee_id = 20500;
+
+# 2021-03-12 17:27:53.277478
++select * from users_prescription_assignments where assignee_id = 24511;
+
+# 2021-03-12 17:28:13.717585
++select * from groups where id 24511;
+
+# 2021-03-12 17:28:18.631883
++select * from groups where id= 24511;
+
+# 2021-03-12 17:28:48.093902
++select id,url from companies where id = 15666;
+
+# 2021-03-12 17:31:50.669935
++select * from users_prescriptions where company_id = 15666;
+
+# 2021-03-12 17:32:11.940975
++select * from users_prescription_items where id = 30598;
+
+# 2021-03-12 17:32:28.372033
++select * from users_prescription_items where prescription_id = 30598;
+
+# 2021-03-12 17:49:24.777342
++select * from users_prescriptions where company_id = 15666;
+
+# 2021-03-12 17:49:32.328148
++select * from users_prescription_assignments where assignee_id = 24511;
+
+# 2021-03-12 17:50:10.465229
++select * from users_prescription_users where prescription_assignment_id = 78520;
+
+# 2021-03-12 17:50:33.211676
++select * from groups_users where group_id = 24511;
+
+# 2021-03-12 17:53:09.020203
++select * from users_prescription_users where prescription_assignment_id = 72820;
+
+# 2021-03-12 17:53:26.316305
++select * from users_prescription_assignments where assignee_id = 24511;
+
+# 2021-03-12 17:55:10.464787
++select * from users_prescription_assignments where prescription_item_id in (40624, 39922);
+
+# 2021-03-12 18:21:58.631305
++\q
+
+# 2021-03-12 18:59:10.343118
++select * from groups where id = 20500;
+
+# 2021-03-12 18:59:21.975103
++\q
+
+# 2021-03-12 18:59:28.039125
++select * from groups where id = 20500;
+
+# 2021-03-12 18:59:29.686222
++\q
+
+# 2021-03-12 19:08:00.097884
++select * from groups where id = 20500;
+
+# 2021-03-12 19:08:11.849762
++select * from groups_users where group_id = 20500;
+
+# 2021-03-12 19:13:34.587209
++\q
+
+# 2021-03-17 22:54:42.868666
++select course_sections from courses where id = 696;
+
+# 2021-03-17 22:57:43.868665
++\q
+
+# 2021-03-18 16:16:28.431665
++select course_sections from courses where id = 696;
+
+# 2021-03-18 16:16:34.719707
++\q
+
+# 2021-03-26 16:43:52.805835
++select * from courses where id = 696;
+
+# 2021-03-26 16:45:50.608667
++update courses set course_sections = [] where id = 696;
+
+# 2021-03-26 16:45:55.967148
++update courses set course_sections = []:jsonb where id = 696;
+
+# 2021-03-26 16:46:03.294488
++update courses set course_sections = '[]':jsonb where id = 696;
+
+# 2021-03-26 16:46:06.774676
++update courses set course_sections = '[]' where id = 696;
+
+# 2021-03-26 16:46:20.942995
++update courses set course_sections = '' where id = 696;
+
+# 2021-03-26 16:46:26.063250
++update courses set course_sections = "[]" where id = 696;
+
+# 2021-03-26 16:46:30.254984
++update courses set course_sections = "\[\]" where id = 696;
+
+# 2021-03-26 16:47:11.575728
++update courses set course_sections = "[]"::jsonb where id = 696;
+
+# 2021-03-26 16:47:19.623646
++update courses set course_sections = '[]'::jsonb where id = 696;
+
+# 2021-03-26 16:47:47.190620
++\q
+
+# 2021-03-29 20:07:44.904810
++select course_sections from courses where id = 696;
+
+# 2021-03-29 20:07:53.089884
++\x auto
+
+# 2021-03-29 20:07:54.282640
++select course_sections from courses where id = 696;
+
+# 2021-03-29 20:08:49.002782
++\q
+
+# 2021-03-30 13:35:00.219312
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-30 13:35:05.081935
++\q
+
+# 2021-03-30 23:13:37.646012
++select * from eduson_programs;
+
+# 2021-03-30 23:14:06.116609
++\q
+
+# 2021-03-31 00:51:56.148009
++select * from eduson_courses where eduson_id = 3665;
+
+# 2021-03-31 00:52:04.449855
++\q
+
+# 2021-03-31 00:52:53.162378
++select * from eduson_lectures where eduson_course_id = 3665;
+
+# 2021-03-31 00:54:18.122517
++\q
+
+# 2021-03-31 01:15:26.596117
++select * from eduson_lectures limit 1;
+
+# 2021-03-31 01:15:38.811636
++\q
+
+# 2021-03-31 01:20:24.519040
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 01:20:33.897002
++\q
+
+# 2021-03-31 01:21:09.987807
++select * from scorm_lectures;
+
+# 2021-03-31 01:21:20.652507
++select * from eduson_lectures;
+
+# 2021-03-31 01:21:57.957938
++select * from eduson_lectures where eduson_lecture_pos > 0;
+
+# 2021-03-31 01:22:02.952953
++select * from eduson_lectures where eduson_lecture_pos == 0;
+
+# 2021-03-31 01:22:07.206287
++select * from eduson_lectures where eduson_lecture_pos = 0;
+
+# 2021-03-31 01:23:35.726687
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 01:23:38.265911
++\q
+
+# 2021-03-31 01:24:07.583507
++select * from eduson_lectures where eduson_lecture_pos > 0;
+
+# 2021-03-31 01:24:20.026677
++select * from eduson_lectures where eduson_lecture_pos = 0;
+
+# 2021-03-31 01:24:22.658290
++select * from eduson_lectures where eduson_lecture_pos = 1;
+
+# 2021-03-31 01:24:27.339035
++select * from eduson_lectures where eduson_lecture_pos = 2;
+
+# 2021-03-31 01:24:34.380910
++\q
+
+# 2021-03-31 01:31:55.566184
++select * from eduson_lectures where eduson_lecture_pos > 2;
+
+# 2021-03-31 01:32:10.597223
++select * from eduson_lectures where eduson_lecture_pos > 2 order by eduson_course_id;
+
+# 2021-03-31 01:32:37.394458
++select * from eduson_courses where id = 2112;
+
+# 2021-03-31 01:42:23.054079
++\q
+
+# 2021-03-31 03:48:12.623815
++select * from eduson_courses;
+
+# 2021-03-31 03:48:25.988298
++select * from courses;
+
+# 2021-03-31 03:49:37.451628
++select title from courses;
+
+# 2021-03-31 03:51:51.346953
++delete from courses;
+
+# 2021-03-31 03:52:00.504447
++\q
+
+# 2021-03-31 03:52:26.920065
++select title from courses;
+
+# 2021-03-31 03:58:35.673549
++select * from eduson_courses where id in (7485, 7504, 7483, 7503, 7484, 7486);
+
+# 2021-03-31 03:58:52.910009
++select * from eduson_courses where eduson_id in (7485, 7504, 7483, 7503, 7484, 7486);
+
+# 2021-03-31 03:59:30.169217
++select * from eduson_courses where eduson_id in (344, 184, 210, 123, 6399, 6462);
+
+# 2021-03-31 04:01:08.551310
++select * from eduson_courses where eduson_id in (7394, 6360, 245, 3797, 3859, 11, 3563, 4514, 6025, 4547, 258, 168, 164, 160, 124, 161, 165, 167, 166, 441, 6788, 7254, 7257, 7258, 201, 7260) and language = 'ru';
+
+# 2021-03-31 04:02:13.625580
++select * from eduson_courses where eduson_id in (6438, 6436, 6475, 479, 332, 288, 329, 323, 327, 2875, 421, 142, 5940, 2054, 2039, 264, 289, 320, 366, 777, 803, 263, 3482, 6659, 117, 5365, 7246, 7247, 4201, 7249, 7245, 7244, 319) and language = 'ru';
+
+# 2021-03-31 04:03:07.311088
++select * from eduson_courses where eduson_id in (3482, 6659, 117, 5365, 7246, 7247, 4201, 7249, 7245, 7244, 319) and language = 'ru';
+
+# 2021-03-31 04:03:19.369213
++delete from courses;
+
+# 2021-03-31 04:03:24.294343
++\q
+
+# 2021-03-31 04:08:03.346368
++select * from lectures where title is null;
+
+# 2021-03-31 04:08:36.219487
++select * from eduson_lectures where academy_id = 4110;
+
+# 2021-03-31 04:12:42.484765
++select * from eduson_courses where eduson_id = 2936;
+
+# 2021-03-31 04:12:57.448858
++select * from eduson_courses where eduson_id = 2173;
+
+# 2021-03-31 04:13:14.389583
++select * from eduson_courses where eduson_id = 201;
+
+# 2021-03-31 04:13:50.864904
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 04:16:47.686419
++select * from lectures where title is null;
+
+# 2021-03-31 04:18:16.090231
++select * from eduson_lectures where academy_id = 5578;
+
+# 2021-03-31 04:18:51.730880
++select * from eduson_courses where id = 3052;
+
+# 2021-03-31 04:22:55.003361
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 04:23:18.738564
++select * from lectures where title is null;
+
+# 2021-03-31 04:24:18.005747
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 04:24:42.574498
++select * from lectures where title is null;
+
+# 2021-03-31 04:24:55.758161
++\q
+
+# 2021-03-31 04:25:54.619862
++select * from courses;
+
+# 2021-03-31 04:29:25.133475
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 04:30:36.163382
++select * from courses;
+
+# 2021-03-31 04:36:31.255246
++select * from lectures where id = 9579;
+
+# 2021-03-31 04:36:48.622008
++select * from courses;
+
+# 2021-03-31 04:44:30.104960
++delete from courses;
+
+# 2021-03-31 05:02:08.915831
++select * from courses;
+
+# 2021-03-31 05:35:37.319843
++delete from courses;
+
+# 2021-03-31 05:36:00.971373
++select * from courses;
+
+# 2021-03-31 05:36:16.764546
++select * from eduson_programs;
+
+# 2021-03-31 05:36:45.405787
++select * from courses;
+
+# 2021-03-31 05:40:58.132475
++select * from eduson_programs;
+
+# 2021-03-31 05:41:02.160465
++delete from courses;
+
+# 2021-03-31 05:41:31.859821
++select * from courses;
+
+# 2021-03-31 05:47:21.759477
++\q
+
+# 2021-03-31 06:00:40.618637
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 06:01:16.827705
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from courses; delete from eduson_courses; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures;
+
+# 2021-03-31 06:02:10.535335
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from eduson_programs; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 06:03:01.094184
++\q
+
+# 2021-03-31 06:10:19.526527
++\q
+
+# 2021-03-31 06:22:02.999444
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from eduson_programs; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 06:38:30.079890
++\q
+
+# 2021-03-31 22:06:06.072821
++select * from videos;
+
+# 2021-03-31 22:06:24.558950
++select * from videos where video_url is null;
+
+# 2021-03-31 22:07:26.231321
++select * from lectures where lecture_type = 'video';
+
+# 2021-03-31 22:07:45.405920
++\q
+
+# 2021-03-31 22:08:45.736562
++select * from videos where lecture_id is null;
+
+# 2021-03-31 22:08:55.320133
++select * from videos where lecture_id order by lecture_id;
+
+# 2021-03-31 22:08:59.911285
++select * from videos order by lecture_id;
+
+# 2021-03-31 22:10:42.301336
++select * from users;
+
+# 2021-03-31 22:16:53.224573
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from eduson_programs; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 22:19:06.379607
++\q
+
+# 2021-03-31 23:42:10.123504
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from eduson_programs; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-03-31 23:43:00.880851
++\q
+
+# 2021-04-01 01:18:10.118157
++delete from eduson_scorm_lectures; delete from eduson_presentations; delete from eduson_videos; delete from eduson_lectures; delete from eduson_courses; delete from eduson_programs; delete from scorm_lectures; delete from presentations; delete from videos; delete from lectures; delete from courses;
+
+# 2021-04-01 01:18:21.431494
++\q
+
+# 2021-04-01 01:45:51.659736
++select * from lectures where id in (151,152);
+
+# 2021-04-01 01:47:36.545595
++select * from lectures where id in (2315,2316);
+
+# 2021-04-01 01:47:52.052276
++\q
+
+# 2021-04-05 23:07:04.023728
++delete from courses;
+
+# 2021-04-05 23:07:23.792154
++delete from eduson_programs; delete from courses;
+
+# 2021-04-05 23:07:26.517045
++\q
+
+# 2021-04-05 23:21:51.297965
++delete from eduson_programs; delete from courses;
+
+# 2021-04-05 23:22:27.690518
++delete from course_section_lectures;delete from course_sections; delete from eduson_programs; delete from courses;
+
+# 2021-04-05 23:22:33.139721
++\q
+
+# 2021-04-06 16:59:52.878860
++delete from course_section_lectures;delete from course_sections; delete from eduson_programs; delete from courses;
+
+# 2021-04-06 16:59:55.805089
++\q
+
+# 2021-04-07 15:38:03.740836
++select * from course_section_lectures;
+
+# 2021-04-07 15:38:10.893898
++select * from course_section_lectures where id = 811;
+
+# 2021-04-07 15:38:31.213611
++select * from course_section_lectures where course_sectid = 811;
+
+# 2021-04-07 15:38:36.912250
++select * from course_section_lectures where course_section_id = 811;
+
+# 2021-04-07 15:38:52.076631
++\q
+
+# 2021-04-09 19:17:18.744134
++select * from course_sections;
+
+# 2021-04-09 19:17:24.185093
++\q
+
+# 2021-04-14 11:03:30.974157
++select * from materials;
+
+# 2021-04-14 11:03:48.771989
++\q
+
+# 2021-04-14 11:12:46.015071
++delete from eduson_materials;
+
+# 2021-04-14 11:12:51.870351
++\q
+
+# 2021-04-14 11:16:41.854192
++select * from materials;
+
+# 2021-04-14 11:20:29.966255
++select * from eduson_materials;
+
+# 2021-04-14 11:21:16.882260
++select eduson_lecture_id, count(*) from eduson_materials;
+
+# 2021-04-14 11:21:39.310817
++select eduson_lecture_id, count(*) from eduson_materials group by eduson_lecture_id;
+
+# 2021-04-14 11:22:01.946548
++select eduson_lecture_id, count(*) from eduson_materials group by eduson_lecture_id order by $2 desc;
+
+# 2021-04-14 11:22:04.425412
++select eduson_lecture_id, count(*) from eduson_materials group by eduson_lecture_id order by 2 desc;
+
+# 2021-04-14 12:39:53.682457
++select * from materials;
+
+# 2021-04-14 12:40:38.328878
++select * from eduson_courses where eduson_id = 72;
+
+# 2021-04-14 12:41:06.391216
++select * from eduson_lectures where eduson_course_id = 732;
+
+# 2021-04-14 12:42:34.568200
++select * from materials;
+
+# 2021-04-14 12:46:08.473491
++select * from lectures;
+
+# 2021-04-14 12:47:31.924190
++select * from eduson_lectures where id = 1289;
+
+# 2021-04-14 12:48:25.290657
++select * from eduson_materials where eduson_lecture_id = 1289;
+
+# 2021-04-14 13:19:29.248985
++select count(*) from eduson_materials;
+
+# 2021-04-14 13:21:08.138480
++select * from eduson_materials where eduson_lecture_id = 1289;
+
+# 2021-04-14 13:21:26.104365
++select * from eduson_lectures where id = 1289;
+
+# 2021-04-14 13:21:49.666422
++select * from eduson_lectures where eduson_id = 157;
+
+# 2021-04-14 13:23:44.512032
++select * from eduson_lectures where eduson_id = 920;
+
+# 2021-04-14 13:24:01.903592
++select * from eduson_materials where eduson_lecture_id = 1419;
+
+# 2021-04-14 13:24:32.653841
++select * from eduson_materials where eduson_lecture_id = 1424;
+
+# 2021-04-14 16:30:12.237410
++delete from eduson_materials; delete from materials;
+
+# 2021-04-14 16:32:29.776604
++select * from eduson_materials;
+
+# 2021-04-14 16:32:42.125338
++select * from materials;
+
+# 2021-04-14 16:33:00.692251
++select * from eduson_lectures where eduson_id = 920;
+
+# 2021-04-14 16:34:05.635923
++select * from materials where lecture_id = 1419;
+
+# 2021-04-14 16:34:16.107835
++select * from materials where lecture_id = 1424;
+
+# 2021-04-14 16:35:32.176608
++select count(*) from materials;
+
+# 2021-04-14 16:35:34.016433
++\q
+
+# 2021-04-18 15:55:01.519030
++select * from courses where id = 222;
+
+# 2021-04-18 15:55:17.064953
++exit
+
+# 2021-04-18 16:44:25.284825
++select * from courses where id = 222;
+
+# 2021-04-18 16:44:30.931498
++\q
+
+# 2021-04-18 18:33:07.030081
++select * from courses where id = 222;
+
+# 2021-04-18 18:33:18.350910
++\q
+
+# 2021-04-19 21:27:55.837204
++select * from courses where id = 222;
+
+# 2021-04-19 21:28:03.155114
++\q
+
+# 2021-04-20 18:58:05.200110
++select * from scorm_lectures where id = 7983;
+
+# 2021-04-20 20:32:01.669229
++select * from scorm_lectures;
+
+# 2021-04-20 21:28:40.762411
++select * from coruses where id = 187;
+
+# 2021-04-20 21:28:47.794538
++select * from courses where id = 187;
+
+# 2021-04-20 21:32:21.476195
++\q
+
+# 2021-04-21 16:12:38.112471
++\q
+
+# 2021-04-21 16:12:40.637562
++\q
+
+# 2021-04-22 19:01:41.115157
++select * from scorm_lectures;
+
+# 2021-04-22 19:01:53.952877
++select * from user_course_section_lectures;
+
+# 2021-04-22 19:02:03.400828
++\h
+
+# 2021-04-22 19:02:10.562513
++\?
+
+# 2021-04-22 19:02:49.925741
++\td
+
+# 2021-04-22 19:02:52.410423
++\dT
+
+# 2021-04-22 19:03:20.242870
++\d
+
+# 2021-04-22 19:03:30.876664
++\d user_course_section_lectures
+
+# 2021-04-22 19:04:56.981868
++\q
+
+# 2021-04-22 19:52:16.860096
++select * from user_course_section_lectures;
+
+# 2021-04-22 19:52:28.337065
++\q
+
+# 2021-04-22 19:55:31.818284
++\d user_course_section_lectures
+
+# 2021-04-22 19:55:41.793459
++\q
+
+# 2021-04-22 21:51:32.362581
++delete from user_course_section_lectures;
+
+# 2021-04-22 21:51:35.676568
++\q
+
+# 2021-04-23 00:00:06.350493
++select * from user_course_section_lectures where id = 5;
+
+# 2021-04-23 00:03:39.374932
++\q
+
+# 2021-04-23 00:21:54.192435
++select * from user_course_section_lectures where id = 5;
+
+# 2021-04-23 00:28:26.724195
++\x auto
+
+# 2021-04-23 00:28:28.716454
++select * from user_course_section_lectures where id = 5;
+
+# 2021-04-23 00:28:46.069571
++select scorm_data from user_course_section_lectures where id = 5;
+
+# 2021-04-23 00:30:34.485776
++delete from user_course_section_lectures;
+
+# 2021-04-23 00:30:48.224318
++select scorm_data from user_course_section_lectures;
+
+# 2021-04-23 00:30:53.725430
++select from user_course_section_lectures;
+
+# 2021-04-23 00:31:01.158197
++select * from user_course_section_lectures;
+
+# 2021-04-23 00:36:28.217871
++delete from user_course_section_lectures;
+
+# 2021-04-23 00:36:44.473870
++select * from user_course_section_lectures;
+
+# 2021-04-23 01:26:08.207327
++\q
+
+# 2021-04-23 01:30:31.349513
++select * from user_course_section_lectures;
+
+# 2021-04-23 01:31:01.611950
++\q
+
+# 2021-04-23 01:32:51.931999
++delete from user_course_section_lectures;
+
+# 2021-04-23 01:32:55.575468
++\q
+
+# 2021-04-23 01:47:50.759853
++delete from user_course_section_lectures;
+
+# 2021-04-23 01:47:55.122747
++\q
+
+# 2021-04-23 01:48:21.696265
++select * from user_course_section_lectures;
+
+# 2021-04-23 02:28:28.271440
++\q
+
+# 2021-04-23 03:40:29.312190
++select * from user_course_section_lectures;
+
+# 2021-04-23 03:41:24.750054
++\q
+
+# 2021-04-23 04:02:29.870297
++select * from lectures where id = 175;
+
+# 2021-04-23 04:03:10.933778
++select * from course_section_lectures where id = 7501;
+
+# 2021-04-23 04:03:28.574050
++select * from lecture_id = 2207;
+
+# 2021-04-23 04:03:59.917769
++select * from lectures where id = 2207;
+
+# 2021-04-23 04:04:48.538232
++\q
+
+# 2021-04-23 19:36:21.841372
++select * from users;
+
+# 2021-04-23 19:36:30.824626
++select * from admin_users;
+
+# 2021-04-23 19:36:37.208266
++\q
+
+# 2021-04-23 20:52:03.781497
++select * from materials;
+
+# 2021-04-23 20:52:32.940018
++\q
+
+# 2021-04-23 21:05:56.889608
++select * from materials;
+
+# 2021-04-23 21:06:33.242055
++select lecture_id, count(*) from materials group by lecture_id;
+
+# 2021-04-23 21:06:39.489573
++select lecture_id, count(*) from materials group by lecture_id order by 2;
+
+# 2021-04-23 21:06:43.937662
++select lecture_id, count(*) from materials group by lecture_id order by 2 desc;
+
+# 2021-04-23 21:07:07.137363
++select * from course_section_lectures where lecture_id = 1697;
+
+# 2021-04-23 21:19:43.285592
++select * from course_section_lectures where lecture_id = 1699;
+
+# 2021-04-23 21:19:52.563562
++select * from course_section_lectures where lecture_id = 1266;
+
+# 2021-04-23 21:21:11.920713
++select course_section_lectures.* from materials inner join course_section_lectures on course_section_lectures.lecture_id = materials.lecture_id;
+
+# 2021-04-23 21:21:53.353571
++select * from coruse_sections where id = 825;
+
+# 2021-04-23 21:22:02.616551
++select * from course_sections where id = 825;
+
+# 2021-04-23 21:22:16.608321
++select * from course id = 179;
+
+# 2021-04-23 21:22:20.338142
++select * from course.id = 179;
+
+# 2021-04-23 21:22:25.778519
++select * from courses where course.id = 179;
+
+# 2021-04-23 21:22:29.874418
++select * from courses where courses.id = 179;
+
+# 2021-04-23 21:33:43.764650
++select * from materials;
+
+# 2021-04-23 21:35:01.398755
++\q
+
+# 2021-04-23 21:42:54.756863
++select * from materials;
+
+# 2021-04-23 21:44:19.141177
++\q
+
+# 2021-04-23 21:46:48.121696
++select * from materials;
+
+# 2021-04-23 21:47:04.647927
++\q
+
+# 2021-04-23 22:04:12.443178
++select material_type, count(*) from materials group by material_type;
+
+# 2021-04-23 22:09:03.475552
++\q
+
+# 2021-04-24 21:46:08.336785
++select * from users;
+
+# 2021-04-24 21:46:22.838298
++\q
+
+# 2021-04-24 21:48:44.476697
++select * from users;
+
+# 2021-04-24 21:49:29.667989
++\q
+
+# 2021-04-25 18:18:01.790815
++select * from lectures;
+
+# 2021-04-25 18:18:33.319760
++select * from lectures where duration != 1800;
+
+# 2021-04-25 18:18:35.293690
++\q
+
+# 2021-04-25 18:20:37.762637
++select * from lectures where duration != 1800;
+
+# 2021-04-25 18:20:48.497827
++select * from lectures;
+
+# 2021-04-25 18:22:26.451446
++select * from eduson_lectures;
+
+# 2021-04-25 18:24:22.989623
++\q
+
+# 2021-04-25 18:25:50.112361
++select * from lectures;
+
+# 2021-04-25 18:26:12.256026
++\q
+
+# 2021-04-25 18:27:57.452199
++select * from lectures;
+
+# 2021-04-25 18:28:17.091450
++\q
+
+# 2021-04-25 18:34:15.286147
++select * from lectures;
+
+# 2021-04-25 18:34:28.800440
++select * from course_section_lectures;
+
+# 2021-04-25 18:34:38.590237
++\q
+
+# 2021-04-25 18:35:06.034770
++select * from course_section_lectures;
+
+# 2021-04-25 18:35:16.414541
++\q
+
+# 2021-04-26 21:00:46.945625
++select * from coruses where id = 223;
+
+# 2021-04-26 21:00:51.521577
++select * from courses where id = 223;
+
+# 2021-04-26 21:16:59.163713
++select * from course_section_lectures where id = 11152;
+
+# 2021-04-26 21:56:33.234160
++select * from course_section where course_id = 223;
+
+# 2021-04-26 21:56:39.271410
++select * from course_sections where course_id = 223;
+
+# 2021-04-26 22:00:10.730847
++select * from course_sections where course_id = 223 order by position;
+
+# 2021-04-26 22:01:38.829044
++select * from course_section_lectures where course_section_id = 1236 order by position;
+
+# 2021-04-26 22:02:42.548220
++select * from course_sections where course_id = 223 order by position;
+
+# 2021-04-26 22:25:20.496814
++\q
+
+# 2021-04-26 23:44:57.970577
++select * from courses;
+
+# 2021-04-26 23:45:11.984511
++\q
+
+# 2021-04-27 20:15:33.408182
++select * from users;
+
+# 2021-04-27 20:28:47.421771
++\q
+
+# 2021-04-27 23:26:24.091054
++select * from course_section_lectures id = 3717;
+
+# 2021-04-27 23:26:29.699064
++select * from course_section_lectures where id = 3717;
+
+# 2021-04-27 23:26:46.158667
++select * from lectures where id = 1071;
+
+# 2021-04-27 23:27:22.248384
++select * from presentations where lecture_id = 1071;
+
+# 2021-04-27 23:34:18.276282
++\q
+
+# 2021-04-30 20:10:23.653229
++select * from user_courses where user_id = 5 and course_id = 95;
+
+# 2021-04-30 20:10:40.570843
++\q
+
+# 2021-04-30 20:44:51.630016
++select * from user_course_section_lectures where user_id = 5 and course_section_lecture_id = 35;
+
+# 2021-04-30 20:45:12.078887
++\q
+
+# 2021-04-30 21:10:27.042642
++select * from course_section_lectures where id = 1142;
+
+# 2021-04-30 21:10:47.401185
++select * from presentations where lecture_id = 213;
+
+# 2021-04-30 21:18:10.107588
++\q
+
+# 2021-05-01 18:33:20.345636
++select * from user_course_section_lectures where user_id = 5 and course_section_lecture_id = 3718;
+
+# 2021-05-01 18:35:55.729229
++\q
+
+# 2021-05-01 22:21:55.934504
++select * from lectures where id = 1378;
+
+# 2021-05-01 22:22:17.765458
++select * from videos where lecture_id = 1378;
+
+# 2021-05-01 22:23:10.391225
++select * from eduson_lectures where academy_id = 1378;
+
+# 2021-05-01 22:24:24.733261
++select * from eduson_courses where id = 812;
+
+# 2021-05-01 22:28:25.290109
++\q
+
+# 2021-05-01 22:37:35.685864
++select * from eduson_lectures where academy_id = 1378;
+
+# 2021-05-01 23:00:11.120185
++\q
+
+# 2021-05-04 21:30:32.513446
++select * from pages where id = 24;
+
+# 2021-05-04 21:30:48.450341
++\q
+
+# 2021-05-06 18:15:26.244372
++select * from videos order by id desc;
+
+# 2021-05-06 19:21:06.499004
++\q
+
+# 2021-05-06 19:21:09.432531
++\q
+
+# 2021-05-06 19:34:17.184196
++select * from videos order by id desc;
+
+# 2021-05-06 19:34:27.806101
++\q
+
+# 2021-05-06 19:46:37.572287
++select * from videos order by id desc;
+
+# 2021-05-06 19:46:50.204080
++\q
+
+# 2021-05-08 19:54:17.375503
++select count(*) from videos where content_file_name is not null;
+
+# 2021-05-08 19:54:26.383744
++select count(*) from videos;
+
+# 2021-05-08 19:54:51.135849
++select * from videos order by id desc;
+
+# 2021-05-08 19:55:41.633086
++select * from videos order by where content_file_name is not null;
+
+# 2021-05-08 19:55:46.513151
++select * from videos where content_file_name is not null;
+
+# 2021-05-08 19:56:50.919806
++\q
+
+# 2021-05-08 19:58:51.387477
++select * from videos where content_file_name is null;
+
+# 2021-05-08 19:59:00.514396
++\q
+
+# 2021-05-08 19:59:04.275603
++select * from videos where content_file_name is null;
+
+# 2021-05-08 19:59:23.339659
++select * from videos where content_file_name is null order by id desc;
+
+# 2021-05-08 19:59:48.531203
++select * from videos where content_file_name is null and file_url is not null order by id desc;
+
+# 2021-05-08 20:00:34.084743
++select * from videos where content_file_name is null and file_url is not null and file_url is not None order by id desc;
+
+# 2021-05-08 20:00:39.613110
++select * from videos where content_file_name is null and file_url is not null and file_url is not 'None' order by id desc;
+
+# 2021-05-08 20:00:44.236127
++select * from videos where content_file_name is null and file_url is not null and file_url is not "None" order by id desc;
+
+# 2021-05-08 20:00:52.196148
++select * from videos where content_file_name is null and file_url is not null and file_url != "None" order by id desc;
+
+# 2021-05-08 20:00:56.052394
++select * from videos where content_file_name is null and file_url is not null and file_url != 'None' order by id desc;
+
+# 2021-05-08 20:01:10.444746
++select * from videos where content_file_name is null and file_url is not null and file_url != 'None' and file_url != '' order by id desc;
+
+# 2021-05-08 20:54:38.765288
++\q

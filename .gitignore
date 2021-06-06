@@ -1,4 +1,8 @@
 .DS_Store
+nvim/.config/nvim/plugin
+AppSupport
+
+
 .netrwhist
 vim/plugged
 vim/.netrwhist

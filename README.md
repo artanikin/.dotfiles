@@ -1,6 +1,8 @@
 # Dotfiles
 
-This repo is a collection of my customizations for zsh, vim and git.
+![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/desk.png)
+
+This repository is managed by [GNU stow](https://www.gnu.org/software/stow/).
 
 **Table of Contents**
 
@@ -8,127 +10,78 @@ This repo is a collection of my customizations for zsh, vim and git.
 - [Git](#git)
 - [Zsh](#zsh)
 - [Tmux](#tmux)
-- [Vim](#vim)
 - [NeoVim](#neovim)
-- [Custom command](#custom-command)
-- [Screenshots](#screenshots)
-  + [Console](#console-screenshot)
-  + [Vim](#vim-screenshot)
+- [Scripts](#scripts)
+- [Developer configs](#developer-configs)
 
 ## Installation
 
-### Brew Packages
-
-```console
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-$ cd ~/.dotfiles
-$ brew bundle
-```
-
 Clone repo to `~/.dotfiles` holder:
 
-```console
-$ cd ~
-$ git clone https://github.com/artanikin/dotfiles.git ~/.dotfiles
-```
+### Brew Packages
 
-Update submodules
-```console
-$ cd ~/.dotfiles
-$ git submodule update
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+cd ~/.dotfiles/brew/.config/brew
+brew bundle
 ```
 
 ### Git
 
-```console
-$ ln -s ~/.dotfiles/git/gitconfig ~/.gitconfig
-$ ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
-$ ln -s ~/.dotfiles/git/git_template ~/.git_template
+```bash
+cd ~/.dotfiles
+stow -v git
 ```
 
 ### Zsh
 
 Link to config files
 
-```console
-$ ln -s ~/.doftiles/.zsh ~/.zsh
-$ ln -s ~/.doftiles/zsh/zshrc ~/.zshrc
-$ ln -s ~/.doftiles/zsh/zshenv ~/.zshenv
+```bash
+cd ~/.dotfiles
+stow -v zsh
 ```
 
 Install [Zplug](https://github.com/zplug/zplug)
 
-```console
-$ mkdir ~/.zplug
-$ git clone https://github.com/zplug/zplug ~/.zplug
+```bash
+git clone https://github.com/zplug/zplug ~/.zplug
 ```
 
 ### Tmux
 
 Link to config file
 
-```console
-$ ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+```bash
+cd ~/.dotfiles
+stow -v tmux
 ```
 
 Install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
-```console
-$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-Install requirenments to system clipboard (tmux-yank plugin) for MacOS
-
-```console
-$ brew install reattach-to-user-namespace
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 Open Tmux sessions and press `Ctrl+I` for install plugins
 
+### Neovim
 
-### Vim
-
-```console
-$ ln -s ~/.doftiles/vim ~/.vim
-$ ln -s ~/.doftiles/vim/vimrc ~/.vimrc
-$ ln -s ~/.doftiles/vim/gvimrc ~/.gvimrc
-```
-* install Plug
-
-```console
-$ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```bash
+cd ~/.dotfiles
+stow -v nvim
 ```
 
-* install plugins
+### Scripts
 
-```console
-$ vim +PlugInstall
+```bash
+cd ~/.dotfiles
+stow -v bin
 ```
 
+### Developer configs
 
-### NeoVim
-
-NeoVim configuration depends on Vim configuration. Before, add links for vim config.
-
-```console
-$ ln -s ~/.dotfiles/vim/nvim ~/.config/nvim
+```bash
+cd ~/.dotfiles
+stow -v dev
 ```
-
-For check all requirenments for neovim
-
-```console
-$ nvim +CheckHealth
-```
-
-### Custom command
-
-```console
-$ ln -s ~/.dotfiles/bin ~/bin
-```
-
-## Screenshots
-
-### Vim Screenshot
-
-![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/vim_updated.png)
