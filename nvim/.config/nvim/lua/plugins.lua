@@ -29,6 +29,7 @@ return require("packer").startup(function(use)
     use {"mattn/emmet-vim"}
     use {"rafamadriz/friendly-snippets"}
     use {"kyazdani42/nvim-tree.lua"}
+    use {"folke/which-key.nvim"}
     use {"tpope/vim-rsi"}
     use {"tpope/vim-endwise"}
     use {"machakann/vim-sandwich"}
@@ -66,6 +67,7 @@ return require("packer").startup(function(use)
     use {"f-person/git-blame.nvim"}
     use {"tpope/vim-fugitive"}
     use {"tpope/vim-rhubarb"}
+    use {"sindrets/diffview.nvim"}
 
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
