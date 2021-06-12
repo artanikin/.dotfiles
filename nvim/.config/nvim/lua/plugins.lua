@@ -14,10 +14,9 @@ return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
     use {"wbthomason/packer.nvim"}
     use {"christoomey/vim-tmux-navigator"}
-    use {"gruvbox-community/gruvbox"}
     use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
     use {"norcalli/nvim-colorizer.lua"}
-    use {"glepnir/galaxyline.nvim"}
+    use {"hoob3rt/lualine.nvim"}
     use {"terrortylor/nvim-comment"}
     use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
     use {"elixir-editors/vim-elixir"}
@@ -39,8 +38,9 @@ return require("packer").startup(function(use)
     use {"janko/vim-test", requires = "benmills/vimux"} -- Run tests
     use {"dyng/ctrlsf.vim", cmd = "CtrlSF"}
     use {"jez/vim-superman"}
-    use {'tpope/vim-rails', ft = {'ruby', 'eruby', 'haml', 'slim'} } -- Plugin for editing Ruby on Rails applications
-    use {'tpope/vim-ragtag'} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
+    use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"} } -- Plugin for editing Ruby on Rails applications
+    use {"tpope/vim-ragtag"} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
+    use {"folke/todo-comments.nvim"}
 
     -- Telescope
     use {"nvim-lua/popup.nvim"}
@@ -59,9 +59,10 @@ return require("packer").startup(function(use)
     use {"wellle/tmux-complete.vim"}
     use {"folke/lsp-colors.nvim"}
     use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
+    use {"ray-x/lsp_signature.nvim"}
 
     -- Git
-    use {"lewis6991/gitsigns.nvim", requires = "nvim-lua/plenary.nvim"}
+    use {"lewis6991/gitsigns.nvim"}
     use {"f-person/git-blame.nvim"}
     use {"tpope/vim-fugitive"}
     use {"tpope/vim-rhubarb"}
@@ -70,4 +71,8 @@ return require("packer").startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use {"p00f/nvim-ts-rainbow"}
     use {"windwp/nvim-ts-autotag"}
+
+    -- Colors
+    use {"gruvbox-community/gruvbox"}
+    use {"folke/tokyonight.nvim"}
 end)

@@ -9,6 +9,9 @@ export PATH="${PATH}:${HOME}/Library/Python/3.7/bin"
 export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 export PATH="$PATH:$HOME/.cache/dein/repos/github.com/jez/vim-superman/bin"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+
+export TERM="screen-256color"
 
 export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
 export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
@@ -34,3 +37,4 @@ export COMPOSE_HTTP_TIMEOUT=120
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 export ASDF_DIR="~/.asdf"
+export WEBPACK_RUN_METHOD=docker

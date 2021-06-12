@@ -48,3 +48,5 @@ eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 eval $(thefuck --alias)
 
 . /usr/local/opt/asdf/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
+

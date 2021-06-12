@@ -30,7 +30,7 @@ let g:startify_commands = [
   \]
 
 let g:startify_bookmarks = [
-      \ { 'c': '~/.config/nvim/init.vim' },
+      \ { 'c': '~/.config/nvim/init.lua' },
       \ { 't': '~/.tmux.conf' },
       \ { 'g': '~/.gitconfig' },
       \ { 'z': '~/.zshrc' }

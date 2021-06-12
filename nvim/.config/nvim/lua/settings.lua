@@ -29,9 +29,12 @@ vim.wo.signcolumn="yes"                     --Always show the signcolumn, otherw
 vim.o.updatetime=200                        --Faster completion
 vim.o.timeoutlen=600                        --By default timeoutlen is 1000 ms
 vim.o.clipboard="unnamedplus"               --Copy paste between vim and everything else
-vim.o.scrolloff=3 			                --Minimal number of screen lines to keep above and below the cursor
-vim.o.sidescrolloff=5 			            --Minimal number of screen columns to keep the left and to the right of the cursor
+vim.o.scrolloff=3 			                    --Minimal number of screen lines to keep above and below the cursor
+vim.o.sidescrolloff=5 			                --Minimal number of screen columns to keep the left and to the right of the cursor
 vim.o.foldlevel=10
+vim.o.ignorecase=true                       -- Ignoring case in a pattern
+vim.o.smartcase=true                        -- Override the 'ignorecase' option if the search pattern contains upper case chars
+
 vim.cmd([[
 " Maintain undo history between sessions
 set undofile
@@ -40,3 +43,6 @@ set undodir=/var/tmp,/tmp
 " List of directories for the backup file
 set backupdir=/var/tmp,/tmp
 ]])
+
+vim.g.ruby_host_prog = '~/.asdf/installs/ruby/3.0.0/bin/neovim-ruby-host'
+
