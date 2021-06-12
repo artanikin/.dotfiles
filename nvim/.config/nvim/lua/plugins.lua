@@ -77,4 +77,5 @@ return require("packer").startup(function(use)
     -- Colors
     use {"gruvbox-community/gruvbox"}
     use {"folke/tokyonight.nvim"}
+    use {"navarasu/onedark.nvim"}
 end)
