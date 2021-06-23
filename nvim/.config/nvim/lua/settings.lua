@@ -34,6 +34,7 @@ vim.o.sidescrolloff=5 			                --Minimal number of screen columns to k
 vim.o.foldlevel=10
 vim.o.ignorecase=true                       -- Ignoring case in a pattern
 vim.o.smartcase=true                        -- Override the 'ignorecase' option if the search pattern contains upper case chars
+vim.cmd('set textwidth=120')
 
 vim.cmd([[
 " Maintain undo history between sessions

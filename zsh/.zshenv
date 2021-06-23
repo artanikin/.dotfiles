@@ -10,6 +10,7 @@ export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/openjdk@11/include"
 export PATH="$PATH:$HOME/.cache/dein/repos/github.com/jez/vim-superman/bin"
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export TERM="screen-256color"
 

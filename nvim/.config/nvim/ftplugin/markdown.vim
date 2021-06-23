@@ -1,4 +1,4 @@
-setlocal spell spelllang=en_us,ru_ru
+setlocal spell spelllang=en_us,ru
 set textwidth=80
 
 " Open markdown file into MacDown app

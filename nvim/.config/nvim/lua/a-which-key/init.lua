@@ -67,5 +67,15 @@ wk.register({
     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
     o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File"}, -- additional options for creating the keymap
   },
+  b = {
+    name = "+buffer",
+    b = { "<cmd>Telescope buffers<cr>", "Find buffer"},
+    d = { ":bd<cr>", "Close current buffer" },
+    D = { ":%bd|e#<cr>", "Close all bufffers except current"}
+  },
+  r = {
+    name = "+rails",
+    a = { ":A<cr>", "Alternate file" }
+  }
 },
 { prefix = "<leader>" })

@@ -54,6 +54,7 @@ alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 # Docker
 alias dc='docker-compose'
 alias dcr='docker-compose run --rm'
+alias dls='docker container ls'
 
 # curl
 # usage postjson '{"key": "value"}' http://example.com/create_record

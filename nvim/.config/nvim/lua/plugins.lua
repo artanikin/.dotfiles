@@ -20,7 +20,6 @@ return require("packer").startup(function(use)
     use {"terrortylor/nvim-comment"}
     use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
     use {"elixir-editors/vim-elixir"}
-    use {"karb94/neoscroll.nvim"}
     use {"editorconfig/editorconfig-vim"}
     use {"windwp/nvim-autopairs"}
     use {"yamatsum/nvim-cursorline"}
@@ -42,6 +41,7 @@ return require("packer").startup(function(use)
     use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"} } -- Plugin for editing Ruby on Rails applications
     use {"tpope/vim-ragtag"} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
     use {"folke/todo-comments.nvim"}
+    use {'whatyouhide/vim-lengthmatters'}
 
     -- Telescope
     use {"nvim-lua/popup.nvim"}

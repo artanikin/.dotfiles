@@ -1,3 +1,7 @@
+local function full_filepath()
+  return vim.fn.fnamemodify(vim.fn.expand('%:p'), ":~:.")
+end
+
 require'lualine'.setup {
   options = {
     icons_enabled = true,
@@ -8,8 +12,8 @@ require'lualine'.setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
-    lualine_c = {"diff", "filename"},
+    lualine_b = {'branch', "diff"},
+    lualine_c = {full_filepath},
     lualine_x = {
       { "diagnostics", sources = {"nvim_lsp"} },
       'encoding',
