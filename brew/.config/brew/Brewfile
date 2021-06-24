@@ -40,6 +40,7 @@ brew 'gh'                                                 # CLI tool for GitHub
 brew 'git'                                                # VCM
 brew 'hub'                                                # I use hub browse
 brew 'git-delta'                                          # Diff tool for CLI
+brew 'gitui'                                              # UI for GIT
 
 cask 'alfred'
 cask 'suspicious-package'                                 # Inspecting Mac installer package
