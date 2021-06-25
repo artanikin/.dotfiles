@@ -26,6 +26,7 @@ brew 'jq'                                                 # CLI JSON processor
 brew 'tidy-html5'                                         # HTML tool
 brew 'stow'
 brew 'keka'
+brew 'hot'                                                # CPU tempreture monitoring
 
 # DB
 cask 'phinze/cask/dbeaver-community'
