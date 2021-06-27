@@ -12,10 +12,10 @@ setopt no_global_rcs
 zplug 'mafredri/zsh-async', from:'github', use:'async.zsh'
 zplug 'zsh-users/zsh-autosuggestions', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:3
-zplug 'plugins/osx', from:oh-my-zsh
 zplug 'zsh-users/zsh-completions', defer:3
-zplug 'wfxr/forgit'
 zplug 'jeffreytse/zsh-vi-mode'
+# zplug 'plugins/osx', from:oh-my-zsh
+# zplug 'wfxr/forgit'
 
 autoload -U compinit && compinit
 
@@ -23,12 +23,12 @@ for zsh_source in $HOME/.zsh/configs/*.zsh; do
   source $zsh_source
 done
 
-if ! zplug check --verbose; then
-printf "Install? [y/N]: "
-if read -q; then
-    echo; zplug install
-fi
-fi
+# if ! zplug check --verbose; then
+# printf "Install? [y/N]: "
+# if read -q; then
+    # echo; zplug install
+# fi
+# fi
 
 zplug load
 
@@ -38,15 +38,15 @@ zplug load
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-PATH="/Users/artyomanikin/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/artyomanikin/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/artyomanikin/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/artyomanikin/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/artyomanikin/perl5"; export PERL_MM_OPT;
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+# PATH="/Users/artyomanikin/perl5/bin${PATH:+:${PATH}}"; export PATH;
+# PERL5LIB="/Users/artyomanikin/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/Users/artyomanikin/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/Users/artyomanikin/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/Users/artyomanikin/perl5"; export PERL_MM_OPT;
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 . /usr/local/opt/asdf/asdf.sh
-. ~/.asdf/plugins/java/set-java-home.zsh
+# . ~/.asdf/plugins/java/set-java-home.zsh
 

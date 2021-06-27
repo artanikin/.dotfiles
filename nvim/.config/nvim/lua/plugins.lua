@@ -70,7 +70,7 @@ return require("packer").startup(function(use)
     use {"sindrets/diffview.nvim"}
 
     -- Treesitter
-    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use { "nvim-treesitter/nvim-treesitter" }
     use {"p00f/nvim-ts-rainbow"}
     use {"windwp/nvim-ts-autotag"}
 
