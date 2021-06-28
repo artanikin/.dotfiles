@@ -6,18 +6,18 @@
 -- vim.cmd('colorscheme gruvbox')
 
 -- Tokyonight
-vim.g.tokyonight_style = "night" -- "storm, night, light"
-vim.g.tokyonight_italic_functions = true
-vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
-vim.cmd[[colorscheme tokyonight]]
+-- vim.g.tokyonight_style = "night" -- "storm, night, light"
+-- vim.g.tokyonight_italic_functions = true
+-- vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+-- vim.cmd[[colorscheme tokyonight]]
 
 -- OneDark
--- vim.g.onedark_style = 'darker' -- darker, cool, deep, warm, warmer
--- vim.cmd[[colorscheme onedark]]
--- 
--- vim.cmd([[
---   augroup highlight_yank
---       autocmd!
---       autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
---   augroup END
--- ]])
+vim.g.onedark_style = 'darker' -- darker, cool, deep, warm, warmer
+vim.cmd[[colorscheme onedark]]
+
+vim.cmd([[
+  augroup highlight_yank
+      autocmd!
+      autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+  augroup END
+]])

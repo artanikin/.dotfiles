@@ -55,6 +55,7 @@ alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 alias dc='docker-compose'
 alias dcr='docker-compose run --rm'
 alias dls='docker container ls'
+alias lzd='lazydocker'
 
 # curl
 # usage postjson '{"key": "value"}' http://example.com/create_record
