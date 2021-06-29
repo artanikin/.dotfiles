@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 brew 'mas'                                                # CLI for the Mac App Store
 brew 'asdf'
-brew 'autojump'                                           # Make it easier to jump between directories
+brew 'z'                                                  # Make it easier to jump between directories
 brew 'ctags'
 brew 'dash'
 brew 'ffmpeg'
