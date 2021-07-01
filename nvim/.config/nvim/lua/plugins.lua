@@ -52,7 +52,7 @@ return require("packer").startup(function(use)
     -- LSP
     use {"neovim/nvim-lspconfig"}
     use {"kabouzeid/nvim-lspinstall"}
-    use {"simrat39/symbols-outline.nvim"}
+    --use {"simrat39/symbols-outline.nvim"}
     use {"hrsh7th/nvim-compe"}
     use {"glepnir/lspsaga.nvim"}
     use {"onsails/lspkind-nvim"}
