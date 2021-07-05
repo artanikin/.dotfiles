@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-  -- ensure_installed = { "css", "erlang", "go", "html", "javascript", "json", "lua", "python", "regex", "ruby", "vue", "yaml" },
+  ensure_installed = { "css", "erlang", "elixir", "go", "html", "javascript", "json", "lua", "python", "regex", "ruby", "vue", "yaml" },
   highlight = {
     enable = true -- false will disable the whole extension
   },

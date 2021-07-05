@@ -41,7 +41,10 @@ return require("packer").startup(function(use)
     use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"} } -- Plugin for editing Ruby on Rails applications
     use {"tpope/vim-ragtag"} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
     use {"folke/todo-comments.nvim"}
-    use {'whatyouhide/vim-lengthmatters'}
+    use {"whatyouhide/vim-lengthmatters"}
+    use {"moll/vim-bbye"}
+    use {"airblade/vim-rooter"}
+    use {"ludovicchabant/vim-gutentags"}
 
     -- Telescope
     use {"nvim-lua/popup.nvim"}
@@ -78,4 +81,5 @@ return require("packer").startup(function(use)
     use {"gruvbox-community/gruvbox"}
     use {"folke/tokyonight.nvim"}
     use {"navarasu/onedark.nvim"}
+    use {"shaunsingh/nord.nvim"}
 end)
