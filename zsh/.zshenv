@@ -39,3 +39,4 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 export ASDF_DIR="~/.asdf"
 export WEBPACK_RUN_METHOD=docker
+. "$HOME/.cargo/env"

@@ -44,7 +44,7 @@ return require("packer").startup(function(use)
     use {"whatyouhide/vim-lengthmatters"}
     use {"moll/vim-bbye"}
     use {"airblade/vim-rooter"}
-    use {"ludovicchabant/vim-gutentags"}
+    use {"kevinhwang91/nvim-bqf"}
 
     -- Telescope
     use {"nvim-lua/popup.nvim"}
@@ -55,7 +55,6 @@ return require("packer").startup(function(use)
     -- LSP
     use {"neovim/nvim-lspconfig"}
     use {"kabouzeid/nvim-lspinstall"}
-    --use {"simrat39/symbols-outline.nvim"}
     use {"hrsh7th/nvim-compe"}
     use {"glepnir/lspsaga.nvim"}
     use {"onsails/lspkind-nvim"}
@@ -81,5 +80,6 @@ return require("packer").startup(function(use)
     use {"gruvbox-community/gruvbox"}
     use {"folke/tokyonight.nvim"}
     use {"navarasu/onedark.nvim"}
-    use {"shaunsingh/nord.nvim"}
+    use {"yashguptaz/calvera-dark.nvim"}
+    use {"marko-cerovac/material.nvim"}
 end)

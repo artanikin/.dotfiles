@@ -5,5 +5,6 @@ require'lspconfig'.solargraph.setup{
   filetypes = { "ruby" },
   settings = {
     solargraph = { diagnostics = true }
-  }
+  },
+  flags = { debounce_text_changes = 150 }
 }

@@ -13,6 +13,8 @@ vim.cmd('nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>')
 vim.cmd('nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>')
 vim.cmd('nnoremap <silent> ca :Lspsaga code_action<CR>')
 vim.cmd('nnoremap <silent> K :Lspsaga hover_doc<CR>')
+vim.cmd('nnoremap <silent> rn <cmd>lua vim.lsp.buf.rename()<CR>')
+vim.cmd('nnoremap <space>q <cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
 -- vim.cmd('nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>')
 vim.cmd('nnoremap <silent> <C-p> :Lspsaga diagnostic_jump_prev<CR>')
 vim.cmd('nnoremap <silent> <C-n> :Lspsaga diagnostic_jump_next<CR>')
@@ -22,7 +24,7 @@ vim.cmd('nnoremap <silent> <C-f> <cmd>lua require(\'lspsaga.action\').smart_scro
 vim.cmd('nnoremap <silent> <C-b> <cmd>lua require(\'lspsaga.action\').smart_scroll_with_saga(-1)<CR>')
 vim.cmd('command! -nargs=0 LspVirtualTextToggle lua require("lsp/virtual_text").toggle()')
 
-local function documentHighlight(client, bufnr)
+local function documentHighlight(client, _bufnr)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec([[
