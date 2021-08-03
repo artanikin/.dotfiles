@@ -56,6 +56,25 @@ scrolling:
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
 
+font_hack: &font_hack
+  size: 14
+  normal:
+    family: Hack
+    style: Regular
+  bold:
+    family: Hack
+    style: Bold
+  italic:
+    family: Hack
+    style: Italic
+  offset:
+    x: 0
+    y: 6
+  glyph_offset:
+    x: 0
+    y: 3
+  use_thin_strokes: true
+
 font_pragmatapro: &font_pragmatapro
   size: 14
   normal:
@@ -153,11 +172,44 @@ font_dankmono: &font_dankmono
     y: 2
   use_thin_strokes: true
 
-font: *font_pragmatapro
+font: *font_hack
 
 # Should display the render timer
 debug:
   render_timer: false
+
+# gruvbox Alacritty Colors
+theme_gruvbox_flat: &theme_gruvbox_flat
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd4be98'
+
+  # Normal colors
+  normal:
+    black:   '0x1D2021'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    aqua:    '0x89b482'
+    white:   '0xd4be98'
+
+  # Bright colors
+  bright:
+    black:   '0x17191a'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    aqua:    '0x89b482'
+    white:   '0xd4be98'
+
+  indexed_colors:
+    - { index: 16, color: '0xe78a4e' }
+    - { index: 17, color: '0xc14a4a' }
 
 theme_material: &theme_material
   primary:
@@ -436,7 +488,7 @@ theme_lucius: &theme_lucius
     cyan:    '#87d7af'
     white:   '#d7d7d7'
 
-colors: *theme_lucius
+colors: *theme_gruvbox_flat
 
 # Visual Bell
 #
