@@ -26,7 +26,7 @@ window:
   # (change requires restart)
   padding:
     x: 5
-    y: 20
+    y: 30
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
@@ -76,7 +76,7 @@ font_hack: &font_hack
   use_thin_strokes: true
 
 font_pragmatapro: &font_pragmatapro
-  size: 14
+  size: 15
   normal:
     family: PragmataPro
     style: Regular
@@ -172,7 +172,7 @@ font_dankmono: &font_dankmono
     y: 2
   use_thin_strokes: true
 
-font: *font_hack
+font: *font_pragmatapro
 
 # Should display the render timer
 debug:
@@ -488,7 +488,7 @@ theme_lucius: &theme_lucius
     cyan:    '#87d7af'
     white:   '#d7d7d7'
 
-colors: *theme_gruvbox_flat
+colors: *theme_iceberg
 
 # Visual Bell
 #
