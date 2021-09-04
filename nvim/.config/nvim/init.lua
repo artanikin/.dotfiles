@@ -4,7 +4,6 @@ require("settings")
 require("keymappings")
 require("plugins")
 require("colors")
--- require("a-lualine")
 
 vim.cmd("source ~/.config/nvim/vimscripts/abbreviations.vim")
 vim.cmd("source ~/.config/nvim/vimscripts/functions.vim")

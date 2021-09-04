@@ -124,6 +124,13 @@ return require("packer").startup(function(use)
       }
     }
 
+    use {
+      "lukas-reineke/indent-blankline.nvim",
+      event = "BufRead",
+      config = function()
+        require("plugins.configs.others").blankline()
+      end,
+    }
 
     -- LSP
     -- use {"neovim/nvim-lspconfig"}
@@ -136,6 +143,85 @@ return require("packer").startup(function(use)
     -- -- use {"folke/lsp-colors.nvim"}
     -- use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
     -- -- use {"ray-x/lsp_signature.nvim"}
+    -- lsp stuff
+
+    use {
+      "kabouzeid/nvim-lspinstall",
+      opt = true,
+      setup = function()
+        require("core.utils").packer_lazy_load "nvim-lspinstall"
+        -- reload the current file so lsp actually starts for it
+        vim.defer_fn(function()
+          vim.cmd "silent! e %"
+        end, 0)
+      end,
+    }
+
+    use {
+      "neovim/nvim-lspconfig",
+      after = "nvim-lspinstall",
+      config = function()
+        require "plugins.configs.lspconfig"
+      end,
+    }
+
+    use {
+      "ray-x/lsp_signature.nvim",
+      after = "nvim-lspconfig",
+      config = function()
+        require("plugins.configs.others").signature()
+      end,
+    }
+
+    use {
+      "andymass/vim-matchup",
+      opt = true,
+      setup = function()
+        require("core.utils").packer_lazy_load "vim-matchup"
+      end,
+    }
+
+    use {
+      "hrsh7th/nvim-cmp",
+      event = "InsertEnter",
+      config = function()
+        require "plugins.configs.cmp"
+      end,
+    }
+
+    use {
+      "L3MON4D3/LuaSnip",
+      wants = "friendly-snippets",
+      after = "nvim-cmp",
+      config = function()
+        require("plugins.configs.others").luasnip()
+      end,
+    }
+
+    use {
+      "saadparwaiz1/cmp_luasnip",
+      after = "LuaSnip",
+    }
+
+    use {
+      "hrsh7th/cmp-nvim-lua",
+      after = "cmp_luasnip",
+    }
+
+    use {
+      "hrsh7th/cmp-nvim-lsp",
+      after = "cmp-nvim-lua",
+    }
+
+    use {
+      "hrsh7th/cmp-buffer",
+      after = "cmp-nvim-lsp",
+    }
+
+    use {
+      "rafamadriz/friendly-snippets",
+      after = "cmp-buffer",
+    }
 
     -- Git
     use {
