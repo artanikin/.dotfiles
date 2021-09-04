@@ -20,6 +20,7 @@ brew 'yarn'                                               # Frontend package man
 brew 'bat'                                                # Replace for cat
 brew 'ripgrep'                                            # Better search
 brew 'lsd'                                                # Replace for ls
+brew 'exa'                                                # Replace for ls
 brew 'vifm'                                               # Prefered filemanager
 brew 'moreutils'                                          # Usefull utils
 brew 'jq'                                                 # CLI JSON processor
@@ -27,6 +28,7 @@ brew 'tidy-html5'                                         # HTML tool
 brew 'stow'
 brew 'keka'
 brew 'hot'                                                # CPU tempreture monitoring
+brew 'broot'
 
 # DB
 cask 'phinze/cask/dbeaver-community'
