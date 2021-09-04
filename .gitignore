@@ -2,6 +2,7 @@
 AppSupport
 nvim/.config/nvim/plugin
 nvim/.config/nvim/spell
+nvim/.config/nvim/vimscripts/gitlab.vim
 vifm/.config/vifm/vifminfo.json
 
 .netrwhist
@@ -12,3 +13,4 @@ pgcli/.config/pgcli/log
 vifm/.config/vifm/vifminfo
 vifm/.config/vifm/vifminfo.json
 tags
+
