@@ -5,6 +5,3 @@ export DEFAULT_USER='artyomanikin'
 
 # For add to $PATH from /etc/paths.d
 eval `/usr/libexec/path_helper -s`
-
-setopt auto_cd
-cdpath=($HOME/projects)

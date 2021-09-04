@@ -1,56 +1,60 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-source ~/.zplug/init.zsh
-setopt combiningchars
-setopt no_global_rcs
-
-zplug 'mafredri/zsh-async', from:'github', use:'async.zsh'
-zplug 'zsh-users/zsh-autosuggestions', defer:3
-zplug 'zsh-users/zsh-syntax-highlighting', defer:3
-zplug 'zsh-users/zsh-completions', defer:3
-zplug 'jeffreytse/zsh-vi-mode'
-# zplug 'plugins/osx', from:oh-my-zsh
-# zplug 'wfxr/forgit'
-
-autoload -U compinit && compinit
-
+# load configs
 for zsh_source in $HOME/.zsh/configs/*.zsh; do
   source $zsh_source
 done
 
-# if ! zplug check --verbose; then
-# printf "Install? [y/N]: "
-# if read -q; then
-    # echo; zplug install
-# fi
-# fi
+# some useful options (man zshoptions)
+setopt autocd extendedglob nomatch menucomplete
+setopt interactive_comments
+stty stop undef		# Disable ctrl-s to freeze terminal.
+zle_highlight=('paste:none')
 
-zplug load
+# beeping is annoying
+unsetopt BEEP
 
+
+# completions
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+# compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+# Colors
+autoload -Uz colors && colors
+
+# Plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+zsh_add_plugin "hlissner/zsh-autopair"
+zsh_add_plugin "romkatv/powerlevel10k"
+# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
+# More completions https://github.com/zsh-users/zsh-completions
+
+# FZF
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f $LOCAL_ZDOTDIR/completion/_man ] && fpath+="$LOCAL_ZDOTDIR/completion/"
+compinit
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+# bindkey '^e' edit-command-line
 
-# PATH="/Users/artyomanikin/perl5/bin${PATH:+:${PATH}}"; export PATH;
-# PERL5LIB="/Users/artyomanikin/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-# PERL_LOCAL_LIB_ROOT="/Users/artyomanikin/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-# PERL_MB_OPT="--install_base \"/Users/artyomanikin/perl5\""; export PERL_MB_OPT;
-# PERL_MM_OPT="INSTALL_BASE=/Users/artyomanikin/perl5"; export PERL_MM_OPT;
-# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+# load broot
+source /Users/artyomanikin/.config/broot/launcher/bash/br
 
-# eval $(thefuck --alias)
-
-. /usr/local/opt/asdf/asdf.sh
-# . ~/.asdf/plugins/java/set-java-home.zsh
-
+# load brew
 if command -v brew >/dev/null 2>&1; then
 	# Load rupa's z if installed
 	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 fi
+
+# load asdf
+. /usr/local/opt/asdf/asdf.sh

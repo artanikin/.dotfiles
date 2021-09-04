@@ -12,7 +12,12 @@ export PATH="$PATH:$HOME/.cache/dein/repos/github.com/jez/vim-superman/bin"
 export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-export TERM="screen-256color"
+export LOCAL_CONFIG_HOME=$HOME/.config
+export LOCAL_CACHE_HOME=$HOME/.cache
+export LOCAL_DATA_HOME=$HOME/.local/share
+export LOCAL_ZDOTDIR=$HOME/.zsh
+
+export TERM="xterm-256color-italic"
 
 export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
 export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
@@ -38,5 +43,4 @@ export COMPOSE_HTTP_TIMEOUT=120
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 export ASDF_DIR="~/.asdf"
-export WEBPACK_RUN_METHOD=docker
 . "$HOME/.cargo/env"

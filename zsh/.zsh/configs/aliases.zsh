@@ -5,7 +5,7 @@ alias scp="scp -r"
 alias rm="rm -ivr"
 alias mv="mv -iv"
 alias mkdir="mkdir -p"
-alias ls="lsd -l --icon never"
+alias ls="exa -l --icons"
 alias ll="ls"
 alias lsa="ls -a"
 alias dotfiles="cd ~/.dotfiles"
@@ -19,7 +19,7 @@ alias mux="tmuxinator"
 alias tnew="tmux new -s `basename $PWD`"
 alias vim="nvim"
 alias v="vim"
-alias vi="nvim --noplugin -u ~/.config/nvim/minimal.vim"
+alias vi="nvim --noplugin" # -u ~/.config/nvim/minimal.vim"
 alias reload!="source ~/.zshrc"
 alias gcob='git checkout $(git branch | fzf)'
 alias gconf="git ls-files -u | awk '{print $4}' | sort -u | xargs -o nvim"
@@ -55,6 +55,8 @@ alias zshconfig="vim ~/.zshrc && source ~/.zshrc"
 alias dc='docker-compose'
 alias dcr='docker-compose run --rm'
 alias dls='docker container ls'
+alias dlog='docker container logs '
+alias dlogf='docker container logs -f '
 alias lzd='lazydocker'
 
 # curl
@@ -62,3 +64,7 @@ alias lzd='lazydocker'
 alias postjson='curl -i -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '
 # usage postjson http://example.com/record/1
 alias getjson='curl -i -H "Accept: application/json" -H "Content-Type: application/json"'
+
+# switch between light and dark themes
+alias ol="tmux source-file ~/.tmux/themes/tmux_light.conf; tmux set-environment THEME 'light'"
+alias od="tmux source-file ~/.tmux/themes/tmux_dark.conf; tmux set-environment THEME 'dark'"
