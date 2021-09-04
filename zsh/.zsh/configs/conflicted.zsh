@@ -1,3 +1,0 @@
-conflicted() {
-  vim +Conflicted
-}
