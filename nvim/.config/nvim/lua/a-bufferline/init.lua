@@ -11,7 +11,7 @@ options = {
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 18,
     diagnostics = "nvim_lsp",
-    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+    diagnostics_indicator = function(count, _level, _diagnostics_dict, _context)
       return "("..count..")"
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
@@ -38,7 +38,7 @@ options = {
     persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
     -- can also be a table containing 2 custom separators
     -- [focused and unfocused]. eg: { '|', '|' }
-    separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' }
+    separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' }
     enforce_regular_tabs = false,
     always_show_bufferline = true,
     -- 'extension' | 'relative_directory' | 'directory'
@@ -46,6 +46,13 @@ options = {
     --   -- add custom logic
     --   return buffer_a.modified > buffer_b.modified
     -- end
+  },
+  highlights = {
+    buffer_selected = {
+      guifg = normal_fg,
+      guibg = '<color-value-here>',
+      gui = "bold"
+    },
   }
 }
 

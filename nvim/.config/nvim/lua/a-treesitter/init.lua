@@ -1,15 +1,27 @@
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "css", "erlang", "elixir", "go", "html", "javascript", "json", "lua", "python", "regex", "ruby", "vue", "yaml" },
+local present, ts_config = pcall(require, "nvim-treesitter.configs")
+if not present then
+   return
+end
+
+ts_config.setup {
+  ensure_installed = {
+    "html",
+    "css",
+    "javascript",
+    "lua",
+    "ruby",
+    "regex",
+    "json",
+    "yaml"
+  },
   highlight = {
-    enable = true -- false will disable the whole extension
-  },
-  playground = {
     enable = true,
-    disable = {},
-    updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-    persist_queries = false -- Whether the query persists across vim sessions
+    use_languagetree = true
   },
-  autotag = {enable = true},
+  indent = {
+    enable = true
+  },
+  -- autotag = {enable = true},
   rainbow = {
     enable = true,
     extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean

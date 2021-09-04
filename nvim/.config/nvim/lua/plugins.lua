@@ -8,78 +8,179 @@ if fn.empty(fn.glob(install_path)) > 0 then
   execute "packadd packer.nvim"
 end
 
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+-- vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
 
 return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
-    use {"wbthomason/packer.nvim"}
-    use {"christoomey/vim-tmux-navigator"}
-    use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
-    use {"norcalli/nvim-colorizer.lua"}
-    use {"hoob3rt/lualine.nvim"}
-    use {"terrortylor/nvim-comment"}
-    use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
-    use {"elixir-editors/vim-elixir"}
-    use {"editorconfig/editorconfig-vim"}
-    use {"windwp/nvim-autopairs"}
-    use {"yamatsum/nvim-cursorline"}
-    use {"unblevable/quick-scope"}
-    use {"hrsh7th/vim-vsnip"}
-    use {"mattn/emmet-vim"}
-    use {"rafamadriz/friendly-snippets"}
-    use {"kyazdani42/nvim-tree.lua"}
-    use {"folke/which-key.nvim"}
-    use {"tpope/vim-rsi"}
-    use {"tpope/vim-endwise"}
-    use {"machakann/vim-sandwich"}
-    use {"mhinz/vim-startify"}
-    use {"rhysd/conflict-marker.vim"}
-    use {"vim-ruby/vim-ruby"}
-    use {"janko/vim-test", requires = "benmills/vimux"} -- Run tests
-    use {"dyng/ctrlsf.vim", cmd = "CtrlSF"}
-    use {"jez/vim-superman"}
-    use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"} } -- Plugin for editing Ruby on Rails applications
-    use {"tpope/vim-ragtag"} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
-    use {"folke/todo-comments.nvim"}
-    use {"whatyouhide/vim-lengthmatters"}
-    use {"moll/vim-bbye"}
-    use {"airblade/vim-rooter"}
-    use {"kevinhwang91/nvim-bqf"}
+    use {
+      "wbthomason/packer.nvim"
+    }
 
-    -- Telescope
-    use {"nvim-lua/popup.nvim"}
+    -- Speedup neovim
+    vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
+    use {'lewis6991/impatient.nvim', rocks = 'mpack'}
+
+    use {"christoomey/vim-tmux-navigator"}
+    -- use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
+    -- use {
+    --   "norcalli/nvim-colorizer.lua",
+    --   event = "BufRead",
+    --   config = function()
+    --      require("a-colorizer")
+    --   end
+    -- }
+    use {
+      "hoob3rt/lualine.nvim",
+      event = "VimEnter",
+      config = function()
+        require("a-lualine")
+      end
+    }
+
+    use {
+      "terrortylor/nvim-comment",
+      cmd = "CommentToggle",
+      config = function()
+        require("a-comment")
+      end,
+      setup = function()
+         require("core.mappings").comment()
+      end
+    }
+
+    use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
+    use {"editorconfig/editorconfig-vim", event = "BufRead"}
+    use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+        require("a-autopairs")
+      end
+    }
+    -- use {"yamatsum/nvim-cursorline"}
+    -- use {"unblevable/quick-scope"}
+    -- use {"hrsh7th/vim-vsnip"}
+    -- use {"mattn/emmet-vim"}
+    -- use {"rafamadriz/friendly-snippets"}
+    use {
+      "kyazdani42/nvim-tree.lua",
+      cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+      config = function()
+        require("a-nvimtree")
+      end,
+      setup = function()
+        require("core.mappings").nvimtree()
+      end,
+    }
+
+    use {
+      "kyazdani42/nvim-web-devicons",
+    }
+
+    -- use {"tpope/vim-rsi"}
+    -- use {"tpope/vim-endwise"}
+    -- use {"tpope/vim-abolish"}
+    use {"machakann/vim-sandwich", event = "BufRead"}
+    use {
+      "mhinz/vim-startify",
+      config = function()
+        vim.g.startify_disable_at_vimenter = false
+      end,
+    }
+    -- use {"rhysd/conflict-marker.vim"}
+    use {"vim-ruby/vim-ruby", ft = {"ruby", "eruby", "haml", "slim"}}
+    -- use {"janko/vim-test", requires = "benmills/vimux"} -- Run tests
+    use {"dyng/ctrlsf.vim", cmd = "CtrlSF"}
+    use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"}} -- Plugin for editing Ruby on Rails applications
+    use {"tpope/vim-ragtag", ft = {"eruby", "html", "slim"}} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
+    use {
+      "kevinhwang91/nvim-bqf",
+      event = "VimEnter",
+      config = function()
+        require("a-nvim-bqf")
+      end
+    }
     use {"nvim-lua/plenary.nvim"}
-    use {"nvim-telescope/telescope.nvim"}
-    use {"nvim-telescope/telescope-fzy-native.nvim"}
+    use {"hashivim/vim-terraform", ft = {"terraform"}}
+
+    use {
+      "junegunn/fzf.vim",
+      requires = { "junegunn/fzf" },
+      cmd = {
+        "Files",
+        "GFiles",
+        "GFiles?",
+        "Buffers",
+        "Colors",
+        "Ag",
+        "Rg",
+        "Lines",
+        "BLines",
+        "Tags",
+        "BTags",
+        "History",
+        "Marks",
+        "Helptags"
+      }
+    }
+
 
     -- LSP
-    use {"neovim/nvim-lspconfig"}
-    use {"kabouzeid/nvim-lspinstall"}
-    use {"hrsh7th/nvim-compe"}
-    use {"glepnir/lspsaga.nvim"}
-    use {"onsails/lspkind-nvim"}
-    use {"kosayoda/nvim-lightbulb"}
-    use {"wellle/tmux-complete.vim"}
-    use {"folke/lsp-colors.nvim"}
-    use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
-    use {"ray-x/lsp_signature.nvim"}
+    -- use {"neovim/nvim-lspconfig"}
+    -- use {"kabouzeid/nvim-lspinstall"}
+    -- use {"hrsh7th/nvim-compe"}
+    -- use {"glepnir/lspsaga.nvim"}
+    -- -- use {"onsails/lspkind-nvim"}
+    -- -- use {"kosayoda/nvim-lightbulb"}
+    -- -- use {"wellle/tmux-complete.vim"}
+    -- -- use {"folke/lsp-colors.nvim"}
+    -- use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
+    -- -- use {"ray-x/lsp_signature.nvim"}
 
     -- Git
-    use {"lewis6991/gitsigns.nvim"}
-    use {"f-person/git-blame.nvim"}
-    use {"tpope/vim-fugitive"}
-    use {"tpope/vim-rhubarb"}
-    use {"sindrets/diffview.nvim"}
+    use {
+      "lewis6991/gitsigns.nvim",
+      config = function()
+        require("a-gitsigns")
+      end,
+      setup = function()
+        require("core.utils").packer_lazy_load "gitsigns.nvim"
+      end,
+    }
+    use {
+      "tpope/vim-fugitive",
+      cmd = {
+        "Git",
+        "Gdiff",
+        "Gdiffsplit",
+        "Gvdiffsplit",
+        "Gwrite",
+        "Gw",
+        "Gdelete",
+        "Gd",
+        "Gmove",
+      },
+      setup = function()
+        require("core.mappings").vim_fugitive()
+      end,
+    }
 
     -- Treesitter
-    use { "nvim-treesitter/nvim-treesitter" }
-    use {"p00f/nvim-ts-rainbow"}
-    use {"windwp/nvim-ts-autotag"}
+    use {
+      "nvim-treesitter/nvim-treesitter",
+      event = "BufRead",
+      config = function()
+        require "a-treesitter"
+      end
+    }
 
     -- Colors
-    use {"gruvbox-community/gruvbox"}
-    use {"folke/tokyonight.nvim"}
-    use {"navarasu/onedark.nvim"}
-    use {"yashguptaz/calvera-dark.nvim"}
-    use {"marko-cerovac/material.nvim"}
+    use {"rafamadriz/neon"}
+    -- use {"eddyekofo94/gruvbox-flat.nvim"}
+    -- use {"folke/tokyonight.nvim"}
+    -- use {"navarasu/onedark.nvim"}
+    -- use {"shaunsingh/nord.nvim"}
+    -- use {"marko-cerovac/material.nvim"}
+    -- use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
+    -- use {"projekt0n/github-nvim-theme"}
 end)

@@ -5,6 +5,11 @@ require('gitsigns').setup {
     delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
     topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
     changedelete = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    -- add = { hl = "DiffAdd", text = "▎", numhl = "GitSignsAddNr" },
+    -- change = { hl = "DiffChange", text = "▎", numhl = "GitSignsChangeNr" },
+    -- delete = { hl = "DiffDelete", text = "_", numhl = "GitSignsDeleteNr" },
+    -- topdelete = { hl = "DiffDelete", text = "‾", numhl = "GitSignsDeleteNr" },
+    -- changedelete = { hl = "DiffChange", text = "▎", numhl = "GitSignsChangeNr" },
   },
   numhl = false,
   linehl = false,
@@ -28,11 +33,21 @@ require('gitsigns').setup {
     ['x ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>'
   },
   watch_index = {
-    interval = 1000
+    interval = 1000,
+    follow_files = true
+  },
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = 'eol',
+    delay = 1000
   },
   sign_priority = 6,
   update_debounce = 200,
   status_formatter = nil, -- Use default
-  use_decoration_api = true,
+  word_diff = false,
   use_internal_diff = true,  -- If luajit is present
 }
+
+vim.cmd([[
+  highlight SignColumn guibg=NONE
+]])

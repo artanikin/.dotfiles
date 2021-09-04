@@ -21,7 +21,7 @@ vim.bo.smartindent=true                     --Makes indenting smart
 vim.wo.number=true
 vim.wo.relativenumber=true
 vim.wo.cursorline=true                      --Enable highlighting of the current line
-vim.o.showtabline=2                         --Always show tabs
+-- vim.o.showtabline=2                         --Always show tabs
 vim.o.showmode=false                        --We don't need to see things like -- INSERT -- anymore
 vim.o.backup=false
 vim.o.writebackup=false
@@ -35,6 +35,7 @@ vim.o.foldlevel=10
 vim.o.ignorecase=true                       -- Ignoring case in a pattern
 vim.o.smartcase=true                        -- Override the 'ignorecase' option if the search pattern contains upper case chars
 vim.cmd('set textwidth=120')
+vim.cmd('set colorcolumn=101')
 
 vim.cmd([[
 " Maintain undo history between sessions

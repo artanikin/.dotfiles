@@ -2,10 +2,10 @@ local function full_filepath()
   return vim.fn.fnamemodify(vim.fn.expand('%:p'), ":~:.")
 end
 
-require'lualine'.setup {
+require'lualine'.setup({
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
+    theme = 'neon', -- oceanicnext
     component_separators = {'', ''},
     section_separators = {'', ''},
     disabled_filetypes = {}
@@ -33,4 +33,4 @@ require'lualine'.setup {
   },
   tabline = {},
   extensions = {"fugitive"}
-}
+})

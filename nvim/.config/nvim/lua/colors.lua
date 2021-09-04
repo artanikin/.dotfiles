@@ -1,23 +1,106 @@
 -- Gruvbox
-vim.g.gruvbox_invert_selection=0
-vim.g.gruvbox_italic=1
-vim.g.gruvbox_contrast_dark="hard" -- hard, medium, soft
-vim.g.gruvbox_sign_column="bg0"
-vim.cmd('colorscheme gruvbox')
+-- vim.g.gruvbox_invert_selection=0
+-- vim.g.gruvbox_italic=1
+-- vim.g.gruvbox_contrast_dark="hard" -- hard, medium, soft
+-- vim.g.gruvbox_sign_column="bg0"
+-- vim.cmd('colorscheme gruvbox')
 
 -- Tokyonight
--- vim.g.tokyonight_style = "night" -- "storm, night, light"
+-- vim.g.tokyonight_style = "day" -- "storm, night, day"
+-- vim.g.tokyonight_italic_comments = true
+-- vim.g.tokyonight_italic_keywords = true
 -- vim.g.tokyonight_italic_functions = true
 -- vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 -- vim.cmd[[colorscheme tokyonight]]
 
+-- Synthwave84
+-- vim.g.synthwave84_style = "day" -- "storm, night, day"
+-- vim.g.synthwave84_italic_comments = true
+-- vim.g.synthwave84_italic_keywords = true
+-- vim.g.synthwave84_italic_functions = true
+-- vim.g.synthwave84_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+-- vim.cmd[[colorscheme synthwave84]]
+
 -- OneDark
--- vim.g.onedark_style = 'darker' -- darker, cool, deep, warm, warmer
+-- vim.g.onedark_style = 'darker' -- dark, darker, cool, deep, warm, warmer
 -- vim.cmd[[colorscheme onedark]]
+
+-- Neon
+vim.g.neon_style = "doom" -- default, doom, dark and light
+vim.g.neon_italic_keyword = true
+vim.g.neon_italic_function = true
+vim.g.neon_transparent = true
+vim.cmd[[colorscheme neon]]
+
+-- Codeschool
+-- require('codeschool').setup({
+--   plugins = {
+--     "buftabline",
+--     "gitsigns",
+--     "lsp",
+--     "lspsaga",
+--     "nvimtree",
+--     "startify",
+--     "telescope",
+--     "treesitter"
+--   },
+--   langs = {
+--     "c",
+--     "clojure",
+--     "coffeescript",
+--     "csharp",
+--     "css",
+--     "elixir",
+--     "golang",
+--     "haskell",
+--     "html",
+--     "java",
+--     "js",
+--     "json",
+--     "jsx",
+--     "lua",
+--     "markdown",
+--     "moonscript",
+--     "objc",
+--     "ocaml",
+--     "purescript",
+--     "python",
+--     "ruby",
+--     "rust",
+--     "scala",
+--     "typescript",
+--     "viml",
+--     "xml"
+--   }
+-- })
+-- vim.g.codeschool_contrast_dark = "medium" -- soft, medium
+-- vim.cmd('colorscheme codeschool')
+
+-- Grubbox flat
+-- vim.g.gruvbox_dark_float = true
+-- vim.g.gruvbox_dark_sidebar = true
+-- vim.g.gruvbox_italic_comments = true
+-- vim.g.gruvbox_italic_functions = true
+-- vim.g.gruvbox_flat_style = "dark" -- dark, hard
+-- vim.cmd('colorscheme gruvbox-flat')
+
+-- Github
+-- require('github-theme').setup({
+--   themeStyle = "light", -- dark, dimmed, light
+--   functionStyle = "italic",
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+-- })
+
+-- require("github-theme").setup({
+--   commentStyle = "italic",
+--   keywordStyle = "italic",
+--   functionStyle = "italic",
+--   variableStyle = "italic"
+-- })
 
 vim.cmd([[
   augroup highlight_yank
       autocmd!
-      autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+      autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 80})
   augroup END
 ]])
