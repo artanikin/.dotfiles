@@ -21,6 +21,7 @@ return require("packer").startup(function(use)
     use {'lewis6991/impatient.nvim', rocks = 'mpack'}
 
     use {"christoomey/vim-tmux-navigator"}
+
     -- use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
     -- use {
     --   "norcalli/nvim-colorizer.lua",
@@ -133,18 +134,6 @@ return require("packer").startup(function(use)
     }
 
     -- LSP
-    -- use {"neovim/nvim-lspconfig"}
-    -- use {"kabouzeid/nvim-lspinstall"}
-    -- use {"hrsh7th/nvim-compe"}
-    -- use {"glepnir/lspsaga.nvim"}
-    -- -- use {"onsails/lspkind-nvim"}
-    -- -- use {"kosayoda/nvim-lightbulb"}
-    -- -- use {"wellle/tmux-complete.vim"}
-    -- -- use {"folke/lsp-colors.nvim"}
-    -- use {"folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons"}
-    -- -- use {"ray-x/lsp_signature.nvim"}
-    -- lsp stuff
-
     use {
       "kabouzeid/nvim-lspinstall",
       opt = true,
