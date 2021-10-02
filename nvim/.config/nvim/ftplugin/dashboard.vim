@@ -1,3 +1,4 @@
+nnoremap <buffer> f :Files<CR>
 nnoremap <buffer> o :History<CR>
 nnoremap <buffer> w :Rg<CR>
 nnoremap <buffer> n :DashboardNewFile<CR>
