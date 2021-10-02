@@ -1,8 +1,8 @@
 [init]
   #  templatedir = ~/.git_template
 [user]
-  name = Anikin Artyom
-  email = anikinartyom@gmail.com
+	name = Anikin Artem
+	email = anikinartyom@gmail.com
 [color]
   diff = auto
   status = auto

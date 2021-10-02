@@ -17,7 +17,7 @@ export LOCAL_CACHE_HOME=$HOME/.cache
 export LOCAL_DATA_HOME=$HOME/.local/share
 export LOCAL_ZDOTDIR=$HOME/.zsh
 
-export TERM="xterm-256color-italic"
+# export TERM="xterm-256color-italic"
 
 export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
 export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
@@ -44,3 +44,11 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 export ASDF_DIR="~/.asdf"
 . "$HOME/.cargo/env"
+
+export FZF_DEFAULT_COMMAND='fd --type f --color=never'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND='fd --type d . --color=never'
+export FZF_DEFAULT_OPTS='
+  --height 75% --multi --reverse
+  --bind ctrl-f:page-down,ctrl-b:page-up
+'

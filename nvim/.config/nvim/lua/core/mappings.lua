@@ -6,8 +6,6 @@ local map = utils.map
 local maps = config.mappings
 local plugin_maps = maps.plugin
 
-local cmd = vim.cmd
-
 local M = {}
 
 M.nvimtree = function()
@@ -34,6 +32,16 @@ M.vim_fugitive = function()
    map("n", m.git_blame, ":Git blame <CR>")
    map("n", m.diff_get_2, ":diffget //2 <CR>")
    map("n", m.diff_get_3, ":diffget //3 <CR>")
+end
+
+M.dashboard = function()
+   local m = plugin_maps.dashboard
+
+   map("n", m.bookmarks, ":DashboardJumpMarks <CR>")
+   map("n", m.new_file, ":DashboardNewFile <CR>")
+   map("n", m.open, ":Dashboard <CR>")
+   map("n", m.session_load, ":SessionLoad <CR>")
+   map("n", m.session_save, ":SessionSave <CR>")
 end
 
 return M

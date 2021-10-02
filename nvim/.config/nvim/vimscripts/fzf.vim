@@ -41,9 +41,9 @@ let g:fzf_action = {
 " " Preview window options
 " let g:fzf_preview_window = ['right:50%:nowrap']
 
-nnoremap <silent> <Leader>ff :GFiles<CR>
-nnoremap <silent> <Leader>fu :GFiles?<CR>
-nnoremap <silent> <Leader>fg :Rg<CR>
+nnoremap <silent> <Leader>ff :Files<CR>
+nnoremap <silent> <Leader>fg :GFiles?<CR>
+nnoremap <silent> <Leader>fw :Rg<CR>
 nnoremap <silent> <leader>fo :History<cr>
 nnoremap <silent> <leader>fl :Lines<cr>
 nnoremap <silent> <Leader>fb :Buffers<CR>

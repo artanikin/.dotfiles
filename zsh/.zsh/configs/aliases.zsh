@@ -14,7 +14,8 @@ alias sed="sed -E"
 alias grep="rg"
 alias -g G="| rg "
 alias server="python -m SimpleHTTPServer 8000"
-alias tmux="tmux -2"
+# alias tmux="tmux -2"
+alias tmux="TERM=xterm-256color tmux"
 alias mux="tmuxinator"
 alias tnew="tmux new -s `basename $PWD`"
 alias vim="nvim"
@@ -58,6 +59,11 @@ alias dls='docker container ls'
 alias dlog='docker container logs '
 alias dlogf='docker container logs -f '
 alias lzd='lazydocker'
+alias stf9='kubectl exec -n s-sb-stf9 -i -t -c puma $(kubectl get pods -n s-sb-stf9 | grep app-sbermarket) -- /bin/bash'
+alias shp9='kubectl exec -n s-sh-shp9 -i -t -c puma $(kubectl get pods -n s-sh-shp9 | grep shopper-backend) -- /bin/bash'
+
+# Kubernetes
+alias k='kubectl'
 
 # curl
 # usage postjson '{"key": "value"}' http://example.com/create_record
@@ -65,6 +71,34 @@ alias postjson='curl -i -H "Accept: application/json" -H "Content-Type: applicat
 # usage postjson http://example.com/record/1
 alias getjson='curl -i -H "Accept: application/json" -H "Content-Type: application/json"'
 
-# switch between light and dark themes
-alias ol="tmux source-file ~/.tmux/themes/tmux_light.conf; tmux set-environment THEME 'light'"
-alias od="tmux source-file ~/.tmux/themes/tmux_dark.conf; tmux set-environment THEME 'dark'"
+fzf_find_edit() {
+    local file=$(
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
+          --preview 'bat --color=always --line-range :500 {}'
+      )
+    if [[ -n $file ]]; then
+        $EDITOR "$file"
+    fi
+}
+
+alias ffe='fzf_find_edit'
+
+fzf_kube_connect() {
+  # local name_template = '{{ range .items }}{{ printf "%s\n" .metadata.name }}{{ end }}'
+  local selected_namespace = $(
+    kubectl get namespaces -o go-template \
+      --template='{{ range .items }}{{ printf "%s\n" .metadata.name }}{{ end }}' | \
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
+          --preview 'bat --color=always --line-range :500 {}'
+  )
+
+  echo "$selected_namespace"
+  # local selected_pod  = $(
+  #   kubectl get pods -n $selected_namespace -o go-template \
+  #     --template='{{ range .items }}{{ printf "%s\n" .metadata.name }}{{ end }}' | \
+  #     fzf --no-multi --select-1 --exit-0
+  # )
+  # return
+}
+
+alias fkc='fzf_kube_connect'

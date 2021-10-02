@@ -30,8 +30,16 @@ vim.api.nvim_set_keymap('n', '<Leader><Leader>', '<C-^>', { noremap = true, sile
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true, silent = true})
 
 -- better moving to the wrapping line
-vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true})
+vim.cmd([[
+nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
+nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
+]])
+
+-- Redirect change operations to the blackhole
+vim.api.nvim_set_keymap('n', 'c', '"_c', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'C', '"_C', { noremap = true, silent = true })
 
 -- window splitting
 vim.api.nvim_set_keymap('n', 'ss', ':split<CR>', { noremap = true, silent = true})
@@ -48,3 +56,6 @@ vim.api.nvim_set_keymap('v', '<C-r>', '"hy:%Subvert/<C-r>h//gc<left><left><left>
 -- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"', { noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('n', '<Leader>p', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+-- puts the caller
+vim.api.nvim_set_keymap('n', '<Leader>wtf', "oputs '#' * 90<c-m>puts caller<c-m>puts '#' * 90<esc>Kviw", { noremap = true, silent = true })

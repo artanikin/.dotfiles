@@ -36,7 +36,7 @@ local function on_attach(_, bufnr)
    buf_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
    buf_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
    buf_set_keymap("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+   buf_set_keymap("n", "<space>F", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
    buf_set_keymap("v", "<space>ca", "<cmd>lua vim.lsp.buf.range_code_action()<CR>", opts)
 end
 
@@ -57,6 +57,36 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
    },
 }
 
+function goimports(timeout_ms)
+    local context = { only = { "source.organizeImports" } }
+    vim.validate { context = { context, "t", true } }
+
+    local params = vim.lsp.util.make_range_params()
+    params.context = context
+
+    -- See the implementation of the textDocument/codeAction callback
+    -- (lua/vim/lsp/handler.lua) for how to do this properly.
+    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
+    if not result or next(result) == nil then return end
+    local actions = result[1].result
+    if not actions then return end
+    local action = actions[1]
+
+    -- textDocument/codeAction can return either Command[] or CodeAction[]. If it
+    -- is a CodeAction, it can have either an edit, a command or both. Edits
+    -- should be executed first.
+    if action.edit or type(action.command) == "table" then
+      if action.edit then
+        vim.lsp.util.apply_workspace_edit(action.edit)
+      end
+      if type(action.command) == "table" then
+        vim.lsp.buf.execute_command(action.command)
+      end
+    else
+      vim.lsp.buf.execute_command(action)
+    end
+end
+
 -- lspInstall + lspconfig stuff
 
 local function setup_servers()
@@ -64,17 +94,28 @@ local function setup_servers()
    local servers = lspinstall.installed_servers()
 
    for _, lang in pairs(servers) do
-      if lang ~= "lua" and lang ~= "typescript" then
-         lspconfig[lang].setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-            flags = {
-               debounce_text_changes = 500,
-            },
-            -- root_dir = vim.loop.cwd,
-         }
-      elseif lang == "typescript" then
-        require("lsp." .. lang)
+      if lang == "typescript" then
+        -- require("lsp." .. lang)
+        require'lspconfig'.tsserver.setup {
+          cmd = {vim.fn.stdpath("data") .. "/lspinstall/typescript/node_modules/.bin/typescript-language-server", "--stdio"},
+          filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+          -- on_attach = require'lsp'.tsserver_on_attach,
+          on_attach = on_attach,
+          capabilities = capabilities,
+          root_dir = require('lspconfig/util').root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git", ".")
+        }
+      elseif lang == "ruby" then
+        require'lspconfig'.solargraph.setup{
+          on_attach = on_attach,
+          capabilities = capabilities,
+          root_dir = require('lspconfig/util').root_pattern("Gemfile", ".git", "."),
+          cmd = { "solargraph", "stdio" },
+          filetypes = { "ruby" },
+          settings = {
+            solargraph = { diagnostics = true }
+          },
+          flags = { debounce_text_changes = 150 }
+        }
       elseif lang == "lua" then
          lspconfig[lang].setup {
             on_attach = on_attach,
@@ -101,11 +142,43 @@ local function setup_servers()
                },
             },
          }
+      elseif lang == "go" then
+        lspconfig.gopls.setup({
+          on_attach = on_attach,
+          capabilities = capabilities,
+          -- cmd = {"gopls", "serve"},
+          cmd = {"gopls"},
+          settings = {
+            gopls = {
+              experimentalPostfixCompletions = true,
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+              },
+              staticcheck = true,
+            },
+          },
+        })
+      else
+         lspconfig[lang].setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            flags = {
+               debounce_text_changes = 500,
+            },
+            -- root_dir = vim.loop.cwd,
+         }
       end
    end
 end
 
 setup_servers()
+
+vim.cmd([[
+  autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
+  autocmd BufWritePre *.go lua goimports(1000)
+]])
+
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
 lspinstall.post_install_hook = function()

@@ -26,11 +26,33 @@
 -- vim.cmd[[colorscheme onedark]]
 
 -- Neon
-vim.g.neon_style = "doom" -- default, doom, dark and light
-vim.g.neon_italic_keyword = true
-vim.g.neon_italic_function = true
-vim.g.neon_transparent = true
-vim.cmd[[colorscheme neon]]
+-- vim.g.neon_style = "dark" -- default, doom, dark and light
+-- vim.g.neon_italic_keyword = false
+-- vim.g.neon_italic_function = false
+-- vim.g.neon_transparent = false
+-- vim.g.neon_bold = false
+-- vim.cmd[[colorscheme neon]]
+
+-- From lua
+local nightfox = require('nightfox')
+nightfox.setup({
+  fox = 'nordfox', -- nordfox, nightfox, palefox
+  styles = {
+    comments = "italic", -- change style of comments to be italic
+    -- keywords = "bold", -- change style of keywords to be bold
+    -- functions = "italic,bold", -- styles can be a comma separated list
+    strings = "italic"
+  },
+  inverse = {
+    match_paren = true, -- inverse the highlighting of match_parens
+  }
+})
+vim.cmd[[colorscheme nordfox]]
+
+-- vim.g.nightflyCursorColor = 1
+-- vim.cmd [[colorscheme nightfly]]
+
+-- vim.cmd[[colorscheme monochrome]]
 
 -- Codeschool
 -- require('codeschool').setup({
@@ -85,17 +107,9 @@ vim.cmd[[colorscheme neon]]
 -- vim.cmd('colorscheme gruvbox-flat')
 
 -- Github
--- require('github-theme').setup({
---   themeStyle = "light", -- dark, dimmed, light
---   functionStyle = "italic",
---   sidebars = {"qf", "vista_kind", "terminal", "packer"},
--- })
-
 -- require("github-theme").setup({
---   commentStyle = "italic",
---   keywordStyle = "italic",
---   functionStyle = "italic",
---   variableStyle = "italic"
+--   theme_style = "dark", -- dark, dark_default, dimmed, light, light_default
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
 -- })
 
 vim.cmd([[

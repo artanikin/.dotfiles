@@ -12,7 +12,8 @@ ts_config.setup {
     "ruby",
     "regex",
     "json",
-    "yaml"
+    "yaml",
+    "go"
   },
   highlight = {
     enable = true,

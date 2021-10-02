@@ -1,0 +1,35 @@
+#! /bin/bash
+
+NODE="$1"
+POD="$2:-'*'"
+COMMAND="${3:-'/bin/bash'}"
+CONTAINER="${4:-'puma'}"
+
+# function pod_names() {
+#   kubectl get pods -n ${NODE} | awk '{ print $1 }'
+#   return
+# }
+
+pod_names=($(kubectl get pods -n ${NODE} | awk '{ print $1 }'))
+# echo ${pod_names[1]}
+
+for i in "${pod_names[@]}"
+do
+   :
+  echo $i
+done
+
+# if [ -z "$NODE" ]; then
+#     echo 'Missing node name'
+#     exit 1
+# fi
+# 
+# if [ -z "$POD" ]; then
+#     echo 'Missing POD param'
+#     exit 1
+# fi
+# 
+# kubectl get pods -n ${NODE} | \
+#   grep ${POD} | \
+#   awk '{ print $1 }' | \
+#   xargs -I{} -- sh -c "kubectl exec -n ${NODE} --stdin --tty --container='${CONTAINER}' {} -- ${COMMAND} < /dev/tty"

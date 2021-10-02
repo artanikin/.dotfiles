@@ -56,6 +56,25 @@ scrolling:
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: false
 
+font_monolisa: &font_monolisa
+  size: 14
+  normal:
+    family: MonoLisa
+    style: Light
+  bold:
+    family: MonoLisa
+    style: Medium
+  italic:
+    family: MonoLisa
+    style: Light Italic
+  offset:
+    x: 0
+    y: 3
+  glyph_offset:
+    x: 0
+    y: 3
+  use_thin_strokes: true
+
 font_hack: &font_hack
   size: 14
   normal:
@@ -172,7 +191,7 @@ font_dankmono: &font_dankmono
     y: 2
   use_thin_strokes: true
 
-font: *font_pragmatapro
+font: *font_monolisa
 
 # Should display the render timer
 debug:

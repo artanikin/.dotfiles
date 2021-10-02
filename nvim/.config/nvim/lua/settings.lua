@@ -25,7 +25,7 @@ vim.wo.cursorline=true                      --Enable highlighting of the current
 vim.o.showmode=false                        --We don't need to see things like -- INSERT -- anymore
 vim.o.backup=false
 vim.o.writebackup=false
-vim.wo.signcolumn="yes"                     --Always show the signcolumn, otherwise it would shift the text each time
+vim.wo.signcolumn="number"  -- yes                   --Always show the signcolumn, otherwise it would shift the text each time
 vim.o.updatetime=200                        --Faster completion
 vim.o.timeoutlen=600                        --By default timeoutlen is 1000 ms
 vim.o.clipboard="unnamedplus"               --Copy paste between vim and everything else
@@ -34,8 +34,19 @@ vim.o.sidescrolloff=5 			                --Minimal number of screen columns to k
 vim.o.foldlevel=10
 vim.o.ignorecase=true                       -- Ignoring case in a pattern
 vim.o.smartcase=true                        -- Override the 'ignorecase' option if the search pattern contains upper case chars
-vim.cmd('set textwidth=120')
+vim.cmd('set textwidth=100')
 vim.cmd('set colorcolumn=101')
+vim.cmd([[
+  set breakindent
+  set breakindentopt=shift:2
+  set showbreak=\\\\\
+  set showbreak=↳
+]])
+
+vim.cmd([[
+  set background=dark
+  set t_Co=256
+]])
 
 vim.cmd([[
 " Maintain undo history between sessions
@@ -44,6 +55,9 @@ set undodir=/var/tmp,/tmp
 
 " List of directories for the backup file
 set backupdir=/var/tmp,/tmp
+
+" Autoresize window
+autocmd VimResized * wincmd =
 ]])
 
 vim.g.ruby_host_prog = '~/.asdf/installs/ruby/3.0.0/bin/neovim-ruby-host'

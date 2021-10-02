@@ -1,0 +1,39 @@
+#!/bin/bash
+
+fzf_find_edit() {
+    local file=$(
+      fzf --query="$1" --no-multi --select-1 --exit-0 \
+          --preview 'bat --color=always --line-range :500 {}'
+      )
+    if [[ -n $file ]]; then
+        $EDITOR "$file"
+    fi
+}
+
+fzf_kube_connect() {
+  local get_name_template='{{ range .items }}{{ printf "%s\n" .metadata.name }}{{ end }}'
+
+  local selected_namespace=$(
+    kubectl get namespaces -o go-template \
+      --template="${get_name_template}" | \
+      fzf --query="$1" --no-multi --select-1 --exit-0
+  )
+  if [ -z "$selected_namespace" ]; then
+      echo '[Error] Please, choose namespace'
+      exit 1
+  fi
+
+  local selected_pod=$(
+    kubectl get pods -n $selected_namespace -o go-template \
+      --template="${get_name_template}" | \
+      fzf --no-multi --select-1 --exit-0
+  )
+  if [ -z "$selected_pod" ]; then
+      echo '[Error] Please, choose pod name'
+      exit 1
+  fi
+
+  kubectl exec -n ${selected_namespace} --stdin --tty --container='puma' ${selected_pod} -- /bin/bash < /dev/tty
+}
+
+fzf_kube_connect

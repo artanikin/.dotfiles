@@ -48,6 +48,12 @@ return require("packer").startup(function(use)
          require("core.mappings").comment()
       end
     }
+    use {
+      "nathom/filetype.nvim",
+      config = function()
+        vim.g.did_load_filetypes = 1
+      end
+    }
 
     use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
     use {"editorconfig/editorconfig-vim", event = "BufRead"}
@@ -58,39 +64,45 @@ return require("packer").startup(function(use)
         require("a-autopairs")
       end
     }
-    -- use {"yamatsum/nvim-cursorline"}
+    use {"yamatsum/nvim-cursorline"}
     -- use {"unblevable/quick-scope"}
     -- use {"hrsh7th/vim-vsnip"}
-    -- use {"mattn/emmet-vim"}
-    -- use {"rafamadriz/friendly-snippets"}
+
     use {
-      "kyazdani42/nvim-tree.lua",
+      'kyazdani42/nvim-tree.lua',
+      requires = 'kyazdani42/nvim-web-devicons',
       cmd = { "NvimTreeToggle", "NvimTreeFocus" },
       config = function()
         require("a-nvimtree")
       end,
       setup = function()
         require("core.mappings").nvimtree()
-      end,
-    }
-
-    use {
-      "kyazdani42/nvim-web-devicons",
+      end
     }
 
     -- use {"tpope/vim-rsi"}
     -- use {"tpope/vim-endwise"}
     -- use {"tpope/vim-abolish"}
+  -- use {"rhysd/conflict-marker.vim"}
+  -- use {"janko/vim-test", requires = "benmills/vimux"} -- Run tests
     use {"machakann/vim-sandwich", event = "BufRead"}
+    -- use {
+    --   "mhinz/vim-startify",
+    --   config = function()
+    --     vim.g.startify_disable_at_vimenter = false
+    --   end,
+    -- }
     use {
-      "mhinz/vim-startify",
+      "glepnir/dashboard-nvim",
+      -- disable = not status.dashboard,
       config = function()
-        vim.g.startify_disable_at_vimenter = false
+        require("a-dashboard")
+      end,
+      setup = function()
+        require("core.mappings").dashboard()
       end,
     }
-    -- use {"rhysd/conflict-marker.vim"}
     use {"vim-ruby/vim-ruby", ft = {"ruby", "eruby", "haml", "slim"}}
-    -- use {"janko/vim-test", requires = "benmills/vimux"} -- Run tests
     use {"dyng/ctrlsf.vim", cmd = "CtrlSF"}
     use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"}} -- Plugin for editing Ruby on Rails applications
     use {"tpope/vim-ragtag", ft = {"eruby", "html", "slim"}} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
@@ -125,13 +137,13 @@ return require("packer").startup(function(use)
       }
     }
 
-    use {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufRead",
-      config = function()
-        require("plugins.configs.others").blankline()
-      end,
-    }
+    -- use {
+    --   "lukas-reineke/indent-blankline.nvim",
+    --   event = "BufRead",
+    --   config = function()
+    --     require("plugins.configs.others").blankline()
+    --   end,
+    -- }
 
     -- LSP
     use {
@@ -154,21 +166,21 @@ return require("packer").startup(function(use)
       end,
     }
 
-    use {
-      "ray-x/lsp_signature.nvim",
-      after = "nvim-lspconfig",
-      config = function()
-        require("plugins.configs.others").signature()
-      end,
-    }
+    -- use {
+    --   "ray-x/lsp_signature.nvim",
+    --   after = "nvim-lspconfig",
+    --   config = function()
+    --     require("plugins.configs.others").signature()
+    --   end,
+    -- }
 
-    use {
-      "andymass/vim-matchup",
-      opt = true,
-      setup = function()
-        require("core.utils").packer_lazy_load "vim-matchup"
-      end,
-    }
+    -- use {
+    --   "andymass/vim-matchup",
+    --   opt = true,
+    --   setup = function()
+    --     require("core.utils").packer_lazy_load "vim-matchup"
+    --   end,
+    -- }
 
     use {
       "hrsh7th/nvim-cmp",
@@ -244,6 +256,7 @@ return require("packer").startup(function(use)
     use {
       "nvim-treesitter/nvim-treesitter",
       event = "BufRead",
+      branch = "0.5-compat",
       config = function()
         require "a-treesitter"
       end
@@ -251,11 +264,15 @@ return require("packer").startup(function(use)
 
     -- Colors
     use {"rafamadriz/neon"}
+    use {"EdenEast/nightfox.nvim"}
+    use {"kdheepak/monochrome.nvim"}
+    use {"bluz71/vim-nightfly-guicolors"}
+    use {"gruvbox-community/gruvbox"}
+    use {"projekt0n/github-nvim-theme"}
     -- use {"eddyekofo94/gruvbox-flat.nvim"}
     -- use {"folke/tokyonight.nvim"}
     -- use {"navarasu/onedark.nvim"}
     -- use {"shaunsingh/nord.nvim"}
     -- use {"marko-cerovac/material.nvim"}
     -- use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
-    -- use {"projekt0n/github-nvim-theme"}
 end)

@@ -58,3 +58,5 @@ fi
 
 # load asdf
 . /usr/local/opt/asdf/asdf.sh
+
+export PATH=$PATH:$(go env GOPATH)/bin
