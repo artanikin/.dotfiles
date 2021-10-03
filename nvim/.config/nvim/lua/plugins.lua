@@ -55,7 +55,7 @@ return require("packer").startup(function(use)
       end
     }
 
-    use {"tweekmonster/startuptime.vim", cmd = "StartupTime"}
+    use {"artanikin/startuptime.vim", cmd = "StartupTime"}
     use {"editorconfig/editorconfig-vim", event = "BufRead"}
     use {
       "windwp/nvim-autopairs",
