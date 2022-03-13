@@ -23,6 +23,17 @@ M.mappings.plugin = {
     open = "<leader>db", -- open dashboard
     session_load = "<leader>l", -- load a saved session
     session_save = "<leader>s", -- save a session
+  },
+  tests = {
+    test_nearest = "<leader>tn",
+    test_file = "<leader>tf",
+    test_suite = "<leader>ts",
+    test_last = "<leader>tl",
+    test_visist = "<leader>tv",
+  },
+  gitlinker = {
+    normap_open_in_browser = "<leader>gb",
+    visual_open_in_browser = "<leader>gb"
   }
 }
 

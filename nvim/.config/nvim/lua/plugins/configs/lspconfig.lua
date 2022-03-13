@@ -172,7 +172,7 @@ local function setup_servers()
    end
 end
 
-setup_servers()
+-- setup_servers()
 
 vim.cmd([[
   autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
@@ -181,10 +181,10 @@ vim.cmd([[
 
 
 -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-lspinstall.post_install_hook = function()
-   setup_servers() -- reload installed servers
-   vim.cmd "bufdo e"
-end
+-- lspinstall.post_install_hook = function()
+   -- setup_servers() -- reload installed servers
+--    vim.cmd "bufdo e"
+-- end
 
 -- replace the default lsp diagnostic symbols
 local function lspSymbol(name, icon)
@@ -213,13 +213,13 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 })
 
 -- suppress error messages from lang servers
-vim.notify = function(msg, log_level, _opts)
-   if msg:match "exit code" then
-      return
-   end
-   if log_level == vim.log.levels.ERROR then
-      vim.api.nvim_err_writeln(msg)
-   else
-      vim.api.nvim_echo({ { msg } }, true, {})
-   end
-end
+-- vim.notify = function(msg, log_level, _opts)
+--    if msg:match "exit code" then
+--       return
+--    end
+--    if log_level == vim.log.levels.ERROR then
+--       vim.api.nvim_err_writeln(msg)
+--    else
+--       vim.api.nvim_echo({ { msg } }, true, {})
+--    end
+-- end

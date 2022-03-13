@@ -18,29 +18,6 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" " 
-" function! s:build_quickfix_list(lines)
-"   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-"   copen
-"   cc
-" endfunction
-" 
-" " Ctrl-q allows to select multiple elements an open them in quick list
-" let g:fzf_action = {
-"       \ 'ctrl-q': function('s:build_quickfix_list'),
-"       \ 'ctrl-t': 'tab split',
-"       \ 'ctrl-s': 'split',
-"       \ 'ctrl-v': 'vsplit' }
-" 
-" " Prefix all fzf.vim exported commands with "Fzf"
-" let g:fzf_command_prefix = 'Fzf'
-" 
-" " [Buffers] Jump to the existing window if possible
-" let g:fzf_buffers_jump = 1
-" 
-" " Preview window options
-" let g:fzf_preview_window = ['right:50%:nowrap']
-
 nnoremap <silent> <Leader>ff :Files<CR>
 nnoremap <silent> <Leader>fg :GFiles?<CR>
 nnoremap <silent> <Leader>fw :Rg<CR>

@@ -1,11 +1,12 @@
-require('impatient') -- Speedup Neovim
+require('user.impatient') -- Speedup Neovim
 
 require("settings")
 require("keymappings")
 require("plugins")
-require("colors")
+require("abbreviations")
+require("autocommands")
 
-vim.cmd("source ~/.config/nvim/vimscripts/abbreviations.vim")
+require("lsp")
+require("user.telescope")
+
 vim.cmd("source ~/.config/nvim/vimscripts/functions.vim")
-vim.cmd("source ~/.config/nvim/vimscripts/startify.vim")
-vim.cmd("source ~/.config/nvim/vimscripts/fzf.vim")

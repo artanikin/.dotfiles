@@ -1,61 +1,85 @@
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', { noremap = true, silent = true })
+local keymap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<Space>', '<NOP>', opts)
 
 vim.g.mapleader = ' '
 
 -- no hl
-vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Esc>', ':nohl<CR>', { noremap = true, silent = true })
+keymap('n', '<Leader>h', ':set hlsearch!<CR>', opts)
+keymap('n', '<Esc>', ':nohl<CR>', opts)
 
 -- file explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opts)
 
 --- better window movement
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { silent = true })
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { silent = true })
+keymap('n', '<C-h>', '<C-w>h', opts)
+keymap('n', '<C-j>', '<C-w>j', opts)
+keymap('n', '<C-k>', '<C-w>k', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- better indenting
-vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
+keymap('v', '<', '<gv', opts)
+keymap('v', '>', '>gv', opts)
 
 -- move visual selected
-vim.api.nvim_set_keymap('v', 'K', ':move \'<-2<CR>gv=gv', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('v', 'J', ':move \'>+1<CR>gv=gv', { noremap = true, silent = true })
+keymap('v', 'K', ':move \'<-2<CR>gv=gv', opts)
+keymap('v', 'J', ':move \'>+1<CR>gv=gv', opts)
 
 -- swith between last two buffers
-vim.api.nvim_set_keymap('n', '<Leader><Leader>', '<C-^>', { noremap = true, silent = true})
+keymap('n', '<Leader><Leader>', '<C-^>', opts)
 
 -- copy to end of line
-vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true, silent = true})
+keymap('n', 'Y', 'y$', opts)
 
 -- better moving to the wrapping line
--- vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true})
+-- keymap('n', 'k', 'gk', opts)
+-- keymap('n', 'j', 'gj', opts)
 vim.cmd([[
 nnoremap <expr> j v:count ? (v:count > 5 ? "m'" . v:count : '') . 'j' : 'gj'
 nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 ]])
 
 -- Redirect change operations to the blackhole
-vim.api.nvim_set_keymap('n', 'c', '"_c', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'C', '"_C', { noremap = true, silent = true })
+keymap('n', 'c', '"_c', opts)
+keymap('n', 'C', '"_C', opts)
 
 -- window splitting
-vim.api.nvim_set_keymap('n', 'ss', ':split<CR>', { noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', 'sv', ':vsplit<CR>', { noremap = true, silent = true})
+keymap('n', 'ss', ':split<CR>', opts)
+keymap('n', 'sv', ':vsplit<CR>', opts)
 
 -- close buffer
-vim.api.nvim_set_keymap('n', '<Leader>d', ':bdelete<CR>', { noremap = true, silent = true})
+keymap('n', '<Leader>d', ':Bdelete<CR>', opts)
 
 -- ctrl + r with text highlighted to bring up a confirm menu for replacing all instances of a word
 -- required from tpope/abolish plugin
-vim.api.nvim_set_keymap('v', '<C-r>', '"hy:%Subvert/<C-r>h//gc<left><left><left>', {})
+keymap('v', '<C-r>', '"hy:%Subvert/<C-r>h//gc<left><left><left>', opts)
 
 -- TAB Complete
--- vim.api.nvim_set_keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"', { noremap = true, silent = true})
+-- keymap('i', '<expr><TAB>', 'pumvisible() ? \"\\<C-n>\" : \"\\<TAB>\"', opts)
 
-vim.api.nvim_set_keymap('n', '<Leader>p', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+keymap('n', '<Leader>p', ':NvimTreeToggle<CR>', opts)
 
 -- puts the caller
-vim.api.nvim_set_keymap('n', '<Leader>wtf', "oputs '#' * 90<c-m>puts caller<c-m>puts '#' * 90<esc>Kviw", { noremap = true, silent = true })
+keymap('n', '<Leader>wtf', "oputs '#' * 90<c-m>puts caller<c-m>puts '#' * 90<esc>Kviw", opts)
+
+-- System clipboard for neovide
+-- keymap('n', '<C-v>', '"+p', opts)
+-- keymap('i', '<C-v>', '"+p', opts)
+
+keymap("n", "<Leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<Leader>fw", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts)
+keymap("n", "<leader>fo", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<Leader>fb", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<Leader>fm", "<cmd>lua require'telescope.builtin'.marks()<cr>", opts)
+keymap("n", "<Leader>fc", "<cmd>lua require'telescope.builtin'.colorscheme()<cr>", opts)
+keymap("n", "<Leader>fv", "<cmd>lua require'user.telescope'.search_dotfiles()<cr>", opts)
+keymap("n", "<Leader>ft", "<cmd>lua require'telescope.builtin'.tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<Leader>fg", "<cmd>lua require'telescope.builtin'.git_status(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<Leader>fh", ":Telescope help_tags<cr>", opts)
+keymap("n", "<Leader>fp", ":Telescope projects<cr>", opts)
+
+keymap("n", "<Leader>fM", "<cmd>lua require'user.telescope'.search_rails_models()<cr>", opts)
+keymap("n", "<Leader>fC", "<cmd>lua require'user.telescope'.search_rails_controllers()<cr>", opts)
+keymap("n", "<Leader>fV", "<cmd>lua require'user.telescope'.search_rails_views()<cr>", opts)
+keymap("n", "<Leader>fT", "<cmd>lua require'user.telescope'.search_rails_specs()<cr>", opts)

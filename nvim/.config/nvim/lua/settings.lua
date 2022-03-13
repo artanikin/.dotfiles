@@ -20,12 +20,12 @@ vim.bo.expandtab=true                       --Converts tabs to spaces
 vim.bo.smartindent=true                     --Makes indenting smart
 vim.wo.number=true
 vim.wo.relativenumber=true
-vim.wo.cursorline=true                      --Enable highlighting of the current line
+vim.wo.cursorline=false                      --Enable highlighting of the current line
 -- vim.o.showtabline=2                         --Always show tabs
 vim.o.showmode=false                        --We don't need to see things like -- INSERT -- anymore
 vim.o.backup=false
 vim.o.writebackup=false
-vim.wo.signcolumn="number"  -- yes                   --Always show the signcolumn, otherwise it would shift the text each time
+vim.wo.signcolumn="yes"  -- number                   --Always show the signcolumn, otherwise it would shift the text each time
 vim.o.updatetime=200                        --Faster completion
 vim.o.timeoutlen=600                        --By default timeoutlen is 1000 ms
 vim.o.clipboard="unnamedplus"               --Copy paste between vim and everything else
@@ -34,19 +34,25 @@ vim.o.sidescrolloff=5 			                --Minimal number of screen columns to k
 vim.o.foldlevel=10
 vim.o.ignorecase=true                       -- Ignoring case in a pattern
 vim.o.smartcase=true                        -- Override the 'ignorecase' option if the search pattern contains upper case chars
-vim.cmd('set textwidth=100')
-vim.cmd('set colorcolumn=101')
+-- vim.cmd('set textwidth=100')
+-- vim.cmd('set colorcolumn=101')
+vim.bo.textwidth=100
+-- vim.wo.colorcolumn='101'
+vim.o.background='dark'
 vim.cmd([[
   set breakindent
   set breakindentopt=shift:2
   set showbreak=\\\\\
   set showbreak=↳
-]])
 
-vim.cmd([[
-  set background=dark
-  set t_Co=256
+  " set list
+  " set listchars=tab:»·,trail:∙
+  " set fillchars=fold:·,diff:-,vert:│
 ]])
+-- vim.wo.t_Co='256'
+-- vim.cmd([[
+--   set t_Co=256
+-- ]])
 
 vim.cmd([[
 " Maintain undo history between sessions
@@ -62,3 +68,11 @@ autocmd VimResized * wincmd =
 
 vim.g.ruby_host_prog = '~/.asdf/installs/ruby/3.0.0/bin/neovim-ruby-host'
 
+-- Neovide
+vim.o.guifont = "JetBrainsMono Nerd Font"
+vim.g.neovide_remember_window_size=true
+vim.g.neovide_fullscreen=false
+vim.g.neovide_cursor_vfx_mode="sonicboom"
+
+vim.g.neovide_refresh_rate=40
+vim.g.neovide_transparency=0.8

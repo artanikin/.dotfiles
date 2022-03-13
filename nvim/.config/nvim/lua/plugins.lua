@@ -1,28 +1,82 @@
-local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath("data").."/site/pack/packer/opt/packer.nvim"
+local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({"git", "clone", "https://github.com/wbthomason/packer.nvim", install_path})
-  execute "packadd packer.nvim"
+  PACKER_BOOTSTRAP = fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path
+  })
+  print "Installing packer close and reopen Nvim..."
+  vim.cmd [[packadd packer.nvim]]
 end
 
--- vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
 
-return require("packer").startup(function(use)
-    -- Packer can manage itself as an optional plugin
-    use {
-      "wbthomason/packer.nvim"
-    }
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
+
+-- Have packer use a popup window
+packer.init {
+  max_jobs = 15,
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end
+  }
+}
+
+return require("packer").startup({
+  function(use)
+    use { "wbthomason/packer.nvim" } -- Have packer manage itself
+    use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
+    use { "nvim-lua/popup.nvim" } -- An implementation of the Popup API from vim in Neovim
 
     -- Speedup neovim
     vim.fn.setenv("MACOSX_DEPLOYMENT_TARGET", "10.15")
-    use {'lewis6991/impatient.nvim', rocks = 'mpack'}
+    use { "lewis6991/impatient.nvim", rocks = "mpack" }
 
-    use {"christoomey/vim-tmux-navigator"}
+    use { "kyazdani42/nvim-web-devicons" }
 
-    -- use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
+    use { "christoomey/vim-tmux-navigator" }
+
+    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+
+    -- use {
+    --   "ahmedkhalf/project.nvim",
+    --   config = function()
+    --     require("user.project")
+    --   end
+    -- }
+
+    use {
+      "akinsho/nvim-bufferline.lua",
+      config = function()
+        require("user.bufferline")
+      end,
+    }
+    use { "moll/vim-bbye" }
+
+    -- use {
+    --   "sunjon/shade.nvim",
+    --   config = function()
+    --     require("user.shade")
+    --   end,
+    -- }
+
     -- use {
     --   "norcalli/nvim-colorizer.lua",
     --   event = "BufRead",
@@ -30,6 +84,7 @@ return require("packer").startup(function(use)
     --      require("a-colorizer")
     --   end
     -- }
+
     use {
       "hoob3rt/lualine.nvim",
       event = "VimEnter",
@@ -39,15 +94,13 @@ return require("packer").startup(function(use)
     }
 
     use {
-      "terrortylor/nvim-comment",
-      cmd = "CommentToggle",
+      "numToStr/Comment.nvim",
+      event = "BufRead",
       config = function()
-        require("a-comment")
-      end,
-      setup = function()
-         require("core.mappings").comment()
+        require("user.comment")
       end
     }
+
     use {
       "nathom/filetype.nvim",
       config = function()
@@ -55,187 +108,129 @@ return require("packer").startup(function(use)
       end
     }
 
-    use {"artanikin/startuptime.vim", cmd = "StartupTime"}
-    use {"editorconfig/editorconfig-vim", event = "BufRead"}
+    use {
+      "artanikin/startuptime.vim",
+      opt = true,
+      cmd = "StartupTime"
+    }
+
+    use {
+      "editorconfig/editorconfig-vim",
+      event = "BufRead"
+    }
+
     use {
       "windwp/nvim-autopairs",
       event = "InsertEnter",
       config = function()
-        require("a-autopairs")
+        require("user.autopairs")
       end
     }
-    use {"yamatsum/nvim-cursorline"}
-    -- use {"unblevable/quick-scope"}
-    -- use {"hrsh7th/vim-vsnip"}
 
     use {
       'kyazdani42/nvim-tree.lua',
-      requires = 'kyazdani42/nvim-web-devicons',
+      opt = true,
+      commit = "d8bf1ad",
       cmd = { "NvimTreeToggle", "NvimTreeFocus" },
       config = function()
-        require("a-nvimtree")
+        require("user.nvimtree")
       end,
       setup = function()
         require("core.mappings").nvimtree()
       end
     }
 
-    -- use {"tpope/vim-rsi"}
-    -- use {"tpope/vim-endwise"}
-    -- use {"tpope/vim-abolish"}
-  -- use {"rhysd/conflict-marker.vim"}
-  -- use {"janko/vim-test", requires = "benmills/vimux"} -- Run tests
-    use {"machakann/vim-sandwich", event = "BufRead"}
-    -- use {
-    --   "mhinz/vim-startify",
-    --   config = function()
-    --     vim.g.startify_disable_at_vimenter = false
-    --   end,
-    -- }
     use {
-      "glepnir/dashboard-nvim",
-      -- disable = not status.dashboard,
+      "vim-test/vim-test",
+      opt = true,
       config = function()
-        require("a-dashboard")
+        require("a-vim-tests")
       end,
       setup = function()
-        require("core.mappings").dashboard()
+        require("core.mappings").tests()
       end,
+      cmd = {
+        "TestNearest",
+        "TestFile",
+        "TestSuite",
+        "TestLast",
+        "TestVisit"
+      }
     }
-    use {"vim-ruby/vim-ruby", ft = {"ruby", "eruby", "haml", "slim"}}
-    use {"dyng/ctrlsf.vim", cmd = "CtrlSF"}
-    use {"tpope/vim-rails", ft = {"ruby", "eruby", "haml", "slim"}} -- Plugin for editing Ruby on Rails applications
-    use {"tpope/vim-ragtag", ft = {"eruby", "html", "slim"}} -- A set of mappings for HTML, XML, PHP, ASP, eRuby, JSP, and more
     use {
-      "kevinhwang91/nvim-bqf",
-      event = "VimEnter",
-      config = function()
-        require("a-nvim-bqf")
-      end
+      "benmills/vimux",
+      after = "vim-test"
     }
-    use {"nvim-lua/plenary.nvim"}
-    use {"hashivim/vim-terraform", ft = {"terraform"}}
+
+    use { 
+      "machakann/vim-sandwich",
+      event = "BufRead"
+    }
 
     use {
-      "junegunn/fzf.vim",
-      requires = { "junegunn/fzf" },
-      cmd = {
-        "Files",
-        "GFiles",
-        "GFiles?",
-        "Buffers",
-        "Colors",
-        "Ag",
-        "Rg",
-        "Lines",
-        "BLines",
-        "Tags",
-        "BTags",
-        "History",
-        "Marks",
-        "Helptags"
-      }
+      "goolord/alpha-nvim",
+      config = function()
+        require("user.alpha")
+      end
+    }
+
+    -- Plugin for editing Ruby on Rails applications
+    use {
+      "tpope/vim-rails",
+      ft = {"ruby", "eruby", "haml", "slim"}
     }
 
     -- use {
-    --   "lukas-reineke/indent-blankline.nvim",
-    --   event = "BufRead",
+    --   "stevearc/dressing.nvim",
     --   config = function()
-    --     require("plugins.configs.others").blankline()
-    --   end,
+    --     require("a-dressing")
+    --   end
     -- }
 
     -- LSP
-    use {
-      "kabouzeid/nvim-lspinstall",
-      opt = true,
-      setup = function()
-        require("core.utils").packer_lazy_load "nvim-lspinstall"
-        -- reload the current file so lsp actually starts for it
-        vim.defer_fn(function()
-          vim.cmd "silent! e %"
-        end, 0)
-      end,
-    }
-
-    use {
-      "neovim/nvim-lspconfig",
-      after = "nvim-lspinstall",
-      config = function()
-        require "plugins.configs.lspconfig"
-      end,
-    }
-
+    use { "neovim/nvim-lspconfig" } -- enable LSP
+    use { "williamboman/nvim-lsp-installer" } -- language server installer
     -- use {
-    --   "ray-x/lsp_signature.nvim",
-    --   after = "nvim-lspconfig",
+    --   "jose-elias-alvarez/null-ls.nvim",
     --   config = function()
-    --     require("plugins.configs.others").signature()
-    --   end,
+    --     require("lsp.null-ls")
+    --   end
     -- }
+    use { "arkav/lualine-lsp-progress" }
 
-    -- use {
-    --   "andymass/vim-matchup",
-    --   opt = true,
-    --   setup = function()
-    --     require("core.utils").packer_lazy_load "vim-matchup"
-    --   end,
-    -- }
-
+    -- completion plugin
     use {
       "hrsh7th/nvim-cmp",
-      event = "InsertEnter",
       config = function()
         require "plugins.configs.cmp"
-      end,
+      end
     }
 
-    use {
-      "L3MON4D3/LuaSnip",
-      wants = "friendly-snippets",
-      after = "nvim-cmp",
-      config = function()
-        require("plugins.configs.others").luasnip()
-      end,
-    }
+    -- snippet completions
+    use { "saadparwaiz1/cmp_luasnip" }
+    use { "hrsh7th/cmp-nvim-lua" }
+    use { "hrsh7th/cmp-nvim-lsp" }
+    use { "hrsh7th/cmp-buffer" }
+    use { "hrsh7th/cmp-path" }
 
-    use {
-      "saadparwaiz1/cmp_luasnip",
-      after = "LuaSnip",
-    }
-
-    use {
-      "hrsh7th/cmp-nvim-lua",
-      after = "cmp_luasnip",
-    }
-
-    use {
-      "hrsh7th/cmp-nvim-lsp",
-      after = "cmp-nvim-lua",
-    }
-
-    use {
-      "hrsh7th/cmp-buffer",
-      after = "cmp-nvim-lsp",
-    }
-
-    use {
-      "rafamadriz/friendly-snippets",
-      after = "cmp-buffer",
-    }
+    -- snippet engine
+    use { "L3MON4D3/LuaSnip" }
+    use { "rafamadriz/friendly-snippets" }
 
     -- Git
     use {
       "lewis6991/gitsigns.nvim",
       config = function()
-        require("a-gitsigns")
+        require("user.gitsigns")
       end,
       setup = function()
         require("core.utils").packer_lazy_load "gitsigns.nvim"
       end,
+      event = "BufRead"
     }
     use {
       "tpope/vim-fugitive",
+      opt = true,
       cmd = {
         "Git",
         "Gdiff",
@@ -249,30 +244,126 @@ return require("packer").startup(function(use)
       },
       setup = function()
         require("core.mappings").vim_fugitive()
+      end
+    }
+    use {
+      'ruifm/gitlinker.nvim',
+      config = function()
+        require("a-gitlinker")
       end,
+      setup = function()
+        require("core.mappings").gitlinker()
+      end,
+      event = "BufRead"
     }
 
     -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
       event = "BufRead",
-      branch = "0.5-compat",
+      run = ":TSUpdate",
       config = function()
         require "a-treesitter"
       end
     }
 
+    use {
+      "p00f/nvim-ts-rainbow",
+      after = "nvim-treesitter"
+    }
+
+    use {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      after = "nvim-treesitter"
+    }
+
+    -- Telescope
+    use { "nvim-telescope/telescope.nvim" }
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+
     -- Colors
-    use {"rafamadriz/neon"}
-    use {"EdenEast/nightfox.nvim"}
-    use {"kdheepak/monochrome.nvim"}
-    use {"bluz71/vim-nightfly-guicolors"}
-    use {"gruvbox-community/gruvbox"}
-    use {"projekt0n/github-nvim-theme"}
-    -- use {"eddyekofo94/gruvbox-flat.nvim"}
-    -- use {"folke/tokyonight.nvim"}
-    -- use {"navarasu/onedark.nvim"}
-    -- use {"shaunsingh/nord.nvim"}
-    -- use {"marko-cerovac/material.nvim"}
-    -- use {"adisen99/codeschool.nvim", requires = {"rktjmp/lush.nvim"}}
-end)
+
+    -- use {
+    --   "rebelot/kanagawa.nvim",
+    --   config = function()
+    --     require "themes.kanagawa"
+    --   end
+    -- }
+
+    -- use {
+    --   "LunarVim/darkplus.nvim",
+    --   config = function()
+    --     require "themes.darkplus"
+    --   end
+    -- }
+
+    -- use {
+    --   "LunarVim/onedarker.nvim",
+    --   config = function()
+    --     require "themes.onedarker"
+    --   end
+    -- }
+
+    use {
+      "Mofiqul/vscode.nvim",
+      config = function()
+        require "themes.vscode"
+      end
+    }
+
+    -- use {
+    --   "navarasu/onedark.nvim",
+    --   config = function()
+    --     require "themes.onedark"
+    --   end
+    -- }
+
+    -- use {
+    --   "Mofiqul/dracula.nvim",
+    --   config = function()
+    --     require "themes.dracula"
+    --   end
+    -- }
+
+    -- use {
+    --   "savq/melange",
+    --   config = function()
+    --     require "themes.melange"
+    --   end
+    -- }
+
+    -- use {
+    --   "luisiacc/gruvbox-baby",
+    --   config = function()
+    --     require "themes.gruvbox-baby"
+    --   end
+    -- }
+
+    -- use {
+    --   "catppuccin/nvim",
+    --   as = "catppuccin",
+    --   config = function()
+    --     require "themes.catppuccin"
+    --   end
+    -- }
+
+    -- use {
+    --   "folke/tokyonight.nvim",
+    --   config = function()
+    --     require "themes.tokyonight"
+    --   end
+    -- }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the enf after all plugins
+    if PACKER_BOOTSTRAP then
+      require("packer").sync()
+    end
+  end,
+  config = {
+    profile = {
+      enable = true,
+      threshold = 1, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+    },
+  },
+})
