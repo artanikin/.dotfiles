@@ -1,4 +1,10 @@
-alias r=clear
+alias ...="cd ../.."
+alias ..="cd .."
+alias cdb="cd -"
+alias o="open"
+alias c=clear
+alias du="ncdu -e --color dark"
+alias pfo='open -a "Finder.app" "$PWD"'
 alias dl="cd ~/Downloads/"
 alias cp="cp -ivr"
 alias scp="scp -r"
@@ -23,7 +29,9 @@ alias v="vim"
 alias vi="nvim --noplugin" # -u ~/.config/nvim/minimal.vim"
 alias reload!="source ~/.zshrc"
 alias gcob='git checkout $(git branch | fzf)'
-alias gconf="git ls-files -u | awk '{print $4}' | sort -u | xargs -o nvim"
+alias goc="git ls-files -u | awk '{print $4}' | sort -u | xargs -o nvim"
+alias gom="git ls-files -m | xargs -o nvim"
+alias ff="fzf --preview 'bat --theme DarkNeon --color always {}' | xargs $EDITOR"
 alias fz="fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort' --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
 alias vfz='vim $(fz)'
 alias preview="fzf --preview 'bat --color \"always\" --line-range 0:30 {}'"
@@ -40,6 +48,7 @@ alias rails="bundle exec rails"
 alias .rails="rails"
 alias rake="bundle exec rake"
 alias fix="git diff --name-only | uniq | xargs nvim"
+alias lmig='vim $(find db/migrate -name "*"|sort|tail -1)'
 
 # SSH fix for working with xterm-color256-italic
 alias ssh="TERM=xterm-256color ssh"
@@ -59,8 +68,15 @@ alias dls='docker container ls'
 alias dlog='docker container logs '
 alias dlogf='docker container logs -f '
 alias lzd='lazydocker'
-alias stf9='kubectl exec -n s-sb-stf9 -i -t -c puma $(kubectl get pods -n s-sb-stf9 | grep app-sbermarket) -- /bin/bash'
+alias stf9='kubectl exec -n s-sb-stf9 -i -t -c puma $(kubectl get pods -n s-sb-stf9 | grep app-stf) -- /bin/bash'
+alias stf9l='kubectl logs -f --tail 10 -n s-sb-stf9 $(kubectl get pods -n s-sb-stf9 | grep app-stf) puma'
+alias stf6='kubectl exec -n s-sb-stf6 -i -t -c puma $(kubectl get pods -n s-sb-stf6 | grep app-stf) -- /bin/bash'
+alias shp6='kubectl exec -n s-sh-shp6 -i -t -c puma $(kubectl get pods -n s-sh-shp6 | grep shopper-backend) -- /bin/bash'
 alias shp9='kubectl exec -n s-sh-shp9 -i -t -c puma $(kubectl get pods -n s-sh-shp9 | grep shopper-backend) -- /bin/bash'
+alias shp9l='kubectl logs -f --tail 10 -n s-sh-shp9 $(kubectl get pods -n s-sh-shp9 | grep shopper-backend) puma'
+alias stf11='kubectl exec -n s-sb-stf11 -i -t -c puma $(kubectl get pods -n s-sb-stf11 | grep app-stf) -- /bin/bash'
+alias shp11='kubectl exec -n s-sh-shp11 -i -t -c puma $(kubectl get pods -n s-sh-shp11 | grep shopper-backend) -- /bin/bash'
+alias shpsur='kubectl exec -n s-sh-shpsurstromming -i -t -c puma $(kubectl get pods -n s-sh-shpsurstromming | grep shopper-backend) -- /bin/bash'
 
 # Kubernetes
 alias k='kubectl'
@@ -102,3 +118,10 @@ fzf_kube_connect() {
 }
 
 alias fkc='fzf_kube_connect'
+
+
+# tmux
+alias tsa="tmux attach-session -t"
+alias tsk="tmux kill-session -t"
+alias tsl="tmux list-sessions"
+alias tsr="tmux rename-session -t"

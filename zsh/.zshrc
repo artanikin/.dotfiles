@@ -29,10 +29,10 @@ zle -N down-line-or-beginning-search
 autoload -Uz colors && colors
 
 # Plugins
-zsh_add_plugin "zsh-users/zsh-autosuggestions"
-zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
-zsh_add_plugin "hlissner/zsh-autopair"
-zsh_add_plugin "romkatv/powerlevel10k"
+# zsh_add_plugin "zsh-users/zsh-autosuggestions"
+# zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+# zsh_add_plugin "hlissner/zsh-autopair"
+# zsh_add_plugin "romkatv/powerlevel10k"
 # For more plugins: https://github.com/unixorn/awesome-zsh-plugins
 # More completions https://github.com/zsh-users/zsh-completions
 
@@ -57,6 +57,12 @@ if command -v brew >/dev/null 2>&1; then
 fi
 
 # load asdf
-. /usr/local/opt/asdf/asdf.sh
+# . /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
 
-export PATH=$PATH:$(go env GOPATH)/bin
+# export PATH=$PATH:$(go env GOPATH)/bin
+
+# Zsh zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^o' autosuggest-accept
+source /Users/artyomanikin/.sbm-cli/completion/zsh/sbm-cli

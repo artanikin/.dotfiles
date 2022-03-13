@@ -28,7 +28,7 @@ export JAVA_HOME=$JAVA_HOME_8
 export SDKROOT=$(xcrun --show-sdk-path)
 
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
-export BAT_CONFIG_PATH="$HOME/.dotfiles/os/bat/bat.conf"
+export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
 
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -42,13 +42,36 @@ export COMPOSE_HTTP_TIMEOUT=120
 # Save history in IEX
 export ERL_AFLAGS="-kernel shell_history enabled"
 
-export ASDF_DIR="~/.asdf"
+# export ASDF_DIR="~/.asdf"
 . "$HOME/.cargo/env"
 
+export FZF_DEFAULT_OPTS="
+--layout=reverse
+--info=inline
+--height=80%
+--multi
+--preview-window=:hidden
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'
+--color='hl:148,hl+:154,pointer:032,marker:010,bg+:237,gutter:008'
+--prompt='∼ ' --pointer='▶' --marker='✓'
+--bind '?:toggle-preview'
+--bind 'ctrl-a:select-all'
+--bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
+--bind 'ctrl-e:execute(echo {+} | xargs -o vim)'
+--bind 'ctrl-v:execute(code {+})'
+--bind ctrl-f:page-down,ctrl-b:page-up
+"
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
-export FZF_DEFAULT_OPTS='
-  --height 75% --multi --reverse
-  --bind ctrl-f:page-down,ctrl-b:page-up
-'
+# export FZF_DEFAULT_OPTS='
+#   --height 75% --multi --reverse
+#   --bind ctrl-f:page-down,ctrl-b:page-up
+# '
+
+# export PATH=$PATH:$(go env GOPATH)/bin
+export GO111MODULE=on
+export GOROOT='/Users/artyomanikin/.asdf/installs/golang/1.16.12/go'
+export GOPATH='/Users/artyomanikin/.asdf/installs/golang/1.16.12/packages'
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export PATH=$HOME/.sbm-cli/usr/bin:$PATH
