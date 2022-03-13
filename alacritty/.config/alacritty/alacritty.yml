@@ -11,26 +11,29 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  # TERM: xterm-256color
-  TERM: xterm-256color-italic
+  # TERM: xterm-256color-italic
+#   TERM: xterm-256color
+  TERM: alacritty
 
 window:
   # Window dimensions in character columns and lines
   # (changes require restart)
-  # dimensions:
-  #   columns: 200
-  #   lines: 50
+  dimensions:
+    columns: 90
+    lines: 30
+  opacity: 1
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
   # (change requires restart)
   padding:
-    x: 5
-    y: 30
+    x: 3
+    y: 3
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: transparent
+  decorations: full
+  dynamic_padding: true
 
   dynamic_title: false
 
@@ -95,7 +98,7 @@ font_hack: &font_hack
   use_thin_strokes: true
 
 font_pragmatapro: &font_pragmatapro
-  size: 15
+  size: 14
   normal:
     family: PragmataPro
     style: Regular
@@ -114,22 +117,41 @@ font_pragmatapro: &font_pragmatapro
   use_thin_strokes: true
 
 font_jetbrains: &font_jetbrains
-  size: 13
+  size: 14
   normal:
-    family: JetBrains Mono
-    style: Light
+    family: JetBrainsMono Nerd Font
+    style: Regular
   bold:
-    family: JetBrains Mono
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: JetBrains Mono
-    style: Light Italic
+    family: JetBrainsMono Nerd Font
+    style: Italic
   offset:
-    x: 1
-    y: 4
+    x: 0
+    y: 0
   glyph_offset:
     x: 0
-    y: 3
+    y: 0
+  use_thin_strokes: true
+
+font_ubuntu: &font_ubuntu
+  size: 16
+  normal:
+    family: UbuntuMono Nerd Font
+    style: Regular
+  bold:
+    family: UbuntuMono Nerd Font
+    style: Bold
+  italic:
+    family: UbuntuMono Nerd Font
+    style: Italic
+  offset:
+    x: 0
+    y: 5 
+  glyph_offset:
+    x: 0
+    y: 5
   use_thin_strokes: true
 
 font_source_code_pro: &font_source_code_pro
@@ -191,7 +213,28 @@ font_dankmono: &font_dankmono
     y: 2
   use_thin_strokes: true
 
-font: *font_monolisa
+font_victor: &font_victor
+  antialias: none # Can have values like lcd, lcdv, gray, and none
+  hinting: true
+  size: 14 
+  normal:
+    family: VictorMono Nerd Font
+    style: Regular
+  bold:
+    family: Victor Mono
+    style: Bold
+  italic:
+    family: Victor Mono
+    style: Italic
+  offset:
+    x: 0
+    y: 4
+  glyph_offset:
+    x: 0
+    y: 2
+  use_thin_strokes: true
+
+font: *font_jetbrains
 
 # Should display the render timer
 debug:
@@ -507,7 +550,75 @@ theme_lucius: &theme_lucius
     cyan:    '#87d7af'
     white:   '#d7d7d7'
 
-colors: *theme_iceberg
+# onedarkpro.nvim - onedark
+theme_onedarkpro: &theme_onedarkpro
+  primary:
+    background: "#1e1e1e"
+    foreground: "#abb2bf"
+
+  normal:
+    black: "#1e1e1e"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#e5c07b"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#abb2bf"
+
+  bright:
+    black: "#3f3f3f"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#e5c07b"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#bfc5ce"
+
+  cursor:
+    text: CellBackground
+    cursor: CellForeground # syntax-cursor-color
+
+  selection:
+    text: CellForeground
+    background: "#3e4452"
+
+# Kanagawa Alacritty Colors
+theme_kanagawa: &theme_kanagawa
+  primary:
+    background: '0x1f1f28'
+    foreground: '0xdcd7ba'
+
+  normal:
+    black:   '0x090618'
+    red:     '0xc34043'
+    green:   '0x76946a'
+    yellow:  '0xc0a36e'
+    blue:    '0x7e9cd8'
+    magenta: '0x957fb8'
+    cyan:    '0x6a9589'
+    white:   '0xc8c093'
+
+  bright:
+    black:   '0x727169'
+    red:     '0xe82424'
+    green:   '0x98bb6c'
+    yellow:  '0xe6c384'
+    blue:    '0x7fb4ca'
+    magenta: '0x938aa9'
+    cyan:    '0x7aa89f'
+    white:   '0xdcd7ba'
+
+  selection:
+    background: '0x2d4f67'
+    foreground: '0xc8c093'
+
+  indexed_colors:
+    - { index: 16, color: '0xffa066' }
+    - { index: 17, color: '0xff5d62' }
+
+colors: *theme_kanagawa
 
 # Visual Bell
 #
@@ -534,9 +645,6 @@ colors: *theme_iceberg
 bell:
   animation: EaseOutExpo
   duration: 0
-
-# Background opacity
-background_opacity: 1
 
 # Mouse bindings
 #
