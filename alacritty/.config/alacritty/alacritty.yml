@@ -1,846 +1,871 @@
-# Configuration for Alacritty, the GPU enhanced terminal emulator
+# font_jetbrains: &font_jetbrains
+font:
+  size: 14
+  normal:
+    family: SFMono Nerd Font
+    style: Regular
+  bold:
+    family: SFMono Nerd Font
+    style: Medium
+  italic:
+    family: SFMono Nerd Font
+    style: Italic
+  offset:
+    x: 0
+    y: 3
+  glyph_offset:
+    x: 0
+    y: 2
 
-# Any items in the `env` entry below will be added as
-# environment variables. Some entries may override variables
-# set by alacritty it self.
-env:
-  # TERM env customization.
-  #
-  # If this property is not set, alacritty will set it to xterm-256color.
-  #
-  # Note that some xterm terminfo databases don't declare support for italics.
-  # You can verify this by checking for the presence of `smso` and `sitm` in
-  # `infocmp xterm-256color`.
-  # TERM: xterm-256color-italic
-#   TERM: xterm-256color
-  TERM: alacritty
+# font: *font_jetbrains
 
+# # Configuration for Alacritty, the GPU enhanced terminal emulator
+#
+# # Any items in the `env` entry below will be added as
+# # environment variables. Some entries may override variables
+# # set by alacritty it self.
+# env:
+#   # TERM env customization.
+#   #
+#   # If this property is not set, alacritty will set it to xterm-256color.
+#   #
+#   # Note that some xterm terminfo databases don't declare support for italics.
+#   # You can verify this by checking for the presence of `smso` and `sitm` in
+#   # `infocmp xterm-256color`.
+#   # TERM: xterm-256color-italic
+# #   TERM: xterm-256color
+#   TERM: alacritty
+#
+colors:
+  transparent_background_colors: true
 window:
-  # Window dimensions in character columns and lines
-  # (changes require restart)
+#   # Window dimensions in character columns and lines
+#   # (changes require restart)
   dimensions:
-    columns: 90
-    lines: 30
-  opacity: 1
+    columns: 200
+    lines: 60
 
-  # Adds this many blank pixels of padding around the window
-  # Units are physical pixels; this is not DPI aware.
-  # (change requires restart)
-  padding:
-    x: 3
-    y: 3
-
-  # Window decorations
-  # Setting this to false will result in window without borders and title bar.
-  decorations: full
-  dynamic_padding: true
-
-  dynamic_title: false
-
-
-scrolling:
-  # Maximum number of lines in the scrollback buffer.
-  # Specifying '0' will disable scrolling.
-  history: 10000
-
-  # Number of lines the viewport will move for every line scrolled when
-  # scrollback is enabled (history > 0).
-  multiplier: 3
-
-  # Faux Scrolling
-  #
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  # faux_multiplier: 3
-
-# When true, bold text is drawn using the bright variant of colors.
-draw_bold_text_with_bright_colors: false
-
-font_monolisa: &font_monolisa
-  size: 14
-  normal:
-    family: MonoLisa
-    style: Light
-  bold:
-    family: MonoLisa
-    style: Medium
-  italic:
-    family: MonoLisa
-    style: Light Italic
-  offset:
-    x: 0
-    y: 3
-  glyph_offset:
-    x: 0
-    y: 3
-  use_thin_strokes: true
-
-font_hack: &font_hack
-  size: 14
-  normal:
-    family: Hack
-    style: Regular
-  bold:
-    family: Hack
-    style: Bold
-  italic:
-    family: Hack
-    style: Italic
-  offset:
-    x: 0
-    y: 6
-  glyph_offset:
-    x: 0
-    y: 3
-  use_thin_strokes: true
-
-font_pragmatapro: &font_pragmatapro
-  size: 14
-  normal:
-    family: PragmataPro
-    style: Regular
-  bold:
-    family: PragmataPro
-    style: Bold
-  italic:
-    family: PragmataPro
-    style: Italic
-  offset:
-    x: 0
-    y: 6
-  glyph_offset:
-    x: 0
-    y: 3
-  use_thin_strokes: true
-
-font_jetbrains: &font_jetbrains
-  size: 14
-  normal:
-    family: JetBrainsMono Nerd Font
-    style: Regular
-  bold:
-    family: JetBrainsMono Nerd Font
-    style: Bold
-  italic:
-    family: JetBrainsMono Nerd Font
-    style: Italic
-  offset:
-    x: 0
-    y: 0
-  glyph_offset:
-    x: 0
-    y: 0
-  use_thin_strokes: true
-
-font_ubuntu: &font_ubuntu
-  size: 16
-  normal:
-    family: UbuntuMono Nerd Font
-    style: Regular
-  bold:
-    family: UbuntuMono Nerd Font
-    style: Bold
-  italic:
-    family: UbuntuMono Nerd Font
-    style: Italic
-  offset:
-    x: 0
-    y: 5 
-  glyph_offset:
-    x: 0
-    y: 5
-  use_thin_strokes: true
-
-font_source_code_pro: &font_source_code_pro
-  size: 14
-  normal:
-    family: Source Code Pro
-    style: Regular
-  bold:
-    family: Source Code Pro
-    style: Medium
-  italic:
-    family: SauceCodePro Nerd Font
-    style: Regular Italic
-  offset:
-    x: 0
-    y: 4
-  glyph_offset:
-    x: 0
-    y: 2
-  use_thin_strokes: true
-
-font_fantasque: &font_fantasque
-  size: 16
-  normal:
-    family: Fantasque Sans Mono
-    style: Regular
-  bold:
-    family: Fantasque Sans Mono
-    style: Bold
-  italic:
-    family: Fantasque Sans Mono
-    style: Italic
-  offset:
-    x: 0
-    y: 5
-  glyph_offset:
-    x: 0
-    y: 0
-  use_thin_strokes: true
-
-font_dankmono: &font_dankmono
-  antialias: none # Can have values like lcd, lcdv, gray, and none
-  hinting: true
-  size: 15
-  normal:
-    family: Dank Mono
-    style: Regular
-  bold:
-    family: Dank Mono
-    style: Bold
-  italic:
-    family: Dank Mono
-    style: Italic
-  offset:
-    x: 0
-    y: 4
-  glyph_offset:
-    x: 0
-    y: 2
-  use_thin_strokes: true
-
-font_victor: &font_victor
-  antialias: none # Can have values like lcd, lcdv, gray, and none
-  hinting: true
-  size: 14 
-  normal:
-    family: VictorMono Nerd Font
-    style: Regular
-  bold:
-    family: Victor Mono
-    style: Bold
-  italic:
-    family: Victor Mono
-    style: Italic
-  offset:
-    x: 0
-    y: 4
-  glyph_offset:
-    x: 0
-    y: 2
-  use_thin_strokes: true
-
-font: *font_jetbrains
-
-# Should display the render timer
-debug:
-  render_timer: false
-
-# gruvbox Alacritty Colors
-theme_gruvbox_flat: &theme_gruvbox_flat
-  # Default colors
-  primary:
-    background: '0x1d2021'
-    foreground: '0xd4be98'
-
-  # Normal colors
-  normal:
-    black:   '0x1D2021'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xd8a657'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    aqua:    '0x89b482'
-    white:   '0xd4be98'
-
-  # Bright colors
-  bright:
-    black:   '0x17191a'
-    red:     '0xea6962'
-    green:   '0xa9b665'
-    yellow:  '0xd8a657'
-    blue:    '0x7daea3'
-    magenta: '0xd3869b'
-    aqua:    '0x89b482'
-    white:   '0xd4be98'
-
-  indexed_colors:
-    - { index: 16, color: '0xe78a4e' }
-    - { index: 17, color: '0xc14a4a' }
-
-theme_material: &theme_material
-  primary:
-    # background: '0x1e282d'
-    background: '0x212121'
-    foreground: '0xc4c7d1'
-  normal:
-    black:   '0x666666'
-    red:     '0xeb606b'
-    green:   '0xc3e88d'
-    yellow:  '0xf7eb95'
-    blue:    '0x80cbc4'
-    magenta: '0xff2f90'
-    cyan:    '0xaeddff'
-    white:   '0xffffff'
-  bright:
-    black:   '0xff262b'
-    red:     '0xeb606b'
-    green:   '0xc3e88d'
-    yellow:  '0xf7eb95'
-    blue:    '0x7dc6bf'
-    magenta: '0x6c71c4'
-    cyan:    '0x35434d'
-    white:   '0xffffff'
-
-theme_onedark: &theme_onedark
-  primary:
-    background: '#282c34'
-    # background: '#131613'
-    foreground: '#abb2bf'
-  normal:
-    # NOTE: Use '#131613' for the `black` color if you'd like to see
-    # black text on the background.
-    # black:   '#282c34'
-    # # black:   '#131613'
-    # red:     '#e06c75'
-    # green:   '#a5a681'
-    # yellow:  '#d5b18e'
-    # blue:    '#61afef'
-    # magenta: '#c678dd'
-    # cyan:    '#56b6c2'
-    # white:   '#e1e9f5'
-  # bright:
-    # black:   '#5c6370'
-    black:   '#131613'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#ffffff'
-
-theme_nord: &theme_nord
-  primary:
-    background: '0x2E3440'
-    foreground: '0xD8DEE9'
-  cursor:
-    text: '0x2E3440'
-    cursor: '0xD8DEE9'
-  normal:
-    black: '0x3B4252'
-    red: '0xBF616A'
-    green: '0xA3BE8C'
-    yellow: '0xEBCB8B'
-    blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x88C0D0'
-    white: '0xE5E9F0'
-  bright:
-    black: '0x4C566A'
-    red: '0xBF616A'
-    green: '0xA3BE8C'
-    yellow: '0xEBCB8B'
-    blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x8FBCBB'
-    white: '0xECEFF4'
-
-theme_gruvbox_dark: &theme_gruvbox_dark
-  primary:
-    # hard contrast: background = '#1d2021'
-    background: '#282828'
-    # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
-  normal:
-    black:   '#282828'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    # white:   '#a89984'
-    white:   '#ebdbb2'
-  bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
-
-theme_monokai_dark: &theme_monokai_dark
-  primary:
-    background: '0x272822'
-    foreground: '0xF8F8F2'
-  normal:
-    black:   '0x272822'
-    red:     '0xF92672'
-    green:   '0xA6E22E'
-    yellow:  '0xF4BF75'
-    blue:    '0x66D9EF'
-    magenta: '0xAE81FF'
-    cyan:    '0xA1EFE4'
-    white:   '0xF8F8F2'
-  bright:
-    red:     '0xF92672'
-    black:   '0x75715E'
-    green:   '0xA6E22E'
-    yellow:  '0xF4BF75'
-    blue:    '0x66D9EF'
-    magenta: '0xAE81FF'
-    cyan:    '0xA1EFE4'
-    white:   '0xF9F8F5'
-
-theme_dracula: &theme_dracula
-  primary:
-    background: '0x282a36'
-    foreground: '0xf8f8f2'
-  normal:
-    black:   '0x000000'
-    red:     '0xff5555'
-    green:   '0x50fa7b'
-    yellow:  '0xf1fa8c'
-    blue:    '0xcaa9fa'
-    magenta: '0xff79c6'
-    cyan:    '0x8be9fd'
-    white:   '0xbfbfbf'
-  bright:
-    black:   '0x575b70'
-    red:     '0xff6e67'
-    green:   '0x5af78e'
-    yellow:  '0xf4f99d'
-    blue:    '0xcaa9fa'
-    magenta: '0xff92d0'
-    cyan:    '0x9aedfe'
-    white:   '0xe6e6e6'
-
-theme_gotham: &theme_gotham
-  primary:
-    background: '0x0a0f14'
-    foreground: '0x98d1ce'
-  normal:
-    black: '0x0a0f14'
-    red: '0xc33027'
-    green: '0x26a98b'
-    yellow: '0xedb54b'
-    blue: '0x195465'
-    magenta: '0x4e5165'
-    cyan: '0x33859d'
-    white: '0x98d1ce'
-  bright:
-    black: '0x10151b'
-    red: '0xd26939'
-    green: '0x081f2d'
-    yellow: '0x245361'
-    blue: '0x093748'
-    magenta: '0x888ba5'
-    cyan: '0x599caa'
-    white: '0xd3ebe9'
-
-theme_darksilent: &theme_darksilent
-  primary:
-    background: '#0e0e13'
-    foreground: '#abb2bf'
-  normal:
-    # NOTE: Use '#131613' for the `black` color if you'd like to see
-    # black text on the background.
-    black:   '#0e0e13'
-    red:     '#ffd7dc'
-    green:   '#acf2bd'
-    yellow:  '#d5b18e'
-    blue:    '#3a5677'
-    magenta: '#d7d4ef'
-    cyan:    '#82BBC2'
-    white:   '#e1e9f2'
-  bright:
-    black:   '#5c6370'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#ffffff'
-
-theme_apprentice: &theme_apprentice
-  primary:
-    background: '#262626'
-    foreground: '#BCBCBC'
-  normal:
-    black:   '#1C1C1C'
-    red:     '#AF5F5F'
-    green:   '#5F875F'
-    yellow:  '#87875F'
-    blue:    '#5F87AF'
-    magenta: '#5F5F87'
-    cyan:    '#5F8787'
-    white:   '#6C6C6C'
-  bright:
-    black:   '#444444'
-    red:     '#FF8700'
-    green:   '#87AF87'
-    yellow:  '#FFFFAF'
-    blue:    '#8FAFD7'
-    magenta: '#8787AF'
-    cyan:    '#5FAFAF'
-    white:   '#FFFFFF'
-
-theme_iceberg: &theme_iceberg
-  primary:
-    background: '#161821'
-    foreground: '#d2d4de'
-  normal:
-    black:   '#161821'
-    red:     '#e27878'
-    green:   '#b4be82'
-    yellow:  '#e2a478'
-    blue:    '#84a0c6'
-    magenta: '#a093c7'
-    cyan:    '#89b8c2'
-    white:   '#c6c8d1'
-  bright:
-    black:   '#6b7089'
-    red:     '#e98989'
-    green:   '#c0ca8e'
-    yellow:  '#e9b189'
-    blue:    '#91acd1'
-    magenta: '#ada0d3'
-    cyan:    '#95c4ce'
-    white:   '#d2d4de'
-
-theme_lucius: &theme_lucius
-  # Default colors
-  primary:
-    background: '#121212'
-    foreground: '#d7d7d7'
-
-  # Cursor colors
-  cursor:
-    text: '#121212'
-    cursor: '#87afd7'
-
-  # Normal colors
-  normal:
-    black:   '#121212'
-    red:     '#ff5f5f'
-    green:   '#afd787'
-    yellow:  '#d7d7af'
-    blue:    '#87d7ff'
-    magenta: '#d7afd7'
-    cyan:    '#87d7af'
-    white:   '#d7d7d7'
-
-  # Bright colors
-  bright:
-    black:   '#121212'
-    red:     '#ff5f5f'
-    green:   '#afd787'
-    yellow:  '#d7d7af'
-    blue:    '#87d7ff'
-    magenta: '#d7afd7'
-    cyan:    '#87d7af'
-    white:   '#d7d7d7'
-
-# onedarkpro.nvim - onedark
-theme_onedarkpro: &theme_onedarkpro
-  primary:
-    background: "#1e1e1e"
-    foreground: "#abb2bf"
-
-  normal:
-    black: "#1e1e1e"
-    red: "#e06c75"
-    green: "#98c379"
-    yellow: "#e5c07b"
-    blue: "#61afef"
-    magenta: "#c678dd"
-    cyan: "#56b6c2"
-    white: "#abb2bf"
-
-  bright:
-    black: "#3f3f3f"
-    red: "#e06c75"
-    green: "#98c379"
-    yellow: "#e5c07b"
-    blue: "#61afef"
-    magenta: "#c678dd"
-    cyan: "#56b6c2"
-    white: "#bfc5ce"
-
-  cursor:
-    text: CellBackground
-    cursor: CellForeground # syntax-cursor-color
-
-  selection:
-    text: CellForeground
-    background: "#3e4452"
-
-# Kanagawa Alacritty Colors
-theme_kanagawa: &theme_kanagawa
-  primary:
-    background: '0x1f1f28'
-    foreground: '0xdcd7ba'
-
-  normal:
-    black:   '0x090618'
-    red:     '0xc34043'
-    green:   '0x76946a'
-    yellow:  '0xc0a36e'
-    blue:    '0x7e9cd8'
-    magenta: '0x957fb8'
-    cyan:    '0x6a9589'
-    white:   '0xc8c093'
-
-  bright:
-    black:   '0x727169'
-    red:     '0xe82424'
-    green:   '0x98bb6c'
-    yellow:  '0xe6c384'
-    blue:    '0x7fb4ca'
-    magenta: '0x938aa9'
-    cyan:    '0x7aa89f'
-    white:   '0xdcd7ba'
-
-  selection:
-    background: '0x2d4f67'
-    foreground: '0xc8c093'
-
-  indexed_colors:
-    - { index: 16, color: '0xffa066' }
-    - { index: 17, color: '0xff5d62' }
-
-colors: *theme_kanagawa
-
-# Visual Bell
+  opacity: 0.95
+  # decorations: buttonless # buttonless, transparent
 #
-# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
-# rung, the terminal background will be set to white and transition back to the
-# default background color. You can control the rate of this transition by
-# setting the `duration` property (represented in milliseconds). You can also
-# configure the transition function by setting the `animation` property.
-#
-# Possible values for `animation`
-# `Ease`
-# `EaseOut`
-# `EaseOutSine`
-# `EaseOutQuad`
-# `EaseOutCubic`
-# `EaseOutQuart`
-# `EaseOutQuint`
-# `EaseOutExpo`
-# `EaseOutCirc`
-# `Linear`
-#
-# To completely disable the visual bell, set its duration to 0.
-#
-bell:
-  animation: EaseOutExpo
-  duration: 0
+#   # Adds this many blank pixels of padding around the window
+#   # Units are physical pixels; this is not DPI aware.
+#   # (change requires restart)
+  # padding:
+  #   x: 2
+  #   y: 2
 
-# Mouse bindings
+#   # Window decorations
+#   # Setting this to false will result in window without borders and title bar.
+#   decorations: full
+#   dynamic_padding: true
 #
-# Currently doesn't support modifiers. Both the `mouse` and `action` fields must
-# be specified.
+#   dynamic_title: false
 #
-# Values for `mouse`:
-# - Middle
-# - Left
-# - Right
-# - Numeric identifier such as `5`
 #
-# Values for `action`:
-# - Paste
-# - PasteSelection
-# - Copy (TODO)
-mouse_bindings:
-  - { mouse: Middle, action: PasteSelection }
-
-mouse:
-  # Click settings
-  #
-  # The `double_click` and `triple_click` settings control the time
-  # alacritty should wait for accepting multiple clicks as one double
-  # or triple click.
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-
-  # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: true
-
-selection:
-  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
-  save_to_clipboard: false
-
-cursor:
-  # Cursor style
-  #
-  # Values for `style`:
-  #   - ▇ Block
-  #   - _ Underline
-  #   - | Beam
-  style: Block
-
-  # If this is `true`, the cursor will be rendered as a hollow box when the
-  # window is not focused.
-  unfocused_hollow: true
-
-# Live config reload (changes require restart)
-live_config_reload: true
-
-# Shell
+# scrolling:
+#   # Maximum number of lines in the scrollback buffer.
+#   # Specifying '0' will disable scrolling.
+#   history: 10000
 #
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
+#   # Number of lines the viewport will move for every line scrolled when
+#   # scrollback is enabled (history > 0).
+#   multiplier: 3
 #
-shell:
-  program: /usr/local/bin/zsh
-  args:
-    - --login
-
-# Key bindings
+#   # Faux Scrolling
+#   #
+#   # The `faux_multiplier` setting controls the number of lines the terminal
+#   # should scroll when the alternate screen buffer is active. This is used
+#   # to allow mouse scrolling for applications like `man`.
+#   #
+#   # Specifying `0` will disable faux scrolling.
+#   # faux_multiplier: 3
 #
-# Each binding is defined as an object with some properties. Most of the
-# properties are optional. All of the alphabetical keys should have a letter for
-# the `key` value such as `V`. Function keys are probably what you would expect
-# as well (F1, F2, ..). The number keys above the main keyboard are encoded as
-# `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
-# etc.  These all match the glutin::VirtualKeyCode variants.
+# # When true, bold text is drawn using the bright variant of colors.
+# draw_bold_text_with_bright_colors: false
 #
-# A list with all available `key` names can be found here:
-# https://docs.rs/glutin/*/glutin/enum.VirtualKeyCode.html#variants
+# font_monolisa: &font_monolisa
+#   size: 14
+#   normal:
+#     family: MonoLisa
+#     style: Light
+#   bold:
+#     family: MonoLisa
+#     style: Medium
+#   italic:
+#     family: MonoLisa
+#     style: Light Italic
+#   offset:
+#     x: 0
+#     y: 3
+#   glyph_offset:
+#     x: 0
+#     y: 3
+#   use_thin_strokes: true
 #
-# Possible values for `mods`
-# `Command`, `Super` refer to the super/command/windows key
-# `Control` for the control key
-# `Shift` for the Shift key
-# `Alt` and `Option` refer to alt/option
+# font_hack: &font_hack
+#   size: 14
+#   normal:
+#     family: Hack
+#     style: Regular
+#   bold:
+#     family: Hack
+#     style: Bold
+#   italic:
+#     family: Hack
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 6
+#   glyph_offset:
+#     x: 0
+#     y: 3
+#   use_thin_strokes: true
 #
-# mods may be combined with a `|`. For example, requiring control and shift
-# looks like:
+# font_pragmatapro: &font_pragmatapro
+#   size: 14
+#   normal:
+#     family: PragmataPro
+#     style: Regular
+#   bold:
+#     family: PragmataPro
+#     style: Bold
+#   italic:
+#     family: PragmataPro
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 6
+#   glyph_offset:
+#     x: 0
+#     y: 3
+#   use_thin_strokes: true
 #
-# mods: Control|Shift
+# font_jetbrains: &font_jetbrains
+#   size: 14
+#   normal:
+#     family: JetBrainsMono Nerd Font
+#     style: Regular
+#   bold:
+#     family: JetBrainsMono Nerd Font
+#     style: Bold
+#   italic:
+#     family: JetBrainsMono Nerd Font
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 0
+#   glyph_offset:
+#     x: 0
+#     y: 0
+#   use_thin_strokes: true
 #
-# The parser is currently quite sensitive to whitespace and capitalization -
-# capitalization must match exactly, and piped items must not have whitespace
-# around them.
+# font_ubuntu: &font_ubuntu
+#   size: 16
+#   normal:
+#     family: UbuntuMono Nerd Font
+#     style: Regular
+#   bold:
+#     family: UbuntuMono Nerd Font
+#     style: Bold
+#   italic:
+#     family: UbuntuMono Nerd Font
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 5 
+#   glyph_offset:
+#     x: 0
+#     y: 5
+#   use_thin_strokes: true
 #
-# Either an `action`, `chars`, or `command` field must be present.
-#   `action` must be one of `Paste`, `PasteSelection`, `Copy`, or `Quit`.
-#   `chars` writes the specified string every time that binding is activated.
-#     These should generally be escape sequences, but they can be configured to
-#     send arbitrary strings of bytes.
-#   `command` must be a map containing a `program` string, and `args` array of
-#     strings. For example:
-#     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
-key_bindings:
-  - { key: V,        mods: Command, action: Paste                        }
-  - { key: C,        mods: Command, action: Copy                         }
-  - { key: Q,        mods: Command, action: Quit                         }
-  - { key: W,        mods: Command, action: Quit                         }
-  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
-  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
-  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
-  - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: Key0,     mods: Command, action: ResetFontSize                }
-  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
-  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
-  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
-  - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
-  - { key: PageUp,                  chars: "\x1b[5~"                     }
-  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
-  - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
-  - { key: PageDown,                chars: "\x1b[6~"                     }
-  - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
-  - { key: Back,                    chars: "\x7f"                        }
-  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
-  - { key: Insert,                  chars: "\x1b[2~"                     }
-  - { key: Delete,                  chars: "\x1b[3~"                     }
-  - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
-  - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
-  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
-  - { key: Left,                    chars: "\x1b[D",   mode: ~AppCursor  }
-  - { key: Left,                    chars: "\x1bOD",   mode: AppCursor   }
-  - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                   }
-  - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
-  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
-  - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
-  - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
-  - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
-  - { key: Up,       mods: Control, chars: "\x1b[1;5A"                   }
-  - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                   }
-  - { key: Up,                      chars: "\x1b[A",   mode: ~AppCursor  }
-  - { key: Up,                      chars: "\x1bOA",   mode: AppCursor   }
-  - { key: Down,     mods: Shift,   chars: "\x1b[1;2B"                   }
-  - { key: Down,     mods: Control, chars: "\x1b[1;5B"                   }
-  - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
-  - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
-  - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }
-  - { key: F1,                      chars: "\x1bOP"                      }
-  - { key: F2,                      chars: "\x1bOQ"                      }
-  - { key: F3,                      chars: "\x1bOR"                      }
-  - { key: F4,                      chars: "\x1bOS"                      }
-  - { key: F5,                      chars: "\x1b[15~"                    }
-  - { key: F6,                      chars: "\x1b[17~"                    }
-  - { key: F7,                      chars: "\x1b[18~"                    }
-  - { key: F8,                      chars: "\x1b[19~"                    }
-  - { key: F9,                      chars: "\x1b[20~"                    }
-  - { key: F10,                     chars: "\x1b[21~"                    }
-  - { key: F11,                     chars: "\x1b[23~"                    }
-  - { key: F12,                     chars: "\x1b[24~"                    }
-  - { key: F1,       mods: Shift,   chars: "\x1b[1;2P"                   }
-  - { key: F2,       mods: Shift,   chars: "\x1b[1;2Q"                   }
-  - { key: F3,       mods: Shift,   chars: "\x1b[1;2R"                   }
-  - { key: F4,       mods: Shift,   chars: "\x1b[1;2S"                   }
-  - { key: F5,       mods: Shift,   chars: "\x1b[15;2~"                  }
-  - { key: F6,       mods: Shift,   chars: "\x1b[17;2~"                  }
-  - { key: F7,       mods: Shift,   chars: "\x1b[18;2~"                  }
-  - { key: F8,       mods: Shift,   chars: "\x1b[19;2~"                  }
-  - { key: F9,       mods: Shift,   chars: "\x1b[20;2~"                  }
-  - { key: F10,      mods: Shift,   chars: "\x1b[21;2~"                  }
-  - { key: F11,      mods: Shift,   chars: "\x1b[23;2~"                  }
-  - { key: F12,      mods: Shift,   chars: "\x1b[24;2~"                  }
-  - { key: F1,       mods: Control, chars: "\x1b[1;5P"                   }
-  - { key: F2,       mods: Control, chars: "\x1b[1;5Q"                   }
-  - { key: F3,       mods: Control, chars: "\x1b[1;5R"                   }
-  - { key: F4,       mods: Control, chars: "\x1b[1;5S"                   }
-  - { key: F5,       mods: Control, chars: "\x1b[15;5~"                  }
-  - { key: F6,       mods: Control, chars: "\x1b[17;5~"                  }
-  - { key: F7,       mods: Control, chars: "\x1b[18;5~"                  }
-  - { key: F8,       mods: Control, chars: "\x1b[19;5~"                  }
-  - { key: F9,       mods: Control, chars: "\x1b[20;5~"                  }
-  - { key: F10,      mods: Control, chars: "\x1b[21;5~"                  }
-  - { key: F11,      mods: Control, chars: "\x1b[23;5~"                  }
-  - { key: F12,      mods: Control, chars: "\x1b[24;5~"                  }
-  - { key: F1,       mods: Alt,     chars: "\x1b[1;6P"                   }
-  - { key: F2,       mods: Alt,     chars: "\x1b[1;6Q"                   }
-  - { key: F3,       mods: Alt,     chars: "\x1b[1;6R"                   }
-  - { key: F4,       mods: Alt,     chars: "\x1b[1;6S"                   }
-  - { key: F5,       mods: Alt,     chars: "\x1b[15;6~"                  }
-  - { key: F6,       mods: Alt,     chars: "\x1b[17;6~"                  }
-  - { key: F7,       mods: Alt,     chars: "\x1b[18;6~"                  }
-  - { key: F8,       mods: Alt,     chars: "\x1b[19;6~"                  }
-  - { key: F9,       mods: Alt,     chars: "\x1b[20;6~"                  }
-  - { key: F10,      mods: Alt,     chars: "\x1b[21;6~"                  }
-  - { key: F11,      mods: Alt,     chars: "\x1b[23;6~"                  }
-  - { key: F12,      mods: Alt,     chars: "\x1b[24;6~"                  }
-  - { key: F1,       mods: Command, chars: "\x1b[1;3P"                   }
-  - { key: F2,       mods: Command, chars: "\x1b[1;3Q"                   }
-  - { key: F3,       mods: Command, chars: "\x1b[1;3R"                   }
-  - { key: F4,       mods: Command, chars: "\x1b[1;3S"                   }
-  - { key: F5,       mods: Command, chars: "\x1b[15;3~"                  }
-  - { key: F6,       mods: Command, chars: "\x1b[17;3~"                  }
-  - { key: F7,       mods: Command, chars: "\x1b[18;3~"                  }
-  - { key: F8,       mods: Command, chars: "\x1b[19;3~"                  }
-  - { key: F9,       mods: Command, chars: "\x1b[20;3~"                  }
-  - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
-  - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
-  - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
+# font_source_code_pro: &font_source_code_pro
+#   size: 14
+#   normal:
+#     family: Source Code Pro
+#     style: Regular
+#   bold:
+#     family: Source Code Pro
+#     style: Medium
+#   italic:
+#     family: SauceCodePro Nerd Font
+#     style: Regular Italic
+#   offset:
+#     x: 0
+#     y: 4
+#   glyph_offset:
+#     x: 0
+#     y: 2
+#   use_thin_strokes: true
+#
+# font_fantasque: &font_fantasque
+#   size: 16
+#   normal:
+#     family: Fantasque Sans Mono
+#     style: Regular
+#   bold:
+#     family: Fantasque Sans Mono
+#     style: Bold
+#   italic:
+#     family: Fantasque Sans Mono
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 5
+#   glyph_offset:
+#     x: 0
+#     y: 0
+#   use_thin_strokes: true
+#
+# font_dankmono: &font_dankmono
+#   antialias: none # Can have values like lcd, lcdv, gray, and none
+#   hinting: true
+#   size: 15
+#   normal:
+#     family: Dank Mono
+#     style: Regular
+#   bold:
+#     family: Dank Mono
+#     style: Bold
+#   italic:
+#     family: Dank Mono
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 4
+#   glyph_offset:
+#     x: 0
+#     y: 2
+#   use_thin_strokes: true
+#
+# font_victor: &font_victor
+#   antialias: none # Can have values like lcd, lcdv, gray, and none
+#   hinting: true
+#   size: 14 
+#   normal:
+#     family: VictorMono Nerd Font
+#     style: Regular
+#   bold:
+#     family: Victor Mono
+#     style: Bold
+#   italic:
+#     family: Victor Mono
+#     style: Italic
+#   offset:
+#     x: 0
+#     y: 4
+#   glyph_offset:
+#     x: 0
+#     y: 2
+#   use_thin_strokes: true
+#
+# font: *font_jetbrains
+#
+# # Should display the render timer
+# debug:
+#   render_timer: false
+#
+# # gruvbox Alacritty Colors
+# theme_gruvbox_flat: &theme_gruvbox_flat
+#   # Default colors
+#   primary:
+#     background: '0x1d2021'
+#     foreground: '0xd4be98'
+#
+#   # Normal colors
+#   normal:
+#     black:   '0x1D2021'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xd8a657'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     aqua:    '0x89b482'
+#     white:   '0xd4be98'
+#
+#   # Bright colors
+#   bright:
+#     black:   '0x17191a'
+#     red:     '0xea6962'
+#     green:   '0xa9b665'
+#     yellow:  '0xd8a657'
+#     blue:    '0x7daea3'
+#     magenta: '0xd3869b'
+#     aqua:    '0x89b482'
+#     white:   '0xd4be98'
+#
+#   indexed_colors:
+#     - { index: 16, color: '0xe78a4e' }
+#     - { index: 17, color: '0xc14a4a' }
+#
+# theme_material: &theme_material
+#   primary:
+#     # background: '0x1e282d'
+#     background: '0x212121'
+#     foreground: '0xc4c7d1'
+#   normal:
+#     black:   '0x666666'
+#     red:     '0xeb606b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x80cbc4'
+#     magenta: '0xff2f90'
+#     cyan:    '0xaeddff'
+#     white:   '0xffffff'
+#   bright:
+#     black:   '0xff262b'
+#     red:     '0xeb606b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x7dc6bf'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x35434d'
+#     white:   '0xffffff'
+#
+# theme_onedark: &theme_onedark
+#   primary:
+#     background: '#282c34'
+#     # background: '#131613'
+#     foreground: '#abb2bf'
+#   normal:
+#     # NOTE: Use '#131613' for the `black` color if you'd like to see
+#     # black text on the background.
+#     # black:   '#282c34'
+#     # # black:   '#131613'
+#     # red:     '#e06c75'
+#     # green:   '#a5a681'
+#     # yellow:  '#d5b18e'
+#     # blue:    '#61afef'
+#     # magenta: '#c678dd'
+#     # cyan:    '#56b6c2'
+#     # white:   '#e1e9f5'
+#   # bright:
+#     # black:   '#5c6370'
+#     black:   '#131613'
+#     red:     '#e06c75'
+#     green:   '#98c379'
+#     yellow:  '#d19a66'
+#     blue:    '#61afef'
+#     magenta: '#c678dd'
+#     cyan:    '#56b6c2'
+#     white:   '#ffffff'
+#
+# theme_nord: &theme_nord
+#   primary:
+#     background: '0x2E3440'
+#     foreground: '0xD8DEE9'
+#   cursor:
+#     text: '0x2E3440'
+#     cursor: '0xD8DEE9'
+#   normal:
+#     black: '0x3B4252'
+#     red: '0xBF616A'
+#     green: '0xA3BE8C'
+#     yellow: '0xEBCB8B'
+#     blue: '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan: '0x88C0D0'
+#     white: '0xE5E9F0'
+#   bright:
+#     black: '0x4C566A'
+#     red: '0xBF616A'
+#     green: '0xA3BE8C'
+#     yellow: '0xEBCB8B'
+#     blue: '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan: '0x8FBCBB'
+#     white: '0xECEFF4'
+#
+# theme_gruvbox_dark: &theme_gruvbox_dark
+#   primary:
+#     # hard contrast: background = '#1d2021'
+#     background: '#282828'
+#     # soft contrast: background = '#32302f'
+#     foreground: '#ebdbb2'
+#   normal:
+#     black:   '#282828'
+#     red:     '#cc241d'
+#     green:   '#98971a'
+#     yellow:  '#d79921'
+#     blue:    '#458588'
+#     magenta: '#b16286'
+#     cyan:    '#689d6a'
+#     # white:   '#a89984'
+#     white:   '#ebdbb2'
+#   bright:
+#     black:   '#928374'
+#     red:     '#fb4934'
+#     green:   '#b8bb26'
+#     yellow:  '#fabd2f'
+#     blue:    '#83a598'
+#     magenta: '#d3869b'
+#     cyan:    '#8ec07c'
+#     white:   '#ebdbb2'
+#
+# theme_monokai_dark: &theme_monokai_dark
+#   primary:
+#     background: '0x272822'
+#     foreground: '0xF8F8F2'
+#   normal:
+#     black:   '0x272822'
+#     red:     '0xF92672'
+#     green:   '0xA6E22E'
+#     yellow:  '0xF4BF75'
+#     blue:    '0x66D9EF'
+#     magenta: '0xAE81FF'
+#     cyan:    '0xA1EFE4'
+#     white:   '0xF8F8F2'
+#   bright:
+#     red:     '0xF92672'
+#     black:   '0x75715E'
+#     green:   '0xA6E22E'
+#     yellow:  '0xF4BF75'
+#     blue:    '0x66D9EF'
+#     magenta: '0xAE81FF'
+#     cyan:    '0xA1EFE4'
+#     white:   '0xF9F8F5'
+#
+# theme_dracula: &theme_dracula
+#   primary:
+#     background: '0x282a36'
+#     foreground: '0xf8f8f2'
+#   normal:
+#     black:   '0x000000'
+#     red:     '0xff5555'
+#     green:   '0x50fa7b'
+#     yellow:  '0xf1fa8c'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff79c6'
+#     cyan:    '0x8be9fd'
+#     white:   '0xbfbfbf'
+#   bright:
+#     black:   '0x575b70'
+#     red:     '0xff6e67'
+#     green:   '0x5af78e'
+#     yellow:  '0xf4f99d'
+#     blue:    '0xcaa9fa'
+#     magenta: '0xff92d0'
+#     cyan:    '0x9aedfe'
+#     white:   '0xe6e6e6'
+#
+# theme_gotham: &theme_gotham
+#   primary:
+#     background: '0x0a0f14'
+#     foreground: '0x98d1ce'
+#   normal:
+#     black: '0x0a0f14'
+#     red: '0xc33027'
+#     green: '0x26a98b'
+#     yellow: '0xedb54b'
+#     blue: '0x195465'
+#     magenta: '0x4e5165'
+#     cyan: '0x33859d'
+#     white: '0x98d1ce'
+#   bright:
+#     black: '0x10151b'
+#     red: '0xd26939'
+#     green: '0x081f2d'
+#     yellow: '0x245361'
+#     blue: '0x093748'
+#     magenta: '0x888ba5'
+#     cyan: '0x599caa'
+#     white: '0xd3ebe9'
+#
+# theme_darksilent: &theme_darksilent
+#   primary:
+#     background: '#0e0e13'
+#     foreground: '#abb2bf'
+#   normal:
+#     # NOTE: Use '#131613' for the `black` color if you'd like to see
+#     # black text on the background.
+#     black:   '#0e0e13'
+#     red:     '#ffd7dc'
+#     green:   '#acf2bd'
+#     yellow:  '#d5b18e'
+#     blue:    '#3a5677'
+#     magenta: '#d7d4ef'
+#     cyan:    '#82BBC2'
+#     white:   '#e1e9f2'
+#   bright:
+#     black:   '#5c6370'
+#     red:     '#e06c75'
+#     green:   '#98c379'
+#     yellow:  '#d19a66'
+#     blue:    '#61afef'
+#     magenta: '#c678dd'
+#     cyan:    '#56b6c2'
+#     white:   '#ffffff'
+#
+# theme_apprentice: &theme_apprentice
+#   primary:
+#     background: '#262626'
+#     foreground: '#BCBCBC'
+#   normal:
+#     black:   '#1C1C1C'
+#     red:     '#AF5F5F'
+#     green:   '#5F875F'
+#     yellow:  '#87875F'
+#     blue:    '#5F87AF'
+#     magenta: '#5F5F87'
+#     cyan:    '#5F8787'
+#     white:   '#6C6C6C'
+#   bright:
+#     black:   '#444444'
+#     red:     '#FF8700'
+#     green:   '#87AF87'
+#     yellow:  '#FFFFAF'
+#     blue:    '#8FAFD7'
+#     magenta: '#8787AF'
+#     cyan:    '#5FAFAF'
+#     white:   '#FFFFFF'
+#
+# theme_iceberg: &theme_iceberg
+#   primary:
+#     background: '#161821'
+#     foreground: '#d2d4de'
+#   normal:
+#     black:   '#161821'
+#     red:     '#e27878'
+#     green:   '#b4be82'
+#     yellow:  '#e2a478'
+#     blue:    '#84a0c6'
+#     magenta: '#a093c7'
+#     cyan:    '#89b8c2'
+#     white:   '#c6c8d1'
+#   bright:
+#     black:   '#6b7089'
+#     red:     '#e98989'
+#     green:   '#c0ca8e'
+#     yellow:  '#e9b189'
+#     blue:    '#91acd1'
+#     magenta: '#ada0d3'
+#     cyan:    '#95c4ce'
+#     white:   '#d2d4de'
+#
+# theme_lucius: &theme_lucius
+#   # Default colors
+#   primary:
+#     background: '#121212'
+#     foreground: '#d7d7d7'
+#
+#   # Cursor colors
+#   cursor:
+#     text: '#121212'
+#     cursor: '#87afd7'
+#
+#   # Normal colors
+#   normal:
+#     black:   '#121212'
+#     red:     '#ff5f5f'
+#     green:   '#afd787'
+#     yellow:  '#d7d7af'
+#     blue:    '#87d7ff'
+#     magenta: '#d7afd7'
+#     cyan:    '#87d7af'
+#     white:   '#d7d7d7'
+#
+#   # Bright colors
+#   bright:
+#     black:   '#121212'
+#     red:     '#ff5f5f'
+#     green:   '#afd787'
+#     yellow:  '#d7d7af'
+#     blue:    '#87d7ff'
+#     magenta: '#d7afd7'
+#     cyan:    '#87d7af'
+#     white:   '#d7d7d7'
+#
+# # onedarkpro.nvim - onedark
+# theme_onedarkpro: &theme_onedarkpro
+#   primary:
+#     background: "#1e1e1e"
+#     foreground: "#abb2bf"
+#
+#   normal:
+#     black: "#1e1e1e"
+#     red: "#e06c75"
+#     green: "#98c379"
+#     yellow: "#e5c07b"
+#     blue: "#61afef"
+#     magenta: "#c678dd"
+#     cyan: "#56b6c2"
+#     white: "#abb2bf"
+#
+#   bright:
+#     black: "#3f3f3f"
+#     red: "#e06c75"
+#     green: "#98c379"
+#     yellow: "#e5c07b"
+#     blue: "#61afef"
+#     magenta: "#c678dd"
+#     cyan: "#56b6c2"
+#     white: "#bfc5ce"
+#
+#   cursor:
+#     text: CellBackground
+#     cursor: CellForeground # syntax-cursor-color
+#
+#   selection:
+#     text: CellForeground
+#     background: "#3e4452"
+#
+# # Kanagawa Alacritty Colors
+# theme_kanagawa: &theme_kanagawa
+#   primary:
+#     background: '0x1f1f28'
+#     foreground: '0xdcd7ba'
+#
+#   normal:
+#     black:   '0x090618'
+#     red:     '0xc34043'
+#     green:   '0x76946a'
+#     yellow:  '0xc0a36e'
+#     blue:    '0x7e9cd8'
+#     magenta: '0x957fb8'
+#     cyan:    '0x6a9589'
+#     white:   '0xc8c093'
+#
+#   bright:
+#     black:   '0x727169'
+#     red:     '0xe82424'
+#     green:   '0x98bb6c'
+#     yellow:  '0xe6c384'
+#     blue:    '0x7fb4ca'
+#     magenta: '0x938aa9'
+#     cyan:    '0x7aa89f'
+#     white:   '0xdcd7ba'
+#
+#   selection:
+#     background: '0x2d4f67'
+#     foreground: '0xc8c093'
+#
+#   indexed_colors:
+#     - { index: 16, color: '0xffa066' }
+#     - { index: 17, color: '0xff5d62' }
+#
+# colors: *theme_kanagawa
+#
+# # Visual Bell
+# #
+# # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
+# # rung, the terminal background will be set to white and transition back to the
+# # default background color. You can control the rate of this transition by
+# # setting the `duration` property (represented in milliseconds). You can also
+# # configure the transition function by setting the `animation` property.
+# #
+# # Possible values for `animation`
+# # `Ease`
+# # `EaseOut`
+# # `EaseOutSine`
+# # `EaseOutQuad`
+# # `EaseOutCubic`
+# # `EaseOutQuart`
+# # `EaseOutQuint`
+# # `EaseOutExpo`
+# # `EaseOutCirc`
+# # `Linear`
+# #
+# # To completely disable the visual bell, set its duration to 0.
+# #
+# bell:
+#   animation: EaseOutExpo
+#   duration: 0
+#
+# # Mouse bindings
+# #
+# # Currently doesn't support modifiers. Both the `mouse` and `action` fields must
+# # be specified.
+# #
+# # Values for `mouse`:
+# # - Middle
+# # - Left
+# # - Right
+# # - Numeric identifier such as `5`
+# #
+# # Values for `action`:
+# # - Paste
+# # - PasteSelection
+# # - Copy (TODO)
+# mouse_bindings:
+#   - { mouse: Middle, action: PasteSelection }
+#
+# mouse:
+#   # Click settings
+#   #
+#   # The `double_click` and `triple_click` settings control the time
+#   # alacritty should wait for accepting multiple clicks as one double
+#   # or triple click.
+#   double_click: { threshold: 300 }
+#   triple_click: { threshold: 300 }
+#
+#   # If this is `true`, the cursor is temporarily hidden when typing.
+#   hide_when_typing: true
+#
+# selection:
+#   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+#   save_to_clipboard: false
+#
+# cursor:
+#   # Cursor style
+#   #
+#   # Values for `style`:
+#   #   - ▇ Block
+#   #   - _ Underline
+#   #   - | Beam
+#   style: Block
+#
+#   # If this is `true`, the cursor will be rendered as a hollow box when the
+#   # window is not focused.
+#   unfocused_hollow: true
+#
+# # Live config reload (changes require restart)
+# live_config_reload: true
+#
+# # Shell
+# #
+# # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# # Entries in shell.args are passed unmodified as arguments to the shell.
+# #
+# shell:
+#   program: /usr/local/bin/zsh
+#   args:
+#     - --login
+#
+# # Key bindings
+# #
+# # Each binding is defined as an object with some properties. Most of the
+# # properties are optional. All of the alphabetical keys should have a letter for
+# # the `key` value such as `V`. Function keys are probably what you would expect
+# # as well (F1, F2, ..). The number keys above the main keyboard are encoded as
+# # `Key1`, `Key2`, etc. Keys on the number pad are encoded `Number1`, `Number2`,
+# # etc.  These all match the glutin::VirtualKeyCode variants.
+# #
+# # A list with all available `key` names can be found here:
+# # https://docs.rs/glutin/*/glutin/enum.VirtualKeyCode.html#variants
+# #
+# # Possible values for `mods`
+# # `Command`, `Super` refer to the super/command/windows key
+# # `Control` for the control key
+# # `Shift` for the Shift key
+# # `Alt` and `Option` refer to alt/option
+# #
+# # mods may be combined with a `|`. For example, requiring control and shift
+# # looks like:
+# #
+# # mods: Control|Shift
+# #
+# # The parser is currently quite sensitive to whitespace and capitalization -
+# # capitalization must match exactly, and piped items must not have whitespace
+# # around them.
+# #
+# # Either an `action`, `chars`, or `command` field must be present.
+# #   `action` must be one of `Paste`, `PasteSelection`, `Copy`, or `Quit`.
+# #   `chars` writes the specified string every time that binding is activated.
+# #     These should generally be escape sequences, but they can be configured to
+# #     send arbitrary strings of bytes.
+# #   `command` must be a map containing a `program` string, and `args` array of
+# #     strings. For example:
+# #     - { ... , command: { program: "alacritty", args: ["-e", "vttest"] } }
+# key_bindings:
+#   - { key: V,        mods: Command, action: Paste                        }
+#   - { key: C,        mods: Command, action: Copy                         }
+#   - { key: Q,        mods: Command, action: Quit                         }
+#   - { key: W,        mods: Command, action: Quit                         }
+#   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
+#   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
+#   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
+#   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
+#   - { key: Key0,     mods: Command, action: ResetFontSize                }
+#   - { key: Equals,   mods: Command, action: IncreaseFontSize             }
+#   - { key: Minus,    mods: Command, action: DecreaseFontSize             }
+#   - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
+#   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
+#   - { key: PageUp,                  chars: "\x1b[5~"                     }
+#   - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
+#   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
+#   - { key: PageDown,                chars: "\x1b[6~"                     }
+#   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
+#   - { key: Back,                    chars: "\x7f"                        }
+#   - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
+#   - { key: Insert,                  chars: "\x1b[2~"                     }
+#   - { key: Delete,                  chars: "\x1b[3~"                     }
+#   - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
+#   - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
+#   - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
+#   - { key: Left,                    chars: "\x1b[D",   mode: ~AppCursor  }
+#   - { key: Left,                    chars: "\x1bOD",   mode: AppCursor   }
+#   - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                   }
+#   - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
+#   - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
+#   - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
+#   - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
+#   - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
+#   - { key: Up,       mods: Control, chars: "\x1b[1;5A"                   }
+#   - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                   }
+#   - { key: Up,                      chars: "\x1b[A",   mode: ~AppCursor  }
+#   - { key: Up,                      chars: "\x1bOA",   mode: AppCursor   }
+#   - { key: Down,     mods: Shift,   chars: "\x1b[1;2B"                   }
+#   - { key: Down,     mods: Control, chars: "\x1b[1;5B"                   }
+#   - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
+#   - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
+#   - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }
+#   - { key: F1,                      chars: "\x1bOP"                      }
+#   - { key: F2,                      chars: "\x1bOQ"                      }
+#   - { key: F3,                      chars: "\x1bOR"                      }
+#   - { key: F4,                      chars: "\x1bOS"                      }
+#   - { key: F5,                      chars: "\x1b[15~"                    }
+#   - { key: F6,                      chars: "\x1b[17~"                    }
+#   - { key: F7,                      chars: "\x1b[18~"                    }
+#   - { key: F8,                      chars: "\x1b[19~"                    }
+#   - { key: F9,                      chars: "\x1b[20~"                    }
+#   - { key: F10,                     chars: "\x1b[21~"                    }
+#   - { key: F11,                     chars: "\x1b[23~"                    }
+#   - { key: F12,                     chars: "\x1b[24~"                    }
+#   - { key: F1,       mods: Shift,   chars: "\x1b[1;2P"                   }
+#   - { key: F2,       mods: Shift,   chars: "\x1b[1;2Q"                   }
+#   - { key: F3,       mods: Shift,   chars: "\x1b[1;2R"                   }
+#   - { key: F4,       mods: Shift,   chars: "\x1b[1;2S"                   }
+#   - { key: F5,       mods: Shift,   chars: "\x1b[15;2~"                  }
+#   - { key: F6,       mods: Shift,   chars: "\x1b[17;2~"                  }
+#   - { key: F7,       mods: Shift,   chars: "\x1b[18;2~"                  }
+#   - { key: F8,       mods: Shift,   chars: "\x1b[19;2~"                  }
+#   - { key: F9,       mods: Shift,   chars: "\x1b[20;2~"                  }
+#   - { key: F10,      mods: Shift,   chars: "\x1b[21;2~"                  }
+#   - { key: F11,      mods: Shift,   chars: "\x1b[23;2~"                  }
+#   - { key: F12,      mods: Shift,   chars: "\x1b[24;2~"                  }
+#   - { key: F1,       mods: Control, chars: "\x1b[1;5P"                   }
+#   - { key: F2,       mods: Control, chars: "\x1b[1;5Q"                   }
+#   - { key: F3,       mods: Control, chars: "\x1b[1;5R"                   }
+#   - { key: F4,       mods: Control, chars: "\x1b[1;5S"                   }
+#   - { key: F5,       mods: Control, chars: "\x1b[15;5~"                  }
+#   - { key: F6,       mods: Control, chars: "\x1b[17;5~"                  }
+#   - { key: F7,       mods: Control, chars: "\x1b[18;5~"                  }
+#   - { key: F8,       mods: Control, chars: "\x1b[19;5~"                  }
+#   - { key: F9,       mods: Control, chars: "\x1b[20;5~"                  }
+#   - { key: F10,      mods: Control, chars: "\x1b[21;5~"                  }
+#   - { key: F11,      mods: Control, chars: "\x1b[23;5~"                  }
+#   - { key: F12,      mods: Control, chars: "\x1b[24;5~"                  }
+#   - { key: F1,       mods: Alt,     chars: "\x1b[1;6P"                   }
+#   - { key: F2,       mods: Alt,     chars: "\x1b[1;6Q"                   }
+#   - { key: F3,       mods: Alt,     chars: "\x1b[1;6R"                   }
+#   - { key: F4,       mods: Alt,     chars: "\x1b[1;6S"                   }
+#   - { key: F5,       mods: Alt,     chars: "\x1b[15;6~"                  }
+#   - { key: F6,       mods: Alt,     chars: "\x1b[17;6~"                  }
+#   - { key: F7,       mods: Alt,     chars: "\x1b[18;6~"                  }
+#   - { key: F8,       mods: Alt,     chars: "\x1b[19;6~"                  }
+#   - { key: F9,       mods: Alt,     chars: "\x1b[20;6~"                  }
+#   - { key: F10,      mods: Alt,     chars: "\x1b[21;6~"                  }
+#   - { key: F11,      mods: Alt,     chars: "\x1b[23;6~"                  }
+#   - { key: F12,      mods: Alt,     chars: "\x1b[24;6~"                  }
+#   - { key: F1,       mods: Command, chars: "\x1b[1;3P"                   }
+#   - { key: F2,       mods: Command, chars: "\x1b[1;3Q"                   }
+#   - { key: F3,       mods: Command, chars: "\x1b[1;3R"                   }
+#   - { key: F4,       mods: Command, chars: "\x1b[1;3S"                   }
+#   - { key: F5,       mods: Command, chars: "\x1b[15;3~"                  }
+#   - { key: F6,       mods: Command, chars: "\x1b[17;3~"                  }
+#   - { key: F7,       mods: Command, chars: "\x1b[18;3~"                  }
+#   - { key: F8,       mods: Command, chars: "\x1b[19;3~"                  }
+#   - { key: F9,       mods: Command, chars: "\x1b[20;3~"                  }
+#   - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
+#   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
+#   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
