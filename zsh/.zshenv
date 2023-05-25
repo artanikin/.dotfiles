@@ -64,14 +64,15 @@ export FZF_DEFAULT_OPTS="
 export FZF_DEFAULT_COMMAND='fd --type f --color=never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND='fd --type d . --color=never'
-# export FZF_DEFAULT_OPTS='
-#   --height 75% --multi --reverse
-#   --bind ctrl-f:page-down,ctrl-b:page-up
-# '
 
-# export PATH=$PATH:$(go env GOPATH)/bin
-export GO111MODULE=on
-export GOROOT='/Users/artyomanikin/.asdf/installs/golang/1.16.12/go'
-export GOPATH='/Users/artyomanikin/.asdf/installs/golang/1.16.12/packages'
-export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+export GOPATH=/Users/artyomanikin/projects/go-workspace
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
 export PATH=$HOME/.sbm-cli/usr/bin:$PATH
+export GODEBUG=netdns=go
+
+export PATH=$PATH:$HOME/.asdf/installs/python/3.9.5/bin
+
+export SBM_OLD_PLAYGROUND=force
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
