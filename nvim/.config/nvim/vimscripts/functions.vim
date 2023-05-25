@@ -12,4 +12,5 @@ endfunction
 command! ThankYouNext call <sid>ThankYouNext()
 
 " Command to copy the current file's full absolute path.
-command! CopyFilePath let @+ = expand('%:p')
+" command! CopyFilePath let @+ = expand('%:p')
+command! CopyFilePath let @+ = @%

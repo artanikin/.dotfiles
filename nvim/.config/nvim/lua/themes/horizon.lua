@@ -1,4 +1,4 @@
-local colorscheme = "onedarker"
+local colorscheme = "horizon"
 
 vim.g.transparent_background = false
 vim.g.italic_comments = false

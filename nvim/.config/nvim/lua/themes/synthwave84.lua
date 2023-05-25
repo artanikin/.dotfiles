@@ -1,7 +1,7 @@
-local colorscheme = "onedarker"
+local colorscheme = "synthwave84"
 
 vim.g.transparent_background = false
-vim.g.italic_comments = false
+vim.g.italic_comments = true
 vim.g.italic_keywords = false
 vim.g.italic_functions = false
 vim.g.italic_variables = false
@@ -12,7 +12,3 @@ if not status_ok then
   vim.notify("colorscheme " .. colorscheme .. " not found!")
   return
 end
-
-vim.cmd([[
-  hi! link Listchar Comment
-]])

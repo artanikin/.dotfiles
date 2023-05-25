@@ -2,7 +2,7 @@ require'bufferline'.setup{
 options = {
     numbers = "none",
     close_command = "Bdelete! %d",
-    indicator_icon = "▎",
+    indicator = { style = "icon", icon = "▎"},
     buffer_close_icon = "",
     modified_icon = "●",
     close_icon = "",
@@ -11,7 +11,7 @@ options = {
     max_name_length = 30,
     max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
     tab_size = 21,
-    diagnostics = false, -- "nvim_lsp",
+    diagnostics = true, -- "nvim_lsp",
     diagnostics_update_in_insert = false,
     -- diagnostics_indicator = function(count, _, _, _)
     --   return "("..count..")"
@@ -42,7 +42,7 @@ options = {
     -- [focused and unfocused]. eg: { '|', '|' }
     separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' }
     enforce_regular_tabs = true,
-    always_show_bufferline = true,
+    always_show_bufferline = false,
     -- 'extension' | 'relative_directory' | 'directory'
     -- sort_by = function(buffer_a, buffer_b)
     --   -- add custom logic

@@ -6,10 +6,7 @@ require('gitsigns').setup {
     topdelete = { hl = "GitSignsDelete", text = "契", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
     changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
   },
-  numhl = false,
-  linehl = false,
   keymaps = {
-    -- Default keymap options
     noremap = true,
     buffer = true,
 
@@ -23,32 +20,6 @@ require('gitsigns').setup {
     ['n <leader>hp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
     ['n <leader>hb'] = '<cmd>lua require"gitsigns".blame_line()<CR>',
   },
-  watch_gitdir = {
-    interval = 1000,
-    follow_files = true
-  },
-  attach_to_untracked = true,
-  current_line_blame = false,
-  current_line_blame_opts = {
-    virt_text = true,
-    virt_text_pos = 'eol',
-    delay = 1000,
-    ignore_whitespace = false
-  },
-  sign_priority = 6,
-  update_debounce = 100,
-  status_formatter = nil, -- Use default
-  word_diff = false,
-  preview_config = {
-    border = "single",
-    style = "minimal",
-    relative = "cursor",
-    row = 0,
-    col = 1
-  },
-  yadm = {
-    enable = false
-  }
 }
 
 vim.cmd([[

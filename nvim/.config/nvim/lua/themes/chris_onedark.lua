@@ -1,4 +1,4 @@
-local colorscheme = "onedarker"
+local colorscheme = "onedark"
 
 vim.g.transparent_background = false
 vim.g.italic_comments = false
@@ -13,6 +13,6 @@ if not status_ok then
   return
 end
 
-vim.cmd([[
-  hi! link Listchar Comment
-]])
+--[[ vim.cmd([[ ]]
+--[[   hi! link Listchar Comment ]]
+--[[ ) ]]

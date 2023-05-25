@@ -1,58 +1,27 @@
+local opt = vim.opt
+
 vim.cmd('set iskeyword+=-')                 --Treat dash separated words as a word text object"
 vim.cmd('set shortmess+=c')                 --Don't pass messages to |ins-completion-menu|.
-vim.o.hidden=true                           --Required to keep multiple buffers open multiple buffers
-vim.wo.wrap=true                            --Display long lines as just one line
 vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.o.pumheight=10                          --Makes popup menu smaller
+vim.o.pumheight=15                          --Makes popup menu smaller
 vim.o.fileencoding="utf-8"                  --The encoding written to file
-vim.o.cmdheight=1                           --More space for displaying messages
-vim.o.mouse="a"                             --Enable your mouse
-vim.o.splitbelow=true                       --Horizontal splits will automatically be below
 vim.o.termguicolors=true
-vim.o.splitright=true                       --Vertical splits will automatically be to the right
--- vim.o.t_Co="256"                         --Support 256 colors
 vim.o.conceallevel=0                        --So that I can see `` in markdown files
-vim.cmd('set tabstop=2')                    --Insert 2 spaces for a tab
-vim.cmd('set shiftwidth=2')                 --Change the number of space characters inserted for indentation
-vim.cmd('set softtabstop=2')
-vim.cmd('set expandtab')
+
 vim.bo.expandtab=true                       --Converts tabs to spaces
 vim.bo.smartindent=true                     --Makes indenting smart
-vim.wo.number=true
-vim.wo.relativenumber=true
-vim.wo.cursorline=false                      --Enable highlighting of the current line
--- vim.o.showtabline=2                         --Always show tabs
-vim.o.showmode=false                        --We don't need to see things like -- INSERT -- anymore
+-- vim.wo.cursorline=false                      --Enable highlighting of the current line
+vim.o.showtabline=1                         --Always show tabs 0: never, 1: if at least two, 2: always
 vim.o.backup=false
 vim.o.writebackup=false
 vim.wo.signcolumn="yes"  -- number                   --Always show the signcolumn, otherwise it would shift the text each time
-vim.o.updatetime=200                        --Faster completion
 vim.o.timeoutlen=600                        --By default timeoutlen is 1000 ms
-vim.o.clipboard="unnamedplus"               --Copy paste between vim and everything else
-vim.o.scrolloff=3 			                    --Minimal number of screen lines to keep above and below the cursor
-vim.o.sidescrolloff=5 			                --Minimal number of screen columns to keep the left and to the right of the cursor
-vim.o.foldlevel=10
-vim.o.ignorecase=true                       -- Ignoring case in a pattern
-vim.o.smartcase=true                        -- Override the 'ignorecase' option if the search pattern contains upper case chars
--- vim.cmd('set textwidth=100')
--- vim.cmd('set colorcolumn=101')
-vim.bo.textwidth=100
--- vim.wo.colorcolumn='101'
-vim.o.background='dark'
-vim.cmd([[
-  set breakindent
-  set breakindentopt=shift:2
-  set showbreak=\\\\\
-  set showbreak=↳
 
-  " set list
-  " set listchars=tab:»·,trail:∙
-  " set fillchars=fold:·,diff:-,vert:│
-]])
--- vim.wo.t_Co='256'
--- vim.cmd([[
---   set t_Co=256
--- ]])
+vim.o.laststatus=3
+
+
+vim.bo.textwidth=100
+vim.o.background='dark'
 
 vim.cmd([[
 " Maintain undo history between sessions
@@ -66,13 +35,113 @@ set backupdir=/var/tmp,/tmp
 autocmd VimResized * wincmd =
 ]])
 
-vim.g.ruby_host_prog = '~/.asdf/installs/ruby/3.0.0/bin/neovim-ruby-host'
+opt.list = false
+opt.listchars:append("eol:↲")
+-- opt.listchars:append("tab:\ ")
+opt.listchars:append("trail:·")
+opt.listchars:append("nbsp:␣")
+-- opt.listchars:append("space:⋅")
 
--- Neovide
-vim.o.guifont = "JetBrainsMono Nerd Font"
-vim.g.neovide_remember_window_size=true
-vim.g.neovide_fullscreen=false
-vim.g.neovide_cursor_vfx_mode="sonicboom"
 
-vim.g.neovide_refresh_rate=40
-vim.g.neovide_transparency=0.8
+-- Disable Netrw
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Cool floating window popup menu for completion on command line
+opt.pumblend = 0
+opt.wildmode = "longest:full"
+opt.wildoptions = "pum"
+
+opt.showmode = false
+opt.showcmd = true
+opt.cmdheight = 1 -- Height of the command bar
+opt.incsearch = true -- Makes search act like search in modern browsers
+opt.showmatch = true -- show matching brackets when text indicator is over them
+opt.relativenumber = true -- Show line numbers
+opt.number = true -- But show the actual number for the line we're on
+opt.ignorecase = true -- Ignore case when searching...
+opt.smartcase = true -- ... unless there is a capital letter in the query
+opt.hidden = true -- I like having buffers stay around
+opt.equalalways = false -- I don't like my windows changing all the time
+opt.splitright = true -- Prefer windows splitting to the right
+opt.splitbelow = true -- Prefer windows splitting to the bottom
+opt.updatetime = 1000 -- Make updates happen faster
+opt.hlsearch = true
+opt.scrolloff = 10 -- Make it so there are always ten lines below my cursor
+
+-- Cursorline highlighting control
+-- Only have it on in the active buffer
+--[[ opt.cursorline = true -- Highlight the current line ]]
+--[[ local group = vim.api.nvim_create_augroup("CursorLineControl", { clear = true }) ]]
+--[[ local set_cursorline = function(event, value, pattern) ]]
+--[[   vim.api.nvim_create_autocmd(event, { ]]
+--[[     group = group, ]]
+--[[     pattern = pattern, ]]
+--[[     callback = function() ]]
+--[[       vim.opt_local.cursorline = value ]]
+--[[     end, ]]
+--[[   }) ]]
+--[[ end ]]
+--[[ set_cursorline("WinLeave", false) ]]
+--[[ set_cursorline("WinEnter", true) ]]
+--[[ set_cursorline("FileType", false, "TelescopePrompt") ]]
+
+-- Tabs
+opt.autoindent = true
+opt.cindent = true
+opt.wrap = true
+
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.expandtab = true
+
+opt.breakindent = true
+opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
+opt.linebreak = true
+
+opt.foldmethod = "marker"
+opt.foldlevel = 10
+opt.modelines = 1
+
+opt.belloff = "all" -- Just turn the dang bell off
+
+opt.clipboard = "unnamedplus"
+
+opt.inccommand = "split"
+opt.swapfile = false -- Living on the edge
+opt.shada = { "!", "'1000", "<50", "s10", "h" }
+
+opt.mouse = "n"
+
+-- Helpful related items:
+--   1. :center, :left, :right
+--   2. gw{motion} - Put cursor back after formatting motion.
+--
+-- TODO: w, {v, b, l}
+opt.formatoptions = opt.formatoptions
+  - "a" -- Auto formatting is BAD.
+  - "t" -- Don't auto format my code. I got linters for that.
+  + "c" -- In general, I like it when comments respect textwidth
+  + "q" -- Allow formatting comments w/ gq
+  - "o" -- O and o, don't continue comments
+  + "r" -- But do continue when pressing enter.
+  + "n" -- Indent past the formatlistpat, not underneath it.
+  + "j" -- Auto-remove comments if possible.
+  - "2" -- I'm not in gradeschool anymore
+
+-- set joinspaces
+opt.joinspaces = false -- Two spaces and grade school, we're done
+
+opt.fillchars = { eob = "~" }
+opt.fillchars:append({
+    horiz = '━',
+    horizup = '┻',
+    horizdown = '┳',
+    vert = '┃',
+    vertleft = '┨',
+    vertright = '┣',
+    verthoriz = '╋',
+})
+
+opt.diffopt = { "internal", "filler", "closeoff", "hiddenoff", "algorithm:minimal" }
