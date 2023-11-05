@@ -67,6 +67,7 @@ export FZF_ALT_C_COMMAND='fd --type d . --color=never'
 
 export GOPATH=/Users/artyomanikin/projects/go-workspace
 export GOROOT=/usr/local/opt/go/libexec
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH=$HOME/.sbm-cli/usr/bin:$PATH

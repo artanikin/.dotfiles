@@ -1,11 +1,4 @@
-require("settings")
-require("keymappings")
-require("plugins")
-require("abbreviations")
-require("autocommands")
+require("custom.core")
+require("custom.lazy")
 
-require("lsp")
-require("user.disable_builtin")
-require("user.telescope")
-
-vim.cmd("source ~/.config/nvim/vimscripts/functions.vim")
+vim.cmd.source("~/.config/nvim/vimscripts/functions.vim")

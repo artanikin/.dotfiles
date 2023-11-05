@@ -43,3 +43,20 @@ function g() {
     git status
   fi
 }
+
+# Source https://thoughtbot.com/blog/powerful-git-macros-for-automating-everyday-workflows
+# git branch changes
+gbc() {
+  git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $@..$(git rev-parse --abbrev-ref HEAD)
+}
+
+# git base branch changes
+gbbc() {
+  git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $(git rev-parse --abbrev-ref HEAD)..$@
+}
+
+# rebasing a branch
+gqrb() {
+    git set-upstream
+    git fetch origin "$@:$@" && git pull && git rebase "$@"
+}
