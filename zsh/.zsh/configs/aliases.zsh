@@ -11,7 +11,7 @@ alias scp="scp -r"
 alias rm="rm -ivr"
 alias mv="mv -iv"
 alias mkdir="mkdir -p"
-alias ls="exa -l --icons"
+alias ls="eza -l --icons"
 alias ll="ls"
 alias lsa="ls -a"
 alias dotfiles="cd ~/.dotfiles"
@@ -32,6 +32,7 @@ alias gcob='git checkout $(git branch | fzf)'
 alias goc="git ls-files -u | awk '{print $4}' | sort -u | xargs -o nvim"
 alias gom="git ls-files -m | xargs -o nvim"
 alias gcpb="git branch --show-current | pbcopy"
+alias gclearbr="git branch --merged master | grep -v '^\*' | grep -v 'master$' | xargs -r git branch -d"
 alias ff="fzf --preview 'bat --theme DarkNeon --color always {}' | xargs $EDITOR"
 alias fz="fzf --bind 'f1:execute(less -f {}),ctrl-y:execute-silent(echo {} | pbcopy)+abort' --preview '[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500'"
 alias vfz='vim $(fz)'
@@ -71,13 +72,15 @@ alias dlogf='docker container logs -f '
 alias lzd='lazydocker'
 alias stf9='kubectl exec -n s-sb-stf9 -i -t -c puma $(kubectl get pods -n s-sb-stf9 | grep app-stf) -- /bin/bash'
 alias stf9l='kubectl logs -f --tail 10 -n s-sb-stf9 $(kubectl get pods -n s-sb-stf9 | grep app-stf) puma'
-alias stf6='kubectl exec -n s-sb-stf6 -i -t -c puma $(kubectl get pods -n s-sb-stf6 | grep app-stf) -- /bin/bash'
-alias shp6='kubectl exec -n s-sh-shp6 -i -t -c puma $(kubectl get pods -n s-sh-shp6 | grep shopper-backend) -- /bin/bash'
+alias stf6='NAMESPACE=paas-content-storefront-6; kubectl exec -it -n $NAMESPACE $(kubectl get pods -n $NAMESPACE | grep app) -- /bin/bash'
+alias shp6='kubectl exec -n paas-content-shopper-6 -i -t --context pam.sbmt.io-sb-stage-staging01 $(kubectl get pods -n paas-content-shopper-6 --context pam.sbmt.io-sb-stage-staging01 | grep app) -- /paas-entrypoint/entrypoint rails console'
 alias shp9='kubectl exec -n s-sh-shp9 -i -t -c puma $(kubectl get pods -n s-sh-shp9 | grep shopper-backend) -- /bin/bash'
 alias shp9l='kubectl logs -f --tail 10 -n s-sh-shp9 $(kubectl get pods -n s-sh-shp9 | grep shopper-backend) puma'
 alias stf11='kubectl exec -n s-sb-stf11 -i -t -c puma $(kubectl get pods -n s-sb-stf11 | grep app-stf) -- /bin/bash'
 alias shp11='kubectl exec -n s-sh-shp11 -i -t -c puma $(kubectl get pods -n s-sh-shp11 | grep shopper-backend) -- /bin/bash'
 alias shpsur='kubectl exec -n s-sh-shpsurstromming -i -t -c puma $(kubectl get pods -n s-sh-shpsurstromming | grep shopper-backend) -- /bin/bash'
+
+
 
 # Kubernetes
 alias k='kubectl'

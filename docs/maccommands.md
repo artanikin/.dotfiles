@@ -15,4 +15,8 @@ defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-ty
 
 # Add Half-Height Dock Spacer (paste for each)
 defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="small-spacer-tile";}' && killall Dock
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
 ```

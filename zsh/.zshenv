@@ -19,13 +19,13 @@ export LOCAL_ZDOTDIR=$HOME/.zsh
 
 # export TERM="xterm-256color-italic"
 
-export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
-export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
-export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
+# export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
+# export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
+# export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
 
 # Java 8
-export JAVA_HOME=$JAVA_HOME_8
-export SDKROOT=$(xcrun --show-sdk-path)
+# export JAVA_HOME=$JAVA_HOME_8
+# export SDKROOT=$(xcrun --show-sdk-path)
 
 export TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins"
 export BAT_CONFIG_PATH="$HOME/.config/bat/bat.conf"
@@ -43,7 +43,7 @@ export COMPOSE_HTTP_TIMEOUT=120
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # export ASDF_DIR="~/.asdf"
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 export FZF_DEFAULT_OPTS="
 --layout=reverse
@@ -73,7 +73,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$HOME/.sbm-cli/usr/bin:$PATH
 export GODEBUG=netdns=go
 
-export PATH=$PATH:$HOME/.asdf/installs/python/3.9.5/bin
+# export PATH=$PATH:$HOME/.asdf/installs/python/3.9.5/bin
 
 export SBM_OLD_PLAYGROUND=force
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc

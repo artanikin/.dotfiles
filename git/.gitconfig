@@ -61,15 +61,9 @@
   unstage = reset                                                               # un-add files from index (tracking)
   uncommit = reset --soft HEAD^                                                 # go back one commit, put changes into your working dir and index
   sla = log --oneline --decorate --graph --all
-
-  ctags = "!sh -c '[ -f .git/hooks/ctags ] || git init; .git/hooks/ctags' git-ctags"
-
-# [format]
-#   pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
-
 [core]
   editor = nvim
-  excludesFile = /Users/artyomanikin/.gitignore
+	excludesfile = /Users/anikin.ap/.gitignore_global
   pager = delta --dark
 	attributesfile = $HOME/.gitattributes
 	hookspath = /Users/artyomanikin/.git_settings/hooks
@@ -78,7 +72,6 @@
 [delta]
   features = side-by-side line-numbers decorations
   whitespace-error-style = 22 reverse
-  ; syntax-theme = coracias-caudatus # light themes: hoopoe, coracias-caudatus
   syntax-theme = gruvbox-dark
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
@@ -106,7 +99,6 @@
   user = artanikin
 [merge]
   tool = vimdiff
-  ; conflictstyle = diff3
 [mergetool]
   prompt = false
 [mergetool "vimdiff"]
@@ -118,14 +110,9 @@
   prompt = false
 [difftool "difftastic"]
   cmd = difft "$LOCAL" "$REMOTE"
-; [difftool]
-;   prompt = false
-; [diff]
-;   tool = vimdiff
 [diff "rspec"]
         xfuncname = "^[ \t]*((RSpec|describe|context|it|before|after|around|feature|scenario|background)[ \t].*)$"
 [diff "swift"]
     xfuncname = ^[ \t]*((class|func)[ \t].*)$
 [pager]
   difftool = true
-

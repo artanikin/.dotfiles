@@ -107,7 +107,7 @@ bower.json
 /.config
 /coverage/
 /InstalledFiles
-/pkg/
+# /pkg/
 /test/tmp/
 /test/version_tmp/
 /tmp/
@@ -196,3 +196,5 @@ crashlytics-build.properties
 .vagrant/
 
 vifminfo
+.aider*
+.aider*/
