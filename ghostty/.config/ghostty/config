@@ -1,0 +1,28 @@
+# theme = tokyonight
+theme = "Solarized Dark - Patched"
+
+# font-family = "JetBrains Mono"
+# font-family = "PragmataPro Mono Liga"
+# font-family = "Osaka"
+# font-family = "PT Mono"
+font-family = "BlexMono Nerd Font Mono"
+# font-family = "monospace"
+font-size = 14
+
+mouse-hide-while-typing = true
+macos-option-as-alt = true
+
+window-save-state = always
+window-height = 100
+
+background-opacity = 0.9
+background-blur-radius = 20
+background = #031219
+
+cursor-style = block
+cursor-style-blink = true
+
+
+# keymaps
+keybind = global:cmd+`=toggle_quick_terminal
+
