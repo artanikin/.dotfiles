@@ -1,7 +1,5 @@
 # Dotfiles
 
-![dotfiles](https://github.com/artanikin/.dotfiles/blob/master/docs/screenshots/desk.png)
-
 This repository is managed by [GNU stow](https://www.gnu.org/software/stow/).
 
 **Table of Contents**
