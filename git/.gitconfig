@@ -116,3 +116,10 @@
     xfuncname = ^[ \t]*((class|func)[ \t].*)$
 [pager]
   difftool = true
+
+[url "ssh://git@gitlab.sbmt.io:"]
+	insteadof = https://gitlab.sbmt.io
+[url "git@gitlab.sbmt.io:"]
+	insteadOf = https://gitlab.sbmt.io
+[url "git@git.sbermarket.tech:"]
+	insteadOf = https://gitlab.sbermarket.tech
